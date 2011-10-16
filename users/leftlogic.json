@@ -1,5 +1,4 @@
 {
-  "short_name": "leftlogic",
-  "fullname": "Left Logic Ltd",
-  "link": "http://leftlogic.com"
+  "host": "leftlogic"
+  "copyright": "Left Logic Ltd, http://leftlogic.com"
 }

@@ -1,5 +1,4 @@
 {
-  "short_name": "mathias",
-  "fullname": "Mathias Bynens",
-  "link": "http://mathiasbynens.be/"
+  "host": "mathias"
+  "copyright": "Mathias Bynens, http://mathiasbynens.be/"
 }

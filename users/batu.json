@@ -1,8 +1,4 @@
 {
-  "short_name": "batu",
-  "fullname": "Fırat Batuhan İçöz",
-  "github": "https://github.com/batuhanicoz",
-  "link": "http://batu.me/1",
-  "license": "MIT",
-  "license_version": ""
+  "host": "batu"
+  "copyright": "Batuhan İçöz, http://batu.me/1"
 }

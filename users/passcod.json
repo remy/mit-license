@@ -1,5 +1,4 @@
 {
-  "short_name": "passcod",
-  "fullname": "Félix Saparelli",
-  "link": "http://passcod.net"
+  "host": "passcod"
+  "copyright": "Félix Saparelli, http://passcod.net"
 }

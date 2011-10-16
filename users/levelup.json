@@ -1,5 +1,4 @@
 {
-  "short_name": "levelup",
-  "fullname": "Level Up (Scotland) Limited",
-  "link": "http://www.thisislevelup.com"
+  "host": "levelup"
+  "copyright": "Level Up (Scotland) Limited, http://www.thisislevelup.com"
 }
