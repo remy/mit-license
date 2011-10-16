@@ -9,15 +9,20 @@ pleasure.
 
 Now I can always include http://rem.mit-license.org in all my projects
 which links `rem` (the cname) against my copyright holder name `Remy
-Sharp` - all stored in the `users.json` file.
+Sharp` - all stored in the `users` directory.
 
 # Example
 
-The `users.json` file contains a simple database of CNAMEs and copyright
-holders, so the following:
+The `users` directory contains a list of files, each representing a host
+on mit-license.org. As present the file format is very simple, but can
+be upgraded in future.
+
+Create a new file and give it the name of the CNAME you want (in my case
+it's `rem.json`). This file contains a JSON object containing at least a
+`copyright` property:
 
     {
-      "rem": "Remy Sharp, http://remysharp.com"
+      "copyright": "Remy Sharp, http://remysharp.com"
     }
 
 Means I can now link to: http://rem.mit-license.org and it will show my
