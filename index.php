@@ -1,13 +1,23 @@
 <?php
 
+date_default_timezone_set('Europe/London'); // stop php from whining
+
 $user = preg_replace('/\.mit-license\.org$/', '', $_SERVER["HTTP_HOST"]);
+
+// sanitise user (not for DNS, but for file reading, I don't know
+// just in case it's hacked about with or something bananas.
+$user = preg_replace('/[^a-z0-9\-]/', '', $user);
+
 $user_file = 'users/'.$user.'.json';
 
-if(file_exists($user_file)){
+if (file_exists($user_file)) {
 	$user_file = file_get_contents($user_file);
 	$user = json_decode($user_file);
-	$holder = '<a href="'.$user->link.'">'.$user->fullname.'</a>';
-}else{
+  $holder = $user->copyright;
+  if (property_exists($user, 'url')) {
+    $holder = '<a href="'.$user->url.'">' . $holder . '</a>';
+  }
+} else {
 	$holder = "&lt;copyright holders&gt;";
 }
 ?>
@@ -25,10 +35,10 @@ Fork this project and send a pull request on:
 
   https://github.com/remy/mit-license
 
-By adding a new record to users.json will yeild an MIT License on a 
-CNAME, for example: 
+By adding a new JSON file to the users directory, it will yeild an 
+MIT License on a CNAME, for example: 
 
-  { "rem": "Remy Sharp" }
+  { "host": "rem", "copyright": "Remy Sharp" }
 
 Means visiting http://rem.mit-license.org shows "Remy Sharp" as the 
 copyright holder. Namespaces will be on a first come first serve basis,
