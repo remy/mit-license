@@ -1,10 +1,14 @@
 <?php
-$users = json_decode(file_get_contents('users.json'));
-$user = preg_replace('/\.mit-license\.org$/', '', $_SERVER["HTTP_HOST"]);
 
-$holder = "&lt;copyright holders&gt;";
-if (property_exists($users, $user)) {
-  $holder = $users->$user;
+$user = preg_replace('/\.mit-license\.org$/', '', $_SERVER["HTTP_HOST"]);
+$user_file = 'users/'.$user.'.json';
+
+if(file_exists($user_file)){
+	$user_file = file_get_contents($user_file);
+	$user = json_decode($user_file);
+	$holder = '<a href="'.$user->link.'">'.$user->fullname.'</a>';
+}else{
+	$holder = "&lt;copyright holders&gt;";
 }
 ?>
 <!DOCTYPE html>
