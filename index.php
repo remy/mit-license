@@ -61,5 +61,6 @@ footer a:hover { color: #333; }
 <footer>
 <p><a href="https://github.com/remy/mit-license">Fork this project to create your own MIT license that you can always link to.</a></p>
 </footer>
+<script>var _gaq=[['_setAccount','UA-1656750-28'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document,'script')</script>
 <body>
 </html>
