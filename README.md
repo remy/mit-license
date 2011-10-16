@@ -25,4 +25,4 @@ license name (note that the date will always show the current year).
 
 # License
 
-MIT: http://rem.mit-License.org
+MIT: http://rem.mit-license.org
