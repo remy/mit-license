@@ -31,29 +31,12 @@ if ($request != "" && $request != "/" && $request != "/index.php") {
 // if sha specified, use that revision of licence
 $license = '';
 if ($sha != "") {
-  try {
-    // TODO must cache and optimise this as it'll kill my server :-(
-    $gitCommitData = json_decode(@file_get_contents('https://api.github.com/repos/remy/mit-license/git/trees/' . $sha));
-    if (isset($gitCommitData) && is_object($gitCommitData) && property_exists($gitCommitData, 'tree')) {
-      foreach ($gitCommitData->tree as $commit) {
-        if ($commit->path == 'LICENSE.html') {
-          $licenseData = json_decode(file_get_contents($commit->url));
-          $license = base64_decode($licenseData->content);
-          break;
-        }
-      }
-    }
-  } catch (Exception $e) {
-    echo 'Caught exception: ',  $e->getMessage(), "\n";
-  }
-  /*
   $out = array();
   // preg_replace should save us - but: please help me Obi Wan...
-  exec("git show " . $sha . ":LICENSE.html", $out, $r);
+  exec("/usr/local/bin/git show " . $sha . ":LICENSE.html", $out, $r);
   if ($r == 0) {
     $license = implode("\n", $out);
-  }
-   */
+  } 
 }
 
 // if we didn't manage to read one in, use latest
