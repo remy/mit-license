@@ -11,8 +11,7 @@ $user = preg_replace('/[^a-z0-9\-]/', '', $user);
 $user_file = 'users/'.$user.'.json';
 
 if (file_exists($user_file)) {
-	$user_file = file_get_contents($user_file);
-	$user = json_decode($user_file);
+  $user = json_decode(file_get_contents($user_file));
   $holder = $user->copyright;
   if (property_exists($user, 'url')) {
     $holder = '<a href="'.$user->url.'">' . $holder . '</a>';
