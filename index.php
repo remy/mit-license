@@ -2,12 +2,12 @@
 
 date_default_timezone_set('Europe/London'); // stop php from whining
 
-$user = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
+$user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
 
 // sanitise user (not for DNS, but for file reading, I don't know
 // just in case it's hacked about with or something bananas.
-$user = preg_replace('/[^a-z0-9\-]/', '', $user);
-$user_file = 'users/'.$user.'.json';
+$user_file = preg_replace('/[^a-z0-9\-]/', '', $user);
+$user_file = 'users/'.$user_file.'.json';
 
 if (file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
@@ -21,6 +21,7 @@ if (file_exists($user_file)) {
 
 // grab sha from request uri
 $request = $_SERVER["REQUEST_URI"];
+$sha = '';
 if ($request != "" && $request != "/" && $request != "/index.php") {
   $sha = preg_replace('/[^a-f0-9]/', '', $_SERVER["REQUEST_URI"]);
 } else if (isset($user) && property_exists($user, 'version')) {
@@ -28,6 +29,7 @@ if ($request != "" && $request != "/" && $request != "/index.php") {
 }
 
 // if sha specified, use that revision of licence
+$license = '';
 if ($sha != "") {
   $out = array();
   // preg_replace should save us - but: please help me Obi Wan...
