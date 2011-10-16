@@ -6,7 +6,7 @@ $user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
 
 // sanitise user (not for DNS, but for file reading, I don't know
 // just in case it's hacked about with or something bananas.
-$user_file = preg_replace('/[^a-z0-9\-]/', '', $user);
+$user_file = preg_replace('/[^a-z0-9\-]/', '', $user_file);
 $user_file = 'users/'.$user_file.'.json';
 
 if (file_exists($user_file)) {
