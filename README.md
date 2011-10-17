@@ -51,7 +51,7 @@ extra assurance for you.
 Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be
 specified on the URL (in your permalink) or in the JSON file.
 
-For example: [source of http://rem.mit-license.org/a526bf7ad1](view-source:http://rem.mit-license.org/a526bf7ad1) shows an older version of comments inline to the HTML document (compared to the [latest version](view-source:http://rem.mit-license.org)).
+For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of comments inline to the HTML document (compared to the [latest version](http://rem.mit-license.org)).
 
 This can also be targeted in my JSON file:
 
