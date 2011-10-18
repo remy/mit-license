@@ -111,6 +111,6 @@ and we'll get it live.
 
 ## License
 
-Of course:
+And of course:
 
 MIT: http://rem.mit-license.org
