@@ -36,6 +36,15 @@ the copyright text, you can include a `url` property:
       "url": "http://remysharp.com"
     }
 
+And if you want your license to appear as plain text, just add the
+`format` property (currently only `txt` and `html` are supported):
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "format": "txt"
+    }
+
 Finally you can also include a license version target in the JSON file
 as explained in the next section.
 
