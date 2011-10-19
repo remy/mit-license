@@ -73,6 +73,22 @@ This can also be targeted in my JSON file:
 Note that if no version is supplied, the latest copy of the LICENSE.html
 will be displayed with your information included.
 
+## Formats & URLs
+
+The following types of requests can be made to this project:
+
+* [http://rem.mit-license.org/](http://rem.mit-license.org/) # HTML, or the default format specified in
+the json file (currently none specified on `rem`)
+* [http://rem.mit-license.org/license.html](http://rem.mit-license.org/license.html) HTML
+* [http://rem.mit-license.org/license.txt](http://rem.mit-license.org/license.txt) Text
+* [http://rem.mit-license.org/a526bf7ad1](http://rem.mit-license.org/a526bf7ad1) a526bf7ad1 version, HTML, or the
+default format specified in the json file (again, none specified for
+`rem` so defaults to HTML)
+* [http://rem.mit-license.org/a526bf7ad1/license.html](http://rem.mit-license.org/a526bf7ad1/license.html) a526bf7ad1 version,
+HTML
+* [http://rem.mit-license.org/a526bf7ad1/license.txt](http://rem.mit-license.org/a526bf7ad1/license.txt) a526bf7ad1 version,
+text
+
 ## Ways to contribute
 
 Aside from code contributions that make the project better, there are a
