@@ -74,6 +74,7 @@ $license = str_replace('{{info}}', $info, $license);
 if ($format == 'txt') {
   $license = array_shift(explode('</article>', array_pop(explode('<article>', $license))));
   $license = preg_replace('/<[^>]*>/', '', trim($license));
+  $license = html_entity_decode($license);
   header('content-type: text/plain');
 }
 
