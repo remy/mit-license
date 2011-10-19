@@ -1,0 +1,11 @@
+html { background: #eee; }
+body { margin: 0; font-family: monospace; font-size: 1.4em; }
+article, footer {
+  display: block; margin: 1em auto; min-width: 320px; width: 90%;
+}
+article { display: block; margin: 2em auto; min-width: 360px; max-width: 900px; width: 80%; border: 1px solid #ccc; padding: 2em; background: #fff; border-radius: 5px; box-shadow: 0 5px 10px rgba(0,0,0,0.25);}
+h1 { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+footer a { display: block; text-align: center; color: #999; font-weight: bold; text-shadow: 0 1px 1px #fff; }
+footer a:hover, footer a:focus { color: #333; }
+

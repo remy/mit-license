@@ -3,6 +3,7 @@
 date_default_timezone_set('Europe/London'); // stop php from whining
 
 $format = 'html';
+$theme = 'default';
 $user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
 
 // sanitise user (not for DNS, but for file reading, I don't know
@@ -20,6 +21,12 @@ if (file_exists($user_file)) {
   if (property_exists($user, 'format')) {
     if (strtolower($user->format) == 'txt') {
       $format = 'txt';
+    }
+  }
+
+  if (property_exists($user, 'theme')) {
+    if (file_exists('themes/' . $user->theme . '.css')) {
+      $theme = $user->theme;
     }
   }
 } else {
@@ -68,6 +75,7 @@ if ($license == "") {
 // replace info tag and display
 $info = date('Y') . ' ' . $holder;
 $license = str_replace('{{info}}', $info, $license);
+$license = str_replace('{{theme}}', $theme, $license);
 
 // if we want text format, strip out the license from the article tag
 // and then strip any other tags in the license.
