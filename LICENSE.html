@@ -30,23 +30,9 @@ Hope you find this useful too!
 - @rem
 
 -->
-<!--[if IE]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<style>
-body {
-  margin:0; padding: 50px;
-	background: #fff url(bg.png);
-	font: 16px/28px "Palatino Linotype", "Book Antiqua", Palatino, FreeSerif, serif; color: #252519;
-}
-article, footer { display:block; max-width:720px; margin:0; }
-article { padding:28px; background:#fff; border:1px solid #ccc; }
-footer { padding:0 28px; text-align:center; }
-h1 { margin:0; font-size: 24px; line-height: 32px;}
-a, a:visited { color:#105cb6; padding:4px; text-decoration:none; } 
-a:active, a:hover { color:#003; }
-a img { position: absolute; top: 0; right: 0; border: 0; }
-</style>
+<!-- for HTML5 el styling -->
+<script>document.createElement('article');document.createElement('footer');</script>
+<link rel="stylesheet" href="/themes/{{theme}}.css">
 </head>
 <body>
 <article>
@@ -72,8 +58,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.</p>
 </article>
 <footer>
-<p><a href="https://github.com/remy/mit-license"><img src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub">Fork this project to create your own MIT license that you can always link to.</a></p>
+<p><a href="https://github.com/remy/mit-license">Fork this project to create your own MIT license that you can always link to.</a></p>
 </footer>
 <script>var _gaq=[['_setAccount','UA-1656750-28'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document,'script')</script>
-</body>
+<body>
 </html>
