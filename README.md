@@ -73,6 +73,30 @@ This can also be targeted in my JSON file:
 Note that if no version is supplied, the latest copy of the LICENSE.html
 will be displayed with your information included.
 
+## Themes
+
+If you've got an eye for design (or like me: not): you can contribute a
+theme by adding a CSS file to the `themes` directory. The default theme
+is simple and clean, but you can add your own as you like.
+
+Current available themes:
+
+* default - [preview](http://mit-license.org) (by
+  [@remy](http://github.com/remy) &
+  [@raphaelbastide](http://github.com/raphaelbastide))
+* flesch - [preview](http://jsbin.com/ufefid/3) (by
+  [@flesch](http://github.com/flesch))
+
+To use a theme, add the `theme` property to your `user.json` file, for
+example:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "theme": "flesch"
+    }
+
+
 ## Formats & URLs
 
 The following types of requests can be made to this project:
@@ -116,6 +140,13 @@ Domain contributions:
 * [barberboy](http://github.com/barberboy) - 2012-2013
 * [paulirish](http://github.com/paulirish) - 2013-2014
 * [batuhanicoz](http://github.com/batuhanicoz) - 2014-2015
+* [buritica](http://github.com/buritica) - 2015-2016
+* [adamstrawson](http://github.com/adamstrawson) - 2016-2018 (2 years)
+* [keithamus](http://github.com/keithamus) - 2018-2026 (8 years)
+
+*Please note that the whois says 2014 currently, I'm following up with
+the domain registra to make sure it's renewed for the right amount of
+time!*
 
 ### 2. Hosting
 
@@ -130,11 +161,7 @@ being lovely.
 
 I'm a developer, I seem only capable of *grey*! If you're a designer and
 want to contribute a decent lick of paint on the project that would be
-super. Obviously the content should remain to the point and simple, but
-I'm sure it could be tightened or sharpened. 
-
-Drop me a messsage with any idea you've got (or even just a bit of CSS)
-and we'll get it live.
+super. Just create a new theme and send me a pull request.
 
 ## License
 
