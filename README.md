@@ -114,6 +114,7 @@ Domain contributions:
 
 * [remy](http://github.com/remy) - 2011-2012
 * [barberboy](http://github.com/barberboy) - 2012-2013
+* [paulirish](http://github.com/paulirish) - 2013-2014
 
 ### 2. Hosting
 
