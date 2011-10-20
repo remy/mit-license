@@ -42,6 +42,9 @@ if (file_exists($user_file)) {
   if (property_exists($user, 'url')) {
     $holder = '<a href="'.$user->url.'">' . $holder . '</a>';
   }
+  if (property_exists($user, 'email')) {
+    $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
+  }
 
   if (property_exists($user, 'format')) {
     if (strtolower($user->format) == 'txt') {
@@ -112,5 +115,3 @@ if ($format == 'txt') {
 }
 
 echo $license;
-
-?>
