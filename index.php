@@ -27,6 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
 
+    // try to add to github...!
+    exec('/usr/local/bin/git add ' . $user_file . ' && /usr/local/bin/git commit -m"created ' . $user_file . '" && /usr/local/bin/git push', $out, $r);
+    user_error('create new user. out: ' . $out . ', r: ' . $r);
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
