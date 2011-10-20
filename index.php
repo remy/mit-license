@@ -13,7 +13,7 @@ $user_file = 'users/'.$user_file.'.json';
 
 if (file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
-  $holder = htmlentities($user->copyright);
+  $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML5, 'UTF-8');
   if (property_exists($user, 'url')) {
     $holder = '<a href="'.$user->url.'">' . $holder . '</a>';
   }
