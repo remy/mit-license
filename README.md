@@ -86,6 +86,7 @@ Current available themes:
   [@raphaelbastide](http://github.com/raphaelbastide))
 * flesch - [preview](http://jsbin.com/ufefid/3) (by
   [@flesch](http://github.com/flesch))
+* afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
 
 To use a theme, add the `theme` property to your `user.json` file, for
 example:
