@@ -164,6 +164,8 @@ The url also supports including a start year:
   show a license year range of 2009-2011 (2011 being the current year)
 * [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/) 
   allows me to force the year range
+* [http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt](http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt) a526bf7ad1 version, with year range of 2009-2010 in plain text
+
 
 ## Ways to contribute
 
