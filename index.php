@@ -36,12 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   exit;
 }
 
+/**
+ * Load up the user.json file and read properties in
+ **/
 if (file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
-  $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML5, 'UTF-8');
+  $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML401, 'UTF-8');
   if (property_exists($user, 'url')) {
-    $holder = '<a href="'.$user->url.'">' . $holder . '</a>';
+    $holder = '<a href="' . $user->url . '">' . $holder . '</a>';
   }
+
   if (property_exists($user, 'email')) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
   }
@@ -61,6 +65,12 @@ if (file_exists($user_file)) {
   $holder = "&lt;copyright holders&gt;";
 }
 
+/**
+ * Now process the request url. Optional parts of the url are (in order):
+ * [sha]/[year|year-range]/license.[format]
+ * eg. http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt
+ **/
+
 // grab sha from request uri
 $request_uri = explode('/', $_SERVER["REQUEST_URI"]);
 
@@ -73,6 +83,19 @@ if (stripos($request, 'license') === 0) {
   $format = array_pop(explode('.', strtolower($request))) == 'txt' ? 'txt' : 'html';
 
   // move down to the next part of the request
+  $request = array_pop($request_uri);
+}
+
+// check if we have a year or a year range up front
+$year = date('Y');
+preg_match('/^(\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
+if (count($match) > 1) {
+  if ($match[2]) {
+    $year = $match[2];
+  }
+  if ($match[1]) {
+    $year = $match[1] . '-' . $year;
+  }
   $request = array_pop($request_uri);
 }
 
@@ -101,7 +124,7 @@ if ($license == "") {
 }
 
 // replace info tag and display
-$info = date('Y') . ' ' . $holder;
+$info = $year . ' ' . $holder;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
 

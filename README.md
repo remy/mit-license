@@ -38,6 +38,15 @@ The `users` directory contains a list of files, each representing a host
 on mit-license.org. The minimum requirement for the JSON is that is
 contains a `copyright` field - everything else is optional.
 
+Available fields:
+
+* copyright (required)
+* url
+* email
+* format
+* version
+* theme
+
 ### copyright
 
 Create a new file and give it the name of the CNAME you want (in my case
@@ -59,6 +68,18 @@ the copyright text, you can include a `url` property:
     {
       "copyright": "Remy Sharp, http://remysharp.com",
       "url": "http://remysharp.com"
+    }
+
+### email
+
+You can also include a link to your email which is displayed after the
+copyright notice using the `email` property (note the `mailto:` is
+automatically added):
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com"
     }
 
 ### format
@@ -84,7 +105,7 @@ extra assurance for you.
 Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be
 specified on the URL (in your permalink) or in the JSON file.
 
-For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of comments inline to the HTML document (compared to the [latest version](http://rem.mit-license.org)).
+For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org) - the older version didn't have the new themes).
 
 This can also be targeted in my JSON file:
 
@@ -103,15 +124,6 @@ If you've got an eye for design (or like me: not): you can contribute a
 theme by adding a CSS file to the `themes` directory. The default theme
 is simple and clean, but you can add your own as you like.
 
-Current available themes:
-
-* default - [preview](http://mit-license.org) (by
-  [@remy](http://github.com/remy) &
-  [@raphaelbastide](http://github.com/raphaelbastide))
-* flesch - [preview](http://jsbin.com/ufefid/3) (by
-  [@flesch](http://github.com/flesch))
-* afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
-
 To use a theme, add the `theme` property to your `user.json` file, for
 example:
 
@@ -121,12 +133,20 @@ example:
       "theme": "flesch"
     }
 
+Current available themes:
+
+* default - [preview](http://mit-license.org) (by
+  [@remy](http://github.com/remy) &
+  [@raphaelbastide](http://github.com/raphaelbastide))
+* flesch - [preview](http://jsbin.com/ufefid/3) (by
+  [@flesch](http://github.com/flesch))
+* afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
 
 ## Formats & URLs
 
 The following types of requests can be made to this project:
 
-* [http://rem.mit-license.org/](http://rem.mit-license.org/) # HTML, or the default format specified in
+* [http://rem.mit-license.org/](http://rem.mit-license.org/) HTML, or the default format specified in
 the json file (currently none specified on `rem`)
 * [http://rem.mit-license.org/license.html](http://rem.mit-license.org/license.html) HTML
 * [http://rem.mit-license.org/license.txt](http://rem.mit-license.org/license.txt) Text
@@ -137,6 +157,13 @@ default format specified in the json file (again, none specified for
 HTML
 * [http://rem.mit-license.org/a526bf7ad1/license.txt](http://rem.mit-license.org/a526bf7ad1/license.txt) a526bf7ad1 version,
 text
+
+The url also supports including a start year:
+
+* [http://rem.mit-license.org/2009/](http://rem.mit-license.org/2009/) will
+  show a license year range of 2009-2011 (2011 being the current year)
+* [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/) 
+  allows me to force the year range
 
 ## Ways to contribute
 
@@ -168,6 +195,7 @@ Domain contributions:
 * [buritica](http://github.com/buritica) - 2015-2016
 * [adamstrawson](http://github.com/adamstrawson) - 2016-2018 (2 years)
 * [keithamus](http://github.com/keithamus) - 2018-2026 (8 years)
+* [pmuellr](http://github.com/pmuellr) - 2026-2027
 
 *Please note that the whois says 2014 currently, I'm following up with
 the domain registra to make sure it's renewed for the right amount of
