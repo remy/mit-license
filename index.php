@@ -5,11 +5,33 @@ date_default_timezone_set('Europe/London'); // stop php from whining
 $format = 'html';
 $theme = 'default';
 $user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
-
 // sanitise user (not for DNS, but for file reading, I don't know
 // just in case it's hacked about with or something bananas.
 $user_file = preg_replace('/[^a-z0-9\-]/', '', $user_file);
 $user_file = 'users/'.$user_file.'.json';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  try {
+    $data = json_decode(file_get_contents('php://input'));
+    if (!property_exists($data, 'copyright')) {
+      Throw new Exception('>>> JSON requires "copyright" property and value');
+    }
+
+    if (file_exists($user_file)) {
+      Throw new Exception(wordwrap('>>> User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'));
+    }
+
+    if (!file_put_contents($user_file, json_encode($data))) {
+      Throw new Exception(wordwrap('>>> Unable to create new user - please send a pull request on https://github.com/remy/mit-license'));
+    }
+
+    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
+
+  } catch (Exception $e) {
+    echo $e->getMessage() . "\n\n";
+  }
+  exit;
+}
 
 if (file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
