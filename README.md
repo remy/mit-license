@@ -198,10 +198,11 @@ Domain contributions:
 * [adamstrawson](http://github.com/adamstrawson) - 2016-2018 (2 years)
 * [keithamus](http://github.com/keithamus) - 2018-2026 (8 years)
 * [pmuellr](http://github.com/pmuellr) - 2026-2027
+* [danielknell](http://github.com/danielknell) - 2027-2029 (2 years)
 
-*Please note that the whois says 2014 currently, I'm following up with
-the domain registra to make sure it's renewed for the right amount of
-time!*
+*Please note that the whois says 2021 as you can only have 10 active
+registered years with ICCAN - but the domain is set to auto-renew, so
+it's all good :)*
 
 ### 2. Hosting
 
