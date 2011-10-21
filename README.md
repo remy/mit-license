@@ -199,6 +199,7 @@ Domain contributions:
 * [keithamus](http://github.com/keithamus) - 2018-2026 (8 years)
 * [pmuellr](http://github.com/pmuellr) - 2026-2027
 * [danielknell](http://github.com/danielknell) - 2027-2029 (2 years)
+* [barberboy](http://github.com/barberboy) - 2029-2039
 
 *Please note that the whois says 2021 as you can only have 10 active
 registered years with ICCAN - but the domain is set to auto-renew, so
