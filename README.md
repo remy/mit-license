@@ -187,7 +187,7 @@ year. If you want to contribute a year, send me a message and I'll add
 the years on.
 
 Of course I'll do my best to continue running the domain and hosting,
-but this is your change to contribute to the community project.
+but this is your chance to contribute to the community project.
 
 Domain contributions:
 
