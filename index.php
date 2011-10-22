@@ -3,7 +3,7 @@
 date_default_timezone_set('Europe/London'); // stop php from whining
 
 $format = 'html';
-$theme = 'candy';
+$theme = 'default';
 $user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
 // sanitise user (not for DNS, but for file reading, I don't know
 // just in case it's hacked about with or something bananas.
