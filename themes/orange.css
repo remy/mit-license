@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption:700);
 html,body{background:#663300;font:13pt "PT Sans",sans-serif;text-align:center}
-a:link,a:visited{color:#888;text-decoration:none}
-a:hover,a:active{color:#aaa;text-decoration:underline}
+a:link,a:visited{color:#234234;text-decoration:none}
+a:hover,a:active{color:#432321;text-decoration:underline}
 article{background:#CC9900;text-align:left;width:85%;margin:80px auto;border-radius:10px;-moz-border-radius:10px}
 article h1{background:#CC6600;text-align:center;border-bottom:1px solid #7A7A00;font:bold 35pt "PT Sans Caption","PT Sans",sans-serif;margin:0;padding:5px;border-radius:10px;-moz-border-radius:10px}
 article p{margin:0;padding:10px 15px}

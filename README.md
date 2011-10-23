@@ -141,7 +141,7 @@ Current available themes:
 * flesch - [preview](http://jsbin.com/ufefid/3) (by
   [@flesch](http://github.com/flesch))
 * afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
-* orange - [preview](http://jsbin.com/uzubos) (by [@kirbylover4000](http://github.com/kirbylover4000))
+* orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
 
 ## Formats & URLs
 
