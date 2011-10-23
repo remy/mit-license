@@ -10,7 +10,7 @@ $user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
 $user_file = preg_replace('/[^a-z0-9\-]/', '', $user_file);
 $user_file = 'users/'.$user_file.'.json';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $user_file != 'users/.json') {
   try {
     $data = json_decode(file_get_contents('php://input'));
     if (!property_exists($data, 'copyright')) {
