@@ -4,13 +4,18 @@ date_default_timezone_set('Europe/London'); // stop php from whining
 
 $format = 'html';
 $theme = 'default';
-$user_file = preg_replace('/\.mit-license\..*$/', '', $_SERVER["HTTP_HOST"]);
-// sanitise user (not for DNS, but for file reading, I don't know
-// just in case it's hacked about with or something bananas.
-$user_file = preg_replace('/[^a-z0-9\-]/', '', $user_file);
-$user_file = 'users/'.$user_file.'.json';
+$cname = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// use a match instead of preg_replace to ensure we got the cname
+preg_match('/^([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
+
+if (count($match) == 2) {
+  $cname = $match[1];
+}
+
+$user_file = 'users/' . $cname . '.json';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
   try {
     $data = json_decode(file_get_contents('php://input'));
     if (!property_exists($data, 'copyright')) {
@@ -39,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 /**
  * Load up the user.json file and read properties in
  **/
-if (file_exists($user_file)) {
+if ($cname && file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
   $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML401, 'UTF-8');
   if (property_exists($user, 'url')) {
