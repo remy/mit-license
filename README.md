@@ -4,18 +4,50 @@ I always forget to add an MIT-license.txt file to my projects, so I
 wanted to link to a single resource that would always be up to date and
 would always have my details online.
 
-But why keep this to myself, so it's on github for your fork and pulling
-pleasure.
+But why keep this to myself, there's two ways to create your *own* MIT
+license page:
+
+1. Make a request to the API (details below)
+2. Fork this project and send a pull request
 
 Now I can always include http://rem.mit-license.org in all my projects
 which links `rem` (the cname) against my copyright holder name `Remy
 Sharp` - all stored in the `users` directory.
 
-## Example
+## Requesting your own MIT license page
+
+You can fork this project, send me a pull request and wait for me to
+pull (which I'll do as quickly as possible) or if the user is still
+available you can do it yourself from the command line:
+
+    curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+
+If the `rem` user isn't taken already, then this will create the new
+user file on the fly and the url will be immediately available.
+
+If there's any problems in the automated creation, send me a pull
+request and it'll go live soon after. 
+
+Equally if you need to update the user file to include more details that
+you didn't initially include (extra fields in the next section) you will
+need to send a pull request on that `user.json` file via GitHub.
+
+## The user.json file
 
 The `users` directory contains a list of files, each representing a host
-on mit-license.org. As present the file format is very simple, but can
-be upgraded in future.
+on mit-license.org. The minimum requirement for the JSON is that is
+contains a `copyright` field - everything else is optional.
+
+Available fields:
+
+* copyright (required)
+* url
+* email
+* format
+* version
+* theme
+
+### copyright
 
 Create a new file and give it the name of the CNAME you want (in my case
 it's `rem.json`). This file contains a JSON object containing at least a
@@ -28,6 +60,8 @@ it's `rem.json`). This file contains a JSON object containing at least a
 Means I can now link to: http://rem.mit-license.org and it will show my
 license name (note that the date will always show the current year).
 
+### url
+
 In addition to the `copyright` property, if you want to make a link from
 the copyright text, you can include a `url` property:
 
@@ -35,6 +69,20 @@ the copyright text, you can include a `url` property:
       "copyright": "Remy Sharp, http://remysharp.com",
       "url": "http://remysharp.com"
     }
+
+### email
+
+You can also include a link to your email which is displayed after the
+copyright notice using the `email` property (note the `mailto:` is
+automatically added):
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com"
+    }
+
+### format
 
 And if you want your license to appear as plain text, just add the
 `format` property (currently only `txt` and `html` are supported):
@@ -45,10 +93,7 @@ And if you want your license to appear as plain text, just add the
       "format": "txt"
     }
 
-Finally you can also include a license version target in the JSON file
-as explained in the next section.
-
-## License version targeting
+### License version targeting
 
 License version targeting allows you to link your MIT license to a
 specific revision in this project - therefore fixing it permanently to
@@ -60,7 +105,7 @@ extra assurance for you.
 Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be
 specified on the URL (in your permalink) or in the JSON file.
 
-For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of comments inline to the HTML document (compared to the [latest version](http://rem.mit-license.org)).
+For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org) - the older version didn't have the new themes).
 
 This can also be targeted in my JSON file:
 
@@ -72,6 +117,56 @@ This can also be targeted in my JSON file:
 
 Note that if no version is supplied, the latest copy of the LICENSE.html
 will be displayed with your information included.
+
+### Themes
+
+If you've got an eye for design (or like me: not): you can contribute a
+theme by adding a CSS file to the `themes` directory. The default theme
+is simple and clean, but you can add your own as you like.
+
+To use a theme, add the `theme` property to your `user.json` file, for
+example:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "theme": "flesch"
+    }
+
+Current available themes:
+
+* default - [preview](http://mit-license.org) (by
+  [@remy](http://github.com/remy) &
+  [@raphaelbastide](http://github.com/raphaelbastide))
+* flesch - [preview](http://jsbin.com/ufefid/3) (by
+  [@flesch](http://github.com/flesch))
+* afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
+* orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
+
+## Formats & URLs
+
+The following types of requests can be made to this project:
+
+* [http://rem.mit-license.org/](http://rem.mit-license.org/) HTML, or the default format specified in
+the json file (currently none specified on `rem`)
+* [http://rem.mit-license.org/license.html](http://rem.mit-license.org/license.html) HTML
+* [http://rem.mit-license.org/license.txt](http://rem.mit-license.org/license.txt) Text
+* [http://rem.mit-license.org/a526bf7ad1](http://rem.mit-license.org/a526bf7ad1) a526bf7ad1 version, HTML, or the
+default format specified in the json file (again, none specified for
+`rem` so defaults to HTML)
+* [http://rem.mit-license.org/a526bf7ad1/license.html](http://rem.mit-license.org/a526bf7ad1/license.html) a526bf7ad1 version,
+HTML
+* [http://rem.mit-license.org/a526bf7ad1/license.txt](http://rem.mit-license.org/a526bf7ad1/license.txt) a526bf7ad1 version,
+text
+
+The url also supports including a start year:
+
+* [http://rem.mit-license.org/2009/](http://rem.mit-license.org/2009/) will
+  show a license year range of 2009-2011 (2011 being the current year)
+* [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/) 
+  allows me to force the year range
+* [http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt](http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt) a526bf7ad1 version, with year range of 2009-2010 in plain text
+
 
 ## Ways to contribute
 
@@ -92,12 +187,25 @@ year. If you want to contribute a year, send me a message and I'll add
 the years on.
 
 Of course I'll do my best to continue running the domain and hosting,
-but this is your change to contribute to the community project.
+but this is your chance to contribute to the community project.
 
 Domain contributions:
 
 * [remy](http://github.com/remy) - 2011-2012
 * [barberboy](http://github.com/barberboy) - 2012-2013
+* [paulirish](http://github.com/paulirish) - 2013-2014
+* [batuhanicoz](http://github.com/batuhanicoz) - 2014-2015
+* [buritica](http://github.com/buritica) - 2015-2016
+* [adamstrawson](http://github.com/adamstrawson) - 2016-2018 (2 years)
+* [keithamus](http://github.com/keithamus) - 2018-2026 (8 years)
+* [pmuellr](http://github.com/pmuellr) - 2026-2027
+* [danielknell](http://github.com/danielknell) - 2027-2029 (2 years)
+* [barberboy](http://github.com/barberboy) - 2029-2030
+* [mostly-magic](http://github.com/mostly-magic) - 2030-2032
+
+*Please note that the whois says 2021 as you can only have 10 active
+registered years with ICCAN - but the domain is set to auto-renew, so
+it's all good :)*
 
 ### 2. Hosting
 
@@ -112,11 +220,7 @@ being lovely.
 
 I'm a developer, I seem only capable of *grey*! If you're a designer and
 want to contribute a decent lick of paint on the project that would be
-super. Obviously the content should remain to the point and simple, but
-I'm sure it could be tightened or sharpened. 
-
-Drop me a messsage with any idea you've got (or even just a bit of CSS)
-and we'll get it live.
+super. Just create a new theme and send me a pull request.
 
 ## License
 
