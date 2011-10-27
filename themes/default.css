@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
 html { background: #eee; }
 body { margin: 0; font-family: "Inconsolata", "DejaVu Sans Mono","Bitstream Vera Sans Mono", monospace; font-size: 1.2em; line-height: 1.2em; }
 article, footer { display: block; min-width: 360px; max-width: 900px; width: 80%; }
@@ -5,14 +6,15 @@ article {  margin: 2.5em auto 0 auto; border: 1px solid ; border-color: #ddd #aa
 h1 { margin-top: 0; }
 article p:first-of-type { margin-top: 1.6em; }
 article p:last-child { margin-bottom: 0; }
-footer {  margin: 0em auto 2em auto; }
-footer a { display: block; text-align: center; color: #666; text-shadow: 0 1px 1px #fff; text-decoration:none; font-size:.8em; }
+footer {  margin: 0em auto 2em auto; text-align: center; }
+footer a { color: #666; text-shadow: 0 1px 1px #fff; text-decoration:none; font-size:.8em; }
 /*footer a:before{content: "⏦";  font-size:1.5em; padding-right:.2em; } */
-footer a:hover, footer a:focus { color: #333; }
+footer a:hover, footer a:focus { color: #444; }
 h1 {font-weight:normal; display:inline; border-bottom:1px solid black; padding:0 0 3px 0; line-height: 36px; }
 a { color:#2844FA; text-decoration:none;}
 a:hover, a:focus { color:#1B29A4; }
-:-moz-any-link:focus {background:#ccc;}
+a:active { color:#000; }
+:-moz-any-link:focus {color:#000; border:0;}
 ::selection {background:#ccc;}
 ::-moz-selection {background:#ccc;}
 
