@@ -99,7 +99,7 @@ if (count($match) > 1) {
     $year = $match[2];
   }
   if ($match[1]) {
-    $year = $match[1] . '-' . $year;
+    $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
   }
   $request = array_pop($request_uri);
 }
