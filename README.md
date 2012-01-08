@@ -143,6 +143,7 @@ Current available themes:
 * afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
 * orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
 * plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
+* double-windsor - [preview](http://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
 
 ## Formats & URLs
 
