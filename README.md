@@ -144,6 +144,7 @@ Current available themes:
 * orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
 * plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
 * double-windsor - [preview](http://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
+* cherry - [preview](http://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
 
 ## Formats & URLs
 
