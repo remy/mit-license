@@ -145,6 +145,9 @@ Current available themes:
 * plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
 * double-windsor - [preview](http://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
 * cherry - [preview](http://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
+* white cherry - [preview](http://jsbin.com/uzezas/2/) (by [@mustafa-x](https://github.com/mustafa-x))
+* blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
+
 
 ## Formats & URLs
 
