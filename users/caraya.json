@@ -1,5 +1,11 @@
 {
   "copyright": "Carlos Araya",
+<<<<<<< HEAD
   "url": "http://rivendellweb.net/work/",
   "theme": "double-windsor"
 }
+=======
+  "url": "http://rivendellweb.net",
+  "theme": "double-windsor"
+}
+>>>>>>> Adding more information for Carlos Araya
