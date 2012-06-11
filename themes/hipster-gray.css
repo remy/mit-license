@@ -1,0 +1,162 @@
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #aaa;
+  font-family: Merriweather, "Palatino Linotype", Georgia, serif;
+  font-size: 21pt;
+  line-height: 170%;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  border: 20pt solid #aaa;
+  overflow-y: auto;
+
+}
+a:link, a:visited {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1pt solid #aaa;
+}
+a:hover, a:focus, a:active {
+  background: #aaa;
+  text-decoration: none;
+}
+h1 {
+  font-family: Merriweather, "Palatino Linotype", Georgia, serif;
+  font-size: 64pt;
+  font-weight: 400;
+  line-height: 100%;
+}
+article, footer {
+  padding: 50pt 50pt 20pt 20%;
+  background: #ccc;
+}
+article p { margin-top: 40pt; }
+article p:first-of-type {
+  margin-top: 20pt;
+  font-size: 14pt;
+  line-height: 150%;
+}
+article :nth-child(4), 
+article :nth-child(4):before {
+  font-size: 18pt;
+  font-weight: 300;
+}
+article :nth-child(4):before {
+  content: "*";
+  margin-left: -20pt;
+  float: left;
+}
+article p:last-child {
+  border: 20pt solid #c4c4c4;
+  font-size: 17pt;
+  line-height: 180%;
+  margin: 40pt;
+  color: #888;
+  padding: 20pt;
+}
+footer {
+  padding-top: 0;
+  font-size: 14pt;
+  line-height: 100%;
+}
+footer p {
+  background: url("hipster-gray-octocat.png") 0 0 no-repeat;
+  margin-left: -20pt;
+  padding-left: 20pt;
+}
+footer a:link, footer a:visited {
+  border-bottom-color: #bbb;
+  color: #888;
+}
+footer a:hover, footer a:focus, footer a:active {
+  color: #000;
+}
+
+
+@media only screen and (max-width: 1360px) {
+  article, footer {
+    padding-left: 50pt;
+  }
+}
+@media only screen and (max-width: 1140px) {
+  body {
+    font-size: 17pt;
+    border-width: 15pt;
+  }
+  h1 { font-size: 40pt; }
+  article, footer { padding: 30pt; }
+  article p { margin-top: 17pt; }
+  article p:first-of-type {
+    font-size: 12pt;
+    line-height: 120%;
+    margin-top: 10pt;
+  }
+  article :nth-child(4), article :nth-child(4):before { font-size: 15pt; }
+  article :nth-child(4):before { margin-left: -15pt; }
+  article p:last-child {
+    border-width: 15pt;
+    font-size: 13pt;
+    margin: 15pt 0 0 0;
+    padding: 15pt;
+  }
+  footer { 
+    padding-top: 0;
+    font-size: 11pt;
+    line-height: 120%;
+  }
+  footer p {
+    margin-left: -15pt;
+    padding-left: 15pt;
+  }
+}
+@media only screen and (max-width: 720px) {
+  body {
+    font-size: 12pt;
+    border-width: 10pt;
+  }
+  h1 { font-size: 24pt; }
+  article, footer { padding: 20pt; }
+  article p { margin-top: 15pt; }
+  article p:first-of-type {
+    font-size: 9pt;
+    line-height: 120%;
+    margin-top: 10pt;
+  }
+  article :nth-child(4), article :nth-child(4):before { font-size: 10pt; }
+  article :nth-child(4):before { margin-left: -10pt; }
+  article p:last-child {
+    border-width: 10pt;
+    font-size: 10pt;
+    margin: 15pt 0 0 0;
+    padding: 10pt;
+  }
+  footer { 
+    padding-top: 0;
+    font-size: 9pt;
+    line-height: 120%;
+  }
+  footer p {
+    background-position: 0 1px;
+    -webkit-background-size: 9px;
+    background-size: 11px;
+    margin-left: -10pt;
+    padding-left: 10pt;
+  }
+}
+
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+  }
+  a[href]:after { content: " [" attr(href) "]" }
+  p { orphans: 3; widows: 3; }
+  body { border: 0; }
+  @page { margin: 0.5cm }
+}
