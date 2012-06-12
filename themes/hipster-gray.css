@@ -9,12 +9,11 @@ body {
   font-family: Merriweather, "Palatino Linotype", Georgia, serif;
   font-size: 21pt;
   line-height: 170%;
-  text-rendering:optimizeLegibility;
-  -webkit-font-smoothing:antialiased;
-  font-smoothing:antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
   border: 20pt solid #aaa;
   overflow-y: auto;
-
 }
 a:link, a:visited {
   color: #000;
@@ -26,7 +25,6 @@ a:hover, a:focus, a:active {
   text-decoration: none;
 }
 h1 {
-  font-family: Merriweather, "Palatino Linotype", Georgia, serif;
   font-size: 64pt;
   font-weight: 400;
   line-height: 100%;
@@ -63,6 +61,7 @@ footer {
   padding-top: 0;
   font-size: 14pt;
   line-height: 100%;
+  margin-top: -1pt;
 }
 footer p {
   background: url("hipster-gray-octocat.png") 0 0 no-repeat;
