@@ -1,7 +1,1 @@
-{
-	"copyright": "Frank Gregor, http://cocoanaut.com",
-	"url": "http://cocoanaut.com",
-	"email": "phranck@cocoanaut.com",
-	"format": "html",
-	"theme": "default"
-}
+{ "copyright": "Frank Gregor", "url": "http://cocoanaut.com", "email": "phranck@cocoanaut.com", "format": "html", "theme": "default" }
