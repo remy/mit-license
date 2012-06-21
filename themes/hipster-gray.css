@@ -3,6 +3,11 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 body {
   background: #aaa;
@@ -12,8 +17,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-  border: 20pt solid #aaa;
   overflow-y: auto;
+  margin: 20pt;
 }
 a:link, a:visited {
   color: #000;
@@ -85,7 +90,7 @@ footer a:hover, footer a:focus, footer a:active {
 @media only screen and (max-width: 1140px) {
   body {
     font-size: 17pt;
-    border-width: 15pt;
+    margin: 15pt;
   }
   h1 { font-size: 40pt; }
   article, footer { padding: 30pt; }
@@ -116,7 +121,7 @@ footer a:hover, footer a:focus, footer a:active {
 @media only screen and (max-width: 720px) {
   body {
     font-size: 12pt;
-    border-width: 10pt;
+    margin: 10pt;
   }
   h1 { font-size: 24pt; }
   article, footer { padding: 20pt; }
@@ -150,12 +155,42 @@ footer a:hover, footer a:focus, footer a:active {
 
 
 @media print {
-  * {
-    background: transparent !important;
-    color: black !important;
-  }
+  * { color: black !important; }
   a[href]:after { content: " [" attr(href) "]" }
-  p { orphans: 3; widows: 3; }
-  body { border: 0; }
-  @page { margin: 0.5cm }
+  a:link, a[href]:after { border: none; }
+  body {
+    background: none;
+    font-size: 14pt;
+    margin: 0;
+  }
+  h1 { font-size: 24pt; }
+  article, footer {
+    background: none;
+    padding: 30pt;
+  }
+  article p { margin-top: 14pt; }
+  article p:first-of-type {
+    font-size: 10pt;
+    line-height: 120%;
+    margin-top: 10pt;
+  }
+  article :nth-child(4), article :nth-child(4):before { font-size: 12pt; }
+  article :nth-child(4):before { margin-left: -12pt; }
+  article p:last-child {
+    border-width: 12pt;
+    font-size: 11pt;
+    margin: 12pt 0 0 0;
+    padding: 12pt;
+  }
+  footer { 
+    padding-top: 0;
+    font-size: 11pt;
+    line-height: 120%;
+  }
+  footer p {
+    -webkit-background-size: 11px;
+    background-size: 11px;
+    margin-left: -12pt;
+    padding-left: 12pt;
+  }
 }
