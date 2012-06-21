@@ -151,7 +151,7 @@ Current available themes:
 * cherry - [preview](http://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
 * white cherry - [preview](http://jsbin.com/uzezas/2/) (by [@mustafa-x](https://github.com/mustafa-x))
 * blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
-* hipster-gray - [preview](http://jsbin.com/ivufon/7) (by [@noformnocontent](https://github.com/noformnocontent))
+* hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
 
 
 ## Formats & URLs
