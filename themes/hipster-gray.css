@@ -18,7 +18,7 @@ body {
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
   overflow-y: auto;
-  margin: 20pt;
+  padding: 20pt;
 }
 a:link, a:visited {
   color: #000;
@@ -90,7 +90,7 @@ footer a:hover, footer a:focus, footer a:active {
 @media only screen and (max-width: 1140px) {
   body {
     font-size: 17pt;
-    margin: 15pt;
+    padding: 15pt;
   }
   h1 { font-size: 40pt; }
   article, footer { padding: 30pt; }
@@ -121,7 +121,7 @@ footer a:hover, footer a:focus, footer a:active {
 @media only screen and (max-width: 720px) {
   body {
     font-size: 12pt;
-    margin: 10pt;
+    padding: 10pt;
   }
   h1 { font-size: 24pt; }
   article, footer { padding: 20pt; }
@@ -155,20 +155,21 @@ footer a:hover, footer a:focus, footer a:active {
 
 
 @media print {
+  @page { margin: .5cm; }
   * { color: black !important; }
   a[href]:after { content: " [" attr(href) "]" }
   a:link, a[href]:after { border: none; }
   body {
     background: none;
-    font-size: 14pt;
-    margin: 0;
+    font-size: 12pt;
+    padding: 0;
   }
-  h1 { font-size: 24pt; }
+  h1 { font-size: 28pt; }
   article, footer {
     background: none;
     padding: 30pt;
   }
-  article p { margin-top: 14pt; }
+  article p { margin-top: 16pt; }
   article p:first-of-type {
     font-size: 10pt;
     line-height: 120%;
@@ -177,17 +178,18 @@ footer a:hover, footer a:focus, footer a:active {
   article :nth-child(4), article :nth-child(4):before { font-size: 12pt; }
   article :nth-child(4):before { margin-left: -12pt; }
   article p:last-child {
-    border-width: 12pt;
+    border-width: 11pt;
     font-size: 11pt;
-    margin: 12pt 0 0 0;
-    padding: 12pt;
+    margin: 18pt 0 0 0;
+    padding: 11pt;
   }
   footer { 
     padding-top: 0;
-    font-size: 11pt;
+    font-size: 10pt;
     line-height: 120%;
   }
   footer p {
+    background-position: 0 1px;
     -webkit-background-size: 11px;
     background-size: 11px;
     margin-left: -12pt;
