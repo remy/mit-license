@@ -1,1 +1,6 @@
-{"copyright":"Andrew Chilton"}
+{
+    "copyright" : "Andrew Chilton",
+    "url"       : "http://chilts.org/blog/",
+    "email"     : "andychilton@gmail.com",
+    "theme"     : "double-windsor"
+}
