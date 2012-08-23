@@ -30,7 +30,7 @@ zoom:1; }
 footer a { text-decoration: none;}
 a, a:visited {  color: #F00; border-bottom: 1px dotted #F5D5CD;  } 
 a:active, a:hover { border-bottom: 1px dotted #F00;   }
-/* ie 8 and lower hackery as they dont support proper rotates and filters conflict with ms-transform. So we simply remove those css styles and have the footer sit at the bottom */
+/* ie 8 and lower hackery as they don't support proper rotates and filters conflict with ms-transform. So we simply remove those css styles and have the footer sit at the bottom */
 *+html  footer p { position: static; background: none;  }
 *+html  footer { position: static; background-color: #fff; margin-top: 10px; }
 @media \0screen {
