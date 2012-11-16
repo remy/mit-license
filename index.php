@@ -70,6 +70,11 @@ if ($cname && file_exists($user_file)) {
   $holder = "&lt;copyright holders&gt;";
 }
 
+// Return txt license if User-Agent is "curl"
+if (!strncmp(strtolower($_SERVER['HTTP_USER_AGENT']), "curl", 4)) {
+  $format = 'txt';
+}
+
 /**
  * Now process the request url. Optional parts of the url are (in order):
  * [sha]/[year|year-range]/license.[format]
