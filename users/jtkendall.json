@@ -1,1 +1,7 @@
-{"copyright":"Joshua Kendall","url":"http:\/\/joshuakendall.com","email":"me@joshuakendall.com","format":"txt"}
+{
+    "copyright": "Joshua Kendall (jtkendall)", 
+    "email": "me@joshuakendall.com", 
+    "format": "html", 
+	"theme": "blackwood",
+    "url": "http://twitter.com/jtkendall"
+}
