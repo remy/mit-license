@@ -30,11 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
       Throw new Exception(wordwrap('>>> Unable to create new user - please send a pull request on https://github.com/remy/mit-license'));
     }
 
-    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
-
     // try to add to github...!
-    // exec('/usr/local/bin/git add ' . $user_file . ' && /usr/local/bin/git commit -m"created ' . $user_file . '" && /usr/local/bin/git push', $out, $r);
-    // user_error('create new user. out: ' . $out . ', r: ' . $r);
+    exec('cd /WWW/mit-license && /usr/bin/git add ' . $user_file . ' && /usr/bin/git commit -m"automated creation of ' . $user_file . '"', $out, $r);
+    //print_r($out); echo "\n"; print_r($r); echo "\n";
+    $out = array();
+    exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
+    //print_r($out); echo "\n"; print_r($r); echo "\n";
+
+    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
