@@ -5,6 +5,8 @@ Options +FollowSymLinks +ExecCGI
 RewriteEngine On
 RewriteBase /
 
+RewriteRule "(^|/)(CVS|\.svn|\.git)/" - [F]
+
 # strip www. from the domain
 RewriteCond %{HTTP_HOST} ^www\.mit-license\.org$ [NC]
 RewriteRule ^(.*)$ http://mit-license.org/$1 [R=301,L]

@@ -25,6 +25,10 @@ available you can do it yourself from the command line:
 If the `rem` user isn't taken already, then this will create the new
 user file on the fly and the url will be immediately available.
 
+You can send a full JSON file to the API, not *just* the copyright, so this works too:
+
+    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+
 If there's any problems in the automated creation, send me a pull
 request and it'll go live soon after. 
 
@@ -144,6 +148,12 @@ Current available themes:
 * orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
 * plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
 * double-windsor - [preview](http://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
+* cherry - [preview](http://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
+* white cherry - [preview](http://jsbin.com/uzezas/2/) (by [@mustafa-x](https://github.com/mustafa-x))
+* blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
+* hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
+* xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
+
 
 ## Formats & URLs
 
