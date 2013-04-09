@@ -56,6 +56,11 @@ if ($cname && file_exists($user_file)) {
 
   if (property_exists($user, 'email')) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
+    
+    if(property_exists($user, 'gravatar') && $user->gravatar === "on"){
+        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/'.md5(strtolower(trim($user->email))).'" />';
+    }
+    
   }
 
   if (property_exists($user, 'format')) {
@@ -135,6 +140,7 @@ if ($license == "") {
 $info = $year . ' ' . $holder;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
+$license = str_replace('{{gravatar}}', $gravatar, $license);
 
 // if we want text format, strip out the license from the article tag
 // and then strip any other tags in the license.
