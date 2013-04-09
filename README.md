@@ -48,6 +48,7 @@ Available fields:
 * url
 * email
 * format
+* gravatar
 * version
 * theme
 
@@ -97,6 +98,21 @@ And if you want your license to appear as plain text, just add the
       "format": "txt"
     }
 
+### gravatar
+
+And if you want to show your gravatar, just add the `gravatar`
+property (allowed values are `on` or `off`):
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": "on"
+    }
+    
+*Depends of email property. You need to check the compatibility of the
+chosen theme. Currently, only the default theme supports Gravatar.*
+
 ### License version targeting
 
 License version targeting allows you to link your MIT license to a
@@ -141,7 +157,8 @@ Current available themes:
 
 * default - [preview](http://mit-license.org) (by
   [@remy](http://github.com/remy) &
-  [@raphaelbastide](http://github.com/raphaelbastide))
+  [@raphaelbastide](http://github.com/raphaelbastide) &
+  [@evertton](http://github.com/evertton))
 * flesch - [preview](http://jsbin.com/ufefid/3) (by
   [@flesch](http://github.com/flesch))
 * afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
@@ -191,6 +208,7 @@ Development contributions from:
 * [batuhanicoz](http://github.com/batuhanicoz)
 * [georgebashi](http://github.com/georgebashi)
 * [mathiasbynens](http://github.com/mathiasbynens)
+* [evertton](http://github.com/evertton)
 
 ### 1. Donate domain years
 
