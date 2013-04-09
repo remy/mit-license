@@ -40,7 +40,8 @@ need to send a pull request on that `user.json` file via GitHub.
 
 The `users` directory contains a list of files, each representing a host
 on mit-license.org. The minimum requirement for the JSON is that is
-contains a `copyright` field - everything else is optional.
+contains a `copyright` field - everything else is optional. Remember to ensure 
+the `user.json` file is [valid JSON](http://jsonlint.com/).
 
 Available fields:
 
@@ -101,17 +102,18 @@ And if you want your license to appear as plain text, just add the
 ### gravatar
 
 And if you want to show your gravatar, just add the `gravatar`
-property (allowed values are `on` or `off`):
+boolean property:
 
     {
       "copyright": "Remy Sharp, http://remysharp.com",
       "url": "http://remysharp.com",
       "email": "me@mysite.com",
-      "gravatar": "on"
+      "gravatar": true
     }
     
-*Depends of email property. You need to check the compatibility of the
-chosen theme. Currently, only the default theme supports Gravatar.*
+Note that the gravatar requires the email property. You also need to check the 
+compatibility of the chosen theme. Currently, only the default theme supports 
+Gravatar.
 
 ### License version targeting
 
@@ -125,7 +127,9 @@ extra assurance for you.
 Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be
 specified on the URL (in your permalink) or in the JSON file.
 
-For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org) - the older version didn't have the new themes).
+For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) 
+shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org)
+- the older version didn't have the new themes).
 
 This can also be targeted in my JSON file:
 
@@ -156,7 +160,7 @@ example:
 Current available themes:
 
 * default - [preview](http://mit-license.org) (by
-  [@remy](http://github.com/remy) &
+  [@remy](http://github.com/remy),
   [@raphaelbastide](http://github.com/raphaelbastide) &
   [@evertton](http://github.com/evertton))
 * flesch - [preview](http://jsbin.com/ufefid/3) (by

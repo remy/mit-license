@@ -57,8 +57,8 @@ if ($cname && file_exists($user_file)) {
   if (property_exists($user, 'email')) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
     
-    if(property_exists($user, 'gravatar') && $user->gravatar === "on"){
-        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/'.md5(strtolower(trim($user->email))).'" />';
+    if(property_exists($user, 'gravatar') && $user->gravatar === true){
+        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
     }
     
   }
