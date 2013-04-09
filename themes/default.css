@@ -17,4 +17,4 @@ a:active { color:#000; }
 :-moz-any-link:focus {color:#000; border:0;}
 ::selection {background:#ccc;}
 ::-moz-selection {background:#ccc;}
-#gravatar{position:relative;float:right;}
+#gravatar{position:relative;float:right; margin-bottom: 1em; margin-left: 1em; border: 1px solid #ddd;}
