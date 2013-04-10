@@ -164,16 +164,33 @@ Current available themes:
   [@raphaelbastide](http://github.com/raphaelbastide) &
   [@evertton](http://github.com/evertton))
 * flesch - [preview](http://jsbin.com/ufefid/3) (by
-  [@flesch](http://github.com/flesch))
-* afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
-* orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
+  [@flesch](http://github.com/flesch) &
+  [@evertton](http://github.com/evertton))
+* afterdark - [preview](http://jsbin.com/ivufon/4) (by
+  [@rmartindotco](http://github.com/rmartindotco) &
+  [@evertton](http://github.com/evertton))
+* orange - [preview](http://jsbin.com/uzubos/2) (by
+  [@kirbylover4000](http://github.com/kirbylover4000) &
+  [@evertton](http://github.com/evertton))
 * plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
-* double-windsor - [preview](http://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
-* cherry - [preview](http://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
-* white cherry - [preview](http://jsbin.com/uzezas/2/) (by [@mustafa-x](https://github.com/mustafa-x))
-* blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
-* hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
-* xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
+* double-windsor - [preview](http://jsbin.com/uzubos/5/) (by
+  [@desandro](https://github.com) &
+  [@evertton](http://github.com/evertton))
+* cherry - [preview](http://jsbin.com/ufefid/5/) (by
+  [@mustafa-x](https://github.com/mustafa-x) &
+  [@evertton](http://github.com/evertton))
+* white cherry - [preview](http://jsbin.com/uzezas/2/) (by
+  [@mustafa-x](https://github.com/mustafa-x) &
+  [@evertton](http://github.com/evertton))
+* blackwood - [preview](http://jsbin.com/uzezas/) (by
+  [@mustafa-x](https://github.com/mustafa-x) &
+  [@evertton](http://github.com/evertton))
+* hipster-gray - [preview](http://jsbin.com/ivufon/10) (by
+  [@noformnocontent](https://github.com/noformnocontent) &
+  [@evertton](http://github.com/evertton))
+* xtansia - [preview](http://jsbin.com/ereren/1/) (by
+  [@tomass1996](https://github.com/tomass1996) &
+  [@evertton](http://github.com/evertton))
 
 
 ## Formats & URLs
