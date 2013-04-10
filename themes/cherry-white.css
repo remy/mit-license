@@ -16,3 +16,4 @@ a img { position: absolute; top: 0; right: 0; border: 0; }
 footer {  background-color: #FFFFFF; border-bottom: 3px solid #FF3366; margin-top: 10px; padding: 4px 28px; text-align: center; border-top: 1px solid #F5F5F5; }
 footer a { padding: 10px;  }
 footer p { font-size: 16px; margin: 0; padding: 0;}
+#gravatar { position: relative; float: right; border: 3px solid #CCCCCC; top: -2.3em; z-index: 1; border-radius: 10px; }
