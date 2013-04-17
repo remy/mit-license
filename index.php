@@ -7,7 +7,7 @@ $theme = 'default';
 $cname = '';
 
 // use a match instead of preg_replace to ensure we got the cname
-preg_match('/^([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
+preg_match('/^(?:www\.)?([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
 
 if (count($match) == 2) {
   $cname = $match[1];
