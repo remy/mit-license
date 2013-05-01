@@ -1,11 +1,10 @@
-/*@import url(http://fonts.googleapis.com/css?family=Bitter:400);*/
 @import url("http://fonts.googleapis.com/css?family=Lato:400,700,400italic");
 
 html{
   font-size: 62.5%;
 }
 body {
-  font-family: Lato, Georgia, serif;
+  font-family: Lato, Helvetica, sans-serif;
   padding: 8px;
   line-height: 1.6;
   color: #3e3e3e;
