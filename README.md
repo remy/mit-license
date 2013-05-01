@@ -174,7 +174,7 @@ Current available themes:
 * blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
 * hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
 * xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
-
+* magic-mint - [preview](http://jsbin.com/obibot/1/) (by [@ekhager](http://github.com/ekhager))
 
 ## Formats & URLs
 
