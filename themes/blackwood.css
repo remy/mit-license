@@ -38,3 +38,4 @@ a:active, a:hover { border-bottom: 1px dotted #F00;   }
   footer p { position: static; background: none;  }
   footer { position: static; background-color: #fff;  }
 }	
+#gravatar { position: relative; float: left; margin-top: 1em; margin-right: 1em; border: 1px solid #ddd; }

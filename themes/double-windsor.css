@@ -71,3 +71,10 @@ footer {
   margin-top: 5px;
   font-style: italic;
 }
+
+#gravatar {
+    border: 1px solid #ddd;
+    position: relative;
+    float: right;
+    top: -1.7em;
+}

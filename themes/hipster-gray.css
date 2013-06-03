@@ -196,3 +196,11 @@ footer a:hover, footer a:focus, footer a:active {
     padding-left: 12pt;
   }
 }
+#gravatar {
+    position: relative;
+    float: left;
+    border: 20px solid #c4c4c4;
+    margin-left: -12em;
+    margin-top: -1em;
+    width: 5em;
+}
