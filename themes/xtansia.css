@@ -65,3 +65,10 @@ a:hover {
 a:active {
   color: #007399;
 }
+
+#gravatar {
+    position: relative;
+    float: right;
+    border: 2px solid gray;
+    top: -1em;
+}
