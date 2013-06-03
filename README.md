@@ -175,6 +175,10 @@ Current available themes:
 * hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
 * xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
 * magic-mint - [preview](http://jsbin.com/obibot/1/) (by [@ekhager](http://github.com/ekhager))
+* default dark - [preview](http://jsbin.com/uhagaw/3) (by
+  [@remy](http://github.com/remy),
+  [@raphaelbastide](http://github.com/raphaelbastide) &
+  [@evertton](http://github.com/evertton))
 
 ## Formats & URLs
 
