@@ -179,6 +179,7 @@ Current available themes:
   [@remy](http://github.com/remy),
   [@raphaelbastide](http://github.com/raphaelbastide) &
   [@evertton](http://github.com/evertton))
+* black beauty - [preview](http://jsbin.com/efujux/22) (by [@evertton](http://github.com/evertton))
 
 ## Formats & URLs
 
