@@ -1,0 +1,98 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+html {
+  font-size: 16px;
+  background-color: #1a1a1a;
+}
+
+body {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  font-weight: 300;
+  color: #999;
+}
+
+article, footer {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+article {
+  margin-top: 2em;
+  background-color: #2a2a2a;
+  padding: 2em;
+  text-align: center;
+  position: relative;
+}
+
+article p {
+  text-align: justify;
+}
+
+article p:first-of-type {
+  text-align: center;
+}
+
+#gravatar {
+  border: 5px solid #999;
+  border-radius: 5px;
+  width: 70px;
+  position: absolute;
+  top: 2em;
+  left: 2em;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed #999;
+  margin: 0;
+}
+
+a {
+    color: #ff6666;
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+a:hover, a:focus, a:active {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  article {
+    margin-top: 5px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  article {
+    padding: 1em;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+  #gravatar {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+}
