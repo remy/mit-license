@@ -1,1 +1,7 @@
-{ "copyright": "Noval Agung Prayogo", "url": "http://novalagung.com", "email": "caknopal@gmail.com", "theme": "double-windsor" }
+{
+  "copyright": "Noval Agung Prayogo",
+  "url": "http://novalagung.com",
+  "email": "caknopal@gmail.com",
+  "theme": "flesch",
+  "gravatar": true
+}
