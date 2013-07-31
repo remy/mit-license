@@ -1,1 +1,6 @@
-{"copyright":"teambition"}
+{
+  "copyright": "teambition, http://teambition.com",
+  "url": "http://teambition.com",
+  "email": "dev@teambition.com",
+  "gravatar": true
+}
