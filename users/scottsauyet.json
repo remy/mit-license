@@ -1,1 +1,7 @@
-{"copyright":"Scott Sauyet, http:\/\/scott.sauyet.com","url":"http:\/\/scott.sauyet.com"}
+{
+  "copyright": "Scott Sauyet, https://github.com/CrossEye",
+  "url": "https://github.com/CrossEye",
+  "email": "scott@sauyet.com",
+  "gravatar": true,
+  "theme"     : "afterdark"
+}
