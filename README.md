@@ -30,7 +30,7 @@ You can send a full JSON file to the API, not *just* the copyright, so this work
     curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
 
 If there's any problems in the automated creation, send me a pull
-request and it'll go live soon after. 
+request and it'll go live soon after.
 
 Equally if you need to update the user file to include more details that
 you didn't initially include (extra fields in the next section) you will
@@ -40,7 +40,7 @@ need to send a pull request on that `user.json` file via GitHub.
 
 The `users` directory contains a list of files, each representing a host
 on mit-license.org. The minimum requirement for the JSON is that is
-contains a `copyright` field - everything else is optional. Remember to ensure 
+contains a `copyright` field - everything else is optional. Remember to ensure
 the `user.json` file is [valid JSON](http://jsonlint.com/).
 
 Available fields:
@@ -110,9 +110,9 @@ boolean property:
       "email": "me@mysite.com",
       "gravatar": true
     }
-    
-Note that the gravatar requires the email property. You also need to check the 
-compatibility of the chosen theme. Currently, only the default theme supports 
+
+Note that the gravatar requires the email property. You also need to check the
+compatibility of the chosen theme. Currently, only the default theme supports
 Gravatar.
 
 ### License version targeting
@@ -127,7 +127,7 @@ extra assurance for you.
 Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be
 specified on the URL (in your permalink) or in the JSON file.
 
-For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) 
+For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source)
 shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org)
 - the older version didn't have the new themes).
 
@@ -174,7 +174,12 @@ Current available themes:
 * blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
 * hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
 * xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
-
+* magic-mint - [preview](http://jsbin.com/obibot/1/) (by [@ekhager](http://github.com/ekhager))
+* default dark - [preview](http://jsbin.com/uhagaw/3) (by
+  [@remy](http://github.com/remy),
+  [@raphaelbastide](http://github.com/raphaelbastide) &
+  [@evertton](http://github.com/evertton))
+* black beauty - [preview](http://jsbin.com/efujux/22) (by [@evertton](http://github.com/evertton))
 
 ## Formats & URLs
 
@@ -196,7 +201,7 @@ The url also supports including a start year:
 
 * [http://rem.mit-license.org/2009/](http://rem.mit-license.org/2009/) will
   show a license year range of 2009-2011 (2011 being the current year)
-* [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/) 
+* [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/)
   allows me to force the year range
 * [http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt](http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt) a526bf7ad1 version, with year range of 2009-2010 in plain text
 
