@@ -9,9 +9,6 @@ body {
   margin:0; padding: 50px;
   font: normal 14px/20px       "DroidSansRegular",Arial,Helvetica,sans-serif;
   color: #444;
-}
-
-body {
   background: #FAFAFA;
   background: url(/themes/page_gradient_radial.svg) 50% -300px no-repeat, url(/themes/page_gradient_linear.svg) 50% 0 repeat-x, #FAFAFA;
   background-size: 1600px 600px, 100% 500px,auto;
