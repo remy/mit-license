@@ -1,5 +1,6 @@
 /*
 **Silver Style
+**v1.0
 **by Dipesh Bhardwaj
 **09.2013
 **http://in.linkedin.com/in/devdipesh/
@@ -12,7 +13,7 @@ body {
 
 body {
   background: #FAFAFA;
-  background: url("/themes/page_gradient_radial.svg") 50% -300px no-repeat, url("/themes/page_gradient_linear.svg") 50% 0 repeat-x, #FAFAFA;
+  background: url(/themes/page_gradient_radial.svg) 50% -300px no-repeat, url(/themes/page_gradient_linear.svg) 50% 0 repeat-x, #FAFAFA;
   background-size: 1600px 600px, 100% 500px,auto;
 }
 
