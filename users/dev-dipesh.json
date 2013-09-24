@@ -1,8 +1,7 @@
 { 
-  "copyright": "Dipesh Bhardwaj, http://in.linkedin.com/in/devdipesh/", 
+  "copyright": "Dipesh Bhardwaj", 
   "email": "itdeveloper03@gmail.com",
-  "url": "dev-dipesh.github.io", 
-  "format": "txt", 
-  "theme": "flesch", 
+  "url": "http://in.linkedin.com/in/devdipesh/", 
+  "theme": "silver-style", 
   "gravatar": true 
 }
