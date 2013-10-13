@@ -2,25 +2,25 @@
 
 html {
   font-size: 16px;
-  background-color: #1a1a1a;
+  background-color: #f7f7f7;
 }
 
 body {
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 1.3em;
   font-weight: 300;
-  color: #CCC;
+  color: #333;
 }
 
 article, footer {
-  max-width: 877px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
 article {
   margin-top: 2em;
-  background-color: #2a2a2a;
   padding: 2em;
   text-align: center;
   position: relative;
@@ -36,7 +36,7 @@ article p:first-of-type {
 
 #gravatar {
   width: 70px;
-  border: 5px solid #ccc;
+  border: 5px solid #d9d9d9;
   border-radius: 5px;
   display:block;
   margin: 0 auto;
@@ -48,18 +48,18 @@ h1 {
   text-transform: uppercase;
   display: inline-block;
   padding-bottom: 12px;
-  border-bottom: 2px dashed #CCC;
+  border-bottom: 2px dashed #d9d9d9;
   margin: 0;
 }
 
 a {
-    color: #ff6666;
+    color: gray;
     text-decoration: none;
     word-wrap: break-word;
 }
 
 a:hover, a:focus, a:active {
-  color: white;
+  color: black;
 }
 
 @media screen and (min-width: 960px) {
