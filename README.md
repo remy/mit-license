@@ -175,12 +175,13 @@ Current available themes:
 * hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
 * xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
 * magic-mint - [preview](http://jsbin.com/obibot/1/) (by [@ekhager](http://github.com/ekhager))
-* default dark - [preview](http://jsbin.com/uhagaw/3) (by
+* default-dark - [preview](http://jsbin.com/uhagaw/10) (by
   [@remy](http://github.com/remy),
   [@raphaelbastide](http://github.com/raphaelbastide) &
   [@evertton](http://github.com/evertton))
-* black beauty - [preview](http://jsbin.com/efujux/22) (by [@evertton](http://github.com/evertton))
+* black-beauty - [preview](http://jsbin.com/efujux/38) (by [@evertton](http://github.com/evertton))
 * silver-style - [preview](http://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
+* friendly - [preview](http://jsbin.com/ecijol/6) (by [@evertton](http://github.com/evertton))
 
 ## Formats & URLs
 
