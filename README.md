@@ -165,7 +165,7 @@ Current available themes:
   [@evertton](http://github.com/evertton))
 * flesch - [preview](http://jsbin.com/ufefid/3) (by
   [@flesch](http://github.com/flesch))
-* eula-modern - [preview](http://jsbin.com/uzubos/10) (by [@sauerlo](http://github.com/lsauer))  
+* eula-modern - [preview](http://jsbin.com/ExiVida/1/) (by [@sauerlo](http://github.com/lsauer))  
 * afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](http://github.com/rmartindotco))
 * orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](http://github.com/kirbylover4000))
 * plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
