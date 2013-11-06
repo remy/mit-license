@@ -30,11 +30,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
       Throw new Exception(wordwrap('>>> Unable to create new user - please send a pull request on https://github.com/remy/mit-license'));
     }
 
-    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
-
     // try to add to github...!
-    // exec('/usr/local/bin/git add ' . $user_file . ' && /usr/local/bin/git commit -m"created ' . $user_file . '" && /usr/local/bin/git push', $out, $r);
-    // user_error('create new user. out: ' . $out . ', r: ' . $r);
+    exec('cd /WWW/mit-license && /usr/bin/git add ' . $user_file . ' && /usr/bin/git commit -m"automated creation of ' . $user_file . '"', $out, $r);
+    //print_r($out); echo "\n"; print_r($r); echo "\n";
+    $out = array();
+    exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
+    //print_r($out); echo "\n"; print_r($r); echo "\n";
+
+    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
@@ -53,6 +56,11 @@ if ($cname && file_exists($user_file)) {
 
   if (property_exists($user, 'email')) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
+    
+    if(property_exists($user, 'gravatar') && $user->gravatar === true){
+        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+    }
+    
   }
 
   if (property_exists($user, 'format')) {
@@ -99,7 +107,7 @@ if (count($match) > 1) {
     $year = $match[2];
   }
   if ($match[1]) {
-    $year = $match[1] . '-' . $year;
+    $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
   }
   $request = array_pop($request_uri);
 }
@@ -132,14 +140,15 @@ if ($license == "") {
 $info = $year . ' ' . $holder;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
+$license = str_replace('{{gravatar}}', $gravatar, $license);
 
 // if we want text format, strip out the license from the article tag
 // and then strip any other tags in the license.
 if ($format == 'txt') {
   $license = array_shift(explode('</article>', array_pop(explode('<article>', $license))));
   $license = preg_replace('/<[^>]*>/', '', trim($license));
-  $license = html_entity_decode($license);
-  header('content-type: text/plain');
+  $license = html_entity_decode($license, ENT_COMPAT | ENT_HTML401, 'UTF-8');
+  header('content-type: text/plain; charset=UTF-8');
 }
 
 echo $license;
