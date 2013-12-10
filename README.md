@@ -183,6 +183,7 @@ Current available themes:
 * black-beauty - [preview](http://jsbin.com/efujux/38) (by [@evertton](http://github.com/evertton))
 * silver-style - [preview](http://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
 * friendly - [preview](http://jsbin.com/ecijol/6) (by [@evertton](http://github.com/evertton))
+* opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](http://github.com/pburtchaell))
 
 ## Formats & URLs
 
