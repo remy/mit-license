@@ -1,1 +1,6 @@
-{"copyright":"The Open Data Institute"}
+{
+  "copyright":"The Open Data Institute",
+  "url": "http://theodi.org",
+  "email": "ops@theodi.org",
+  "gravatar": true
+}
