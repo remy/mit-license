@@ -20,21 +20,25 @@ You can fork this project, send me a pull request and wait for me to
 pull (which I'll do as quickly as possible) or if the user is still
 available you can do it yourself from the command line:
 
-    curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+    curl -d'{ "copyright": "Remy Sharp", "password":"12345" }' http://rem.mit-license.org
+
+Note: You must pick a password, and use that password if you ever need to update your user.
 
 If the `rem` user isn't taken already, then this will create the new
 user file on the fly and the url will be immediately available.
 
 You can send a full JSON file to the API, not *just* the copyright, so this works too:
 
-    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt", "password": "12345" }' http://rem.mit-license.org
 
 If there's any problems in the automated creation, send me a pull
 request and it'll go live soon after.
 
-Equally if you need to update the user file to include more details that
-you didn't initially include (extra fields in the next section) you will
-need to send a pull request on that `user.json` file via GitHub.
+If you need to update your user.json for some reason, simply just run the command:
+
+    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt", "password": "12345" }' http://rem.mit-license.org
+
+Note: You cannot change your password from the command line.
 
 ## The user.json file
 
