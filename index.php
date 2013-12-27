@@ -37,8 +37,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
 
     if (file_exists($user_file)) {
       $user = json_decode(file_get_contents($user_file));
-      if(hash("sha512", $data->password) != $user->password){
-        Throw new Exception('>>> Incorrect Password, Please Try Again');
+      if (property_exists($user, 'password')) {
+        if(hash("sha512", $data->password) != $user->password){
+          Throw new Exception('>>> Incorrect Password, Please Try Again');
+        }
+      } else {
+        echo ">> Warning: Your user Currently Has No Password\n\n";
       }
     }
     
