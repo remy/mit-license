@@ -20,21 +20,25 @@ You can fork this project, send me a pull request and wait for me to
 pull (which I'll do as quickly as possible) or if the user is still
 available you can do it yourself from the command line:
 
-    curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+    curl -d'{ "copyright": "Remy Sharp", "password":"12345" }' http://rem.mit-license.org
+
+Note: You must pick a password, and use that password if you ever need to update your user.
 
 If the `rem` user isn't taken already, then this will create the new
 user file on the fly and the url will be immediately available.
 
 You can send a full JSON file to the API, not *just* the copyright, so this works too:
 
-    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt", "password": "12345" }' http://rem.mit-license.org
 
 If there's any problems in the automated creation, send me a pull
 request and it'll go live soon after.
 
-Equally if you need to update the user file to include more details that
-you didn't initially include (extra fields in the next section) you will
-need to send a pull request on that `user.json` file via GitHub.
+If you need to update your user.json for some reason, simply just run the command:
+
+    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt", "password": "12345" }' http://rem.mit-license.org
+
+Note: You cannot change your password from the command line.
 
 ## The user.json file
 
@@ -52,6 +56,9 @@ Available fields:
 * gravatar
 * version
 * theme
+* startyear
+* endyear
+* allowyearoveride
 
 ### copyright
 
@@ -114,6 +121,51 @@ boolean property:
 Note that the gravatar requires the email property. You also need to check the
 compatibility of the chosen theme. Currently, only the default theme supports
 Gravatar.
+
+### startyear
+
+And if you want to set a starting year for the copyright:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": true,
+      "startyear": "2012"
+    }
+
+Note that the starting year for the copyright can still be changed in the url unless you set the allowyearoverides property to false.
+
+### endyear
+
+And if you want to set a ending year for the copyright:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": true,
+      "startyear": "2012",
+      "endyear": "2013"
+    }
+
+Note that the ending year for the copyright can still be changed in the url unless you set the allowyearoverides property to false.
+
+### allowyearoverides
+
+Set this propertey to `true` if you would like to prevent people from chaging the starting and ending years of the copyright:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": true,
+      "startyear": "2012",
+      "endyear": "2013",
+      "allowyearoverides": true
+    }
+
+Note that this defaults to `false`.
 
 ### License version targeting
 
@@ -222,6 +274,7 @@ Development contributions from:
 * [georgebashi](http://github.com/georgebashi)
 * [mathiasbynens](http://github.com/mathiasbynens)
 * [evertton](http://github.com/evertton)
+* [ariporad](http://github.com/ariporad)
 
 ### 1. Donate domain years
 

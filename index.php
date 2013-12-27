@@ -5,12 +5,21 @@ date_default_timezone_set('Europe/London'); // stop php from whining
 $format = 'html';
 $theme = 'default';
 $cname = '';
+$allowyearoveride = true;
+$allowstartoveride = true;
+$startyear = date('Y');
+$year = date('Y');
 
 // use a match instead of preg_replace to ensure we got the cname
 preg_match('/^([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
 
 if (count($match) == 2) {
   $cname = $match[1];
+} else {
+  preg_match('/^([a-z0-9\-]+)\.localhost/', $_SERVER['HTTP_HOST'], $match);
+  if (count($match) == 2) {
+    $cname = $match[1];
+  }
 }
 
 $user_file = 'users/' . $cname . '.json';
@@ -22,22 +31,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
       Throw new Exception('>>> JSON requires "copyright" property and value');
     }
 
-    if (file_exists($user_file)) {
-      Throw new Exception(wordwrap('>>> User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'));
+    if (!property_exists($data, 'password')) {
+      Throw new Exception('>>> JSON requires "password" property and value');
     }
 
+    if (file_exists($user_file)) {
+      $user = json_decode(file_get_contents($user_file));
+      if (property_exists($user, 'password')) {
+        if(hash("sha512", $data->password) != $user->password){
+          Throw new Exception('>>> Incorrect Password, Please Try Again');
+        }
+      } else {
+        echo ">> Warning: Your user Currently Has No Password\n\n";
+      }
+    }
+    
+    $data->password = hash("sha512", $data->password);
+
     if (!file_put_contents($user_file, json_encode($data))) {
-      Throw new Exception(wordwrap('>>> Unable to create new user - please send a pull request on https://github.com/remy/mit-license'));
+      Throw new Exception(wordwrap('>>> Unable to create new user / update - please send a pull request on https://github.com/remy/mit-license'));
     }
 
     // try to add to github...!
-    exec('cd /WWW/mit-license && /usr/bin/git add ' . $user_file . ' && /usr/bin/git commit -m"automated creation of ' . $user_file . '"', $out, $r);
+    exec('cd /WWW/mit-license && /usr/bin/git add ' . $user_file . ' && /usr/bin/git commit -m"automated creation/updating of ' . $user_file . '"', $out, $r);
     //print_r($out); echo "\n"; print_r($r); echo "\n";
     $out = array();
     exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
     //print_r($out); echo "\n"; print_r($r); echo "\n";
 
-    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
+    echo '>>> MIT license page created / updated: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
@@ -74,6 +96,20 @@ if ($cname && file_exists($user_file)) {
       $theme = $user->theme;
     }
   }
+
+  if (property_exists($user, 'startyear')) {
+    $startyear = $user->startyear;
+    $allowstartyearoveride = false;
+  }
+
+  if (property_exists($user, 'endyear')) {
+    $year = $user->endyear;
+    $allowyearoveride = false;
+  }
+
+  if (property_exists($user, 'allowyearoveride')) {
+    $allowyearoveride = $allowstartyearoveride = $user->allowyearoveride;
+  }
 } else {
   $holder = "&lt;copyright holders&gt;";
 }
@@ -100,17 +136,22 @@ if (stripos($request, 'license') === 0) {
 }
 
 // check if we have a year or a year range up front
-$year = date('Y');
 preg_match('/^(\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
 if (count($match) > 1) {
   if ($match[2]) {
-    $year = $match[2];
+    if ($allowyearoveride) {
+      $year = $match[2];
+    }
   }
   if ($match[1]) {
-    $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+    if ($allowstartyearoveride) {
+      $startyear = $match[1];
+    }
   }
   $request = array_pop($request_uri);
 }
+
+$year = $startyear == $year ? $year : $startyear . '-' . $year;
 
 // check if there's a SHA on the url and read this to switch license versions
 $sha = '';
