@@ -1,4 +1,4 @@
-<IfModule mod_rewrite.c>
+#<IfModule mod_rewrite.c>
 
 # $Id: .htaccess,v 1.3 2006/11/09 09:08:14 remy Exp $
 Options +FollowSymLinks +ExecCGI
@@ -11,6 +11,9 @@ RewriteRule "(^|/)(CVS|\.svn|\.git)/" - [F]
 RewriteCond %{HTTP_HOST} ^www\.mit-license\.org$ [NC]
 RewriteRule ^(.*)$ http://mit-license.org/$1 [R=301,L]
 
+RewriteCond %{HTTP_HOST} ^www\.localhost$ [NC]
+RewriteRule ^(.*)$ http://localhost/$1 [R=301,L]
+
 # if the file or directory exists
 RewriteCond %{REQUEST_FILENAME} -d [OR]
 RewriteCond %{REQUEST_FILENAME} -f
@@ -18,4 +21,4 @@ RewriteRule .* - [L]
 
 # using 'index.php' because it forces a '/' request to the handler
 RewriteRule ^(.*)$ index.php [QSA,L]
-</IfModule>
+#</IfModule>

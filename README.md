@@ -52,6 +52,9 @@ Available fields:
 * gravatar
 * version
 * theme
+* startyear
+* endyear
+* allowyearoveride
 
 ### copyright
 
@@ -114,6 +117,51 @@ boolean property:
 Note that the gravatar requires the email property. You also need to check the
 compatibility of the chosen theme. Currently, only the default theme supports
 Gravatar.
+
+### startyear
+
+And if you want to set a starting year for the copyright:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": true,
+      "startyear": "2012"
+    }
+
+Note that the starting year for the copyright can still be changed in the url unless you set the allowyearoverides property to false.
+
+### endyear
+
+And if you want to set a ending year for the copyright:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": true,
+      "startyear": "2012",
+      "endyear": "2013"
+    }
+
+Note that the ending year for the copyright can still be changed in the url unless you set the allowyearoverides property to false.
+
+### allowyearoverides
+
+Set this propertey to `true` if you would like to prevent people from chaging the starting and ending years of the copyright:
+
+    {
+      "copyright": "Remy Sharp, http://remysharp.com",
+      "url": "http://remysharp.com",
+      "email": "me@mysite.com",
+      "gravatar": true,
+      "startyear": "2012",
+      "endyear": "2013",
+      "allowyearoverides": true
+    }
+
+Note that this defaults to `false`.
 
 ### License version targeting
 
@@ -222,6 +270,7 @@ Development contributions from:
 * [georgebashi](http://github.com/georgebashi)
 * [mathiasbynens](http://github.com/mathiasbynens)
 * [evertton](http://github.com/evertton)
+* [ariporad](http://github.com/ariporad)
 
 ### 1. Donate domain years
 
