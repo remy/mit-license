@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html id="home" lang="en">
+<head>
+<title>MIT License</title>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=0.70;">
+<!-- for HTML5 el styling -->
+<script>document.createElement('article');document.createElement('footer');</script>
+<link rel="stylesheet" href="/themes/default.css">
+</head>
+<body>
+<article id="signup">
+
+<h1>Signup for your own MIT License</h1>
+<p><form id="form" method="POST" >
+	<label for="cname">What URL Do You Want For Your MIT Licence: </label><input type="text" id="cname" />.mit-licence.org <span id="cname-status"></span><br />
+	<label for="copyright">Copyright (ex. "Johnny Appleseed"): </label><input type="text" id="copyright" name="copyright" required/><br />
+	<label for="url">Link For Copyright (ex. "http://appleseed.com/"): </label><input type="url" id="url" name="url" /><br />
+	<label for="email">Email (Will Be Shown With Copyright, ex. "johnnyappleseed@gmail.com"): </label><input type="email" id="email" name="email" /><br />
+	<label for="format">Format: </label><input type="radio" name="format" value="txt" /> Text
+	<input type="radio" name="format" value="html" /> HTML <br />
+	<label for="gravitar">Show Your Gravitar (Requires Email): </label><input type="checkbox" id="gravitar" name="gravitar" /><br />
+	<label for="startyear">Starting Year For The Copyright (Default: The Current Year): </label><input type="number" id="startyear" name="startyear" /><br />
+	<label for="endyear">Ending Year For The Copyright (Default: The Current Year): </label><input type="number" id="endyear" name="endyear" /><br />
+	<label for="allowyearoverides">Allow People To Overide Your Start And End Year With The URL (Default: Only If You Have Not Set The Starting/Ending Year): </label><input type="checkbox" id="allowyearoverides" name="allowyearoverides" /><br />
+	<label for="format">Format: </label><br/>
+	<input type="radio" name="theme" value="default" checked="checked" /> <a href="http://mit-license.org">default</a><br />
+	<input type="radio" name="theme" value="flesch" /> <a href="http://jsbin.com/ufefid/3">flesch</a><br />
+	<input type="radio" name="theme" value="eula-modern" /> <a href="http://jsbin.com/ExiVida/1/">eula-modern</a><br />
+	<input type="radio" name="theme" value="afterdark" /> <a href="http://jsbin.com/ivufon/4">afterdark</a><br />
+	<input type="radio" name="theme" value="orange" /> <a href="http://jsbin.com/uzubos/2">orange</a><br />
+	<input type="radio" name="theme" value="plaintext" /> <a href="http://jsbin.com/uzubos/4">plaintext</a><br />
+	<input type="radio" name="theme" value="double-windsor" /> <a href="http://jsbin.com/uzubos/5/">double-windsor</a><br />
+	<input type="radio" name="theme" value="cherry" /> <a href="http://jsbin.com/ufefid/5/">cherry</a><br />
+	<input type="radio" name="theme" value="white cherry" /> <a href="http://jsbin.com/uzezas/2/">white cherry</a><br />
+	<input type="radio" name="theme" value="blackwood" /> <a href="http://jsbin.com/uzezas/">blackwood</a><br />
+	<input type="radio" name="theme" value="hipster-gray" /> <a href="http://jsbin.com/ivufon/10">hipster-gray</a><br />
+	<input type="radio" name="theme" value="xtansia" /> <a href="http://jsbin.com/ereren/1/">xtansia</a><br />
+	<input type="radio" name="theme" value="magic-mint" /> <a href="http://jsbin.com/obibot/1/">magic-mint</a><br />
+	<input type="radio" name="theme" value="default-dark" /> <a href="http://jsbin.com/uhagaw/10">default-dark</a><br />
+	<input type="radio" name="theme" value="black-beauty" /> <a href="http://jsbin.com/efujux/38">black-beauty</a><br />
+	<input type="radio" name="theme" value="silver-style" /> <a href="http://jsbin.com/erezijI/2">silver-style</a><br />
+	<input type="radio" name="theme" value="friendly" /> <a href="http://jsbin.com/ecijol/6">friendly</a><br />
+	<input type="radio" name="theme" value="opensans" /> <a href="http://jsbin.com/UfepUvah">opensans</a><br />
+	<label for="password">Password: </label><input type="password" id="password" name="password" required/><br />
+	<input type="hidden" name="GUI" value="true">
+	<input type="submit" value="Submit" onclick="prepData();">
+	<p>Once Created, You Will Always Be Able To Link To Your MIT License Page.</p>
+</form></p>
+<script type="text/javascript">
+	function isAGoodCname (no) {
+		var status = document.getElementById("cname-status");
+		if(no){
+			status.innerText = "Sorry, That URL is alredy in use."
+			status.style.color = "red";
+			document.getElementById("form").action = null;
+		} else {
+			status.innerText = "Ok.";
+			status.style.color = "green";
+		}
+	}
+	function prepData () {
+		if(document.getElementById("startyear").value == (new Date()).getFullYear()){
+			document.getElementById("startyear").name = null;
+		}
+		if(document.getElementById("endyear").value == (new Date()).getFullYear()){
+			document.getElementById("endyear").name = null;
+		}
+		if(document.getElementById("url").value == ""){
+			document.getElementById("url").name = null;
+		}
+		if(document.getElementById("email").value == ""){
+			document.getElementById("email").name = null;
+		}
+	}
+	function cname () {
+		var cname = document.getElementById("cname").value;
+		var jsonp = document.createElement("script");
+		jsonp.src = "http://" + cname + "." + window.location.host + "/?callback=isAGoodCname";
+		document.body.appendChild(jsonp);
+		document.getElementById("form").action = ("http://" + cname + "." + window.location.host);
+	}
+	var year = (new Date()).getFullYear();
+	var yearsago = year - 200;
+	document.getElementById("startyear").min = yearsago;
+	document.getElementById("startyear").max = year;
+	document.getElementById("startyear").value = year;
+	document.getElementById("endyear").min = yearsago;
+	document.getElementById("endyear").max = year;
+	document.getElementById("endyear").value = year
+	document.getElementById("cname").onkeyup = cname;
+</script>
+</article>
+<footer>
+</footer>
+<script>var _gaq=[['_setAccount','UA-1656750-28'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s)})(document,'script')</script>
+</body>
+</html>

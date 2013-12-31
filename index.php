@@ -34,6 +34,16 @@ $user_file = 'users/' . $cname . '.json';
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
   try {
     $data = json_decode(file_get_contents('php://input'));
+
+    if (!$data) {
+      $data = json_decode(json_encode($_POST));
+    }
+
+    // If the request is from the GUI, then we want to redirect them at the end.
+    $GUI = $data->GUI;
+
+    unset($data->GUI);
+
     if (!property_exists($data, 'copyright')) {
       Throw new Exception('>>> JSON requires "copyright" property and value');
     }
@@ -49,7 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
           Throw new Exception('>>> Incorrect Password, Please Try Again');
         }
       } else {
-        echo ">> Warning: Your user Currently Has No Password\n\n";
+        if (!$GUI) {
+          echo ">> Warning: Your user Currently Has No Password\n\n";
+        }
       }
     }
     
@@ -65,8 +77,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
     $out = array();
     exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
     //print_r($out); echo "\n"; print_r($r); echo "\n";
-
-    echo '>>> MIT license page created / updated: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
+    if ($GUI) {
+      header('content-type: text/html; charset=UTF-8');
+      echo '<!DOCTYPE html><html><head><title>Redirecting…</title></head><script type="text/javascript">document.location.href="http://' . $_SERVER['HTTP_HOST'] . '";</script><body></body></html>';
+    } else {
+      echo '>>> MIT license page created / updated: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
+    }
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
@@ -78,6 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
  **/
 if ($cname && file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
+
   $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML401, 'UTF-8');
   if (property_exists($user, 'url')) {
     $holder = '<a href="' . $user->url . '">' . $holder . '</a>';
@@ -119,6 +136,18 @@ if ($cname && file_exists($user_file)) {
   }
 } else {
   $holder = "&lt;copyright holders&gt;";
+}
+
+// if request is JSONP wanting to know if the current cname has a user, reply
+
+if ($_GET['callback']) {
+  if ($user) {
+    $hasuser = "true";
+  } else {
+    $hasuser = "false";
+  }
+  echo $_GET['callback'] . "(" . $hasuser . ");";
+  exit;
 }
 
 /**
