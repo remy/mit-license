@@ -5,10 +5,8 @@ date_default_timezone_set('Europe/London'); // stop php from whining
 $format = 'html';
 $theme = 'default';
 $cname = '';
-$allowyearoveride = true;
-$allowstartoveride = true;
-$startyear = date('Y');
-$year = date('Y');
+$startyear;
+$year;
 
 // use a match instead of preg_replace to ensure we got the cname
 preg_match('/^([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
@@ -116,12 +114,10 @@ if ($cname && file_exists($user_file)) {
 
   if (property_exists($user, 'startyear')) {
     $startyear = $user->startyear;
-    $allowstartyearoveride = false;
   }
 
   if (property_exists($user, 'endyear')) {
     $year = $user->endyear;
-    $allowyearoveride = false;
   }
 
   if (property_exists($user, 'allowyearoveride')) {
@@ -168,12 +164,12 @@ if (stripos($request, 'license') === 0) {
 preg_match('/^(\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
 if (count($match) > 1) {
   if ($match[2]) {
-    if ($allowyearoveride) {
+    if (!$year) {
       $year = $match[2];
     }
   }
   if ($match[1]) {
-    if ($allowstartyearoveride) {
+    if (!$startyear) {
       $startyear = $match[1];
     }
   }
