@@ -22,13 +22,6 @@ if (count($match) == 2) {
   }
 }
 
-if ($cname == "githubupdate") {
-  $out = array();
-  $r;
-  exec('cd /WWW/mit-license && /usr/bin/git pull origin master -v 2>&1', $out, $r);
-  exit;
-}
-
 $user_file = 'users/' . $cname . '.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
