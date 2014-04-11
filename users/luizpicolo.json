@@ -3,6 +3,6 @@
   "url"			: "http://www.luizpicolo.com.br",
   "format"		: "html",
   "email"		: "luizpicolo@gmail.com",
-  "gravatar"	: true,
+  "gravatar"	: false,
   "theme"     	: "rokkitt"
 }
