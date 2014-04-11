@@ -1,1 +1,7 @@
-{"copyright":"frisB.com"}
+{
+  "copyright": "frisB, http://frisB.com",
+  "url": "http://frisB.com",
+  "email": "play@frisb.com"
+  "theme": "default",
+  "gravatar": true
+}
