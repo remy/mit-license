@@ -1,1 +1,7 @@
-{"copyright":"Tri M. Nguyen"}
+{
+  "copyright": "Tri M. Nguyen",
+  "url": "http://tmn.io",
+  "email": "mail@trimn.net",
+  "format": "html",
+  "theme": "flesch"
+}
