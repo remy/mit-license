@@ -1,1 +1,7 @@
-{"copyright":"Justin C. Miller"}
+{
+  "copyright": "Justin C. Miller, http://devjustinian.com",
+  "email": "justin@devjustinian.com",
+  "url": "http://devjustinian.com",
+  "theme": "friendly",
+  "gravatar": true
+}
