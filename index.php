@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
     //Fix for #532
     //Windows curl calls require a double quote around your JSON
     
-    $raw = trim(file_get_contents('php://input'),('"'));
+    $raw = trim(file_get_contents('php://input'));
     $raw = str_replace("'",'"',$raw);
     $data = json_decode($raw,true);
    
