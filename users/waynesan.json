@@ -1,1 +1,8 @@
-{"copyright":"Wayne San","email":"waynesan@zerozone.tw"}
+{
+  "copyright": "Wayne San, http://waynesan.zerozone.tw/",
+  "url": "http://waynesan.zerozone.tw/",
+  "email": "waynesan@zerozone.tw",
+  "format": "html",
+  "gravatar": true,
+  "theme" : "default"
+}
