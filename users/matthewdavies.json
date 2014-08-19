@@ -1,1 +1,7 @@
-{"copyright":"Matthew Davies"}
+{
+  "copyright":"Matthew Davies",
+  "url": "http://daviesgeek.github.io",
+  "theme": "double-windsor",
+  "email": "daviesgeek@icloud.com",
+  "gravatar": true
+}
