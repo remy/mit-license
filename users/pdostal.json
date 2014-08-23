@@ -1,1 +1,8 @@
-{"copyright":"Pavel Dost\u00e1l","url":"http:\/\/pdostal.cz","email":"pdostal@pdostal.cz","format":"txt","gravatar":true}
+{
+  "copyright": "Pavel Dostál, http://pdostal.cz",
+  "url": "http://pdostal.cz",
+//"email": "pdostal@pdostal.cz",
+  "format": "html",
+  "theme": "default",
+  "gravatar": true
+}
