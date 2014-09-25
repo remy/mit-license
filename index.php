@@ -17,15 +17,8 @@ $user_file = 'users/' . $cname . '.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
   try {
-    //Fix for #532
-    //Windows curl calls require a double quote around your JSON
-    
-    $raw = trim(file_get_contents('php://input'));
-    $raw = str_replace("'",'"',$raw);
-    $data = json_decode($raw,true);
-   
-    if (!isset($data['copyright'])) {
-      //end of fix
+    $data = json_decode(file_get_contents('php://input'));
+    if (!property_exists($data, 'copyright')) {
       Throw new Exception('>>> JSON requires "copyright" property and value');
     }
 
