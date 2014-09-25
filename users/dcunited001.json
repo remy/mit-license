@@ -1,1 +1,8 @@
-{"copyright":"David Conner"}
+{
+  "copyright":"David Conner",
+  "email": "dconner.pro@gmail.com",
+  "format": "html",
+  "gravatar": "true",
+  "url": "http://te.xel.io",
+  "theme": "opensans"
+}
