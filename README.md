@@ -185,7 +185,7 @@ Current available themes:
 * friendly - [preview](http://jsbin.com/ecijol/6) (by [@evertton](http://github.com/evertton))
 * opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](http://github.com/pburtchaell))
 * bg - [preview](http://jsbin.com/xepomuweyi) (by [@anmoljagetia](http://github.com/anmoljagetia))
-* 
+
 ## Formats & URLs
 
 The following types of requests can be made to this project:
