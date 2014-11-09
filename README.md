@@ -184,7 +184,7 @@ Current available themes:
 * silver-style - [preview](http://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
 * friendly - [preview](http://jsbin.com/ecijol/6) (by [@evertton](http://github.com/evertton))
 * opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](http://github.com/pburtchaell))
-* solarized - [preview](http://jsbin.com/jisogekehi) (by [@anmoljagetia](http://github.com/anmoljagetia))
+* solarized - [preview](http://jsbin.com/yimax/1) (by [@anmoljagetia](http://github.com/anmoljagetia))
 
 ## Formats & URLs
 
