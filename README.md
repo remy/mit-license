@@ -180,9 +180,9 @@ Current available themes:
   [@remy](http://github.com/remy),
   [@raphaelbastide](http://github.com/raphaelbastide) &
   [@evertton](http://github.com/evertton))
-* black-beauty - [preview](http://jsbin.com/efujux/38) (by [@evertton](http://github.com/evertton))
+* black-beauty - [preview](http://jsbin.com/dovivu) (by [@evertton](http://github.com/evertton))
 * silver-style - [preview](http://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
-* friendly - [preview](http://jsbin.com/ecijol/6) (by [@evertton](http://github.com/evertton))
+* friendly - [preview](http://jsbin.com/hilula) (by [@evertton](http://github.com/evertton))
 * opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](http://github.com/pburtchaell))
 
 ## Formats & URLs
