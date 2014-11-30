@@ -13,15 +13,14 @@ body {
 }
 
 article, footer {
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 877px;
+  margin: 0 auto;
   text-align: center;
 }
 
 article {
-  margin-top: 2em;
-  padding: 2em;
+  margin-top: 1em;
+  padding: 1em;
   text-align: center;
   position: relative;
 }
@@ -32,24 +31,47 @@ article p {
 
 article p:first-of-type {
   text-align: center;
+  font-size: .8em;
+  
+}
+
+article p:last-of-type {
+  border-left: 3px solid #333;
+  padding-left: 15px;
 }
 
 #gravatar {
   width: 70px;
-  border: 5px solid #d9d9d9;
-  border-radius: 5px;
-  display:block;
+  border-radius: 35px;
+  display: block;
   margin: 0 auto;
+  position: absolute;
+  bottom: -3em;
+  left: 0;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 300;
   text-transform: uppercase;
   display: inline-block;
   padding-bottom: 12px;
   border-bottom: 2px dashed #d9d9d9;
   margin: 0;
+}
+
+footer {
+  background: #dadada;
+  border-radius: 5px;
+}
+
+footer p {
+  text-align: left;
+  padding-left: 80px;
+}
+
+footer p a {
+  color: #333;
 }
 
 a {
@@ -62,13 +84,16 @@ a:hover, a:focus, a:active {
   color: black;
 }
 
-@media screen and (min-width: 960px) {
-  #gravatar {
-    position: absolute;
-    top: 2em;
-    left: 2em;
-  }
+@media (min-width: 640px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 2.4em;
+  }
+
+  body {
+    font-size: 1.4em;
+  }
+
+  article p:first-of-type {
+    font-size: 1em;
   }
 }
