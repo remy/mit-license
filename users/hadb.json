@@ -1,7 +1,8 @@
 {
-    "copyright": "HADB, Bean Deng 邓斌",
-    "url": "http://blog.haoest.com",
-    "email": "haiandengbin@126.com",
-    "format": "html",
-    "theme": "eula-modern"
+  "copyright": "HADB, Bean Deng 邓斌",
+  "url": "http://blog.haoest.com",
+  "format": "html",
+  "email": "haiandengbin@126.com",
+  "gravatar": false,
+  "theme": "eula-modern"
 }
