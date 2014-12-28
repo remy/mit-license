@@ -1,1 +1,6 @@
-{"copyright":"Jason A. Heppler","url":"http:\/\/jasonheppler.org","email":"jason@jasonheppler.org","format":"txt"}
+{
+  "copyright":"Jason A. Heppler",
+  "url":"http:\/\/jasonheppler.org",
+  "email":"jason@jasonheppler.org",
+  "theme": "eula-modern"
+}
