@@ -19,12 +19,12 @@ Here you don't have the options "theme" nor "version". This is an example "info.
 
 ```json
 {
-    "copyright": "Henrique Dias",
-    "url": "http://henriquedias.com",
-    "email": "me@henriquedias.com",
+    "copyright": "Your Name",
+    "url": "Your Website",
+    "email": "Your Mail",
     "gravatar": true,
     "format": "html",
-    "licenseUrl": "http://license.henriquedias.com/mit"
+    "licenseUrl": "The license link"
 }
 ```
 
