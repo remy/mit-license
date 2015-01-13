@@ -20,14 +20,18 @@ You can fork this project, send me a pull request and wait for me to
 pull (which I'll do as quickly as possible) or if the user is still
 available you can do it yourself from the command line:
 
-    curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+```bash
+curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+```
 
 If the `rem` user isn't taken already, then this will create the new
 user file on the fly and the url will be immediately available.
 
 You can send a full JSON file to the API, not *just* the copyright, so this works too:
 
-    curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+```bash
+curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+```
 
 If there's any problems in the automated creation, send me a pull
 request and it'll go live soon after.
@@ -59,9 +63,11 @@ Create a new file and give it the name of the CNAME you want (in my case
 it's `rem.json`). This file contains a JSON object containing at least a
 `copyright` property:
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com"
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com"
+}
+```
 
 Means I can now link to: http://rem.mit-license.org and it will show my
 license name (note that the date will always show the current year).
@@ -71,10 +77,12 @@ license name (note that the date will always show the current year).
 In addition to the `copyright` property, if you want to make a link from
 the copyright text, you can include a `url` property:
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com",
-      "url": "http://remysharp.com"
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "url": "http://remysharp.com"
+}
+```
 
 ### email
 
@@ -82,34 +90,40 @@ You can also include a link to your email which is displayed after the
 copyright notice using the `email` property (note the `mailto:` is
 automatically added):
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com",
-      "url": "http://remysharp.com",
-      "email": "me@mysite.com"
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "url": "http://remysharp.com",
+  "email": "me@mysite.com"
+}
+```
 
 ### format
 
 And if you want your license to appear as plain text, just add the
 `format` property (currently only `txt` and `html` are supported):
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com",
-      "url": "http://remysharp.com",
-      "format": "txt"
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "url": "http://remysharp.com",
+  "format": "txt"
+}
+```
 
 ### gravatar
 
 And if you want to show your gravatar, just add the `gravatar`
 boolean property:
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com",
-      "url": "http://remysharp.com",
-      "email": "me@mysite.com",
-      "gravatar": true
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "url": "http://remysharp.com",
+  "email": "me@mysite.com",
+  "gravatar": true
+}
+```
 
 Note that the gravatar requires the email property. You also need to check the
 compatibility of the chosen theme. Currently, only the default theme supports
@@ -133,11 +147,13 @@ shows an older version of the LICENSE.html file (compared to the [latest version
 
 This can also be targeted in my JSON file:
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com",
-      "url": "http://remysharp.com",
-      "version": "a526rbf7"
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "url": "http://remysharp.com",
+  "version": "a526rbf7"
+}
+```
 
 Note that if no version is supplied, the latest copy of the LICENSE.html
 will be displayed with your information included.
@@ -151,11 +167,13 @@ is simple and clean, but you can add your own as you like.
 To use a theme, add the `theme` property to your `user.json` file, for
 example:
 
-    {
-      "copyright": "Remy Sharp, http://remysharp.com",
-      "url": "http://remysharp.com",
-      "theme": "flesch"
-    }
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "url": "http://remysharp.com",
+  "theme": "flesch"
+}
+```
 
 Current available themes:
 
@@ -180,9 +198,9 @@ Current available themes:
   [@remy](http://github.com/remy),
   [@raphaelbastide](http://github.com/raphaelbastide) &
   [@evertton](http://github.com/evertton))
-* black-beauty - [preview](http://jsbin.com/efujux/38) (by [@evertton](http://github.com/evertton))
+* black-beauty - [preview](http://jsbin.com/dovivu) (by [@evertton](http://github.com/evertton))
 * silver-style - [preview](http://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
-* friendly - [preview](http://jsbin.com/ecijol/6) (by [@evertton](http://github.com/evertton))
+* friendly - [preview](http://jsbin.com/hilula) (by [@evertton](http://github.com/evertton))
 * opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](http://github.com/pburtchaell))
 * solarized - [preview](http://jsbin.com/yimax/1) (by [@anmoljagetia](http://github.com/anmoljagetia))
 
