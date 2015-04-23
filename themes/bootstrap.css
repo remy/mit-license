@@ -1,0 +1,19 @@
+html { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+body {margin: 0; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;  font-size: 14px;  line-height: 1.42857143;  color: #333;  background-color: #fff;}
+article, footer { display: block; min-width: 360px; max-width: 900px; width: 80%; }
+article {  margin: 2.5em auto 0 auto; border: 1px solid #ddd; border-radius: 4px; padding: 2em; background: #fff; }
+article p{ margin: 0 0 10px;}
+article p:first-of-type { font-size: 21px; font-weight: 300;  line-height: 1.4; margin-bottom: 20px;}
+article p:last-child { margin-bottom: 0; }
+footer {  margin: 0em auto 2em auto; text-align: center; }
+footer a { color: #767676; text-decoration:none; font-size:12px; padding: 1em; }
+footer a:hover, footer a:focus { color: #111; }
+h1 { line-height: 1.1; font-size: 36px; padding-bottom: 9px;  margin: 0 0 20px;  border-bottom: 1px solid #eee;   font-weight: 500;}
+a { color: #337ab7; text-decoration:none;}
+a:hover { color: #23527c; text-decoration: underline; }
+a:active, a:hover{   outline: 0; }
+:-moz-any-link:focus {color:#000; border:0;}
+::selection {background:#ccc;}
+::-moz-selection {background:#ccc;}
+#gravatar { position: relative; float: right; margin-bottom: 1em; margin-left: 1em; border: 1px solid #ddd; }
+@media all and (max-width: 500px) { article {padding:1em;} article p:first-of-type { font-size: 16px;} h1{ font-size: 30px; } }
