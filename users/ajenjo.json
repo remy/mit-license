@@ -1,6 +1,7 @@
 {
   "copyright": "Jon Dotsoy.",
   "url": "https://github.com/ajenjo/ajenjo-server",
-  "email": "hi@jon.soy",
-  "theme": "eula-modern"
+  "email": "ajenjo@jonad.in",
+  "theme": "xtansia",
+  "gravatar": true
 }
