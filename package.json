@@ -1,0 +1,19 @@
+{
+  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
+  "name": "mit-licence",
+  "description": "Hosted MIT License with details controlled through this repo",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:remy/mit-license.git"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "bugs": { "url": "https://github.com/remy/mit-license/issues" },
+  "licenses": [
+    { "type": "MIT",
+      "url": "http://rem.mit-license.org/"
+    }
+  ]
+}

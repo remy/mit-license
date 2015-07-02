@@ -148,6 +148,7 @@ if ($format == 'txt') {
   $license = array_shift(explode('</article>', array_pop(explode('<article>', $license))));
   $license = preg_replace('/<[^>]*>/', '', trim($license));
   $license = html_entity_decode($license, ENT_COMPAT | ENT_HTML401, 'UTF-8');
+  $license .= "\n";
   header('content-type: text/plain; charset=UTF-8');
 }
 
