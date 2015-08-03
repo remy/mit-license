@@ -203,6 +203,8 @@ Current available themes:
 * friendly - [preview](http://jsbin.com/hilula) (by [@evertton](http://github.com/evertton))
 * opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](http://github.com/pburtchaell))
 * solarized - [preview](http://jsbin.com/yimax/1) (by [@anmoljagetia](http://github.com/anmoljagetia))
+* willpower - [preview](http://jsbin.com/piheyicoyi/1) (by [@willpowerart](http://github.com/willpowerart))
+* rokkitt - [preview](http://jsbin.com/zudayiqeco/1) (by [@luizpicolo](http://github.com/luizpicolo))
 
 ## Formats & URLs
 
