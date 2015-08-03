@@ -1,1 +1,7 @@
-{"copyright":"knakayama","email":"knakayama@gmail.com","format":"txt"}
+{
+  "copyright": "knakayama, https://github.com/knakayama",
+  "format": "txt",
+  "email": "knakayama@gmail.com",
+  "gravatar": true,
+  "theme"     : "default"
+}
