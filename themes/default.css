@@ -1,22 +1,107 @@
 @import url(http://fonts.googleapis.com/css?family=Inconsolata);
-html { background: #eee; }
-body { margin: 0; font-family: "Inconsolata", "DejaVu Sans Mono","Bitstream Vera Sans Mono", monospace; font-size: 1.2em; line-height: 1.2em; }
-article, footer { display: block; min-width: 360px; max-width: 900px; width: 80%; }
-article {  margin: 2.5em auto 0 auto; border: 1px solid ; border-color: #ddd #aaa #aaa #ddd; padding: 2em; background: #fff; }
-h1 { margin-top: 0; }
-article p:first-of-type { margin-top: 1.6em; }
-article p:last-child { margin-bottom: 0; }
-footer {  margin: 0em auto 2em auto; text-align: center; }
-footer a { color: #666; text-shadow: 0 1px 1px #fff; text-decoration:none; font-size:.8em; padding: 1em; }
-/*footer a:before{content: "⏦";  font-size:1.5em; padding-right:.2em; } */
-footer a:hover, footer a:focus { color: #111; }
-h1 {font-weight:normal; display:inline; border-bottom:1px solid black; padding:0 0 3px 0; line-height: 36px; }
-a { color:#2844FA; text-decoration:none;}
-a:hover, a:focus { color:#1B29A4; }
-a:active { color:#000; }
-:-moz-any-link:focus {color:#000; border:0;}
-::selection {background:#ccc;}
-::-moz-selection {background:#ccc;}
-#gravatar { position: relative; float: right; margin-bottom: 1em; margin-left: 1em; }
-@media all and (max-width: 500px) { article {padding:1em;} body {font-size:1em;} }
 
+/**
+ * General styles
+ */
+html { background: #eee; }
+body {
+    margin: 0;
+    font-family:
+        "Inconsolata",
+        "DejaVu Sans Mono",
+        "Bitstream Vera Sans Mono",
+        monospace;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+article,
+footer {
+    display: block;
+    min-width: 360px;
+    max-width: 900px;
+    width: 80%;
+}
+
+h1 {
+    font-weight: normal;
+    display: inline;
+    border-bottom: 1px solid #000;
+    padding: 0 0 3px 0;
+    line-height: 36px;
+}
+
+a {
+    color: #2844fa;
+    text-decoration: none;
+}
+a:hover,
+a:focus {
+    color: #1b29a4;
+}
+a:active {
+    color: #000;
+}
+
+:-moz-any-link:focus {
+    color: #000;
+    border: 0;
+}
+
+::selection { background: #ccc; }
+::-moz-selection { background: #ccc; }
+
+/**
+ * Main article
+ */
+article {
+    margin: 2.5em auto 0 auto;
+    border: 1px solid;
+    border-color: #ddd #aaa #aaa #ddd;
+    padding: 2em;
+    background: #fff;
+}
+
+article p:first-of-type {
+    margin-top: 1.6em;
+}
+article p:last-child {
+    margin-bottom: 0;
+}
+
+/**
+ * Page footer
+ */
+footer {
+    margin: 0 auto 2em auto;
+    text-align: center;
+}
+footer a {
+    color: #666;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+    font-size: .8em;
+    padding: 1em;
+}
+footer a:hover,
+footer a:focus {
+    color: #111;
+}
+
+/**
+ * Gravatar image
+ */
+#gravatar {
+    position: relative;
+    float: right;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+/**
+ * Adjustments for small screens
+ */
+@media all and (max-width: 500px) {
+    body { font-size: 1em; }
+    article { padding: 1em; }
+}
