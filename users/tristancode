@@ -1,6 +1,6 @@
 {
-    "copyright": "Google, Inc.",
-    "url": "www.google.com",
-    "email": "legal@google.com",
+    "copyright": "Test, Inc.",
+    "url": "www.test.com",
+    "email": "legal@test.com",
     "theme": "afterdark"
 }
