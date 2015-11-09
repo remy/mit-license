@@ -37,6 +37,7 @@ article {
   max-width: 700px;
   margin: 10px auto 0px;
   text-align: justify;
+  margin-top: -65px;
 }
 
 @media (max-device-height: 699px) {
@@ -47,7 +48,7 @@ article {
 }
 
 h1 {
-  font-size: 4.2em;
+  font-size: 3.8em;
   font-family: Segoe UI Light,'SegoeUILightWF',Arial,sans-serif;
   line-height: .9em;
   color: #000;
@@ -127,7 +128,7 @@ footer a:visited {
   position: relative;
   float: right;
   border: 3px solid #ccc;
-  top: -4.3em;
+  top: 4.5em;
   z-index: 1;
   border-radius: 10px;
 }

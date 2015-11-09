@@ -1,1 +1,7 @@
-{"copyright":"Daniel Lamb","url":"http:\/\/daniellmb.com"}
+{
+    "copyright": "Daniel Lamb",
+    "url": "http://daniellmb.com",
+    "email": "dlamb.open.source@mgmail.com",
+    "gravatar": true,
+    "theme": "friendly"
+}

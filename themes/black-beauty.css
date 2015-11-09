@@ -19,9 +19,9 @@ article, footer {
 }
 
 article {
-  margin-top: 2em;
+  margin-top: 1em;
   background-color: #2a2a2a;
-  padding: 2em;
+  padding: 1em;
   text-align: center;
   position: relative;
 }
@@ -32,18 +32,26 @@ article p {
 
 article p:first-of-type {
   text-align: center;
+  font-size: .8em;
+}
+
+article p:last-of-type {
+  border-left: 3px solid #CCC;
+  padding-left: 15px;
 }
 
 #gravatar {
   width: 70px;
-  border: 5px solid #ccc;
-  border-radius: 5px;
-  display:block;
+  border-radius: 35px;
+  display: block;
   margin: 0 auto;
+  position: absolute;
+  right: -6px;
+  bottom: -20px;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 300;
   text-transform: uppercase;
   display: inline-block;
@@ -62,13 +70,17 @@ a:hover, a:focus, a:active {
   color: white;
 }
 
-@media screen and (min-width: 960px) {
-  #gravatar {
-    position: absolute;
-    top: 2em;
-    left: 2em;
-  }
+@media (min-width: 640px) {
   h1 {
-    font-size: 2.5em;
+    font-size: 2.4em;
+  }
+
+  body {
+    font-size: 1.4em;
+  }
+
+  article p:first-of-type {
+    font-size: 1em;
   }
 }
+
