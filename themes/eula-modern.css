@@ -37,7 +37,6 @@ article {
   max-width: 700px;
   margin: 10px auto 0px;
   text-align: justify;
-  margin-top: -65px;
 }
 
 @media (max-device-height: 699px) {
