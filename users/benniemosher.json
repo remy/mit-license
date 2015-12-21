@@ -1,1 +1,9 @@
-{"copyright":"Bennie Mosher"}
+{
+  "copyright": "Bennie Mosher, https://benniemosher.com",
+  "url": "https://benniemosher.com",
+  "email": "benniemosher@gmail.com",
+  "format": "html",
+  "gravatar": true,
+  "version": "117ac5a405b332fe2f0344400b0ec50004c256b3",
+  "theme": "default"
+}
