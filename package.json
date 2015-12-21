@@ -11,9 +11,5 @@
     "test": "node test.js"
   },
   "bugs": { "url": "https://github.com/remy/mit-license/issues" },
-  "licenses": [
-    { "type": "MIT",
-      "url": "http://rem.mit-license.org/"
-    }
-  ]
+  "license" : "SEE LICENSE IN LICENSE"
 }
