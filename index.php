@@ -49,18 +49,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
  **/
 if ($cname && file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
-  $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML401, 'UTF-8');
-  if (property_exists($user, 'url')) {
-    $holder = '<a href="' . $user->url . '">' . $holder . '</a>';
+
+  // move old-format usernames and emails into new-format array
+  if (!is_array($user->copyright)) {
+    $user->copyright = array(array("name" => $user->copyright));
+    if (property_exists($user, 'email')) {
+      $user->copyright[0]->email = $user->copyright;
+    }
   }
 
-  if (property_exists($user, 'email')) {
-    $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
-    
-    if(property_exists($user, 'gravatar') && $user->gravatar === true){
-        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+  $people = array(); //initialize
+  $counter = 0;
+  foreach ($user->copyright as $person) {
+    $people[$counter] = htmlentities($person->name, ENT_COMPAT | ENT_HTML401, 'UTF-8');
+
+    if (property_exists($person, 'url')) {
+      $people[$counter] = '<a href="' . $person->url . '">' . $people[$counter] . '</a>';
     }
-    
+
+    if (property_exists($person, 'email')) {
+      $people[$counter] .= ' &lt;<a href="mailto:' . $person->email . '">' . $person->email . '</a>&gt;';
+
+    }
+    $counter++;
+  }
+  $holders = implode($people, ", "); // join array with ", "
+
+  if(property_exists($user, 'gravatar') && $user->gravatar === true && property_exists($user, 'email')) {
+    $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+  //Also allow just setting the gravatar directly from the gravatar property itself, since we no longer need a root-level email field
+  } elseif(property_exists($user, 'gravatar') && $user->gravatar !== false) {
+    $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->gravatar))) . '" />';
   }
 
   if (property_exists($user, 'format')) {
@@ -75,7 +94,7 @@ if ($cname && file_exists($user_file)) {
     }
   }
 } else {
-  $holder = "&lt;copyright holders&gt;";
+  $holders = "&lt;copyright holder(s)&gt;";
 }
 
 /**
@@ -137,7 +156,7 @@ if ($license == "") {
 }
 
 // replace info tag and display
-$info = $year . ' ' . $holder;
+$info = $year . ' ' . $holders;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
 $license = str_replace('{{gravatar}}', $gravatar, $license);
