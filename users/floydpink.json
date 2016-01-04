@@ -1,1 +1,7 @@
-{"copyright":"Hari Menon"}
+{
+  "copyright": "Hari Menon, http://harimenon.com",
+  "url": "https://harimenon.com",
+  "email": "me@harimenon.com",
+  "gravatar": true,
+  "theme": "double-windsor"
+}
