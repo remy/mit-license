@@ -205,6 +205,7 @@ Current available themes:
 * solarized - [preview](http://jsbin.com/yimax/1) (by [@anmoljagetia](http://github.com/anmoljagetia))
 * willpower - [preview](http://jsbin.com/piheyicoyi/1) (by [@willpowerart](http://github.com/willpowerart))
 * rokkitt - [preview](http://jsbin.com/zudayiqeco/1) (by [@luizpicolo](http://github.com/luizpicolo))
+* material - [preview](http://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). *Available colors: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey.*
 
 ## Formats & URLs
 
