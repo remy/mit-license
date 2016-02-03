@@ -1,1 +1,7 @@
-{"copyright":"M Haidar Hanif","url":"http:\/\/mhaidarhanif.org"}
+{
+  "copyright": "M Haidar Hanif, http://mhaidarhanif.com",
+  "url": "http://mhaidarhanif.com",
+  "email": "email@mhaidarhanif.com",
+  "theme": "material-cyan",
+  "gravatar": true
+}
