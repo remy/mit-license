@@ -1,8 +1,8 @@
 {
   "copyright":"Joe Gibson",
-  "url":"http://gibsjose.com",
-  "email":"gibsjose@mail.gvsu.edu",
+  "url":"https://gibsjose.com",
+  "email":"joseph.gibson@nasa.gov",
   "format": "html",
-  "gravatar": true,
+  "gravatar": false,
   "theme": "double-windsor"
 }
