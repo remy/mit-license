@@ -16,7 +16,9 @@ if (count($match) == 2) {
 $user_file = 'users/' . $cname . '.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
-  Throw new Exception('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
+  echo ('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
+  exit;
+
   try {
     $data = json_decode(file_get_contents('php://input'));
     if (!property_exists($data, 'copyright')) {
