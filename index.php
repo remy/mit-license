@@ -16,6 +16,7 @@ if (count($match) == 2) {
 $user_file = 'users/' . $cname . '.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
+  Throw new Exception('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
   try {
     $data = json_decode(file_get_contents('php://input'));
     if (!property_exists($data, 'copyright')) {
@@ -56,11 +57,11 @@ if ($cname && file_exists($user_file)) {
 
   if (property_exists($user, 'email')) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
-    
+
     if(property_exists($user, 'gravatar') && $user->gravatar === true){
         $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
     }
-    
+
   }
 
   if (property_exists($user, 'format')) {
@@ -128,7 +129,7 @@ if ($sha != "") {
   exec("/usr/local/bin/git show " . $sha . ":LICENSE.html", $out, $r);
   if ($r == 0) {
     $license = implode("\n", $out);
-  } 
+  }
 }
 
 // if we didn't manage to read one in, use latest
