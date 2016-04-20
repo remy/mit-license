@@ -104,13 +104,18 @@ if (stripos($request, 'license') === 0) {
 
 // check if we have a year or a year range up front
 $year = date('Y');
-preg_match('/^(\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
+preg_match('/^(@?\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
+
 if (count($match) > 1) {
-  if ($match[2]) {
+  if ($match[2] && $match[1][0] != '@') { // 2nd segment
     $year = $match[2];
   }
   if ($match[1]) {
-    $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+    if ($match[1][0] == '@') {
+      $year = substr($match[1], 1);
+    } else {
+      $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+    }
   }
   $request = array_pop($request_uri);
 }
