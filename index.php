@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
     exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
     //print_r($out); echo "\n"; print_r($r); echo "\n";
 
-    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
+    echo '>>> MIT license page created: https://' . $_SERVER['HTTP_HOST'] . "\n\n";
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
@@ -61,7 +61,7 @@ if ($cname && file_exists($user_file)) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
 
     if(property_exists($user, 'gravatar') && $user->gravatar === true){
-        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+        $gravatar = '<img id="gravatar" src="https://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
     }
 
   }
