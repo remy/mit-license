@@ -179,8 +179,9 @@ Current available themes:
 
 * default - [preview](http://mit-license.org) (by
   [@remy](http://github.com/remy),
-  [@raphaelbastide](http://github.com/raphaelbastide) &
-  [@evertton](http://github.com/evertton))
+  [@raphaelbastide](http://github.com/raphaelbastide),
+  [@evertton](http://github.com/evertton) &
+  [@ftornik](http://github.com/ftornik))
 * flesch - [preview](http://jsbin.com/ufefid/3) (by
   [@flesch](http://github.com/flesch))
 * eula-modern - [preview](http://jsbin.com/ExiVida/1/) (by [@sauerlo](http://github.com/lsauer))  
