@@ -200,7 +200,7 @@ The url also supports including a start year:
 Finally, the url also supports pinning the year
 
 * [http://rem.mit-license.org/@2009](http://rem.mit-license.org/@2009)
-  this is useful for when your software copyright should expire ([as discussed here]())
+  this is useful for when your software copyright should expire ([as discussed here](https://github.com/remy/mit-license/issues/771))
 
 ## Ways to contribute
 
