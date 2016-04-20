@@ -236,15 +236,15 @@ Domain contributions:
 * [barberboy](https://github.com/barberboy) - 2029-2030
 * [mostly-magic](https://github.com/mostly-magic) - 2030-2032
 
-*Please note that the whois says 2021 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
+*Please note that the whois says 2032 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
 
 ### 2. Hosting
 
-For the first 5 years mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a mostly. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit.
+For the first 5 years mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a mostly. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting is currently costs $7 per month, if you want to donate in months or years, it's gratefully received ❤
 
 Hosting contributions:
 
-* [remy](https://github.com/remy) - 2011-2016 Apr
+* [remy](https://github.com/remy) - 2011-2016 Apr...
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
