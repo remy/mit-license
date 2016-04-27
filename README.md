@@ -245,6 +245,7 @@ For the first 5 years mit-license.org was hosted on my own dedicated server, but
 Hosting contributions:
 
 * [remy](https://github.com/remy) - 2011-2016 Apr...
+* [therebelrobot](https://github.com/therebelrobot) 1 month
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
