@@ -14,7 +14,7 @@ Now I can always include http://rem.mit-license.org in all my projects which lin
 You can fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
 
 ```bash
-curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+curl -d'{ "copyright": "Remy Sharp" }' https://rem.mit-license.org
 ```
 
 If the `rem` user isn't taken already, then this will create the new user file on the fly and the url will be immediately available.
@@ -22,7 +22,7 @@ If the `rem` user isn't taken already, then this will create the new user file o
 You can send a full JSON file to the API, not *just* the copyright, so this works too:
 
 ```bash
-curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
 ```
 
 If there's any problems in the automated creation, send me a pull request and it'll go live soon after.
@@ -49,7 +49,7 @@ Create a new file and give it the name of the CNAME you want (in my case it's `r
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com"
+  "copyright": "Remy Sharp, https://remysharp.com"
 }
 ```
 
