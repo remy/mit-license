@@ -2,150 +2,236 @@
 
 date_default_timezone_set('Europe/London'); // stop php from whining
 
-$format = 'html';
-$theme = 'default';
-$cname = '';
+function get_cname_and_user()
+{
+    static $user_info = null;
 
-// use a match instead of preg_replace to ensure we got the cname
-preg_match('/^([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
+    if ($user_info === null) {
+        // use a match instead of preg_replace to ensure we got the cname
+        preg_match('/^([a-z0-9\-]+)\.mit-license\..*$/', $_SERVER['HTTP_HOST'], $match);
 
-if (count($match) == 2) {
-  $cname = $match[1];
-}
-
-$user_file = 'users/' . $cname . '.json';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
-  echo ('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
-  exit;
-
-  try {
-    $data = json_decode(file_get_contents('php://input'));
-    if (!property_exists($data, 'copyright')) {
-      Throw new Exception('>>> JSON requires "copyright" property and value');
+        $user_info[] = count($match) == 2 ? $match[1] : '';
+        $user_info[] = 'users/'.$user_info[0].'.json';
     }
 
+    return $user_info;
+}
+
+function get_license_path($name)
+{
+    $name = $name ?: 'MIT';
+
+    return 'licenses/'.strtoupper($name).'.html';
+}
+
+function send_response_error_json($error, $status = 'HTTP/1.1 422 Unprocessable Entity')
+{
+    header($status);
+    header('Content-Type: text/json', true);
+
+    echo json_encode(['errors' => [$error]]);
+    exit;
+}
+
+function send_response_json($message)
+{
+    header('HTTP/1.1 201 Created');
+    header('Content-Type: text/json', true);
+
+    echo json_encode(['success' => [$message]]);
+    exit;
+}
+
+function read_http_post()
+{
+    if (null === ($data = json_decode(file_get_contents('php://input')))) {
+        send_response_error_json('JSON could not be parsed');
+    }
+
+    if (!property_exists($data, 'copyright') || empty($data->copyright)) {
+        send_response_error_json('JSON requires "copyright" property and value');
+    }
+
+    list($cname, $user_file) = get_cname_and_user();
+
     if (file_exists($user_file)) {
-      Throw new Exception(wordwrap('>>> User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'));
+        send_response_error_json('User already exists - to update values, please send a pull request on https://github.com/remy/mit-license');
     }
 
     if (!file_put_contents($user_file, json_encode($data))) {
-      Throw new Exception(wordwrap('>>> Unable to create new user - please send a pull request on https://github.com/remy/mit-license'));
+        send_response_error_json('Unable to create new user - please send a pull request on https://github.com/remy/mit-license');
     }
 
-    // try to add to github...!
-    exec('cd /WWW/mit-license && /usr/bin/git add ' . $user_file . ' && /usr/bin/git commit -m"automated creation of ' . $user_file . '"', $out, $r);
-    //print_r($out); echo "\n"; print_r($r); echo "\n";
-    $out = array();
-    exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
-    //print_r($out); echo "\n"; print_r($r); echo "\n";
+    $web_root = escapeshellarg(dirname(__FILE__));
+    $user_file = escapeshellarg($user_file);
+    $commands = [
+        sprintf('cd %s && /usr/bin/git add %s', $web_root, $user_file),
+        sprintf('cd %s && /usr/bin/git commit -m"automated creation of %s"', $web_root, $user_file),
+        sprintf('cd %s && /usr/bin/git push origin master -v 2>&1', $web_root),
+    ];
 
-    echo '>>> MIT license page created: https://' . $_SERVER['HTTP_HOST'] . "\n\n";
-  } catch (Exception $e) {
-    echo $e->getMessage() . "\n\n";
-  }
-  exit;
+    foreach ($commands as $c) {
+        exec($c, $out, $return);
+
+        if ($return != 0) {
+            file_put_contents($web_root.DIRECTORY_SEPARATOR.'git-errors.log', var_export($out, true));
+            send_response_error_json('Unable to create new user - please send a pull request on https://github.com/remy/mit-license');
+        }
+    }
+
+    send_response_json('MIT license page created: https://'.$cname.'.mit-license.org');
 }
 
-/**
+list($cname, $user_file) = get_cname_and_user();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
+    read_http_post();
+    exit;
+}
+
+$format = 'html';
+$theme = 'default';
+$gravatar = '';
+
+list($cname, $user_file) = get_cname_and_user();
+
+/*
  * Load up the user.json file and read properties in
  **/
 if ($cname && file_exists($user_file)) {
-  $user = json_decode(file_get_contents($user_file));
-  $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML401, 'UTF-8');
-  if (property_exists($user, 'url')) {
-    $holder = '<a href="' . $user->url . '">' . $holder . '</a>';
-  }
+    $user = json_decode(file_get_contents($user_file));
 
-  if (property_exists($user, 'email')) {
-    $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
+    // move old-format usernames and emails into new-format array
+    if (!is_array($user->copyright)) {
+        $person = new \stdClass();
+        $person->name = $user->copyright;
 
-    if(property_exists($user, 'gravatar') && $user->gravatar === true){
-        $gravatar = '<img id="gravatar" src="https://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+        if (property_exists($user, 'email')) {
+            $person->email = $user->email;
+        }
+
+        if (property_exists($user, 'url')) {
+            $person->url = $user->url;
+        }
+
+        if (property_exists($user, 'gravatar')) {
+            $person->gravatar = $user->gravatar;
+        }
+
+        $user->copyright = [$person];
     }
 
-  }
+    $holders = [];
+    $gravatar = null;
+    foreach ($user->copyright as $c) {
+        $person = htmlentities($c->name, ENT_COMPAT | ENT_HTML401, 'UTF-8');
 
-  if (property_exists($user, 'format')) {
-    if (strtolower($user->format) == 'txt') {
-      $format = 'txt';
-    }
-  }
+        if (property_exists($c, 'url')) {
+            $person = '<a href="'.$c->url.'">'.$person.'</a>';
+        }
 
-  if (property_exists($user, 'theme')) {
-    if (file_exists('themes/' . $user->theme . '.css')) {
-      $theme = $user->theme;
+        if (property_exists($c, 'email')) {
+            $person = $person.' &lt;<a href="mailto:'.$c->email.'">'.$c->email.'</a>&gt;';
+        }
+
+        if ($gravatar === null && property_exists($c, 'gravatar')) {
+            if ($c->gravatar === true && property_exists($c, 'email')) {
+                $gravatar = $c->email;
+            } elseif ($c->gravatar !== false) {
+                $gravatar = $c->gravatar;
+            }
+        }
+
+        $holders[] = $person;
     }
-  }
+
+    $holder = implode($holders, ", ");
+
+    if ($gravatar !== null) {
+        $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/'.md5(strtolower(trim($gravatar))).'"/>';
+    }
+
+    if (property_exists($user, 'format') && strtolower($user->format) == 'txt') {
+        $format = 'txt';
+    }
+
+    if (property_exists($user, 'theme') && file_exists('themes/'.$user->theme.'.css')) {
+        $theme = $user->theme;
+    }
 } else {
-  $holder = "&lt;copyright holders&gt;";
+    $holder = '&lt;copyright holders&gt;';
 }
 
-/**
+/*
  * Now process the request url. Optional parts of the url are (in order):
  * [sha]/[year|year-range]/license.[format]
  * eg. http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt
  **/
 
-// grab sha from request uri
-$request_uri = explode('/', $_SERVER["REQUEST_URI"]);
-
-$request = array_pop($request_uri);
-// in case there's a trailing slash (unlikely)
-if ($request == '') $request = array_pop($request_uri);
+$request_uri = explode('/', $_SERVER['REQUEST_URI']);
 
 // url file format overrides user preference
-if (stripos($request, 'license') === 0) {
-  $format = array_pop(explode('.', strtolower($request))) == 'txt' ? 'txt' : 'html';
-
-  // move down to the next part of the request
-  $request = array_pop($request_uri);
-}
-
-// check if we have a year or a year range up front
-$year = date('Y');
-preg_match('/^(@?\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
-
-if (count($match) > 1) {
-  if ($match[2] && $match[1][0] != '@') { // 2nd segment
-    $year = $match[2];
-  }
-  if ($match[1]) {
-    if ($match[1][0] == '@') {
-      $year = substr($match[1], 1);
-    } else {
-      $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+foreach ($request_uri as $r) {
+    if (stripos($r, 'license') === 0 && pathinfo($r, PATHINFO_EXTENSION) === 'txt') {
+        $format = 'txt';
     }
-  }
-  $request = array_pop($request_uri);
+};
+
+$year = date('Y');
+foreach ($request_uri as $r) {
+    preg_match('/^(@?)(\d{4})(\-)?(\d{4})?$/', $r, $match);
+
+    if (count($match) === 3) {
+        $year = $match[2];
+    } elseif (count($match) === 4) {
+        $year = $match[2] == $year ? $match[2] : $match[2] . '-' . $year;
+    } elseif (count($match) === 5) {
+        $year = $match[2] . '-' . $match[4];
+    }
 }
 
-// check if there's a SHA on the url and read this to switch license versions
 $sha = '';
-if ($request != "" && $request != "/" && $request != "/index.php") {
-  $sha = preg_replace('/[^a-f0-9]/', '', $request);
-} else if (isset($user) && property_exists($user, 'version')) {
-  $sha = preg_replace('/[^a-f0-9]/', '', $user->version);
+foreach ($request_uri as $r) {
+    preg_match('/^([a-f0-9]{7,})$/', $r, $match);
+
+    if (isset($match[1])) {
+        $sha = $match[1];
+    }
+}
+
+if (empty($sha) && isset($user) && property_exists($user, 'version')) {
+    $sha = preg_replace('/[^a-f0-9]/', '', $user->version);
+}
+
+$license_type = null;
+foreach ($request_uri as $r) {
+    preg_match('/^\+([A-Z]+)$/', $r, $match);
+
+    if (isset($match[1]) && file_exists(get_license_path($match[1]))) {
+        $license_type = $match[1];
+    }
+}
+
+if (null === $license_type && isset($user) && property_exists($user, 'license') && file_exists(get_license_path($user->license))) {
+    $license_type = $user->license;
 }
 
 // if sha specified, use that revision of licence
 $license = '';
-if ($sha != "") {
-  $out = array();
-  // preg_replace should save us - but: please help me Obi Wan...
-  exec("/usr/local/bin/git show " . $sha . ":LICENSE.html", $out, $r);
-  if ($r == 0) {
-    $license = implode("\n", $out);
-  }
+if ($sha != '') {
+    exec(sprintf('/usr/local/bin/git show %s:licenses/%s', escapeshellarg($sha), get_license_path($license_type)), $out, $return);
+
+    if ($return == 0) {
+        $license = implode("\n", $out);
+    }
 }
 
-// if we didn't manage to read one in, use latest
-if ($license == "") {
-  $license = file_get_contents('LICENSE.html');
+if (empty($license)) {
+    $license = file_get_contents(get_license_path($license_type));
 }
 
 // replace info tag and display
-$info = $year . ' ' . $holder;
+$info = $year.' '.$holder;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
 $license = str_replace('{{gravatar}}', $gravatar, $license);
@@ -153,11 +239,11 @@ $license = str_replace('{{gravatar}}', $gravatar, $license);
 // if we want text format, strip out the license from the article tag
 // and then strip any other tags in the license.
 if ($format == 'txt') {
-  $license = array_shift(explode('</article>', array_pop(explode('<article>', $license))));
-  $license = preg_replace('/<[^>]*>/', '', trim($license));
-  $license = html_entity_decode($license, ENT_COMPAT | ENT_HTML401, 'UTF-8');
-  $license .= "\n";
-  header('content-type: text/plain; charset=UTF-8');
+    $license = array_shift(explode('</article>', array_pop(explode('<article>', $license))));
+    $license = preg_replace('/<[^>]*>/', '', trim($license));
+    $license = html_entity_decode($license, ENT_COMPAT | ENT_HTML401, 'UTF-8');
+    $license .= "\n";
+    header('content-type: text/plain; charset=UTF-8');
 }
 
 echo $license;
