@@ -14,7 +14,7 @@ Now I can always include http://rem.mit-license.org in all my projects which lin
 You can fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
 
 ```bash
-curl -d'{ "copyright": "Remy Sharp" }' http://rem.mit-license.org
+curl -d'{ "copyright": "Remy Sharp" }' https://rem.mit-license.org
 ```
 
 If the `rem` user isn't taken already, then this will create the new user file on the fly and the url will be immediately available.
@@ -22,7 +22,7 @@ If the `rem` user isn't taken already, then this will create the new user file o
 You can send a full JSON file to the API, not *just* the copyright, so this works too:
 
 ```bash
-curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' http://rem.mit-license.org
+curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
 ```
 
 If there's any problems in the automated creation, send me a pull request and it'll go live soon after.
@@ -192,7 +192,7 @@ text
 The url also supports including a start year:
 
 * [http://rem.mit-license.org/2009/](http://rem.mit-license.org/2009/) will
-  show a license year range of 2009-2011 (2011 being the current year)
+  show a license year range of 2009-2016 (2016 being the current year)
 * [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/)
   allows me to force the year range
 * [http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt](http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt) a526bf7ad1 version, with year range of 2009-2010 in plain text
