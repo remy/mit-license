@@ -44,42 +44,9 @@ function send_response_json($message)
 
 function read_http_post()
 {
-    if (null === ($data = json_decode(file_get_contents('php://input')))) {
-        send_response_error_json('JSON could not be parsed');
-    }
+    send_response_error_json('The curl API has been temporarily disabled; send a pull request in the short term. Service will resume as normal again soon ❤');
 
-    if (!property_exists($data, 'copyright') || empty($data->copyright)) {
-        send_response_error_json('JSON requires "copyright" property and value');
-    }
-
-    list($cname, $user_file) = get_cname_and_user();
-
-    if (file_exists($user_file)) {
-        send_response_error_json('User already exists - to update values, please send a pull request on https://github.com/remy/mit-license');
-    }
-
-    if (!file_put_contents($user_file, json_encode($data))) {
-        send_response_error_json('Unable to create new user - please send a pull request on https://github.com/remy/mit-license');
-    }
-
-    $web_root = escapeshellarg(dirname(__FILE__));
-    $user_file = escapeshellarg($user_file);
-    $commands = [
-        sprintf('cd %s && /usr/bin/git add %s', $web_root, $user_file),
-        sprintf('cd %s && /usr/bin/git commit -m"automated creation of %s"', $web_root, $user_file),
-        sprintf('cd %s && /usr/bin/git push origin master -v 2>&1', $web_root),
-    ];
-
-    foreach ($commands as $c) {
-        exec($c, $out, $return);
-
-        if ($return != 0) {
-            file_put_contents($web_root.DIRECTORY_SEPARATOR.'git-errors.log', var_export($out, true));
-            send_response_error_json('Unable to create new user - please send a pull request on https://github.com/remy/mit-license');
-        }
-    }
-
-    send_response_json('MIT license page created: https://'.$cname.'.mit-license.org');
+    // todo: implement new logic with support for Heroku (ephemeral disk)
 }
 
 list($cname, $user_file) = get_cname_and_user();
@@ -145,8 +112,6 @@ if ($cname && file_exists($user_file)) {
         $holders[] = $person;
     }
 
-    $holder = implode($holders, ", ");
-
     if ($gravatar !== null) {
         $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/'.md5(strtolower(trim($gravatar))).'"/>';
     }
@@ -159,7 +124,7 @@ if ($cname && file_exists($user_file)) {
         $theme = $user->theme;
     }
 } else {
-    $holder = '&lt;copyright holders&gt;';
+    $holders[] = '&lt;copyright holders&gt;';
 }
 
 /*
@@ -231,7 +196,10 @@ if (empty($license)) {
 }
 
 // replace info tag and display
-$info = $year.' '.$holder;
+$holders = array_map(function ($holder) use ($year) {
+    return sprintf('Copyright © %s %s', $year, $holder);
+}, $holders);
+$info = implode('<br />'.PHP_EOL, $holders);
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
 $license = str_replace('{{gravatar}}', $gravatar, $license);

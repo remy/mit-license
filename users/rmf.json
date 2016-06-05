@@ -3,12 +3,13 @@
     {
       "name" :     "Rob M Frawley 2nd",
       "url" :      "http:\/\/robfrawley.com",
-      "email" :    "source@robfrawley.com",
+      "email" :    "rmf@src.run",
       "gravatar" : true
     },
     {
-      "name" :  "First Last",
-      "email" : "flast@domain.com"
+      "name" :  "Source Consulting, LLC",
+      "url" : "http:\/\/src.run",
+      "email" : "src@src.run"
     }
   ],
   "theme":"material-pink"
