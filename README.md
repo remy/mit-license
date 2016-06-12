@@ -240,7 +240,7 @@ Domain contributions:
 
 ### 2. Hosting
 
-For the first 5 years mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a mostly. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting is currently costs $7 per month, if you want to donate in months or years, it's gratefully received ❤
+For the first 5 years mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a monthly fee. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting is currently costs $7 per month, if you want to donate in months or years, it's gratefully received ❤
 
 Hosting contributions:
 
