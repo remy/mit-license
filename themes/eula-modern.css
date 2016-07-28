@@ -1,4 +1,4 @@
-/*author: lo sauer, 2013 - http://github.com/lsauer, @sauerlo */
+/*author: lo sauer, 2013 - https://github.com/lsauer, @sauerlo */
 * {
   scrollbar-base-color: white;
   scrollbar-track-color: white;
@@ -119,7 +119,7 @@ footer {
   font-style: italic;
 }
 
-footer a:link, 
+footer a:link,
 footer a:visited {
   color:#ccc;
 }

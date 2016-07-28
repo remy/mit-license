@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300);
 
 * {
   margin: 0;
@@ -44,7 +44,7 @@ article p:first-of-type {
   font-size: 14pt;
   line-height: 150%;
 }
-article :nth-child(4), 
+article :nth-child(4),
 article :nth-child(4):before {
   font-size: 18pt;
   font-weight: 300;
@@ -108,7 +108,7 @@ footer a:hover, footer a:focus, footer a:active {
     margin: 15pt 0 0 0;
     padding: 15pt;
   }
-  footer { 
+  footer {
     padding-top: 0;
     font-size: 11pt;
     line-height: 120%;
@@ -139,7 +139,7 @@ footer a:hover, footer a:focus, footer a:active {
     margin: 15pt 0 0 0;
     padding: 10pt;
   }
-  footer { 
+  footer {
     padding-top: 0;
     font-size: 9pt;
     line-height: 120%;
@@ -183,7 +183,7 @@ footer a:hover, footer a:focus, footer a:active {
     margin: 18pt 0 0 0;
     padding: 11pt;
   }
-  footer { 
+  footer {
     padding-top: 0;
     font-size: 10pt;
     line-height: 120%;
