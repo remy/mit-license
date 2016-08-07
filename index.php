@@ -148,7 +148,9 @@ if ($license == "") {
 $info = $year . ' ' . $holder;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
-$license = str_replace('{{gravatar}}', $gravatar, $license);
+if (isset($gravatar)) {
+	$license = str_replace('{{gravatar}}', $gravatar, $license);
+}
 
 // if we want text format, strip out the license from the article tag
 // and then strip any other tags in the license.
