@@ -53,11 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
 if ($cname && file_exists($user_file)) {
   $user = json_decode(file_get_contents($user_file));
   $holder = htmlentities($user->copyright, ENT_COMPAT | ENT_HTML401, 'UTF-8');
-  if (property_exists($user, 'url')) {
+  if (property_exists($user, 'url') && filter_var($user->url, FILTER_VALIDATE_URL)) {
     $holder = '<a href="' . $user->url . '">' . $holder . '</a>';
   }
 
-  if (property_exists($user, 'email')) {
+  if (property_exists($user, 'email') && filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
 
     if(property_exists($user, 'gravatar') && $user->gravatar === true){
