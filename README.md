@@ -249,6 +249,7 @@ Hosting contributions:
 * [remy](https://github.com/remy) - 2011-2016 Apr...
 * [therebelrobot](https://github.com/therebelrobot) 1 month
 * [mkody](https://github.com/mkody) 2 months
+* [dan9186](https://github.com/dan9186) 1 year
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
