@@ -173,6 +173,7 @@ Current available themes:
 * rokkitt - [preview](http://jsbin.com/zudayiqeco/1) (by [@luizpicolo](https://github.com/luizpicolo))
 * mitserrat - [preview](http://jsbin.com/xeqekutuwe/1) (by [@WouterJanson](https://github.com/WouterJanson))
 * material - [preview](http://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). *Available colours: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `material-deep-orange`.*
+* hmt-blue - [preview](https://jsbin.com/naqorar/) (by [@J2TeaM](https://github.com/J2TeaM))
 
 ## Formats & URLs
 
