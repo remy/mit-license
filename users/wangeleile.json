@@ -1,1 +1,6 @@
-{ "copyright": "Horst Wangeleile", "url": "http://wangeleile.de", "email": "wangeleile@googlemail.com", "format": "txt" }
+{
+  "copyright": "Horst Wangeleile, http://wangeleile.de",
+  "url": "http://wangeleile.de",
+  "email": "wangeleile@googlemail.com"
+}
+
