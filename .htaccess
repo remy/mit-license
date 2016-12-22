@@ -8,8 +8,13 @@ RewriteBase /
 RewriteRule "(^|/)(CVS|\.svn|\.git)/" - [F]
 
 # strip www. from the domain
-RewriteCond %{HTTP_HOST} ^www\.mit-license\.org$ [NC]
-RewriteRule ^(.*)$ http://mit-license.org/$1 [R=301,L]
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteCond %{HTTPS} on
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
 # if the file or directory exists
 RewriteCond %{REQUEST_FILENAME} -d [OR]
