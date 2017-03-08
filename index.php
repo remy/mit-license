@@ -16,6 +16,9 @@ if (count($match) == 2) {
 $user_file = 'users/' . $cname . '.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
+  echo ('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
+  exit;
+
   try {
     $data = json_decode(file_get_contents('php://input'));
     if (!property_exists($data, 'copyright')) {
@@ -30,11 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
       Throw new Exception(wordwrap('>>> Unable to create new user - please send a pull request on https://github.com/remy/mit-license'));
     }
 
-    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . "\n\n";
-
     // try to add to github...!
-    // exec('/usr/local/bin/git add ' . $user_file . ' && /usr/local/bin/git commit -m"created ' . $user_file . '" && /usr/local/bin/git push', $out, $r);
-    // user_error('create new user. out: ' . $out . ', r: ' . $r);
+    exec('cd /WWW/mit-license && /usr/bin/git add ' . $user_file . ' && /usr/bin/git commit -m"automated creation of ' . $user_file . '"', $out, $r);
+    //print_r($out); echo "\n"; print_r($r); echo "\n";
+    $out = array();
+    exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
+    //print_r($out); echo "\n"; print_r($r); echo "\n";
+
+    echo '>>> MIT license page created: https://' . $_SERVER['HTTP_HOST'] . "\n\n";
   } catch (Exception $e) {
     echo $e->getMessage() . "\n\n";
   }
@@ -53,6 +59,11 @@ if ($cname && file_exists($user_file)) {
 
   if (property_exists($user, 'email')) {
     $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
+
+    if(property_exists($user, 'gravatar') && $user->gravatar === true){
+        $gravatar = '<img id="gravatar" src="https://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+    }
+
   }
 
   if (property_exists($user, 'format')) {
@@ -93,13 +104,18 @@ if (stripos($request, 'license') === 0) {
 
 // check if we have a year or a year range up front
 $year = date('Y');
-preg_match('/^(\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
+preg_match('/^(@?\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
+
 if (count($match) > 1) {
-  if ($match[2]) {
+  if ($match[2] && $match[1][0] != '@') { // 2nd segment
     $year = $match[2];
   }
   if ($match[1]) {
-    $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+    if ($match[1][0] == '@') {
+      $year = substr($match[1], 1);
+    } else {
+      $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+    }
   }
   $request = array_pop($request_uri);
 }
@@ -120,7 +136,7 @@ if ($sha != "") {
   exec("/usr/local/bin/git show " . $sha . ":LICENSE.html", $out, $r);
   if ($r == 0) {
     $license = implode("\n", $out);
-  } 
+  }
 }
 
 // if we didn't manage to read one in, use latest
@@ -132,13 +148,15 @@ if ($license == "") {
 $info = $year . ' ' . $holder;
 $license = str_replace('{{info}}', $info, $license);
 $license = str_replace('{{theme}}', $theme, $license);
+$license = str_replace('{{gravatar}}', $gravatar, $license);
 
 // if we want text format, strip out the license from the article tag
 // and then strip any other tags in the license.
 if ($format == 'txt') {
   $license = array_shift(explode('</article>', array_pop(explode('<article>', $license))));
   $license = preg_replace('/<[^>]*>/', '', trim($license));
-  $license = html_entity_decode($license);
+  $license = html_entity_decode($license, ENT_COMPAT | ENT_HTML401, 'UTF-8');
+  $license .= "\n";
   header('content-type: text/plain; charset=UTF-8');
 }
 

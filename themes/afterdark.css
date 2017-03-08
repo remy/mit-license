@@ -9,3 +9,4 @@ a img { position: absolute; top: 0; right: 0; border: 0; }
 :-moz-any-link:focus {background:#bc4a46;}
 ::selection {background:#bc4a46;}
 ::-moz-selection {background:#bc4a46;}
+#gravatar { position: relative; float: right; margin-bottom: 1em; margin-left: 1em; border: 1px solid #ddd; }
