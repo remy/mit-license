@@ -250,6 +250,8 @@ Hosting contributions:
 * [therebelrobot](https://github.com/therebelrobot) 1 month
 * [mkody](https://github.com/mkody) 2 months
 * [dan9186](https://github.com/dan9186) 1 year
+* Kristin Anthony 1 year
+* [zhengyi-yang](https://github.com/zhengyi-yang) 5 months
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
