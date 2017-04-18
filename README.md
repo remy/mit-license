@@ -49,7 +49,7 @@ Create a new file and give it the name of the CNAME you want (in my case it's `r
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com"
+  "copyright": "Remy Sharp, https://remysharp.com"
 }
 ```
 
