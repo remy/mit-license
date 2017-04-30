@@ -238,7 +238,7 @@ Domain contributions:
 * [barberboy](https://github.com/barberboy) - 2029-2030
 * [mostly-magic](https://github.com/mostly-magic) - 2030-2032
 
-*Please note that the whois says 2032 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
+*Please note that the whois says 2021 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
 
 ### 2. Hosting
 
