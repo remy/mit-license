@@ -253,6 +253,7 @@ Hosting contributions:
 * Kristin Anthony 1 year
 * [zhengyi-yang](https://github.com/zhengyi-yang) 5 months
 * [catodd](https://github.com/catodd) 2 months
+* [lrz0](https://github.com/lrz0) 1 month
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
