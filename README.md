@@ -174,6 +174,7 @@ Current available themes:
 * mitserrat - [preview](http://jsbin.com/xeqekutuwe/1) (by [@WouterJanson](https://github.com/WouterJanson))
 * material - [preview](http://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). *Available colours: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `material-deep-orange`.*
 * hmt-blue - [preview](https://jsbin.com/naqorar/) (by [@J2TeaM](https://github.com/J2TeaM))
+* dusk - [preview](https://output.jsbin.com/giqivoh) (by [@georapbox](https://github.com/georapbox))
 
 ## Formats & URLs
 
@@ -238,7 +239,7 @@ Domain contributions:
 * [barberboy](https://github.com/barberboy) - 2029-2030
 * [mostly-magic](https://github.com/mostly-magic) - 2030-2032
 
-*Please note that the whois says 2032 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
+*Please note that the whois says 2021 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
 
 ### 2. Hosting
 
@@ -252,6 +253,9 @@ Hosting contributions:
 * [dan9186](https://github.com/dan9186) 1 year
 * Kristin Anthony 1 year
 * [zhengyi-yang](https://github.com/zhengyi-yang) 5 months
+* [catodd](https://github.com/catodd) 2 months
+* [lrz0](https://github.com/lrz0) 1 month
+* [jorge-matricali](https://github.com/jorge-matricali) 3 months
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
