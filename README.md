@@ -257,6 +257,7 @@ Hosting contributions:
 * [catodd](https://github.com/catodd) 2 months
 * [lrz0](https://github.com/lrz0) 1 month
 * [jorge-matricali](https://github.com/jorge-matricali) 3 months
+* [youchenlee](https://github.com/youchenlee) 12 months
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
