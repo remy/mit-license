@@ -3,5 +3,6 @@
     "url": "https://alexander.fyi",
     "email": "iam@alexander.fyi",
     "format": "txt",
-    "gravatar": true
+    "gravatar": true,
+    "theme": "plaintext"
 }
