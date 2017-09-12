@@ -1,4 +1,7 @@
 {
   "copyright": "Daniel Knell, http://danielknell.co.uk",
-  "url": "http://danielknell.co.uk"
+  "url": "http://danielknell.co.uk",
+  "email": "contact@danielknell.co.uk",
+  "theme": "material-pink",
+  "gravatar": true
 }

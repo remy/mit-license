@@ -10,10 +10,12 @@
   "scripts": {
     "test": "node test.js"
   },
-  "bugs": { "url": "https://github.com/remy/mit-license/issues" },
-  "licenses": [
-    { "type": "MIT",
-      "url": "http://rem.mit-license.org/"
-    }
-  ]
+  "bugs": {
+    "url": "https://github.com/remy/mit-license/issues"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "nconf": "^0.8.4",
+    "request": "^2.72.0"
+  }
 }

@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
 html { background: #eee; }
 body { margin: 0; font-family: "Inconsolata", "DejaVu Sans Mono","Bitstream Vera Sans Mono", monospace; font-size: 1.2em; line-height: 1.2em; }
 article, footer { display: block; min-width: 360px; max-width: 900px; width: 80%; }

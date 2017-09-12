@@ -1,1 +1,7 @@
-{"copyright":"Daniel Furze"}
+{
+  "copyright":"Daniel Furze",
+  "email": "daniel@furzeface.com",
+  "gravatar": true,
+  "theme": "magic-mint",
+  "url": "http://daniel.furzeface.com"
+}

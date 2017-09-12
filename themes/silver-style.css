@@ -3,7 +3,7 @@
 **v1.0
 **by Dipesh Bhardwaj
 **09.2013
-**http://in.linkedin.com/in/devdipesh/
+**https://in.linkedin.com/in/devdipesh/
 */
 body {
   margin:0; padding: 50px;
@@ -28,7 +28,7 @@ article, footer { display:block; max-width:720px; margin:0 auto; }
   article { padding:28px;}
 footer { padding:0 28px; text-align:center; }
   h1 { margin:0; font-size: 24px; line-height: 32px;color:#008CCC; text-transform: uppercase;}
-a, a:visited { color:#577446; padding:4px; text-decoration:none; } 
+a, a:visited { color:#577446; padding:4px; text-decoration:none; }
 a:active, a:hover { color:#5dd912; }
 a img { position: absolute; top: 0; right: 0; border: 0; }
 :-moz-any-link:focus {background:#bc4a46;}
