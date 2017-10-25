@@ -1,6 +1,7 @@
 {
-  copyright : 'Ali Mihandoost, http://ali.md',
-	url       : 'http://ali.md'
-  email     : 'i@ali.md'
-	theme     : 'default'
+  "copyright": "Ali Mihandoost, http://ali.md",
+  "url": "http://ali.md",
+  "email": "i@ali.md",
+  "theme": "flesch",
+  "gravatar": true
 }
