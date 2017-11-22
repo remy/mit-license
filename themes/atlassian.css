@@ -1,0 +1,150 @@
+/*-----------------------------------------------------------------------------
+
+MIT-license Theme: atlassian
+
+version:      1.0
+date:         23/11/2017
+author:       Fauzi Ferdiansyah
+github:       https://github.com/fauziferdiansyah
+
+description:  A simple theme from atlassian.
+
+-----------------------------------------------------------------------------*/
+html,body{
+	font-family: 'Heebo', sans-serif;
+	background: #0747A6;
+	color: #091E42;
+}
+html{padding:0;margin:0;}
+article{
+	padding: 20px;
+	background: #FFFFFF;;
+	margin: 50px;
+	border-radius: 3px;
+	overflow: hidden;
+	animation: fGLASt 0.9s cubic-bezier(0.15, 1, 0.33, 1) forwards;
+	-webkit-animation: fGLASt 0.9s cubic-bezier(0.15, 1, 0.33, 1) forwards;
+	box-sizing: border-box;
+	box-shadow: 0 1px 1px rgba(23,43,77,0.2), 0 0 0.5px 0 rgba(23,43,77,0.25);
+	transition: all 0.3s cubic-bezier(0.15, 1, 0.33, 1);
+	-webkit-transition: all 0.3s cubic-bezier(0.15, 1, 0.33, 1);
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
+	margin-top: 230px;
+	margin-bottom: 20px
+}
+article img{
+	float: left;
+	margin-right: 30px;
+	position: absolute;
+	top: 70px;
+	left: 28%;
+}
+article h1{
+	font-size: 30px;
+	margin-bottom: 0px;
+	position: absolute;
+	top: 70px;
+	margin: 0 auto;
+	color: #FFFFFF;
+	left: 36.5%;
+	letter-spacing: 1px;
+}
+article p:nth-last-child(4){
+	position: absolute;
+	top: 110px;
+	left: 36.5%;
+	color: #FFFFFF;
+}
+article p:nth-last-child(4) *{
+	color: #FFFFFF;
+}
+
+footer {
+	padding: 5px 20px 5px 20px;
+	background: #FFFFFF;
+	margin: 50px;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-top: 0px;
+	text-align: center;
+	margin-top: 20px;
+}
+footer a {
+	color: #0747a6;
+	text-decoration: none;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	font-size: 16px;
+}
+footer a:before{
+	content: '< ';
+	padding-right: 3px;
+	color: #999999;
+	font-weight: 400;
+}
+footer a:after{
+	content: ' >';
+	padding-left: 3px;
+	color: #999999;
+	font-weight: 400;
+}
+footer a:hover:before {
+	padding-right: 8px;
+}
+footer a:hover:after {
+	padding-left: 8px;
+}
+
+/* Responsive */
+@media only screen and (max-width:1000px){
+	article{
+		margin-top: 80px;
+	}
+	article img{
+		float: right;
+    position: unset;
+	}
+	article h1{
+		position: inherit;
+    color: #091E42;
+    display: inline-block;
+	}
+	article p:nth-last-child(4){
+		position: unset;
+    color: #091E42;
+	}
+	article p:nth-last-child(4) *{
+		color: #091E42;
+	}
+}
+
+/* ANIMATION */
+@keyframes fGLASt {
+	0% {
+	  top: 60px;
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	100% {
+	  top: 0;
+	  opacity: 1;
+	}
+  
+  }
+  @-webkit-keyframes fGLASt {
+	0% {
+	  top: 60px;
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	100% {
+	  top: 0;
+	  opacity: 1;
+	}
+  
+  }
