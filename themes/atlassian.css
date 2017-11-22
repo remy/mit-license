@@ -1,0 +1,14 @@
+/*-----------------------------------------------------------------------------
+
+MIT-license Theme: atlassian
+
+version:      1.0
+date:         23/11/2017
+author:       Fauzi Ferdiansyah
+github:       https://github.com/fauziferdiansyah
+
+description:  A simple theme from atlassian.
+
+-----------------------------------------------------------------------------*/
+
+article h1,article p:nth-last-child(4){position:absolute;left:36.5%;color:#FFF}article h1,article p:nth-last-child(4) *{color:#FFF}article,footer{background:#FFF;border-radius:3px;overflow:hidden;box-sizing:border-box;box-shadow:0 1px 1px rgba(23,43,77,.2),0 0 .5px 0 rgba(23,43,77,.25)}body,html{font-family:Heebo,sans-serif;background:#0747A6;color:#091E42}html{padding:0;margin:0}article{padding:20px;margin:230px 50px 20px;animation:fGLASt .9s cubic-bezier(.15,1,.33,1) forwards;-webkit-animation:fGLASt .9s cubic-bezier(.15,1,.33,1) forwards;transition:all .3s cubic-bezier(.15,1,.33,1);-webkit-transition:all .3s cubic-bezier(.15,1,.33,1);animation-delay:.5s;-webkit-animation-delay:.5s}article img{float:left;margin-right:30px;position:absolute;top:70px;left:28%}article h1{font-size:30px;top:70px;margin:0 auto;letter-spacing:1px}article p:nth-last-child(4){top:110px}footer{padding:5px 20px;margin:20px 50px 50px;text-align:center;animation:fGLASt .9s cubic-bezier(.15,1,.33,1) forwards;-webkit-animation:fGLASt .9s cubic-bezier(.15,1,.33,1) forwards;transition:all .3s cubic-bezier(.15,1,.33,1);-webkit-transition:all .3s cubic-bezier(.15,1,.33,1);animation-delay:.5s;-webkit-animation-delay:.5s}footer a{color:#0747a6;text-decoration:none;font-weight:700;letter-spacing:.5px;font-size:16px}footer a:before{content:'< ';padding-right:3px;color:#999;font-weight:400}footer a:after{content:' >';padding-left:3px;color:#999;font-weight:400}footer a:hover:before{padding-right:8px}footer a:hover:after{padding-left:8px}@media only screen and (max-width:1000px){article h1,article p:nth-last-child(4) *{color:#091E42}article{margin-top:80px}article img{float:right;position:unset}article h1{position:inherit;display:inline-block}article p:nth-last-child(4){position:unset;color:#091E42}}@keyframes fGLASt{0%{top:60px;opacity:0}50%{opacity:1}100%{top:0;opacity:1}}@-webkit-keyframes fGLASt{0%{top:60px;opacity:0}50%{opacity:1}100%{top:0;opacity:1}}
