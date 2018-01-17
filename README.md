@@ -259,6 +259,8 @@ Hosting contributions:
 * [jorge-matricali](https://github.com/jorge-matricali) 3 months
 * [youchenlee](https://github.com/youchenlee) 12 months
 * [ramsey](https://github.com/ramsey) 12 months
+* [rmm5t](https://github.com/rmm5t) 1 month
+* [wrainaud](https://github.com/wrainaud) 3 months
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
