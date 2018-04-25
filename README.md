@@ -261,6 +261,7 @@ Hosting contributions:
 * [ramsey](https://github.com/ramsey) 12 months
 * [rmm5t](https://github.com/rmm5t) 1 month
 * [wrainaud](https://github.com/wrainaud) 3 months
+* [romkey](https://github.com/romkey) 12 months
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
