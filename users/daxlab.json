@@ -1,1 +1,7 @@
-{"copyright":"Mandeep Singh","url":"http:\/\/github.com\/daxlab","email":"mandeep25894@gmail.com","format":"txt","theme":"default"}
+{
+  "copyright": "Mandeep Singh",
+  "url": "https://github.com/daxlab",
+  "email": "mandeep25894@gmail.com",
+  "theme": "material-green",
+  "gravatar": true
+}

@@ -16,6 +16,9 @@ if (count($match) === 2) {
 $user_file = 'users/' . $cname . '.json';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
+  echo ('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
+  exit;
+
   try {
     $data = json_decode(file_get_contents('php://input'));
     if (!property_exists($data, 'copyright')) {
@@ -38,11 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
 
     exec('cd /WWW/mit-license && /usr/bin/git push origin master -v 2>&1', $out, $r);
 
-    //print_r($out); echo "\n"; print_r($r); echo "\n";
-    echo '>>> MIT license page created: http://' . $_SERVER['HTTP_HOST'] . '\n\n';
-  }
-  catch (Exception $e) {
-    echo $e->getMessage() . '\n\n';
+    echo '>>> MIT license page created: https://' . $_SERVER['HTTP_HOST'] . "\n\n";
+  } catch (Exception $e) {
+    echo $e->getMessage() . "\n\n";
   }
 
   exit;
@@ -60,10 +61,10 @@ if ($cname && file_exists($user_file)) {
   }
 
   if (property_exists($user, 'email')) {
-    $holder = "$holder &lt;<a href=\"mailto:$user->email\">$user->email</a>&gt;";
+    $holder = $holder . ' &lt;<a href="mailto:' . $user->email . '">' . $user->email . '</a>&gt;';
 
-    if (property_exists($user, 'gravatar') && $user->gravatar === true) {
-      $gravatar = '<img id="gravatar" src="http://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+    if(property_exists($user, 'gravatar') && $user->gravatar === true){
+        $gravatar = '<img id="gravatar" src="https://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
     }
   }
 
@@ -102,14 +103,18 @@ if (stripos($request, 'license') === 0) {
 
 // check if we have a year or a year range up front
 $year = date('Y');
-preg_match('/^(\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
+preg_match('/^(@?\d{4})(?:(?:\-)(\d{4}))?$/', $request, $match);
 
 if (count($match) > 1) {
-  if ($match[2]) {
+  if ($match[2] && $match[1][0] != '@') { // 2nd segment
     $year = $match[2];
   }
   if ($match[1]) {
-    $year = $match[1] === $year ? $year : $match[1] . '-' . $year;
+    if ($match[1][0] == '@') {
+      $year = substr($match[1], 1);
+    } else {
+      $year = $match[1] == $year ? $year : $match[1] . '-' . $year;
+    }
   }
 
   $request = array_pop($request_uri);
@@ -133,8 +138,9 @@ if ($sha != '') {
 
   // preg_replace should save us - but: please help me Obi Wan...
   exec("/usr/local/bin/git show " . $sha . ":LICENSE.html", $out, $r);
+
   if ($r === 0) {
-    $license = implode('\n', $out);
+    $license = implode("\n", $out);
   }
 }
 
