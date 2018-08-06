@@ -1,1 +1,0 @@
-curl -d'{ "copyright": "Bitmxittz Developers", "url": "https://bitmxittz.com", "email": "contact@bitmxittz.com", "theme": "flesch", "gravatar": true }' https://bitmxittz.mit-license.org
