@@ -11,7 +11,7 @@ Now I can always include http://rem.mit-license.org in all my projects which lin
 
 ## Requesting your own MIT license page
 
-You can fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
+One way is to use [MIT License Tools](https://richienb.github.io/mit-license-tools/) but you can also fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
 
 ```bash
 curl -d'{ "copyright": "Remy Sharp" }' https://rem.mit-license.org
