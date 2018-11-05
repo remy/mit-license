@@ -263,6 +263,7 @@ Hosting contributions:
 * [wrainaud](https://github.com/wrainaud) 3 months
 * [romkey](https://github.com/romkey) 12 months
 * [kylewelsby](https://github.com/kylewelsby) 6 months
+* [wiesner](https://github.com/wiesner) 1 month
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
