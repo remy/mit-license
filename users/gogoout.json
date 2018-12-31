@@ -1,1 +1,7 @@
-{"copyright":"gogoout","email":"gogoout@gmail.com","gravatar":true,"theme":"default-dark"}
+{
+  "copyright": "Gogoout",
+  "url": "https://gogoout.github.io/resumecard/",
+  "email": "gogoout@gmail.com",
+  "gravatar": true,
+  "theme": "8bits-monochrome"
+}
