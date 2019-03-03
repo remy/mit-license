@@ -15,6 +15,13 @@ if (count($match) == 2) {
 
 $user_file = 'users/' . $cname . '.json';
 
+if (!file_exists($user_file)) {
+  $file = current(preg_grep("$user_file$/i", glob("users/*")));
+  if($file) {
+    $user_file = $file;
+  }
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $cname) {
   echo ('>>> curl API has been temporarily disabled. Please send a pull request in the short term. Service will resume as normal again soon ❤');
   exit;
