@@ -176,6 +176,7 @@ Current available themes:
 * hmt-blue - [preview](https://jsbin.com/naqorar/) (by [@J2TeaM](https://github.com/J2TeaM))
 * dusk - [preview](https://output.jsbin.com/giqivoh) (by [@georapbox](https://github.com/georapbox))
 * 8bits - [preview](http://jorge-matricali.github.io/mit-license-8bits-theme/) (by [@jorge-matricali](https://github.com/jorge-matricali)). *Available colours: monochrome, monochrome-white, monochrome-blue-white. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`.*
+* hacker - [preview](https://tommy.mit-license.org/) (by [@TommyPujol06](https://github.com/TommyPujol06))
 
 ## Formats & URLs
 
