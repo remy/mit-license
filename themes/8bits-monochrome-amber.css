@@ -1,17 +1,17 @@
-/* 8bits theme v1.1.0 by Jorge Matricali, https://github.com/matricali/mit-license-8bits-theme */
+/* 8bit theme v1.0.0 by Jorge Matricali, https://github.com/matricali/mit-license-8bits-theme */
 /* MIT License https://jorge-matricali.mit-license.org/ */
 @import url('https://fonts.googleapis.com/css?family=PT+Mono|VT323');
 body {
   font-family: 'PT Mono', monospace;
   padding: .4em;
   font-size: 1.1em;
-  background: #00f;
-  color: #fff;
+  background: #000;
+  color: #ffbf00;
 }
 a:link,
 a:visited {
   text-decoration: none;
-  color: #fff;
+  color: #ffbf00;
 }
 article {
   display: block;
@@ -21,7 +21,7 @@ article {
   margin: 10px auto 0;
 }
 article h1 {
-  color: #fff;
+  color: #ffbf00;
   width: 100%;
   margin: 0 auto;
   padding-top: 1.5em;
@@ -38,7 +38,7 @@ article h1 + p {
 }
 article h1 + p a:link,
 article h1 + p a:visited {
-  color: #fff;
+  color: #ffbf00;
 }
 article p {
   padding: 0 2em;
@@ -93,9 +93,9 @@ footer {
   }
 }
 img {
-  -webkit-filter: contrast(700%) invert(100%) brightness(80%) sepia(100%) saturate(5) invert(100%);
-  -moz-filter: contrast(700%) invert(100%) brightness(80%) sepia(100%) saturate(5) invert(100%);
-  -ms-filter: contrast(700%) invert(100%) brightness(80%) sepia(100%) saturate(5) invert(100%);
-  -o-filter: contrast(700%) invert(100%) brightness(80%) sepia(100%) saturate(5) invert(100%);
-  filter: contrast(700%) invert(100%) brightness(80%) sepia(100%) saturate(5) invert(100%);
+  -webkit-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
+  -moz-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
+  -ms-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
+  -o-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
+  filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
 }
