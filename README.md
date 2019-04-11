@@ -175,7 +175,7 @@ Current available themes:
 * material - [preview](http://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). *Available colours: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `material-deep-orange`.*
 * hmt-blue - [preview](https://jsbin.com/naqorar/) (by [@J2TeaM](https://github.com/J2TeaM))
 * dusk - [preview](https://output.jsbin.com/giqivoh) (by [@georapbox](https://github.com/georapbox))
-* 8bits - [preview](https://gogoout.mit-license.org/) (by [@jorge-matricali](https://github.com/jorge-matricali)). *Available colours: monochrome, monochrome-white, monochrome-blue-white. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`.*
+* 8bits - [preview](https://matricali.github.io/mit-license-8bits-theme/) (by [@matricali](https://github.com/matricali)). *Available colours: monochrome, monochrome-white, monochrome-blue-white, monochrome-green, monochrome-amber. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`.*
 * hacker - [preview](https://tommy.mit-license.org/) (by [@TommyPujol06](https://github.com/TommyPujol06))
 
 ## Formats & URLs
@@ -257,7 +257,7 @@ Hosting contributions:
 * [zhengyi-yang](https://github.com/zhengyi-yang) 5 months
 * [catodd](https://github.com/catodd) 2 months
 * [lrz0](https://github.com/lrz0) 1 month
-* [jorge-matricali](https://github.com/jorge-matricali) 3 months
+* [matricali](https://github.com/matricali) 3 months
 * [youchenlee](https://github.com/youchenlee) 12 months
 * [ramsey](https://github.com/ramsey) 12 months
 * [rmm5t](https://github.com/rmm5t) 1 month
