@@ -266,6 +266,7 @@ Hosting contributions:
 * [kylewelsby](https://github.com/kylewelsby) 6 months
 * [wiesner](https://github.com/wiesner) 1 month
 * [rajinwonderland](https://github.com/rajinwonderland) 3 months
+* [miszo](https://github.com/miszo) 1 month
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
