@@ -21,6 +21,7 @@
     "dayjs": "^1.8.14",
     "express": "^4.17.1",
     "express-res-html": "^0.2.3",
+    "humanize-list": "^1.0.1",
     "md5": "^2.2.1",
     "mustache": "^3.0.1",
     "mustache-express": "^1.2.8"

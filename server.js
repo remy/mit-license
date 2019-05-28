@@ -6,6 +6,7 @@ const mustache = require('mustache')
 const compression = require('compression')
 const dayjs = require('dayjs')
 const md5 = require('md5')
+const humanizeList = require('humanize-list')
 
 // Read License file
 const template = fs.readFileSync('LICENSE.html', "utf8")
@@ -46,7 +47,7 @@ app.get('*', (req, res) => {
         } else {
             // No error
             const user = JSON.parse(data)
-            info = `${year} ${user.copyright}`
+            info = `${year} ${typeof user.copyright === "string" ? user.copyright : humanizeList(user.copyright)}`
             theme = user.theme || "default"
             gravatar = user.gravatar ? `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}" />` : ``
         }
