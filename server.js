@@ -48,13 +48,10 @@ app.get('*', (req, res) => {
             const user = JSON.parse(data)
             info = `${year} ${user.copyright}`
             theme = user.theme || "default"
-            gravatar = user.gravatar ? `<img id="gravatar" src="https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}" />` : ``
-            // gravatar = '<img id="gravatar" src="https://www.gravatar.com/avatar/' . md5(strtolower(trim($user->email))) . '" />';
+            gravatar = user.gravatar ? `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}" />` : ``
         }
 
         // Parse the options specified in the URL
-        // console.log(req.path.split('/'))
-        const options = {}
         res.set('Content-Type', 'text/html');
         res.send(new Buffer.from(mustache.render(template, {
             info,
