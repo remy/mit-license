@@ -1,66 +1,68 @@
-const express = require('express')
-const path = require('path')
-const fs = require('fs')
-const PORT = process.env.PORT || 80
-const mustache = require('mustache')
-const compression = require('compression')
-const dayjs = require('dayjs')
-const md5 = require('md5')
-const humanizeList = require('humanize-list')
-
-// Read License file
-const template = fs.readFileSync('LICENSE.html', "utf8")
-mustache.parse(template);
-
+var express = require('express');
+var path = require('path');
+var fs = require('fs');
+var PORT = process.env.PORT || 80;
+var compression = require('compression');
+var dayjs = require('dayjs');
+var md5 = require('md5');
+var humanizeList = require('humanize-list');
+var minify = require('express-minify');
 // Prepare application
-const app = express()
-app.use(compression())
-app.use(require('express-res-html'))
-
+var app = express();
+app.use(compression());
+app.use(minify({
+    cache: require('tmp').dirSync().name
+}));
+app.set('view engine', 'ejs');
+// Setup static files
+app.use('/themes', express.static('themes'));
+app.use('/users', express.static('users'));
+app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'));
 // Setup useful variables
-const year = dayjs().year()
-
-// Any theme request
-app.get('/themes/:file', (req, res) => res.sendFile(path.join(__dirname, 'themes', req.params.file)))
-
-// Any user request
-app.get('/users/:file', (req, res) => res.sendFile(path.join(__dirname, 'users', req.params.file)))
-
+var yearNow = dayjs().year();
+// HTTP POST API
+app.post('/', function (req, res) {
+    res.end();
+});
 // Any other HTTP GET request
-app.get('*', (req, res) => {
+app.get('*', function (req, res) {
     // Get user id (example: 'rem.mit-license.org/@2019' -> 'rem')
-    const id = req.hostname.split('.')[0]
-
+    var id = req.hostname.split('.')[0];
+    // Get params (example: 'rem.mit-license.org/@2019' -> ['@2019'])
+    var params = req.path.split('/');
+    params.shift();
+    //
+    var year = yearNow;
     // Load the user data (example: from 'rem.mit-license.org/@2019' -> 'users/rem.json')
-    fs.readFile(path.join('users', `${id}.json`), 'utf8', (err, data) => {
+    fs.readFile(path.join('users', id + ".json"), 'utf8', function (err, data) {
+        var info, theme, gravatar;
         // If error opening
         if (err) {
             if (err.code === 'ENOENT') {
                 // File not found
-                info = `${year} <copyright holders>`
-                theme = `default`
-                gravatar = ``
-            } else {
-                // Other error
-                res.status(500).end()
+                info = year + " <copyright holders>";
+                theme = 'default';
+                gravatar = '';
             }
-        } else {
-            // No error
-            const user = JSON.parse(data)
-            info = `${year} ${typeof user.copyright === "string" ? user.copyright : humanizeList(user.copyright)}`
-            theme = user.theme || "default"
-            gravatar = user.gravatar ? `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}" />` : ``
+            else {
+                // Other error
+                res.status(500).end();
+            }
         }
-
+        else {
+            // No error
+            var user = JSON.parse(data);
+            info = year + " " + (typeof user.copyright === 'string' ? user.copyright : humanizeList(user.copyright));
+            theme = user.theme || 'default';
+            gravatar = user.gravatar ? "<img id=\"gravatar\" alt=\"Profile image\" src=\"https://www.gravatar.com/avatar/" + md5(user.email.trim().toLowerCase()) + "\" />" : '';
+        }
         // Parse the options specified in the URL
-        res.set('Content-Type', 'text/html');
-        res.send(new Buffer.from(mustache.render(template, {
-            info,
-            theme,
-            gravatar
-        })));
+        res.render(path.join(__dirname, 'licenses', 'MIT.ejs'), {
+            info: info,
+            theme: theme,
+            gravatar: gravatar
+        });
     });
-})
-
+});
 // Start listening for HTTP requests
-app.listen(PORT)
+app.listen(PORT);

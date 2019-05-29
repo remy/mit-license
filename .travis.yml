@@ -1,4 +1,3 @@
 language: node_js
-sudo: false
-node_js:
-  - "stable"
+sudo:     false
+node_js:  lts/*

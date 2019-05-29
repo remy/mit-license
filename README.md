@@ -65,9 +65,7 @@ You can also use an array to hold multiple copyright holders:
 
 Which will be formatted as:
 
-```
-Remy Sharp (http://remysharp.com) and Richie Bendall (https://richienb.github.io)
-```
+    Remy Sharp (http://remysharp.com) and Richie Bendall (https://richienb.github.io)
 
 ### url
 

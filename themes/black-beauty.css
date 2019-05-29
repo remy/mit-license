@@ -1,63 +1,63 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300);
 
 html {
-  font-size: 16px;
-  background-color: #1a1a1a;
+    font-size: 16px;
+    background-color: #1a1a1a;
 }
 
 body {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  font-size: 1.3em;
-  font-weight: 300;
-  color: #CCC;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #CCC;
 }
 
 article, footer {
-  max-width: 877px;
-  margin: 0 auto;
-  text-align: center;
+    max-width: 877px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 article {
-  margin-top: 1em;
-  background-color: #2a2a2a;
-  padding: 1em;
-  text-align: center;
-  position: relative;
+    margin-top: 1em;
+    background-color: #2a2a2a;
+    padding: 1em;
+    text-align: center;
+    position: relative;
 }
 
 article p {
-  text-align: left;
+    text-align: left;
 }
 
 article p:first-of-type {
-  text-align: center;
-  font-size: .8em;
+    text-align: center;
+    font-size: .8em;
 }
 
 article p:last-of-type {
-  border-left: 3px solid #CCC;
-  padding-left: 15px;
+    border-left: 3px solid #CCC;
+    padding-left: 15px;
 }
 
 #gravatar {
-  width: 70px;
-  border-radius: 35px;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  right: -6px;
-  bottom: -20px;
+    width: 70px;
+    border-radius: 35px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    right: -6px;
+    bottom: -20px;
 }
 
 h1 {
-  font-size: 1.5em;
-  font-weight: 300;
-  text-transform: uppercase;
-  display: inline-block;
-  padding-bottom: 12px;
-  border-bottom: 2px dashed #CCC;
-  margin: 0;
+    font-size: 1.5em;
+    font-weight: 300;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 12px;
+    border-bottom: 2px dashed #CCC;
+    margin: 0;
 }
 
 a {
@@ -67,20 +67,19 @@ a {
 }
 
 a:hover, a:focus, a:active {
-  color: white;
+    color: white;
 }
 
 @media (min-width: 640px) {
-  h1 {
-    font-size: 2.4em;
-  }
+    h1 {
+        font-size: 2.4em;
+    }
 
-  body {
-    font-size: 1.4em;
-  }
+    body {
+        font-size: 1.4em;
+    }
 
-  article p:first-of-type {
-    font-size: 1em;
-  }
+    article p:first-of-type {
+        font-size: 1em;
+    }
 }
-
