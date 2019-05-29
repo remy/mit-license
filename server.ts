@@ -1,13 +1,14 @@
-import express from 'express'
-import path from 'path'
-import fs from 'fs'
+import express = require('express');
+import * as path from 'path'
+import * as fs from 'fs'
 const PORT = process.env.PORT || 80
-import compression from 'compression'
-import dayjs from 'dayjs'
-import md5 from 'md5'
+import compression = require('compression');
+import md5 = require('md5');
 import humanizeList from 'humanize-list'
-import minify from 'express-minify'
-import isNumber from 'is-number'
+import minify = require('express-minify')
+const ejs = require('ejs')
+import {yearNow, stripTags, trimArray} from './util'
+const HTML = require('node-html-parser')
 
 // Prepare application
 const app = express()
@@ -22,8 +23,12 @@ app.use('/themes', express.static('themes'))
 app.use('/users', express.static('users'))
 app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'))
 
-// Setup useful variables
-const yearNow = dayjs().year()
+// Allow CORS
+app.use((_req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*')
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+    next()
+})
 
 // HTTP POST API
 app.post('/', (_req, res) => {
@@ -41,19 +46,19 @@ app.get('*', (req, res) => {
 
     // Load the user data (example: from 'rem.mit-license.org/@2019' -> 'users/rem.json')
     fs.readFile(path.join('users', `${id}.json`), 'utf8', (err, data: string) => {
-        let name: string, theme: string, gravatar: string
-        const user = JSON.parse(data || "{}")
+        let name: string; let theme: string; let gravatar: string
+        const user = JSON.parse(data || '{}')
         // If error opening
         if (err) {
             if (err.code === 'ENOENT') {
                 // File not found
-                name = "<copyright holders>"
+                name = '<copyright holders>'
                 theme = 'default'
                 gravatar = ''
             } else {
                 // Other error
                 res.status(500).end()
-                return;
+                return
             }
         } else {
             // No error
@@ -64,34 +69,49 @@ app.get('*', (req, res) => {
 
         const year = (() => {
             // rem.mit-license.org/@2019
-            const customYear = params.find(val => val.startsWith("@"))
+            const customYear = params.find((val) => val.startsWith('@'))
 
             // rem.mit-license.org/2019
-            const fromYear = params.find(val => !isNaN(parseInt(val.replace("-", ""))))
+            const fromYear = params.find((val) => !isNaN(parseInt(val.replace('-', ''))))
 
             // If current year
-            if (customYear) return customYear.replace(/[@-]/g, "")
+            if (customYear) return customYear.replace(/[@-]/g, '')
 
             // If from year
             if (fromYear) {
                 // If from year is same as current
                 if (parseInt(fromYear) === yearNow) return yearNow
 
-                return `${fromYear.replace("-", "")}-${yearNow.toString().replace("-", "")}`
+                return `${fromYear.replace('-', '')}-${yearNow.toString().replace('-', '')}`
             }
 
             return yearNow
         })()
 
-        const customLicense = params.find(val => val.startsWith("+"))
-        const license = customLicense ? customLicense.replace("+", "") : user.license || `${"MIT"}.ejs`
+        const customLicense = params.find((val) => val.startsWith('+'))
+        const license = customLicense ? customLicense.replace('+', '') : user.license || 'MIT'
 
-        // Parse the options specified in the URL
-        res.render(path.join(__dirname, 'licenses', license), {
+        const format = params.find((val) => val === 'license.html') ? 'html' : params.find((val) => val === 'license.txt') ? 'txt' : user.format || 'html'
+
+        const args = {
             info: `${year} ${name}`,
             theme,
             gravatar,
-        })
+        }
+
+        if (format === 'html') res.render(path.join(__dirname, 'licenses', license), args)
+        else {ejs.renderFile(path.join(__dirname, 'licenses', `${license}.ejs`), args, (_err: any, str: string) =>
+            res
+                .set('Content-Type', 'text/plain; charset=UTF-8')
+                .send(
+                    trimArray(
+                        stripTags(HTML.parse(str).childNodes[0].childNodes[3].childNodes[1].toString())
+                            .split('\n')
+                            .map((val: string) => val.trim())
+                    )
+                        .join('\n')
+                )
+        )}
     })
 })
 

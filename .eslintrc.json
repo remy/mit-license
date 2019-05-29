@@ -19,6 +19,7 @@
         "indent": ["error", 4],
         "semi": ["error", "never"],
         "brace-style": 0,
-        "max-len": 0
+        "max-len": 0,
+        "require-jsdoc": "off"
     }
 }
