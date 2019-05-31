@@ -18,6 +18,8 @@
     },
     "license": "SEE LICENSE IN LICENSE",
     "dependencies": {
+        "@octokit/rest": "^16.27.3",
+        "btoa": "^1.2.1",
         "compression": "^1.7.4",
         "dayjs": "^1.8.14",
         "ejs": "^2.6.1",

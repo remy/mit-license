@@ -10,6 +10,15 @@ import ejs = require('ejs')
 import { yearNow, stripTags, trimArray } from './util'
 import HTML = require('node-html-parser')
 import postcssMiddleware = require('postcss-middleware')
+import btoa = require('btoa')
+
+const github = require("@octokit/rest")({
+    // GitHub personal access token
+    auth: process.env.github_token,
+
+    // User agent with version from package.json
+    userAgent: `mit-license v${require('./package.json').version}`,
+})
 
 // Prepare application
 const app = express()
@@ -35,9 +44,32 @@ app.use((_req, res, next) => {
     next()
 })
 
+// Parse URL-encoded bodies (as sent by HTML forms)
+// app.use(express.urlencoded({ extended: true }))
+//
+// Parse JSON bodies (as sent by API clients)
+app.use(express.json())
+
 // HTTP POST API
-app.post('/', (_req, res) => {
-    res.end()
+app.post('/', (req, res) => {
+    // Get differnet parts of hostname (example: remy.mit-license.org -> ['remy', 'mit-license', 'org'])
+    const params = req.hostname.split(".")
+
+    console.log(req.body)
+
+    // If there isn't enough part of the hostname
+    if (params.length < 2) res.status(400).send("Please specify a subdomain in the URL.")
+
+    res.json(req.body)
+    return
+
+    github.repos.createFile({
+        owner: "remy",
+        repo: "mit-license",
+        path: `users/${params[0]}.json`,
+        message: `Automated creation of user ${params[0]}.`,
+        content: btoa()
+    })
 })
 
 // Any other HTTP GET request
