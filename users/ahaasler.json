@@ -1,8 +1,8 @@
 {
-  "copyright": "Adrian Haasler García",
-  "url": "https://www.adrianhaasler.com",
-  "email": "dev@adrianhaasler.com",
-  "format": "html",
-  "gravatar": true,
-  "theme": "material-blue"
+    "copyright": "Adrian Haasler Garc\u00c3\u00ada",
+    "url": "https://www.adrianhaasler.com",
+    "email": "dev@adrianhaasler.com",
+    "format": "html",
+    "gravatar": true,
+    "theme": "material-blue"
 }

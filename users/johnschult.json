@@ -1,6 +1,6 @@
 {
-  "copyright": "John Schult, https://github.com/johnschult",
-  "email": "johnschult@icloud.com",
-  "gravatar": true,
-  "theme"     : "default"
+    "copyright": "John Schult, https://github.com/johnschult",
+    "email": "johnschult@icloud.com",
+    "gravatar": true,
+    "theme": "default"
 }

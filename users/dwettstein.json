@@ -1,7 +1,7 @@
 {
-  "copyright": "David Wettstein, http://wettste.in",
-  "url": "http://wettste.in",
-  "theme": "default",
-  "format": "txt",
-  "gravatar": false
+    "copyright": "David Wettstein, http://wettste.in",
+    "url": "http://wettste.in",
+    "theme": "default",
+    "format": "txt",
+    "gravatar": false
 }

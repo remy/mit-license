@@ -1,7 +1,7 @@
-{ 
-  "copyright": "Nils Måsén, piksel bitworks", 
-  "url": "http://piksel.se", 
-  "email": "nils@piksel.se", 
-  "gravatar": true,
-  "theme": "default"
+{
+    "copyright": "Nils M\u00c3\u00a5s\u00c3\u00a9n, piksel bitworks",
+    "url": "http://piksel.se",
+    "email": "nils@piksel.se",
+    "gravatar": true,
+    "theme": "default"
 }
