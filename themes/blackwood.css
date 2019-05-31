@@ -49,9 +49,6 @@ footer {
 footer p {
     zoom: 1;
     background-color: #FFFFFF;
-    -moz-box-shadow: 1px 1px 3px #989898;
-    -webkit-box-shadow: 1px 1px 3px #989898;
-    -moz-box-shadow: 1px 1px 3px #989898;
     box-shadow: 1px 1px 3px #989898;
     font-size: 0.9em;
     max-width: 318px;
@@ -59,21 +56,11 @@ footer p {
     position: absolute;
     right: -106px;
     top: 0;
-    -webkit-transform: rotate(34.5deg);
-    /* Saf3.1+, Chrome */
-    -moz-transform: rotate(34.5deg);
-    /* FF3.5+ */
-    -o-transform: rotate(34.5deg);
-    /* Opera 10.5 */
-    -ms-transform: rotate(40deg);
-    /* IE9 */
     transform: rotate(34.5deg);
 }
 
 footer p:before {
     background-color: #999999;
-    -moz-box-shadow: 1px 1px 2px #000000;
-    -webkit-box-shadow: 1px 1px 2px #000000;
     box-shadow: 1px 1px 2px #000000;
     content: "";
     display: block;
@@ -83,14 +70,6 @@ footer p:before {
     position: absolute;
     top: -13px;
     width: 7px;
-    -webkit-transform: rotate(34.5deg);
-    /* Saf3.1+, Chrome */
-    -moz-transform: rotate(34.5deg);
-    /* FF3.5+ */
-    -o-transform: rotate(34.5deg);
-    /* Opera 10.5 */
-    -ms-transform: rotate(34.5deg);
-    /* IE9 */
     transform: rotate(34.5deg);
     zoom: 1;
 }
@@ -104,14 +83,6 @@ footer p:after {
     position: absolute;
     right: 0;
     width: 7px;
-    -webkit-transform: rotate(34.5deg);
-    /* Saf3.1+, Chrome */
-    -moz-transform: rotate(34.5deg);
-    /* FF3.5+ */
-    -o-transform: rotate(34.5deg);
-    /* Opera 10.5 */
-    -ms-transform: rotate(34.5deg);
-    /* IE9 */
     transform: rotate(34.5deg);
     zoom: 1;
 }

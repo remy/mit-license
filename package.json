@@ -8,8 +8,8 @@
         "url": "git@github.com:remy/mit-license.git"
     },
     "scripts": {
-        "start": "tsc server.ts && node server.js",
-        "dev": "ts-node-dev --respawn --transpileOnly --no-notify server.ts",
+        "start": "ts-node-dev --respawn --transpileOnly --no-notify server.ts",
+        "serve": "tsc server.ts && node server.js",
         "test": "node test.js",
         "lint": "eslint server.ts util.ts test.js --color --fix"
     },
@@ -26,6 +26,8 @@
         "humanize-list": "^1.0.1",
         "md5": "^2.2.1",
         "node-html-parser": "^1.1.15",
+        "postcss-middleware": "^1.1.4",
+        "postcss-preset-env": "^6.6.0",
         "tmp": "^0.1.0",
         "typescript": "^3.4.5"
     },

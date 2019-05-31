@@ -10,8 +10,7 @@ button, hr, input {
 html {
     font-family: sans-serif;
     line-height: 1.15;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
+    text-size-adjust: 100%;
 }
 
 body {
@@ -124,7 +123,7 @@ button, select {
 }
 
 [type=submit], [type=reset], button, html [type=button] {
-    -webkit-appearance: button
+    appearance: button
 }
 
 [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
@@ -165,12 +164,12 @@ textarea {
 }
 
 [type=search] {
-    -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
 
 [type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration {
-    -webkit-appearance: none
+    appearance: none
 }
 
 ::-webkit-input-placeholder {
@@ -179,7 +178,7 @@ textarea {
 }
 
 ::-webkit-file-upload-button {
-    -webkit-appearance: button;
+    appearance: button;
     font: inherit
 }
 
@@ -314,8 +313,6 @@ article>p:last-child {
     border-left: 15px solid #3392cd;
     border-right: 2px solid #3392cd;
     /*Box Shadow - (Optional)*/
-    -moz-box-shadow: 2px 2px 15px #ccc;
-    -webkit-box-shadow: 2px 2px 15px #ccc;
     box-shadow: 2px 2px 15px #ccc;
 }
 

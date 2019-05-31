@@ -114,9 +114,5 @@ footer {
 }
 
 img {
-    -webkit-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
-    -moz-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
-    -ms-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
-    -o-filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
     filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10);
 }

@@ -114,9 +114,5 @@ footer {
 }
 
 img {
-    -webkit-filter: contrast(700%) grayscale(100%) saturate(100);
-    -moz-filter: contrast(700%) grayscale(100%) saturate(100);
-    -ms-filter: contrast(700%) grayscale(100%) saturate(100);
-    -o-filter: contrast(700%) grayscale(100%) saturate(100);
     filter: contrast(700%) grayscale(100%) saturate(100);
 }

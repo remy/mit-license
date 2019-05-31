@@ -20,8 +20,6 @@ article {
     border-right: 3px solid #FF6666;
     padding: 74px 28px 28px;
     position: relative;
-    -webkit-border-radius: 0px 0 10px 10px;
-    -moz-border-radius: 0px 0 10px 10px;
     border-radius: 0px 0 10px 10px;
 }
 
@@ -36,8 +34,6 @@ h1 {
     top: 0;
     width: 100%;
     display: block;
-    -moz-box-shadow: 2px 7px 0px -3px #CCCCCC;
-    -webkit-box-shadow: 2px 7px 0px -3px #CCCCCC;
     box-shadow: 2px 7px 0px -3px #CCCCCC;
 }
 
@@ -60,8 +56,6 @@ h1:before {
     position: absolute;
     top: 52px;
     width: 11px;
-    -webkit-border-radius: 0 0 0 32px;
-    -moz-border-radius: 0 0 0 32px;
     border-radius: 0 0 0 32px;
 }
 

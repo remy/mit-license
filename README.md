@@ -141,7 +141,7 @@ Note that if no version is supplied, the latest copy of the LICENSE.html will be
 
 ### Themes
 
-If you've got an eye for design (or like me: not): you can contribute a theme by adding a CSS file to the `themes` directory. The default theme is simple and clean, but you can add your own as you like.
+If you've got an eye for design (or like me: not): you can contribute a theme by adding a CSS file to the `themes` directory. You can use the latest CSS technologies since they are automatically polyfilled. The default theme is simple and clean, but you can add your own as you like.
 
 To use a theme, add the `theme` property to your `user.json` file, for example:
 

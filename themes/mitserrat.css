@@ -68,6 +68,4 @@ p:first-of-type, footer {
     width: 80px;
     margin-top: 72px;
     border-radius: 40px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
 }

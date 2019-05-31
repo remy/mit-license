@@ -1,7 +1,6 @@
 html {
     font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
+    text-size-adjust: 100%;
 }
 
 body {
@@ -88,7 +87,6 @@ figure {
 }
 
 hr {
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0
 }
@@ -117,7 +115,7 @@ button, select {
 }
 
 button, html input[type="button"], input[type="reset"], input[type="submit"] {
-    -webkit-appearance: button;
+    appearance: button;
     cursor: pointer
 }
 
@@ -144,14 +142,12 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 
 input[type="search"] {
-    -webkit-appearance: textfield;
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
+    appearance: textfield;
     box-sizing: content-box
 }
 
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none
+    appearance: none
 }
 
 fieldset {
@@ -184,10 +180,10 @@ td, th {
 
 @media print {
     *, *:before, *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important
+        background: transparent;
+        color: #000;
+        box-shadow: none;
+        text-shadow: none
     }
 
     a, a:visited {
@@ -220,7 +216,7 @@ td, th {
     }
 
     img {
-        max-width: 100% !important
+        max-width: 100%
     }
 
     p, h2, h3 {
@@ -233,7 +229,7 @@ td, th {
     }
 
     select {
-        background: #fff !important
+        background: #fff
     }
 
     .navbar {
@@ -241,7 +237,7 @@ td, th {
     }
 
     .btn>.caret, .dropup>.btn>.caret {
-        border-top-color: #000 !important
+        border-top-color: #000
     }
 
     .label {
@@ -249,15 +245,15 @@ td, th {
     }
 
     .table {
-        border-collapse: collapse !important
+        border-collapse: collapse
     }
 
     .table td, .table th {
-        background-color: #fff !important
+        background-color: #fff
     }
 
     .table-bordered th, .table-bordered td {
-        border: 1px solid #ddd !important
+        border: 1px solid #ddd
     }
 }
 
@@ -1328,14 +1324,10 @@ td, th {
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box
 }
 
 *:before, *:after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -1398,8 +1390,6 @@ img {
     background-color: #222;
     border: 1px solid #ddd;
     border-radius: 0;
-    -webkit-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     display: inline-block;
     max-width: 100%;
@@ -2883,8 +2873,6 @@ label {
 }
 
 input[type="search"] {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box
 }
 
@@ -2933,17 +2921,13 @@ output {
     background-image: none;
     border: 1px solid #444;
     border-radius: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s
 }
 
 .form-control:focus {
     border-color: #0f0;
     outline: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 255, 0, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(0, 255, 0, 0.6)
 }
 
@@ -2974,7 +2958,7 @@ textarea.form-control {
 }
 
 input[type="search"] {
-    -webkit-appearance: none
+    appearance: none
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -3182,13 +3166,11 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 
 .has-success .form-control {
     border-color: #0d0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
 }
 
 .has-success .form-control:focus {
     border-color: #0a0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #4f4;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #4f4
 }
 
@@ -3208,13 +3190,11 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 
 .has-warning .form-control {
     border-color: #f4ff00;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
 }
 
 .has-warning .form-control:focus {
     border-color: #c3cc00;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f8ff66;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f8ff66
 }
 
@@ -3234,13 +3214,11 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 
 .has-error .form-control {
     border-color: #d00;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
 }
 
 .has-error .form-control:focus {
     border-color: #a00;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f44;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #f44
 }
 
@@ -3379,9 +3357,6 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
     font-size: 14px;
     line-height: 1.428571429;
     border-radius: 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none
 }
 
@@ -3399,7 +3374,6 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 .btn:active, .btn.active {
     outline: 0;
     background-image: none;
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
 }
 
@@ -3408,7 +3382,6 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
     pointer-events: none;
     opacity: .65;
     filter: alpha(opacity=65);
-    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -3576,7 +3549,6 @@ textarea.form-group-lg .form-control, select[multiple].form-group-lg .form-contr
 
 .btn-link, .btn-link:active, .btn-link.active, .btn-link[disabled], fieldset[disabled] .btn-link {
     background-color: transparent;
-    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -3631,8 +3603,6 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 
 .fade {
     opacity: 0;
-    -webkit-transition: opacity .15s linear;
-    -o-transition: opacity .15s linear;
     transition: opacity .15s linear
 }
 
@@ -3660,11 +3630,8 @@ tbody.collapse.in {
     position: relative;
     height: 0;
     overflow: hidden;
-    -webkit-transition-property: height, visibility;
     transition-property: height, visibility;
-    -webkit-transition-duration: .35s;
     transition-duration: .35s;
-    -webkit-transition-timing-function: ease;
     transition-timing-function: ease
 }
 
@@ -3704,7 +3671,6 @@ tbody.collapse.in {
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 0;
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
     background-clip: padding-box
 }
@@ -3903,12 +3869,10 @@ tbody.collapse.in {
 }
 
 .btn-group.open .dropdown-toggle {
-    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125)
 }
 
 .btn-group.open .dropdown-toggle.btn-link {
-    -webkit-box-shadow: none;
     box-shadow: none
 }
 
@@ -4398,10 +4362,10 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
     }
 
     .navbar-collapse.collapse {
-        display: block !important;
-        height: auto !important;
+        display: block;
+        height: auto;
         padding-bottom: 0;
-        overflow: visible !important
+        overflow: visible
     }
 
     .navbar-collapse.in {
@@ -4583,7 +4547,6 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
     padding: 10px 15px;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
     margin-top: 8px;
     margin-bottom: 8px
@@ -4663,7 +4626,6 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
         margin-right: 0;
         padding-top: 0;
         padding-bottom: 0;
-        -webkit-box-shadow: none;
         box-shadow: none
     }
 }
@@ -4712,11 +4674,11 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 
 @media (min-width:768px) {
     .navbar-left {
-        float: left !important
+        float: left
     }
 
     .navbar-right {
-        float: right !important;
+        float: right;
         margin-right: -15px
     }
 
@@ -5256,8 +5218,6 @@ a.badge:hover, a.badge:focus {
     background-color: #222;
     border: 1px solid #ddd;
     border-radius: 0;
-    -webkit-transition: border .2s ease-in-out;
-    -o-transition: border .2s ease-in-out;
     transition: border .2s ease-in-out
 }
 
@@ -5366,16 +5326,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     color: #a00
 }
 
-@-webkit-keyframes progress-bar-stripes {
-    from {
-        background-position: 40px 0
-    }
-
-    to {
-        background-position: 0 0
-    }
-}
-
 @keyframes progress-bar-stripes {
     from {
         background-position: 40px 0
@@ -5392,7 +5342,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     margin-bottom: 20px;
     background-color: #3c3c3c;
     border-radius: 0;
-    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1)
 }
 
@@ -5405,23 +5354,16 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     color: #fff;
     text-align: center;
     background-color: #0f0;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    -webkit-transition: width .6s ease;
-    -o-transition: width .6s ease;
     transition: width .6s ease
 }
 
 .progress-striped .progress-bar, .progress-bar-striped {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-size: 40px 40px
 }
 
 .progress.active .progress-bar, .progress-bar.active {
-    -webkit-animation: progress-bar-stripes 2s linear infinite;
-    -o-animation: progress-bar-stripes 2s linear infinite;
     animation: progress-bar-stripes 2s linear infinite
 }
 
@@ -5430,8 +5372,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-success {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -5440,8 +5380,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-info {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -5450,8 +5388,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-warning {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -5460,8 +5396,6 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 }
 
 .progress-striped .progress-bar-danger {
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
     background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
 }
 
@@ -5696,7 +5630,6 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
     background-color: #222;
     border: 1px solid transparent;
     border-radius: 0;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05)
 }
 
@@ -6041,7 +5974,6 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:hover, a.list-g
     background-color: #080808;
     border: 1px solid #000;
     border-radius: 0;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05)
 }
 
@@ -6084,7 +6016,7 @@ button.close {
     cursor: pointer;
     background: transparent;
     border: 0;
-    -webkit-appearance: none
+    appearance: none
 }
 
 .modal-open {
@@ -6105,20 +6037,11 @@ button.close {
 }
 
 .modal.fade .modal-dialog {
-    -webkit-transform: translate(0, -25%);
-    -ms-transform: translate(0, -25%);
-    -o-transform: translate(0, -25%);
     transform: translate(0, -25%);
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    -moz-transition: -moz-transform 0.3s ease-out;
-    -o-transition: -o-transform 0.3s ease-out;
     transition: transform 0.3s ease-out
 }
 
 .modal.in .modal-dialog {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -o-transform: translate(0, 0);
     transform: translate(0, 0)
 }
 
@@ -6139,7 +6062,6 @@ button.close {
     border: 1px solid #999;
     border: 1px solid transparent;
     border-radius: 0;
-    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     background-clip: padding-box;
     outline: 0
@@ -6219,7 +6141,6 @@ button.close {
     }
 
     .modal-content {
-        -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
     }
 
@@ -6371,7 +6292,6 @@ button.close {
     border: 1px solid #333;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0;
-    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     white-space: normal
 }
@@ -6504,8 +6424,6 @@ button.close {
 .carousel-inner>.item {
     display: none;
     position: relative;
-    -webkit-transition: .6s ease-in-out left;
-    -o-transition: .6s ease-in-out left;
     transition: .6s ease-in-out left
 }
 
@@ -6515,32 +6433,22 @@ button.close {
 
 @media all and (transform-3d), (-webkit-transform-3d) {
     .carousel-inner>.item {
-        -webkit-transition: -webkit-transform 0.6s ease-in-out;
-        -moz-transition: -moz-transform 0.6s ease-in-out;
-        -o-transition: -o-transform 0.6s ease-in-out;
         transition: transform 0.6s ease-in-out;
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
         backface-visibility: hidden;
-        -webkit-perspective: 1000;
-        -moz-perspective: 1000;
         perspective: 1000
     }
 
     .carousel-inner>.item.next, .carousel-inner>.item.active.right {
-        -webkit-transform: translate3d(100%, 0, 0);
         transform: translate3d(100%, 0, 0);
         left: 0
     }
 
     .carousel-inner>.item.prev, .carousel-inner>.item.active.left {
-        -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
         left: 0
     }
 
     .carousel-inner>.item.next.left, .carousel-inner>.item.prev.right, .carousel-inner>.item.active {
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         left: 0
     }
@@ -6595,8 +6503,6 @@ button.close {
 }
 
 .carousel-control.left {
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
-    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.0001) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1)
@@ -6605,8 +6511,6 @@ button.close {
 .carousel-control.right {
     left: auto;
     right: 0;
-    background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
-    background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0, rgba(0, 0, 0, 0.5) 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1)
@@ -6745,19 +6649,19 @@ button.close {
 }
 
 .pull-right {
-    float: right !important
+    float: right
 }
 
 .pull-left {
-    float: left !important
+    float: left
 }
 
 .hide {
-    display: none !important
+    display: none
 }
 
 .show {
-    display: block !important
+    display: block
 }
 
 .invisible {
@@ -6773,28 +6677,24 @@ button.close {
 }
 
 .hidden {
-    display: none !important
+    display: none
 }
 
 .affix {
     position: fixed
 }
 
-@-ms-viewport {
-    width: device-width
-}
-
 .visible-xs, .visible-sm, .visible-md, .visible-lg {
-    display: none !important
+    display: none
 }
 
 .visible-xs-block, .visible-xs-inline, .visible-xs-inline-block, .visible-sm-block, .visible-sm-inline, .visible-sm-inline-block, .visible-md-block, .visible-md-inline, .visible-md-inline-block, .visible-lg-block, .visible-lg-inline, .visible-lg-inline-block {
-    display: none !important
+    display: none
 }
 
 @media (max-width:767px) {
     .visible-xs {
-        display: block !important
+        display: block
     }
 
     table.visible-xs {
@@ -6802,35 +6702,35 @@ button.close {
     }
 
     tr.visible-xs {
-        display: table-row !important
+        display: table-row
     }
 
     th.visible-xs, td.visible-xs {
-        display: table-cell !important
+        display: table-cell
     }
 }
 
 @media (max-width:767px) {
     .visible-xs-block {
-        display: block !important
+        display: block
     }
 }
 
 @media (max-width:767px) {
     .visible-xs-inline {
-        display: inline !important
+        display: inline
     }
 }
 
 @media (max-width:767px) {
     .visible-xs-inline-block {
-        display: inline-block !important
+        display: inline-block
     }
 }
 
 @media (min-width:768px) and (max-width:991px) {
     .visible-sm {
-        display: block !important
+        display: block
     }
 
     table.visible-sm {
@@ -6838,35 +6738,35 @@ button.close {
     }
 
     tr.visible-sm {
-        display: table-row !important
+        display: table-row
     }
 
     th.visible-sm, td.visible-sm {
-        display: table-cell !important
+        display: table-cell
     }
 }
 
 @media (min-width:768px) and (max-width:991px) {
     .visible-sm-block {
-        display: block !important
+        display: block
     }
 }
 
 @media (min-width:768px) and (max-width:991px) {
     .visible-sm-inline {
-        display: inline !important
+        display: inline
     }
 }
 
 @media (min-width:768px) and (max-width:991px) {
     .visible-sm-inline-block {
-        display: inline-block !important
+        display: inline-block
     }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
     .visible-md {
-        display: block !important
+        display: block
     }
 
     table.visible-md {
@@ -6874,35 +6774,35 @@ button.close {
     }
 
     tr.visible-md {
-        display: table-row !important
+        display: table-row
     }
 
     th.visible-md, td.visible-md {
-        display: table-cell !important
+        display: table-cell
     }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
     .visible-md-block {
-        display: block !important
+        display: block
     }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
     .visible-md-inline {
-        display: inline !important
+        display: inline
     }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
     .visible-md-inline-block {
-        display: inline-block !important
+        display: inline-block
     }
 }
 
 @media (min-width:1200px) {
     .visible-lg {
-        display: block !important
+        display: block
     }
 
     table.visible-lg {
@@ -6910,63 +6810,63 @@ button.close {
     }
 
     tr.visible-lg {
-        display: table-row !important
+        display: table-row
     }
 
     th.visible-lg, td.visible-lg {
-        display: table-cell !important
+        display: table-cell
     }
 }
 
 @media (min-width:1200px) {
     .visible-lg-block {
-        display: block !important
+        display: block
     }
 }
 
 @media (min-width:1200px) {
     .visible-lg-inline {
-        display: inline !important
+        display: inline
     }
 }
 
 @media (min-width:1200px) {
     .visible-lg-inline-block {
-        display: inline-block !important
+        display: inline-block
     }
 }
 
 @media (max-width:767px) {
     .hidden-xs {
-        display: none !important
+        display: none
     }
 }
 
 @media (min-width:768px) and (max-width:991px) {
     .hidden-sm {
-        display: none !important
+        display: none
     }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
     .hidden-md {
-        display: none !important
+        display: none
     }
 }
 
 @media (min-width:1200px) {
     .hidden-lg {
-        display: none !important
+        display: none
     }
 }
 
 .visible-print {
-    display: none !important
+    display: none
 }
 
 @media print {
     .visible-print {
-        display: block !important
+        display: block
     }
 
     table.visible-print {
@@ -6974,46 +6874,46 @@ button.close {
     }
 
     tr.visible-print {
-        display: table-row !important
+        display: table-row
     }
 
     th.visible-print, td.visible-print {
-        display: table-cell !important
+        display: table-cell
     }
 }
 
 .visible-print-block {
-    display: none !important
+    display: none
 }
 
 @media print {
     .visible-print-block {
-        display: block !important
+        display: block
     }
 }
 
 .visible-print-inline {
-    display: none !important
+    display: none
 }
 
 @media print {
     .visible-print-inline {
-        display: inline !important
+        display: inline
     }
 }
 
 .visible-print-inline-block {
-    display: none !important
+    display: none
 }
 
 @media print {
     .visible-print-inline-block {
-        display: inline-block !important
+        display: inline-block
     }
 }
 
 @media print {
     .hidden-print {
-        display: none !important
+        display: none
     }
 }

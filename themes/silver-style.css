@@ -19,10 +19,8 @@ article {
     border-right: 1.5px solid #9ab8ed;
     padding: 17px;
     border-radius: 1%;
-    -webkit-box-shadow: 3px 0px 20px -2px #7ba5e4;
-    -moz-box-shadow: 3px 0px 20px -2px #7ba5e4;
     box-shadow: 3px 0px 20px -2px #7ba5e4;
-    background: -webkit-radial-gradient(50% 0%, 50% 15px, #EB8CF2 0%, white 100%);
+    background: radial-gradient(50% 0%, 50% 15px, #EB8CF2 0%, white 100%);
 }
 
 article, footer {

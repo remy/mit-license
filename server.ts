@@ -1,14 +1,15 @@
-import express = require('express');
+import express = require('express')
 import * as path from 'path'
 import * as fs from 'fs'
 const PORT = process.env.PORT || 80
-import compression = require('compression');
+import compression = require('compression')
 import md5 = require('md5');
 import humanizeList from 'humanize-list'
 import minify = require('express-minify')
-const ejs = require('ejs')
-import {yearNow, stripTags, trimArray} from './util'
-const HTML = require('node-html-parser')
+import ejs = require('ejs')
+import { yearNow, stripTags, trimArray } from './util'
+import HTML = require('node-html-parser')
+import postcssMiddleware = require('postcss-middleware')
 
 // Prepare application
 const app = express()
@@ -19,8 +20,12 @@ app.use(minify({
 app.set('view engine', 'ejs')
 
 // Setup static files
-app.use('/themes', express.static('themes'))
 app.use('/users', express.static('users'))
+app.use('/themes', postcssMiddleware({
+    plugins: [require('postcss-preset-env')({ browsers: '>= 0%', stage: 0 })],
+    src: req => path.join(__dirname, 'themes', req.path)
+}))
+app.use('/themes', express.static('themes'))
 app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'))
 
 // Allow CORS
@@ -100,18 +105,20 @@ app.get('*', (req, res) => {
         }
 
         if (format === 'html') res.render(path.join(__dirname, 'licenses', license), args)
-        else {ejs.renderFile(path.join(__dirname, 'licenses', `${license}.ejs`), args, (_err: any, str: string) =>
-            res
-                .set('Content-Type', 'text/plain; charset=UTF-8')
-                .send(
-                    trimArray(
-                        stripTags(HTML.parse(str).childNodes[0].childNodes[3].childNodes[1].toString())
-                            .split('\n')
-                            .map((val: string) => val.trim())
+        else {
+            ejs.renderFile(path.join(__dirname, 'licenses', `${license}.ejs`), args, (_err: any, str: string) =>
+                res
+                    .set('Content-Type', 'text/plain; charset=UTF-8')
+                    .send(
+                        trimArray(
+                            stripTags(HTML.parse(str).childNodes[0].childNodes[3].childNodes[1].toString())
+                                .split('\n')
+                                .map((val: string) => val.trim())
+                        )
+                            .join('\n')
                     )
-                        .join('\n')
-                )
-        )}
+            )
+        }
     })
 })
 

@@ -1,7 +1,5 @@
 # Contributing
 
-This project is PHP based but may one day move to node (as this is my preferred development language).
-
 If you are a collaborator (with push permissions), you can merge any open PR with the following conditions:
 
 1. It passes the JSON validity test (this is a github integration in travis)
