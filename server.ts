@@ -1,18 +1,33 @@
-import express = require('express')
+/*
+IMPORTANT:   Set the `github_token` environment variable to a personal access token
+             with at least the `public_repo` scope for the API.
+
+Server port: The `PORT` environment variable can also be set to control the port the server
+             should be hosted on.
+*/
+
+// Core
 import * as path from 'path'
 import * as fs from 'fs'
+
+// Server
 const PORT = process.env.PORT || 80
+import express = require('express')
 import compression = require('compression')
+import minify = require('express-minify')
+import postcssMiddleware = require('postcss-middleware')
+
+// License viewing
+import * as ejs from 'ejs'
+import {yearNow, stripTags, trimArray} from './util'
+import * as HTML from 'node-html-parser'
 import md5 = require('md5');
 import humanizeList from 'humanize-list'
-import minify = require('express-minify')
-import ejs = require('ejs')
-import { yearNow, stripTags, trimArray } from './util'
-import HTML = require('node-html-parser')
-import postcssMiddleware = require('postcss-middleware')
-import btoa = require('btoa')
 
-const github = require("@octokit/rest")({
+// License creation
+import btoa = require('btoa')
+import gitpull = require('git-pull')
+const github = require('@octokit/rest')({
     // GitHub personal access token
     auth: process.env.github_token,
 
@@ -29,10 +44,11 @@ app.use(minify({
 app.set('view engine', 'ejs')
 
 // Setup static files
+app.use('/robots.txt', express.static('robots.txt'))
 app.use('/users', express.static('users'))
 app.use('/themes', postcssMiddleware({
-    plugins: [require('postcss-preset-env')({ browsers: '>= 0%', stage: 0 })],
-    src: req => path.join(__dirname, 'themes', req.path)
+    plugins: [require('postcss-preset-env')({browsers: '>= 0%', stage: 0})],
+    src: (req) => path.join(__dirname, 'themes', req.path),
 }))
 app.use('/themes', express.static('themes'))
 app.use('/favicon.ico', express.static(__dirname + '/favicon.ico'))
@@ -45,33 +61,36 @@ app.use((_req, res, next) => {
 })
 
 // Parse URL-encoded bodies (as sent by HTML forms)
-// app.use(express.urlencoded({ extended: true }))
-//
+app.use(express.urlencoded({extended: true}))
+
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json())
 
 // HTTP POST API
 app.post('/', (req, res) => {
     // Get differnet parts of hostname (example: remy.mit-license.org -> ['remy', 'mit-license', 'org'])
-    const params = req.hostname.split(".")
-
-    console.log(req.body)
+    const params = req.hostname.split('.')
 
     // If there isn't enough part of the hostname
-    if (params.length < 2) res.status(400).send("Please specify a subdomain in the URL.")
-
-    res.json(req.body)
-    return
+    if (params.length < 2) res.status(400).send('Please specify a subdomain in the URL.')
 
     github.repos.createFile({
-        owner: "remy",
-        repo: "mit-license",
+        owner: 'remy',
+        repo: 'mit-license',
         path: `users/${params[0]}.json`,
         message: `Automated creation of user ${params[0]}.`,
-        content: btoa(),
+        content: btoa(''),
         committer: {
-            name: "MIT License Bot",
-            email: "remy@leftlogic.com"
+            name: 'MIT License Bot',
+            email: 'remy@leftlogic.com',
+        },
+    })
+
+    gitpull(__dirname, (err: any, _consoleOutput: any) => {
+        if (err) {
+            res.status(502).end()
+        } else {
+            res.status(201).end()
         }
     })
 })
@@ -91,21 +110,66 @@ app.get('*', (req, res) => {
         const user = JSON.parse(data || '{}')
         // If error opening
         if (err) {
-            if (err.code === 'ENOENT') {
-                // File not found
-                name = '<copyright holders>'
-                theme = 'default'
-                gravatar = ''
-            } else {
-                // Other error
+            if (err.code !== 'ENOENT') {
+                // Error is not "File not found"
                 res.status(500).end()
                 return
             }
-        } else {
-            // No error
-            name = typeof user.copyright === 'string' ? user.copyright : humanizeList(user.copyright)
-            theme = user.theme || 'default'
-            gravatar = user.gravatar ? `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}" />` : ''
+        } else if (!user.locked && user.copyright) {
+            // No error and valid
+            name = (() => {
+                if (typeof user.copyright === 'string') {
+                    // Supports regular format
+                    let template: string
+
+                    if (user.url) template = `<a href="${user.url}">${user.copyright}</a>`
+                    else template = user.copyright
+
+                    if (user.email) template += ` &lt;<a href="mailto:${user.email}">${user.email}</a>&gt;`
+
+                    return template
+                } else if (user.copyright.every((val: any) => typeof val === 'string')) {
+                    // Supports: ['Remy Sharp', 'Richie Bendall']
+                    return humanizeList(user)
+                } else {
+                    /*
+                    Supports:
+                    [{
+                        "name": "Remy Sharp, https://remysharp.com",
+                        "url": "https://remysharp.com",
+                        "email": "remy@remysharp.com"
+                    },{
+                        "name": "Richie Bendall, https://www.richie-bendall.ml",
+                        "url": "https://www.richie-bendall.ml",
+                        "email": "richiebendall@gmail.com",
+                    }]
+                    */
+                    let template: string
+
+                    return humanizeList(user.copyright.map((val) => {
+                        if (val.url) template = `<a href="${val.url}">${val.name}</a>`
+                        else template = val.copyright
+
+                        if (val.email) template += ` &lt;<a href="mailto:${val.email}">${val.email}</a>&gt;`
+
+                        return template
+                    }))
+                }
+            })()
+
+            theme = user.theme
+
+            gravatar = (() => {
+                if (user.gravatar && user.email) {
+                    // Supports regular format
+                    return `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(user.email.trim().toLowerCase())}" />`
+                }
+                else if (typeof user.copyright[0] === 'object' && user.gravatar) {
+                    // Supports mutli-user format
+                    return `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(user.copyright[0].email.trim().toLowerCase())}" />`
+                }
+                else return ''
+            })()
         }
 
         const year = (() => {
@@ -115,8 +179,14 @@ app.get('*', (req, res) => {
             // rem.mit-license.org/2019
             const fromYear = params.find((val) => !isNaN(parseInt(val.replace('-', ''))))
 
+            // rem.mit-license.org/2018-2019
+            const rangeYear = params.find((val) => val.split('-').length === 2)
+
             // If current year
             if (customYear) return customYear.replace(/[@-]/g, '')
+
+            // If range year
+            if (rangeYear) return rangeYear
 
             // If from year
             if (fromYear) {
@@ -135,8 +205,8 @@ app.get('*', (req, res) => {
         const format = params.find((val) => val === 'license.html') ? 'html' : params.find((val) => val === 'license.txt') ? 'txt' : user.format || 'html'
 
         const args = {
-            info: `${year} ${name}`,
-            theme,
+            info: `${year} ${name || '&lt;copyright holders&gt;'}`,
+            theme: theme || 'default',
             gravatar,
         }
 

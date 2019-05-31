@@ -10,4 +10,7 @@ before_install:    npm i -g yarn
 
 install:           yarn install
 
-script:            yarn test
+script:
+    - yarn test
+    - yarn lint
+    - yarn build

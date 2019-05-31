@@ -2,21 +2,23 @@
     "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
     "name": "mit-licence",
     "description": "Hosted MIT License with details controlled through this repo",
+    "private": true,
     "version": "1.0.0",
     "repository": {
         "type": "git",
         "url": "git@github.com:remy/mit-license.git"
     },
     "scripts": {
+        "build": "tsc server.ts",
         "start": "ts-node-dev --respawn --transpileOnly --no-notify server.ts",
-        "serve": "tsc server.ts && node server.js",
+        "serve": "yarn build && node server.js",
         "test": "node test.js",
-        "lint": "eslint server.ts util.ts test.js --color --fix"
+        "lint": "eslint server.ts util.ts test.js --color"
     },
     "bugs": {
         "url": "https://github.com/remy/mit-license/issues"
     },
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "MIT",
     "dependencies": {
         "@octokit/rest": "^16.27.3",
         "btoa": "^1.2.1",
@@ -25,6 +27,7 @@
         "ejs": "^2.6.1",
         "express": "^4.17.1",
         "express-minify": "^1.0.0",
+        "git-pull": "^0.1.0",
         "humanize-list": "^1.0.1",
         "md5": "^2.2.1",
         "node-html-parser": "^1.1.15",
@@ -34,8 +37,10 @@
         "typescript": "^3.4.5"
     },
     "devDependencies": {
+        "@types/btoa": "^1.2.3",
         "@types/compression": "^0.0.36",
         "@types/css": "^0.0.31",
+        "@types/ejs": "^2.6.3",
         "@types/express": "^4.16.1",
         "@types/express-minify": "^0.1.34",
         "@types/md5": "^2.1.33",

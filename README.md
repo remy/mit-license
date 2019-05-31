@@ -40,7 +40,6 @@ Available fields:
 -   email
 -   format
 -   gravatar
--   version
 -   theme
 
 ### copyright
@@ -59,13 +58,29 @@ You can also use an array to hold multiple copyright holders:
 
 ```json
 {
-  "copyright": ["Remy Sharp (http://remysharp.com)", "Richie Bendall (https://richienb.github.io)"]
+  "copyright": ["Remy Sharp", "Richie Bendall"]
 }
 ```
 
 Which will be formatted as:
 
-    Remy Sharp (http://remysharp.com) and Richie Bendall (https://richienb.github.io)
+    Remy Sharp and Richie Bendall
+
+If you additionally want to include a URL and email with each copyright holder, use objects in the array:
+
+```json
+{
+    "copyright": [{
+        "name": "Remy Sharp, https://remysharp.com",
+        "url": "https://remysharp.com",
+        "email": "remy@remysharp.com"
+    }, {
+        "name": "Richie Bendall, https://www.richie-bendall.ml",
+        "url": "https://www.richie-bendall.ml",
+        "email": "richiebendall@gmail.com"
+    }]
+}
+```
 
 ### url
 
@@ -116,28 +131,6 @@ And if you want to show your gravatar, just add the `gravatar` boolean property:
 ```
 
 Note that the gravatar requires the email property. You also need to check the compatibility of the chosen theme. Currently, only the default theme supports Gravatar.
-
-### License version targeting
-
-License version targeting allows you to link your MIT license to a specific revision in this project - therefore fixing it permanently to a specific license text.
-
-Though I don't expect the license text to change ever, this is just some extra assurance for you.
-
-Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be specified on the URL (in your permalink) or in the JSON file.
-
-For example: <http://rem.mit-license.org/a526bf7ad1> (make sure to view-source) shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org) - the older version didn't have the new themes).
-
-This can also be targeted in my JSON file:
-
-```json
-{
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
-  "version": "a526rbf7"
-}
-```
-
-Note that if no version is supplied, the latest copy of the LICENSE.html will be displayed with your information included.
 
 ### Themes
 
@@ -198,13 +191,6 @@ The following types of requests can be made to this project:
     the json file (currently none specified on `rem`)
 -   <http://rem.mit-license.org/license.html> HTML
 -   <http://rem.mit-license.org/license.txt> Text
--   <http://rem.mit-license.org/a526bf7ad1> a526bf7ad1 version, HTML, or the
-    default format specified in the json file (again, none specified for
-    `rem` so defaults to HTML)
--   <http://rem.mit-license.org/a526bf7ad1/license.html> a526bf7ad1 version,
-    HTML
--   <http://rem.mit-license.org/a526bf7ad1/license.txt> a526bf7ad1 version,
-    text
 
 The url also supports including a start year:
 
@@ -212,7 +198,7 @@ The url also supports including a start year:
     show a license year range of 2009-2016 (2016 being the current year)
 -   [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/)
     allows me to force the year range
--   <http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt> a526bf7ad1 version, with year range of 2009-2010 in plain text
+-   <http://rem.mit-license.org/2009-2010/license.txt> year range of 2009-2010 in plain text
 
 Finally, the url also supports pinning the year
 
