@@ -68,7 +68,11 @@ app.post('/', (req, res) => {
         repo: "mit-license",
         path: `users/${params[0]}.json`,
         message: `Automated creation of user ${params[0]}.`,
-        content: btoa()
+        content: btoa(),
+        committer: {
+            name: "MIT License Bot",
+            email: "remy@leftlogic.com"
+        }
     })
 })
 

@@ -131,7 +131,6 @@ footer a:visited {
     position: absolute;
     right: 0;
     border: 3px solid #ccc;
-    // top: 4.5em;
     z-index: 1;
     border-radius: 10px;
 }
