@@ -19,10 +19,11 @@ import postcssMiddleware = require('postcss-middleware')
 
 // License viewing
 import * as ejs from 'ejs'
-import {yearNow, stripTags, trimArray} from './util'
+import { yearNow, stripTags, trimArray } from './util'
 import * as HTML from 'node-html-parser'
 import md5 = require('md5');
 import humanizeList from 'humanize-list'
+import dayjs from 'dayjs'
 
 // License creation
 import btoa = require('btoa')
@@ -34,6 +35,26 @@ const github = require('@octokit/rest')({
     // User agent with version from package.json
     userAgent: `mit-license v${require('./package.json').version}`,
 })
+
+// Helpers
+const yearNow = dayjs().year()
+const stripTags = (val: any) => val.replace(/<(?:.|\n)*?>/gm, '')
+function trimArray(arr: any[]) {
+    // Example: trimArray(['', '', 'abc', '', 'abc', 'abc', '', '']) -> ["abc", "", "abc", "abc"]
+    const handleVal = (val: any) => {
+        if (val !== '') {
+            valPassed = true
+            return val
+        }
+        else if (!valPassed) return null
+        else return val
+    }
+    let valPassed = false
+    arr = arr.map(handleVal)
+    valPassed = false
+    arr = arr.reverse().map(handleVal)
+    return arr.reverse().filter((val) => val !== null)
+}
 
 // Prepare application
 const app = express()
@@ -47,7 +68,7 @@ app.set('view engine', 'ejs')
 app.use('/robots.txt', express.static('robots.txt'))
 app.use('/users', express.static('users'))
 app.use('/themes', postcssMiddleware({
-    plugins: [require('postcss-preset-env')({browsers: '>= 0%', stage: 0})],
+    plugins: [require('postcss-preset-env')({ browsers: '>= 0%', stage: 0 })],
     src: (req) => path.join(__dirname, 'themes', req.path),
 }))
 app.use('/themes', express.static('themes'))
@@ -61,7 +82,7 @@ app.use((_req, res, next) => {
 })
 
 // Parse URL-encoded bodies (as sent by HTML forms)
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json())
@@ -71,26 +92,59 @@ app.post('/', (req, res) => {
     // Get differnet parts of hostname (example: remy.mit-license.org -> ['remy', 'mit-license', 'org'])
     const params = req.hostname.split('.')
 
+    const conf = (() => {
+        // If query parameters provided
+        if (Object.keys(req.query).length > 0) return req.query
+
+        // If the data parsed as {'{data: "value"}': ''}
+        const keys = Object.keys(req.body)
+        if (keys.length === 1 && !Object.values(req.body)[0]) return JSON.parse(keys[0])
+
+        // Fallback
+        return req.body
+    })()
+
     // If there isn't enough part of the hostname
     if (params.length < 2) res.status(400).send('Please specify a subdomain in the URL.')
 
-    github.repos.createFile({
-        owner: 'remy',
-        repo: 'mit-license',
-        path: `users/${params[0]}.json`,
-        message: `Automated creation of user ${params[0]}.`,
-        content: btoa(''),
-        committer: {
-            name: 'MIT License Bot',
-            email: 'remy@leftlogic.com',
-        },
-    })
+    // Extract the name from the URL
+    const name = params[0]
 
-    gitpull(__dirname, (err: any, _consoleOutput: any) => {
-        if (err) {
-            res.status(502).end()
+    // Check if the user file exists in the users directory
+    fs.access(path.join('users', `${name}.json`), fs.constants.F_OK, (err) => {
+        if (!err) {
+            // File already exists
+            res.status(409).send('User already exists - to update values, please send a pull request on https://github.com/remy/mit-license')
         } else {
-            res.status(201).end()
+            try {
+                // File doesn't exist
+
+                // If copyright property and key doesn't exist
+                if (!conf.copyright) res.status(400).send(`JSON requires "copyright" property and value`)
+                else {
+                    github.repos.createFile({
+                        owner: 'remy',
+                        repo: 'mit-license',
+                        path: `users/${params[0]}.json`,
+                        message: `Automated creation of user ${params[0]}.`,
+                        content: btoa(JSON.stringify(conf, null, 4)),
+                        committer: {
+                            name: 'MIT License Bot',
+                            email: 'remy@leftlogic.com',
+                        },
+                    })
+
+                    gitpull(__dirname, (err: any, _consoleOutput: any) => {
+                        if (err) {
+                            res.status(502).send(`Unable to create new user - please send a pull request on https://github.com/remy/mit-license`)
+                        } else {
+                            res.status(201).send(`MIT license page created: https://${req.hostname}`)
+                        }
+                    })
+                }
+            } catch (e) {
+                res.status(502).send(`Unable to create new user - please send a pull request on https://github.com/remy/mit-license`)
+            }
         }
     })
 })

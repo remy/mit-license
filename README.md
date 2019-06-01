@@ -192,15 +192,22 @@ The following types of requests can be made to this project:
 -   <http://rem.mit-license.org/license.html> HTML
 -   <http://rem.mit-license.org/license.txt> Text
 
-The url also supports including a start year:
+The URL also supports including a start year:
 
 -   <http://rem.mit-license.org/2009/> will
     show a license year range of 2009-2016 (2016 being the current year)
--   [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/)
+-   <http://rem.mit-license.org/2009-2010>
     allows me to force the year range
 -   <http://rem.mit-license.org/2009-2010/license.txt> year range of 2009-2010 in plain text
 
-Finally, the url also supports pinning the year
+You can also specify either the `MIT` or `ISC` license in the URL:
+
+-   <http://rem.mit-license.org/+MIT> will
+    show the MIT License (default)
+-   <http://rem.mit-license.org/+ISC>
+    shows the ISC license instead
+
+Finally, the URL also supports pinning the year
 
 -   <http://rem.mit-license.org/@2009>
     this is useful for when your software copyright should expire ([as discussed here](https://github.com/remy/mit-license/issues/771))
