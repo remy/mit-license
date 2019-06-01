@@ -25,6 +25,18 @@ You can send a full JSON file to the API, not _just_ the copyright, so this work
 curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
 ```
 
+Whilst the command above sends the data as a string which will later be parsed, you can explicitly specify a JSON `Content-Type`:
+
+```bash
+curl -H 'Content-Type: application/json' -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
+```
+
+You can also encode the data as URL query parameters like so:
+
+```bash
+curl -X POST "https://rem.mit-license.org/?copyright=Remy%20Sharp&url=http%3A%2F%2Fremysharp.com&email=me%40mysite.com&format=txt"
+```
+
 If there's any problems in the automated creation, send me a pull request and it'll go live soon after.
 
 Equally if you need to update the user file to include more details that you didn't initially include (extra fields in the next section) you will need to send a pull request on that `user.json` file via GitHub.
