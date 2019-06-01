@@ -2,12 +2,12 @@
 
 I always forget to add an MIT-license.txt file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
-Why keep this to myself, there's two ways to create your _own_ MIT license page:
+Why keep this to myself, there are two ways to create your _own_ MIT license page:
 
 1.  Make a request to the API (details below)
 2.  Fork this project and send a pull request
 
-Now I can always include <http://rem.mit-license.org> in all my projects which links `rem` (the cname) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
+Now I can always include <http://rem.mit-license.org> in all my projects which links `rem` (the CNAME) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
 
 ## Requesting your own MIT license page
 
@@ -17,7 +17,7 @@ You can fork this project, send me a pull request and wait for me to pull (which
 curl -d'{ "copyright": "Remy Sharp" }' https://rem.mit-license.org
 ```
 
-If the `rem` user isn't taken already, then this will create the new user file on the fly and the url will be immediately available.
+If the `rem` user isn't taken already, then this will create the new user file on the fly and the URL will be immediately available.
 
 You can send a full JSON file to the API, not _just_ the copyright, so this works too:
 
@@ -37,18 +37,18 @@ You can also encode the data as URL query parameters like so:
 curl -X POST "https://rem.mit-license.org/?copyright=Remy%20Sharp&url=http%3A%2F%2Fremysharp.com&email=me%40mysite.com&format=txt"
 ```
 
-If there's any problems in the automated creation, send me a pull request and it'll go live soon after.
+If there are any problems in the automated creation, send me a pull request and it'll go live soon after.
 
-Equally if you need to update the user file to include more details that you didn't initially include (extra fields in the next section) you will need to send a pull request on that `user.json` file via GitHub.
+Equally, if you need to update the user file to include more details that you didn't initially include (extra fields in the next section) you will need to send a pull request on that `user.json` file via GitHub.
 
 ## The user.json file
 
-The `users` directory contains a list of files, each representing a host on mit-license.org. The minimum requirement for the JSON is that is contains a `copyright` field - everything else is optional. Remember to ensure the `user.json` file is [valid JSON](http://jsonlint.com/).
+The `users` directory contains a list of files, each representing a host on mit-license.org. The minimum requirement for the JSON is that it contains a `copyright` field - everything else is optional. Remember to ensure the `user.json` file is [valid JSON](http://jsonlint.com/).
 
 Available fields:
 
 -   copyright (required)
--   url
+-   URL
 -   email
 -   format
 -   gravatar
@@ -64,7 +64,7 @@ Create a new file and give it the name of the CNAME you want (in my case it's `r
 }
 ```
 
-Means I can now link to: <http://rem.mit-license.org> and it will show my license name (note that the date will always show the current year).
+Means I can now link to <http://rem.mit-license.org> and it will show my license name (note that the date will always show the current year).
 
 You can also use an array to hold multiple copyright holders:
 
@@ -96,7 +96,7 @@ If you additionally want to include a URL and email with each copyright holder, 
 
 ### url
 
-In addition to the `copyright` property, if you want to make a link from the copyright text, you can include a `url` property:
+In addition to the `copyright` property, if you want to make a link from the copyright text, you can include a `URL` property:
 
 ```json
 {
@@ -242,7 +242,7 @@ Development contributions from:
 
 I host the domain with namecheap.com and yearly renewal is $9.69 per year. If you want to contribute a year, send me a message and I'll add the years on.
 
-Of course I'll do my best to continue running the domain and hosting, but this is your chance to contribute to the community project.
+Of course, I'll do my best to continue running the domain and hosting, but this is your chance to contribute to the community project.
 
 Domain contributions:
 
@@ -262,7 +262,7 @@ _Please note that the whois says 2021 as you can only have 10 active registered 
 
 ### 2. Hosting
 
-For the first 5 years mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a monthly fee. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting is currently costs $7 per month, if you want to donate in months or years, it's gratefully received ❤
+For the first 5 years, mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a monthly fee. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting currently costs $7 per month if you want to donate in months or years, it's gratefully received ❤
 
 Hosting contributions:
 
