@@ -53,6 +53,7 @@ Available fields:
 -   format
 -   gravatar
 -   theme
+-   license
 
 ### copyright
 
@@ -143,6 +144,22 @@ And if you want to show your gravatar, just add the `gravatar` boolean property:
 ```
 
 Note that the gravatar requires the email property. You also need to check the compatibility of the chosen theme. Currently, only the default theme supports Gravatar.
+
+### license
+
+By default the license display is set to the MIT License. The licenses you can specify as default are as follows:
+
+- MIT
+- ISC
+
+To set the default license, set the `license` property:
+
+```json
+{
+  "copyright": "Remy Sharp, http://remysharp.com",
+  "license": "ISC"
+}
+```
 
 ### Themes
 
