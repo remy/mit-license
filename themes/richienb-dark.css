@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400");
 
 /*! Richienb MIT License Theme
  * * GITHUB : https://github.com/Richienb/mit-license-richienb-theme
@@ -13,7 +13,7 @@ html {
 }
 
 html ::selection {
-    background-color: #3f51b5;
+    background-color: #c5cae9;
     color: black;
 }
 
@@ -52,7 +52,7 @@ html::-webkit-scrollbar-thumb:active {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-article {
+html article {
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
     background-color: #212121;
     color: white;
@@ -62,7 +62,7 @@ article {
     min-height: calc(100vh - 10rem);
 }
 
-article::before {
+html article::before {
     content: "";
     top: 0;
     left: 0;
@@ -73,15 +73,18 @@ article::before {
     position: absolute;
 }
 
-article h1 {
+html article #gravatar {
+    float: right;
+    border-radius: 50%;
+    margin-top: 1.7em;
+    margin-right: 1em;
+}
+
+html article h1 {
     font-size: 3.75rem;
     line-height: 3.75rem;
     font-weight: 300;
     letter-spacing: -0.0083333333em;
-}
-
-footer {
-    text-align: center;
 }
 
 p {
@@ -93,6 +96,10 @@ p {
 
 a {
     color: #5c6bc0;
+}
+
+footer {
+    text-align: center;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
