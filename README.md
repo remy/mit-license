@@ -1,13 +1,13 @@
 # A permalink for your MIT License ![Travis CI Status](https://img.shields.io/travis/remy/mit-license/master.svg?style=for-the-badge)
 
-I always forget to add an MIT-license.txt file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
+I always forget to add an `MIT-license.txt` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
 Why keep this to myself, there are two ways to create your _own_ MIT license page:
 
 1.  Make a request to the API (details below)
 2.  Fork this project and send a pull request
 
-Now I can always include <http://rem.mit-license.org> in all my projects which links `rem` (the CNAME) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
+Now I can always include <https://rem.mit-license.org> in all my projects which links `rem` (the CNAME) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
 
 ## Requesting your own MIT license page
 
@@ -22,13 +22,13 @@ If the `rem` user isn't taken already, then this will create the new user file o
 You can send a full JSON file to the API, not _just_ the copyright, so this works too:
 
 ```bash
-curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
+curl -d'{ "copyright": "Remy Sharp", "url": "https://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
 ```
 
 Whilst the command above sends the data as a string which will later be parsed, you can explicitly specify a JSON `Content-Type`:
 
 ```bash
-curl -H 'Content-Type: application/json' -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
+curl -H 'Content-Type: application/json' -d'{ "copyright": "Remy Sharp", "url": "https://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
 ```
 
 You can also encode the data as URL query parameters like so:
@@ -43,7 +43,7 @@ Equally, if you need to update the user file to include more details that you di
 
 ## The user.json file
 
-The `users` directory contains a list of files, each representing a host on mit-license.org. The minimum requirement for the JSON is that it contains a `copyright` field - everything else is optional. Remember to ensure the `user.json` file is [valid JSON](http://jsonlint.com/).
+The `users` directory contains a list of files, each representing a host on mit-license.org. The minimum requirement for the JSON is that it contains a `copyright` field - everything else is optional. Remember to ensure the `user.json` file is [valid JSON](https://jsonlint.com/).
 
 Available fields:
 
@@ -61,11 +61,11 @@ Create a new file and give it the name of the CNAME you want (in my case it's `r
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com"
+  "copyright": "Remy Sharp, https://remysharp.com"
 }
 ```
 
-Means I can now link to <http://rem.mit-license.org> and it will show my license name (note that the date will always show the current year).
+Means I can now link to <https://rem.mit-license.org> and it will show my license name (note that the date will always show the current year).
 
 You can also use an array to hold multiple copyright holders:
 
@@ -101,8 +101,8 @@ In addition to the `copyright` property, if you want to make a link from the cop
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com"
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com"
 }
 ```
 
@@ -112,8 +112,8 @@ You can also include a link to your email which is displayed after the copyright
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "email": "me@mysite.com"
 }
 ```
@@ -124,8 +124,8 @@ And if you want your license to appear as plain text, just add the `format` prop
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "format": "txt"
 }
 ```
@@ -136,8 +136,8 @@ And if you want to show your gravatar, just add the `gravatar` boolean property:
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "email": "me@mysite.com",
   "gravatar": true
 }
@@ -149,14 +149,14 @@ Note that the gravatar requires the email property. You also need to check the c
 
 By default the license display is set to the MIT License. The licenses you can specify as default are as follows:
 
-- MIT
-- ISC
+-   MIT
+-   ISC
 
 To set the default license, set the `license` property:
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
   "license": "ISC"
 }
 ```
@@ -169,44 +169,44 @@ To use a theme, add the `theme` property to your `user.json` file, for example:
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "theme": "flesch"
 }
 ```
 
 Current available themes:
 
--   default - [preview](http://mit-license.org) (by
+-   default - [preview](https://mit-license.org) (by
     [@remy](https://github.com/remy),
     [@raphaelbastide](https://github.com/raphaelbastide) &
     [@evertton](https://github.com/evertton))
--   flesch - [preview](http://jsbin.com/ufefid/3) (by
+-   flesch - [preview](https://jsbin.com/ufefid/3) (by
     [@flesch](https://github.com/flesch))
--   eula-modern - [preview](http://jsbin.com/ExiVida/1/) (by [@sauerlo](https://github.com/lsauer))
--   afterdark - [preview](http://jsbin.com/ivufon/4) (by [@rmartindotco](https://github.com/rmartindotco))
--   orange - [preview](http://jsbin.com/uzubos/2) (by [@kirbylover4000](https://github.com/kirbylover4000))
--   plaintext - [preview](http://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
--   double-windsor - [preview](http://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
--   cherry - [preview](http://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
--   white cherry - [preview](http://jsbin.com/uzezas/2/) (by [@mustafa-x](https://github.com/mustafa-x))
--   blackwood - [preview](http://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
--   hipster-gray - [preview](http://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
--   xtansia - [preview](http://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
--   magic-mint - [preview](http://jsbin.com/obibot/1/) (by [@ekhager](https://github.com/ekhager))
--   default-dark - [preview](http://jsbin.com/uhagaw/10) (by
+-   eula-modern - [preview](https://jsbin.com/ExiVida/1/) (by [@sauerlo](https://github.com/lsauer))
+-   afterdark - [preview](https://jsbin.com/ivufon/4) (by [@rmartindotco](https://github.com/rmartindotco))
+-   orange - [preview](https://jsbin.com/uzubos/2) (by [@kirbylover4000](https://github.com/kirbylover4000))
+-   plaintext - [preview](https://jsbin.com/uzubos/4) (by [@barberboy](https://github.com/barberboy))
+-   double-windsor - [preview](https://jsbin.com/uzubos/5/) (by [@desandro](https://github.com))
+-   cherry - [preview](https://jsbin.com/ufefid/5/) (by [@mustafa-x](https://github.com/mustafa-x))
+-   white cherry - [preview](https://jsbin.com/uzezas/2/) (by [@mustafa-x](https://github.com/mustafa-x))
+-   blackwood - [preview](https://jsbin.com/uzezas/) (by [@mustafa-x](https://github.com/mustafa-x))
+-   hipster-gray - [preview](https://jsbin.com/ivufon/10) (by [@noformnocontent](https://github.com/noformnocontent))
+-   xtansia - [preview](https://jsbin.com/ereren/1/) (by [@tomass1996](https://github.com/tomass1996))
+-   magic-mint - [preview](https://jsbin.com/obibot/1/) (by [@ekhager](https://github.com/ekhager))
+-   default-dark - [preview](https://jsbin.com/uhagaw/10) (by
     [@remy](https://github.com/remy),
     [@raphaelbastide](https://github.com/raphaelbastide) &
     [@evertton](https://github.com/evertton))
--   black-beauty - [preview](http://jsbin.com/dovivu) (by [@evertton](https://github.com/evertton))
--   silver-style - [preview](http://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
--   friendly - [preview](http://jsbin.com/hilula) (by [@evertton](https://github.com/evertton))
--   opensans - [preview](http://jsbin.com/UfepUvah) (by [@pburtchaell](https://github.com/pburtchaell))
--   solarized - [preview](http://jsbin.com/yimax/1) (by [@anmoljagetia](https://github.com/anmoljagetia))
--   willpower - [preview](http://jsbin.com/piheyicoyi/1) (by [@willpowerart](https://github.com/willpowerart))
--   rokkitt - [preview](http://jsbin.com/zudayiqeco/1) (by [@luizpicolo](https://github.com/luizpicolo))
--   mitserrat - [preview](http://jsbin.com/xeqekutuwe/1) (by [@WouterJanson](https://github.com/WouterJanson))
--   material - [preview](http://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). _Available colours: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `material-deep-orange`._
+-   black-beauty - [preview](https://jsbin.com/dovivu) (by [@evertton](https://github.com/evertton))
+-   silver-style - [preview](https://jsbin.com/erezijI/2) (by [@dev-dipesh](https://github.com/Dev-Dipesh))
+-   friendly - [preview](https://jsbin.com/hilula) (by [@evertton](https://github.com/evertton))
+-   opensans - [preview](https://jsbin.com/UfepUvah) (by [@pburtchaell](https://github.com/pburtchaell))
+-   solarized - [preview](https://jsbin.com/yimax/1) (by [@anmoljagetia](https://github.com/anmoljagetia))
+-   willpower - [preview](https://jsbin.com/piheyicoyi/1) (by [@willpowerart](https://github.com/willpowerart))
+-   rokkitt - [preview](https://jsbin.com/zudayiqeco/1) (by [@luizpicolo](https://github.com/luizpicolo))
+-   mitserrat - [preview](https://jsbin.com/xeqekutuwe/1) (by [@WouterJanson](https://github.com/WouterJanson))
+-   material - [preview](https://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). _Available colours: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `material-deep-orange`._
 -   hmt-blue - [preview](https://jsbin.com/naqorar/) (by [@J2TeaM](https://github.com/J2TeaM))
 -   dusk - [preview](https://output.jsbin.com/giqivoh) (by [@georapbox](https://github.com/georapbox))
 -   8bits - [preview](https://matricali.github.io/mit-license-8bits-theme/) (by [@matricali](https://github.com/matricali)). _Available colours: monochrome, monochrome-white, monochrome-blue-white, monochrome-green, monochrome-amber. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`._
@@ -216,29 +216,29 @@ Current available themes:
 
 The following types of requests can be made to this project:
 
--   <http://rem.mit-license.org/> HTML, or the default format specified in
+-   <https://rem.mit-license.org/> HTML, or the default format specified in
     the json file (currently none specified on `rem`)
--   <http://rem.mit-license.org/license.html> HTML
--   <http://rem.mit-license.org/license.txt> Text
+-   <https://rem.mit-license.org/license.html> HTML
+-   <https://rem.mit-license.org/license.txt> Text
 
 The URL also supports including a start year:
 
--   <http://rem.mit-license.org/2009/> will
+-   <https://rem.mit-license.org/2009/> will
     show a license year range of 2009-2016 (2016 being the current year)
--   <http://rem.mit-license.org/2009-2010>
+-   <https://rem.mit-license.org/2009-2010>
     allows me to force the year range
--   <http://rem.mit-license.org/2009-2010/license.txt> year range of 2009-2010 in plain text
+-   <https://rem.mit-license.org/2009-2010/license.txt> year range of 2009-2010 in plain text
 
 You can also specify either the `MIT` or `ISC` license in the URL:
 
--   <http://rem.mit-license.org/+MIT> will
+-   <https://rem.mit-license.org/+MIT> will
     show the MIT License (default)
--   <http://rem.mit-license.org/+ISC>
+-   <https://rem.mit-license.org/+ISC>
     shows the ISC license instead
 
 Finally, the URL also supports pinning the year
 
--   <http://rem.mit-license.org/@2009>
+-   <https://rem.mit-license.org/@2009>
     this is useful for when your software copyright should expire ([as discussed here](https://github.com/remy/mit-license/issues/771))
 
 ## Ways to contribute
@@ -252,6 +252,7 @@ Development contributions from:
 -   [georgebashi](https://github.com/georgebashi)
 -   [mathiasbynens](https://github.com/mathiasbynens)
 -   [evertton](https://github.com/evertton)
+-   [Richienb](https://github.com/Richienb)
 
 **SSL and wildcard DNS is supported by [CloudFlare](https://www.cloudflare.com) - thank you 🙏💙**
 
@@ -311,4 +312,4 @@ I'm a developer, I seem only capable of _grey_! If you're a designer and want to
 
 And of course:
 
-MIT: <http://rem.mit-license.org>
+MIT: <https://rem.mit-license.org>
