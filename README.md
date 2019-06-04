@@ -177,8 +177,8 @@ Current available themes:
 * dusk - [preview](https://output.jsbin.com/giqivoh) (by [@georapbox](https://github.com/georapbox))
 * 8bits - [preview](https://matricali.github.io/mit-license-8bits-theme/) (by [@matricali](https://github.com/matricali)). *Available colours: monochrome, monochrome-white, monochrome-blue-white, monochrome-green, monochrome-amber. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`.*
 * hacker - [preview](https://tommy.mit-license.org/) (by [@TommyPujol06](https://github.com/TommyPujol06))
-* richienb - [preview](https://richienb.github.io/mit-license-richienb-theme/demo)
-* richienb-dark - [preview](https://richienb.github.io/mit-license-richienb-theme/demo-dark)
+* richienb - [preview](https://richienb.github.io/mit-license-richienb-theme/demo) (by [@Richienb](https://github.com/Richienb))
+* richienb-dark - [preview](https://richienb.github.io/mit-license-richienb-theme/demo-dark) (by [@Richienb](https://github.com/Richienb))
 
 ## Formats & URLs
 
