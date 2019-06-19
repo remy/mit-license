@@ -1,26 +1,18 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true
-    },
-    "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
-    "extends": "google",
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "warnOnUnsupportedTypeScriptVersion": false
-    },
-    "rules": {
-        "indent": ["error", 4],
-        "semi": ["error", "never"],
-        "brace-style": 0,
-        "max-len": 0,
-        "require-jsdoc": "off"
-    }
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": ["node"],
+  "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "warnOnUnsupportedTypeScriptVersion": false
+  },
+  "rules": {
+    "node/no-deprecated-api": 0,
+    "no-console": 0
+  }
 }
