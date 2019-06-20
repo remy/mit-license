@@ -18,7 +18,7 @@ function getCopyrightHTML(user, plain) {
   if (user.email) {
     html += ` &lt;<a href="mailto:${stripTags(user.email)}">${
       plain ? user.email : escapeTags(user.email)
-    }</a>&gt;`;
+      }</a>&gt;`;
   }
 
   return html;
@@ -58,7 +58,7 @@ module.exports = (req, res) => {
   const year = options.pinnedYear
     ? options.pinnedYear
     : [options.startYear, options.endYear].filter(Boolean).join('-');
-  const license = (user.license || 'MIT').toLowerCase();
+  const license = (user.license || 'MIT').toUpperCase();
   const format = options.format || user.format || 'html';
 
   const args = {

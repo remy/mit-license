@@ -13,4 +13,3 @@ install:           yarn install
 script:
     - yarn test
     - yarn lint
-    - yarn build

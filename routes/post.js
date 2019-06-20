@@ -8,7 +8,7 @@ var github = require('@octokit/rest')({
   // GitHub personal access token
   auth: process.env.github_token,
   // User agent with version from package.json
-  userAgent: 'mit-license v' + require(__dirname + '/../package.json').version,
+  userAgent: 'mit-license v' + require(path.join(__dirname, "..", "package.json")).version,
 });
 
 function getUserData({ query, body }) {
@@ -75,12 +75,14 @@ module.exports = async (req, res) => {
   }
 
   try {
+    const fileContent = JSON.stringify(userData, 0, 2)
+
     const success = await github.repos.createFile({
       owner: 'remy',
       repo: 'mit-license',
       path: `users/${id}.json`,
       message: `Automated creation of user ${id}.`,
-      content: btoa(JSON.stringify(userData, 0, 2)),
+      content: btoa(fileContent),
       committer: {
         name: 'MIT License Bot',
         email: 'remy@leftlogic.com',
@@ -89,8 +91,8 @@ module.exports = async (req, res) => {
 
     // TODO copy the user.json into the users/ directory, it'll work
     writeFile(
-      `${__dirname}/../users/${id}.json`,
-      JSON.stringify(userData, 0, 2)
+      path.join(__dirname, "..", "users", `${id}.json`),
+      fileContent
     );
 
     console.log(success);

@@ -1,5 +1,3 @@
-#!/bin/env node
-
 const path = require('path');
 const fs = require('fs');
 const CSS = require('css');

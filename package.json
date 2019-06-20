@@ -13,10 +13,10 @@
     "node": ">=10.x.x"
   },
   "scripts": {
-    "start": "node .",
+    "start": "nodemon .",
     "serve": "node server.js",
     "test": "node test.js",
-    "lint": "eslint server.js middleware/*.js routes/*.js test.js --color"
+    "lint": "eslint server.js middleware/*.js routes/*.js --color"
   },
   "bugs": {
     "url": "https://github.com/remy/mit-license/issues"
@@ -44,7 +44,8 @@
     "@types/node": "^12.0.8",
     "css": "^2.2.4",
     "eslint": "^5.16.0",
-    "eslint-plugin-node": "^9.1.0"
+    "eslint-plugin-node": "^9.1.0",
+    "nodemon": "^1.19.1"
   },
   "resolutions": {
     "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^2.3.1",
