@@ -13,7 +13,8 @@
     "node": ">=10.x.x"
   },
   "scripts": {
-    "start": "nodemon .",
+    "start": "node .",
+    "dev": "nodemon .",
     "serve": "node server.js",
     "test": "node test.js",
     "lint": "eslint server.js middleware/*.js routes/*.js --color"
