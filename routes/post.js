@@ -12,6 +12,7 @@ var github = require('@octokit/rest')({
   // User agent with version from package.json
   userAgent: 'mit-license v' + require(path.join(__dirname, "..", "package.json")).version,
 });
+const { validDomainId } = require('./utils');
 
 function getUserData({
   query,
@@ -25,8 +26,6 @@ function getUserData({
   // Fallback
   return body;
 }
-
-const validDomain = s => /^[\w-_]+$/.test(s);
 
 // HTTP POST API
 module.exports = async (req, res) => {
@@ -48,7 +47,7 @@ module.exports = async (req, res) => {
   // Extract the name from the URL
   const id = params[0];
 
-  if (!validDomain(id)) {
+  if (!validDomainId(id)) {
     // Return a vague error intentionally
     res
       .status(400)
@@ -59,47 +58,53 @@ module.exports = async (req, res) => {
     return;
   }
 
-  // Check if the user file exists in the users directory
-  access(path.join(__dirname, '..', 'users', `${id}.json`))
-    .then(() => {
-      res
+  try {
+    // Check if the user file exists in the users directory
+    await access(path.join(__dirname, '..', 'users', `${id}.json`));
+    res
         .status(409)
         .send(
           'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'
         )
+    return;
+  } catch ({code, message}) {
+    if (code !== "ENOENT") {
+      res.code(500).send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
+      return;
+    }
+  }
+
+  // File doesn't exist
+  // If copyright property and key doesn't exist
+  if (!userData.copyright) {
+    res.status(400).send('JSON requires "copyright" property and value');
+    return;
+  }
+
+  try {
+    const fileContent = JSON.stringify(userData, 0, 2)
+
+    await github.repos.createFile({
+      owner: 'remy',
+      repo: 'mit-license',
+      path: `users/${id}.json`,
+      message: `Automated creation of user ${id}.`,
+      content: btoa(fileContent),
+      committer: {
+        name: 'MIT License Bot',
+        email: 'remy@leftlogic.com',
+      },
     })
-    .catch(({code, message}) => {
-      if (code !== 'ENOENT') {
-        res.code(500).send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
-        return;
-      }
 
-      // File doesn't exist
-      // If copyright property and key doesn't exist
-      if (!userData.copyright) {
-        res.status(400).send('JSON requires "copyright" property and value');
-        return;
-      }
+    writeFile(
+      path.join(__dirname, "..", "users", `${id}.json`),
+      fileContent
+    );
 
-      const fileContent = JSON.stringify(userData, 0, 2)
+    res.status(201).send(`MIT license page created: https://${hostname}`);
+  } catch(err) {
+    res.status(500).send(`Unable to create new user - please send a pull request on https://github.com/remy/mit-license`)
+  }
 
-      github.repos.createFile({
-          owner: 'remy',
-          repo: 'mit-license',
-          path: `users/${id}.json`,
-          message: `Automated creation of user ${id}.`,
-          content: btoa(fileContent),
-          committer: {
-            name: 'MIT License Bot',
-            email: 'remy@leftlogic.com',
-          },
-      })
-        .then(() => writeFile(
-            path.join(__dirname, "..", "users", `${id}.json`),
-            fileContent
-          )
-          .then(() => res.status(201).send(`MIT license page created: https://${hostname}`))
-          .catch(() => res.status(500).send('Unable to create new user - please send a pull request on https://github.com/remy/mit-license'))
-        )
-    })
+  next();
 };

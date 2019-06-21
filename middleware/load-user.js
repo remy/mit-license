@@ -10,17 +10,21 @@ module.exports = async (req, res, next) => {
     return next();
   }
 
-  // otherwise load up the user json file
+  // Otherwise load up the user json file
   res.locals.user = {
     copyright: '<copyright holders>',
   };
-  readFile(
-    path.join(__dirname, '..', 'users', `${id}.json`),
-    'utf8'
-  )
-    .then(data => res.locals.user = JSON.parse(data))
-    .catch(({code, message}) => {
-      if (code !== 'ENOENT') res.code(500).send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
-    })
-    .finally(() => next())
+
+  try {
+    const data = await readFile(
+      path.join(__dirname, '..', 'users', `${id}.json`),
+      'utf8'
+    );
+    res.locals.user = JSON.parse(data);
+  } catch ({code, message}) {
+    res.code(500).send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
+    return;
+  }
+
+  next();
 };

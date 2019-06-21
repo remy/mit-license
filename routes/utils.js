@@ -5,3 +5,4 @@ const tags = {
 };
 exports.escapeTags = str => (str || '').replace(/[<>&]/g, m => tags[m]);
 exports.stripTags = str => (str || '').replace(/<(?:.|\n)*?>/gm, '');
+exports.validDomainId = s => /^[\w-_]+$/.test(s);

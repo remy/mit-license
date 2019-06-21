@@ -1,58 +1,66 @@
 const path = require('path');
 const fs = require('fs');
 const CSS = require('css');
+const {
+  validDomainId
+} = require('./routes/utils');
+const {
+  promisify
+} = require('util');
+const readFile = promisify(fs.readFile);
+const readdir = promisify(fs.readdir);
+const hasFlag = require('has-flag')
+
 let errored = false;
 
-const users = fs.readdirSync('users');
-users.forEach(async user => {
-  if (user.endsWith('json')) {
-    if (encodeURIComponent(user) === user) {
-      fs.readFile(path.join('users', user), 'utf8', async (err, content) => {
-        if (err) {
-          errored = true;
-          console.error(`Unable to read ${user}`);
-        } else {
-          try {
-            const u = JSON.parse(content);
-            if (!u.locked && !u.copyright) {
-              errored = true;
-              console.error(`Copyright not specified in ${user} (${e})`);
-            }
-          } catch (e) {
-            errored = true;
-            console.error(`Invalid JSON in ${user} (${e})`);
-          }
-        }
-      });
-    } else {
-      errored = true;
-      console.error(`${user} is not URL safe`);
-    }
-  } else {
-    errored = true;
-    console.error(`${user} is not a json file`);
-  }
-});
+function report(content, fix) {
+  errored = true;
+  console.error(content);
+  if (fix && hasFlag("--fix")) fix()
+}
 
-const themes = fs.readdirSync('themes');
-themes.forEach(async theme => {
-  if (theme.endsWith('css')) {
-    fs.readFile(path.join('themes', theme), 'utf8', async (err, content) => {
-      if (err) {
-        errored = true;
-        console.error(`Unable to read ${theme}`);
-      } else {
-        try {
-          CSS.parse(content);
-        } catch (e) {
-          errored = true;
-          console.error(`Invalid CSS in ${theme} (${e})`);
-        }
+(async () => {
+  const users = await readdir('users');
+  await users.forEach(async user => {
+    if (!user.endsWith('json')) report(`${user} is not a json file`, () => fs.unlink(path.join('users', user), () => {}))
+    if (!validDomainId(user.replace(".json", ""))) report(`${user} is not a valid domain id.`)
+    try {
+      const data = await readFile(path.join('users', user), "utf8")
+      try {
+        const u = JSON.parse(data);
+        if (!u.locked && !u.copyright) report(`Copyright not specified in ${user}`)
+        const stringified = JSON.stringify(u, 0, 2)
+        if (data !== stringified) report(`Non-regular formatting in ${user}`, () => fs.writeFile(path.join('users', user), stringified, () => {}))
+      } catch ({
+        message
+      }) {
+        report(`Invalid JSON in ${user} (${message})`)
       }
-    });
-  }
-});
+    } catch ({
+      message
+    }) {
+      report(`Unable to read ${user} (${message})`)
+    }
+  });
 
-setTimeout(() => {
+  const themes = await readdir('themes');
+  await themes.forEach(async theme => {
+    if (theme.endsWith('css')) {
+      try {
+        const data = await readFile(path.join('themes', theme), "utf8")
+        try {
+          CSS.parse(data);
+        } catch ({
+          message
+        }) {
+          report(`Invalid CSS in ${theme} (${message})`)
+        }
+      } catch ({
+        message
+      }) {
+        report(`Unable to read ${theme} (${message})`)
+      }
+    }
+  });
   if (errored) process.exit(1);
-}, 500);
+})()
