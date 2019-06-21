@@ -49,8 +49,6 @@ module.exports = (req, res, next) => {
     }
   );
 
-  console.log(res.locals.options);
-
   if (res.locals.options.sha) {
     res.setHeader(
       'X-note',

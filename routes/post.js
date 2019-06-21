@@ -105,6 +105,4 @@ module.exports = async (req, res) => {
   } catch(err) {
     res.status(500).send(`Unable to create new user - please send a pull request on https://github.com/remy/mit-license`)
   }
-
-  next();
 };
