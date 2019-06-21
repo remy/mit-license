@@ -10,8 +10,6 @@ const minify = require('express-minify');
 const postcssMiddleware = require('postcss-middleware');
 const tmpdir = require('os').tmpdir();
 const path = require('path');
-const cluster = require('cluster');
-const numCPUs = require('os').cpus().length;
 
 // Server
 var PORT = process.env.PORT || 8080;
@@ -62,20 +60,7 @@ app.use(require('./middleware/load-options'));
 app.post('/', require('./routes/post'));
 app.get('/*', require('./routes/get'));
 
-// If the current process is the main one
-if (cluster.isMaster) {
-  // Create processes relative to amount of CPUs
-  Array.from({
-    length: numCPUs
-  }, () => cluster.fork());
-
-  // When worker closed
-  cluster.on('exit', worker => {
-    console.log(`❌ Worker ${worker.process.pid} died.`);
-  });
-} else {
-  // Start listening for HTTP requests
-  app.listen(PORT, () => {
-    console.log(`🚀 on http://localhost:${PORT}`);
-  });
-}
+// Start listening for HTTP requests
+app.listen(PORT, () => {
+  console.log(`🚀 on http://localhost:${PORT}`);
+});
