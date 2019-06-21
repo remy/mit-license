@@ -14,21 +14,13 @@ module.exports = async (req, res, next) => {
   res.locals.user = {
     copyright: '<copyright holders>',
   };
-  try {
-    const file = await readFile(
-      path.join(__dirname, '..', 'users', `${id}.json`),
-      'utf8'
-    );
-    res.locals.user = JSON.parse(file);
-  } catch (e) {
-    if (e.code !== 'ENOENT') {
-      // Error is *not* "File not found"
-      console.log(e);
-
-      res.status(500).end();
-      return;
-    }
-  }
-
-  next();
+  readFile(
+    path.join(__dirname, '..', 'users', `${id}.json`),
+    'utf8'
+  )
+    .then(data => res.locals.user = JSON.parse(data))
+    .catch(({code, message}) => {
+      if (code !== 'ENOENT') res.code(500).send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
+    })
+    .finally(() => next())
 };
