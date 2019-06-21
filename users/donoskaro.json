@@ -1,8 +1,8 @@
 {
-    "copyright": "Oskar Augustyn",
-    "url": "https://donoskaro.com",
-    "email": "oskar@augustyn.co",
-    "format": "html",
-    "theme": "material-blue",
-    "gravatar": true
+  "copyright": "Oskar Augustyn",
+  "url": "https://donoskaro.com",
+  "email": "oskar@augustyn.co",
+  "format": "html",
+  "theme": "material-blue",
+  "gravatar": true
 }

@@ -1,8 +1,8 @@
 {
-    "copyright": "Julien Bonnier, http://julienbonnier.com",
-    "url": "http://julienbonnier.com",
-    "format": "txt",
-    "email": "j.bonnier@gmail.com",
-    "gravatar": true,
-    "theme": "default"
+  "copyright": "Julien Bonnier, http://julienbonnier.com",
+  "url": "http://julienbonnier.com",
+  "format": "txt",
+  "email": "j.bonnier@gmail.com",
+  "gravatar": true,
+  "theme": "default"
 }

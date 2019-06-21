@@ -1,8 +1,8 @@
 {
-    "copyright": "Simple App Group LLC",
-    "email": "info@simpleappgroup.com",
-    "format": "html",
-    "theme": "opensans",
-    "url": "https://simpleappgroup.com",
-    "gravatar": true
+  "copyright": "Simple App Group LLC",
+  "email": "info@simpleappgroup.com",
+  "format": "html",
+  "theme": "opensans",
+  "url": "https://simpleappgroup.com",
+  "gravatar": true
 }

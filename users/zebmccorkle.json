@@ -1,8 +1,8 @@
 {
-    "copyright": "Zebulon McCorkle",
-    "url": "https://zebmccorkle.me",
-    "email": "zebmccorkle@gmail.com",
-    "format": "html",
-    "gravatar": true,
-    "theme": "friendly"
+  "copyright": "Zebulon McCorkle",
+  "url": "https://zebmccorkle.me",
+  "email": "zebmccorkle@gmail.com",
+  "format": "html",
+  "gravatar": true,
+  "theme": "friendly"
 }

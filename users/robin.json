@@ -1,8 +1,8 @@
 {
-    "copyright": "Robin M\u00c3\u00bcller",
-    "url": "https://roundrobin.ninja",
-    "email": "robin.mueller@outlook.de",
-    "format": "html",
-    "gravatar": true,
-    "theme": "material-indigo"
+  "copyright": "Robin MÃ¼ller",
+  "url": "https://roundrobin.ninja",
+  "email": "robin.mueller@outlook.de",
+  "format": "html",
+  "gravatar": true,
+  "theme": "material-indigo"
 }
