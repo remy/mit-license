@@ -48,7 +48,7 @@ module.exports = (req, res) => {
     gravatar = `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(
       user.email.trim().toLowerCase()
     )}" />`;
-  } else if (typeof user.copyright[0] === 'object' && user.gravatar) {
+  } else if (user.copyright && typeof user.copyright[0] === 'object' && user.gravatar) {
     // Supports multi-user format
     gravatar = `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(
       user.copyright[0].email.trim().toLowerCase()
