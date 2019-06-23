@@ -1,5 +1,9 @@
 {
-  "copyright": "Richie Bendall, https://www.richie-bendall.ml",
+  "copyright": [{
+        "name": "Remy Sharp, https://remysharp.com",
+        "url": "https://remysharp.com",
+        "email": "remy@remysharp.com"
+    }, "Richie Bendall"],
   "url": "https://www.richie-bendall.ml",
   "email": "richiebendall@gmail.com",
   "format": "html",

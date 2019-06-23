@@ -5,8 +5,8 @@ const { stripTags, escapeTags } = require('./utils');
 function getCopyrightHTML(user, plain) {
   let html = '';
 
-  const name = plain
-    ? user.name || user.copyright
+  const name = typeof user === "string" ? user
+    : plain ? user.name || user.copyright
     : escapeTags(user.name || user.copyright);
 
   if (user.url) {
@@ -39,7 +39,9 @@ module.exports = (req, res) => {
         .map(_ => (options.format !== 'html' ? _ : escapeTags(_)))
         .join(', ');
     } else {
-      name = user.copyright.map(getCopyrightHTML);
+      name = user.copyright
+        .map(getCopyrightHTML)
+        .join(', ');
     }
   }
 
