@@ -5,14 +5,12 @@ module.exports = (req, res, next) => {
 
   res.locals.options = parts.reduce(
     (acc, curr) => {
-      if (!curr) {
-        return acc;
-      }
+      if (!curr) return acc;
 
       let match = curr.match(/^@?(\d{4})$/) || [];
 
       if (match.length) {
-        // pinned year
+        // Pinned year
         if (curr.startsWith('@')) {
           acc.pinnedYear = parseInt(curr.substr(1), 10);
         } else {
@@ -35,6 +33,13 @@ module.exports = (req, res, next) => {
           .split('.')
           .pop()
           .trim();
+        return acc;
+      }
+
+      if (curr.startsWith('+')) {
+        acc.license = curr
+          .substr(1)
+          .toUpperCase();
         return acc;
       }
 

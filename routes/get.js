@@ -58,7 +58,7 @@ module.exports = (req, res) => {
   const year = options.pinnedYear
     ? options.pinnedYear
     : [options.startYear, options.endYear].filter(Boolean).join('-');
-  const license = (user.license || 'MIT').toUpperCase();
+  const license = (options.license || user.license || 'MIT').toUpperCase();
   const format = options.format || user.format || 'html';
 
   const args = {
