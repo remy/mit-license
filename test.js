@@ -29,7 +29,7 @@ function report(content, fix) {
       try {
         const u = JSON.parse(data);
         if (!u.locked && !u.copyright) report(`Copyright not specified in ${user}`)
-        const stringified = JSON.stringify(u, 0, 2)
+        const stringified = `${JSON.stringify(u, 0, 2)}\n`
         if (data !== stringified) report(`Non-regular formatting in ${user}`, () => fs.writeFile(path.join('users', user), stringified, () => {}))
       } catch ({
         message
