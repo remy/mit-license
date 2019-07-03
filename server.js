@@ -7,6 +7,7 @@ Server port: The `PORT` environment variable can also be set to control the port
 */
 const express = require('express');
 const minify = require('express-minify');
+const favicon = require('serve-favicon');
 const postcssMiddleware = require('postcss-middleware');
 const tmpdir = require('os').tmpdir();
 const path = require('path');
@@ -19,6 +20,7 @@ const app = express();
 app.use(minify({
   cache: tmpdir
 }));
+app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.set('views', path.join(__dirname, '/licenses'));
 app.set('view engine', 'ejs');
 

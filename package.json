@@ -1,56 +1,56 @@
 {
-    "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
-    "name": "mit-licence",
-    "description": "Hosted MIT License with details controlled through this repo",
-    "private": true,
-    "version": "2.0.0",
-    "main": "server.js",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:remy/mit-license.git"
-    },
-    "engines": {
-        "node": ">=10.x.x"
-    },
-    "scripts": {
-        "start": "node .",
-        "dev": "nodemon .",
-        "serve": "node server.js",
-        "test": "node test.js",
-        "lint": "eslint server.js middleware/*.js routes/*.js --color"
-    },
-    "bugs": {
-        "url": "https://github.com/remy/mit-license/issues"
-    },
-    "license": "MIT",
-    "dependencies": {
-        "@octokit/rest": "^16.28.2",
-        "btoa": "^1.2.1",
-        "ejs": "^2.6.2",
-        "express": "^4.17.1",
-        "express-minify": "^1.0.0",
-        "md5": "^2.2.1",
-        "node-html-parser": "^1.1.15",
-        "postcss-middleware": "^1.1.4",
-        "postcss-preset-env": "^6.6.0"
-    },
-    "devDependencies": {
-        "@types/btoa": "^1.2.3",
-        "@types/compression": "^0.0.36",
-        "@types/css": "^0.0.31",
-        "@types/ejs": "^2.6.3",
-        "@types/express": "^4.17.0",
-        "@types/express-minify": "^0.1.34",
-        "@types/md5": "^2.1.33",
-        "@types/node": "^12.0.8",
-        "css": "^2.2.4",
-        "eslint": "^5.16.0",
-        "eslint-plugin-node": "^9.1.0",
-        "has-flag": "^4.0.0",
-        "nodemon": "^1.19.1"
-    },
-    "resolutions": {
-        "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^2.3.1",
-        "caniuse-lite": "1.0.30000974"
-    }
+  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
+  "name": "mit-licence",
+  "description": "Hosted MIT License with details controlled through this repo",
+  "private": true,
+  "version": "2.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:remy/mit-license.git"
+  },
+  "engines": {
+    "node": ">=10.x.x"
+  },
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon .",
+    "serve": "node server.js",
+    "test": "node test.js",
+    "lint": "eslint server.js middleware/*.js routes/*.js --color"
+  },
+  "bugs": {
+    "url": "https://github.com/remy/mit-license/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^16.28.2",
+    "btoa": "^1.2.1",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-minify": "^1.0.0",
+    "md5": "^2.2.1",
+    "node-html-parser": "^1.1.15",
+    "postcss-middleware": "^1.1.4",
+    "postcss-preset-env": "^6.6.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/btoa": "^1.2.3",
+    "@types/compression": "^0.0.36",
+    "@types/css": "^0.0.31",
+    "@types/ejs": "^2.6.3",
+    "@types/express": "^4.17.0",
+    "@types/express-minify": "^0.1.34",
+    "@types/md5": "^2.1.33",
+    "@types/node": "^12.0.8",
+    "css": "^2.2.4",
+    "eslint": "^6.0.1",
+    "eslint-plugin-node": "^9.1.0",
+    "has-flag": "^4.0.0",
+    "nodemon": "^1.19.1"
+  },
+  "resolutions": {
+    "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
+  }
 }
