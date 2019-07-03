@@ -8,7 +8,7 @@ cache:
 
 before_install:    npm i -g yarn
 
-install:           yarn install
+install:           yarn install --non-interactive
 
 script:
     - yarn test
