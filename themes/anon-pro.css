@@ -41,7 +41,7 @@ article h1 {
   margin-bottom: 24px
 }
 
-article p:first-of-type{
+article p:first-of-type {
   font-style: italic;
 }
 
@@ -69,7 +69,10 @@ article a:hover, article a:focus {
   outline: none;
 }
 
-footer { position: absolute; }
+footer {
+  position: absolute;
+}
+
 footer a {
   position: fixed;
   bottom: 25px;
@@ -89,7 +92,3 @@ footer a:hover, footer a:focus {
   box-shadow: 10px 10px 0px #daa;
   outline: none;
 }
-
-
-
-
