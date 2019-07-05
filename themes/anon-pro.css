@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 1.1em;
+  background: #fbfbfb;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article {
+  max-width: 90%;
+  min-height: 100vh;
+  padding: 30px 0 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 770px) {
+  article {
+    max-width: 693px;
+  }
+}
+
+article img {
+  display: none;
+}
+
+article h1 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 24px
+}
+
+article p:first-of-type {
+  font-style: italic;
+}
+
+article p {
+  margin-bottom: 1em;
+  font-size: 24px;
+  line-height: 1.4;
+}
+
+article p:last-of-type {
+  font-style: italic;
+}
+
+article a {
+  color: black;
+  text-decoration: none;
+  background-position: center bottom;
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#38f, #38f);
+}
+
+article a:hover, article a:focus {
+  background-color: #38f;
+  outline: none;
+}
+
+footer {
+  position: absolute;
+}
+
+footer a {
+  position: fixed;
+  bottom: 25px;
+  left: 0;
+  color: white;
+  max-width: 320px;
+  background: #db2d20;
+  padding: 5px 20px 5px 40px;
+  display: block;
+  transform: translateX(-20px);
+  transition: all .2s ease;
+  box-shadow: 5px 5px 0px #ddd;
+}
+
+footer a:hover, footer a:focus {
+  transform: translateX(0);
+  box-shadow: 10px 10px 0px #daa;
+  outline: none;
+}
