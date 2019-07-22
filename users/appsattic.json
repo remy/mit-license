@@ -1,8 +1,8 @@
 {
-    "copyright" : "AppsAttic Ltd",
-    "url"       : "https://appsattic.com/",
-    "email"     : "chilts@appsattic.com",
-    "format"    : "html",
-    "gravatar"  : true,
-    "theme"     : "default"
+  "copyright": "AppsAttic Ltd",
+  "url": "https://appsattic.com/",
+  "email": "chilts@appsattic.com",
+  "format": "html",
+  "gravatar": true,
+  "theme": "default"
 }
