@@ -88,7 +88,7 @@ module.exports = async (req, res) => {
       owner: 'remy',
       repo: 'mit-license',
       path: `users/${id}.json`,
-      message: `Automated creation of user ${id}.`,
+      message: `chore: Automated creation of user ${id}.`,
       content: btoa(fileContent),
       committer: {
         name: 'MIT License Bot',
