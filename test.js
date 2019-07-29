@@ -27,8 +27,13 @@ function report(content, fix) {
     try {
       const data = await readFile(path.join('users', user), "utf8")
       try {
-        const u = JSON.parse(data);
+        let u = JSON.parse(data);
         if (!u.locked && !u.copyright) report(`Copyright not specified in ${user}`)
+        if (u.version) report(`Version tag found in ${user}`, () => {
+          delete u.version
+          const stringified = `${JSON.stringify(u, 0, 2)}\n`
+          fs.writeFile(path.join('users', user), stringified, () => { })
+        })
         const stringified = `${JSON.stringify(u, 0, 2)}\n`
         if (data !== stringified) report(`Non-regular formatting in ${user}`, () => fs.writeFile(path.join('users', user), stringified, () => {}))
       } catch ({

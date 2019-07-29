@@ -43,9 +43,9 @@
     through2 "^2.0.3"
 
 "@octokit/endpoint@^5.1.0":
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-5.3.1.tgz#4a1714c7d35c1ed074e898c5f4a9897541581f79"
-  integrity sha512-4mKqSQfeTRFpQMUGIUG1ewdQT64b2YpvjG2dE1x7nhQupdI/AjdgdcIsmPtRFEXlih/uLQLRWJL4FrivpQdC7A==
+  version "5.3.2"
+  resolved "https://registry.yarnpkg.com/@octokit/endpoint/-/endpoint-5.3.2.tgz#2deda2d869cac9ba7f370287d55667be2a808d4b"
+  integrity sha512-gRjteEM9I6f4D8vtwU2iGUTn9RX/AJ0SVXiqBUEuYEWVGGAVjSXdT0oNmghH5lvQNWs8mwt6ZaultuG6yXivNw==
   dependencies:
     deepmerge "4.0.0"
     is-plain-object "^3.0.0"
@@ -61,9 +61,9 @@
     once "^1.4.0"
 
 "@octokit/request@^5.0.0":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-5.0.1.tgz#6705c9a883db0ac0f58cee717e806b6575d4a199"
-  integrity sha512-SHOk/APYpfrzV1RNf7Ux8SZi+vZXhMIB2dBr4TQR6ExMX8R4jcy/0gHw26HLe1dWV7Wxe9WzYyDSEC0XwnoCSQ==
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@octokit/request/-/request-5.0.2.tgz#59a920451f24811c016ddc507adcc41aafb2dca5"
+  integrity sha512-z1BQr43g4kOL4ZrIVBMHwi68Yg9VbkRUyuAgqCp1rU3vbYa69+2gIld/+gHclw15bJWQnhqqyEb7h5a5EqgZ0A==
   dependencies:
     "@octokit/endpoint" "^5.1.0"
     "@octokit/request-error" "^1.0.1"
@@ -74,9 +74,9 @@
     universal-user-agent "^3.0.0"
 
 "@octokit/rest@^16.28.5":
-  version "16.28.5"
-  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.28.5.tgz#56a5a37fc45a6520199189ac3e5eb09420c0ef6f"
-  integrity sha512-W8hHSm6103c+lNdTuQBMKdZNDCOFFXJdatj92g2d6Hqk134EMDHRc02QWI/Fs1WGnWZ8Leb0QFbXPKO2njeevQ==
+  version "16.28.7"
+  resolved "https://registry.yarnpkg.com/@octokit/rest/-/rest-16.28.7.tgz#a2c2db5b318da84144beba82d19c1a9dbdb1a1fa"
+  integrity sha512-cznFSLEhh22XD3XeqJw51OLSfyL2fcFKUO+v2Ep9MTAFfFLS1cK1Zwd1yEgQJmJoDnj4/vv3+fGGZweG+xsbIA==
   dependencies:
     "@octokit/request" "^5.0.0"
     "@octokit/request-error" "^1.0.2"
@@ -541,9 +541,9 @@ camelcase@^4.0.0:
   integrity sha1-1UVjW+HjPFQmScaRc+Xeas+uNN0=
 
 caniuse-lite@^1.0.30000980, caniuse-lite@^1.0.30000981, caniuse-lite@^1.0.30000984:
-  version "1.0.30000985"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000985.tgz#0eb40f6c8a8c219155cbe43c4975c0efb4a0f77f"
-  integrity sha512-1ngiwkgqAYPG0JSSUp3PUDGPKKY59EK7NrGGX+VOxaKCNzRbNc7uXMny+c3VJfZxtoK3wSImTvG9T9sXiTw2+w==
+  version "1.0.30000986"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000986.tgz#f34350e367cc900509511574817ac092112bf7ab"
+  integrity sha512-pM+LnkoAX0+QnIH3tpW5EnkmfpEoqOD8FAcoBvsl3Xh6DXkgctiCxeCbXphP/k3XJtJzm+zOAJbi6U6IVkpWZQ==
 
 capture-stack-trace@^1.0.0:
   version "1.0.1"
@@ -1027,9 +1027,9 @@ ejs@^2.6.2:
   integrity sha512-PcW2a0tyTuPHz3tWyYqtK6r1fZ3gp+3Sop8Ph+ZYN81Ob5rwmbHEzaqs10N3BEsaGTkh/ooniXK+WwszGlc2+Q==
 
 electron-to-chromium@^1.3.191:
-  version "1.3.199"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.199.tgz#f9a62a74cda77854310a2abffde8b75591ea09a1"
-  integrity sha512-gachlDdHSK47s0N2e58GH9HMC6Z4ip0SfmYUa5iEbE50AKaOUXysaJnXMfKj0xB245jWbYcyFSH+th3rqsF8hA==
+  version "1.3.203"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.203.tgz#76de1b76eaaf7208e587a26b8e45407535a00abd"
+  integrity sha512-Z1FjJKEBhYrCNmnususVk8khiBabVI/bSJB/295V4ghVt4MFmtbP+mXgRZLQZinEBI469U6FtiGgpXnlLs6qiQ==
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -2617,9 +2617,9 @@ node-pre-gyp@^0.12.0:
     tar "^4"
 
 node-releases@^1.1.25:
-  version "1.1.25"
-  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.25.tgz#0c2d7dbc7fed30fbe02a9ee3007b8c90bf0133d3"
-  integrity sha512-fI5BXuk83lKEoZDdH3gRhtsNgh05/wZacuXkgbiYkceE7+QIMXOg98n9ZV7mz27B+kFHnqHcUpscZZlGRSmTpQ==
+  version "1.1.26"
+  resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.26.tgz#f30563edc5c7dc20cf524cc8652ffa7be0762937"
+  integrity sha512-fZPsuhhUHMTlfkhDLGtfY80DSJTjOcx+qD1j5pqPkuhUHVS7xHZIg9EE4DHK8O3f0zTxXHX5VIkDG8pu98/wfQ==
   dependencies:
     semver "^5.3.0"
 
@@ -3550,9 +3550,9 @@ semver@^5.0.3, semver@^5.1.0, semver@^5.3.0, semver@^5.5.0:
   integrity sha512-Ya52jSX2u7QKghxeoFGpLwCtGlt7j0oY9DYb5apt9nPlJ42ID+ulTXESnt/qAQcoSERyZ5sl3LDIOw0nAn/5DA==
 
 semver@^6.1.0, semver@^6.1.2:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-6.2.0.tgz#4d813d9590aaf8a9192693d6c85b9344de5901db"
-  integrity sha512-jdFC1VdUGT/2Scgbimf7FSx9iJLXoqfglSF+gJeuNWVpiE37OIbc1jywR/GJyFdz3mnkz2/id0L0J/cr0izR5A==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.0.tgz#ee0a64c8af5e8ceea67687b133761e1becbd1d3d"
+  integrity sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==
 
 send@0.17.1:
   version "0.17.1"
