@@ -4,12 +4,15 @@ I always forget to add an `MIT-license.txt` file to my projects, so I wanted to 
 
 Why keep this to myself, there are two ways to create your _own_ MIT license page:
 
-1.  Make a request to the API (details below)
-2.  Fork this project and send a pull request
+1.  Use the generator tool (easiest)
+2.  Make a request to the API (details below)
+3.  Fork this project and send a pull request
 
 Now I can always include <https://rem.mit-license.org> in all my projects which links `rem` (the CNAME) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
 
 ## Requesting your own MIT license page
+
+The simplest way to create your own MIT license page is to use the self-service generator found [here](https://richienb.github.io/mit-license-generator).
 
 You can fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
 
