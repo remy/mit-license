@@ -86,15 +86,18 @@ If you additionally want to include a URL and email with each copyright holder, 
 
 ```json
 {
-    "copyright": [{
-        "name": "Remy Sharp, https://remysharp.com",
-        "url": "https://remysharp.com",
-        "email": "remy@remysharp.com"
-    }, {
-        "name": "Richie Bendall, https://www.richie-bendall.ml",
-        "url": "https://www.richie-bendall.ml",
-        "email": "richiebendall@gmail.com"
-    }]
+  "copyright": [
+    {
+      "name": "Remy Sharp, https://remysharp.com",
+      "url": "https://remysharp.com",
+      "email": "remy@remysharp.com"
+    },
+    {
+      "name": "Richie Bendall, https://www.richie-bendall.ml",
+      "url": "https://www.richie-bendall.ml",
+      "email": "richiebendall@gmail.com"
+    }
+  ]
 }
 ```
 
