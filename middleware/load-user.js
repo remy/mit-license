@@ -20,10 +20,14 @@ module.exports = async (req, res, next) => {
       path.join(__dirname, '..', 'users', `${id}.json`),
       'utf8'
     );
-    res.locals.user = {...res.locals.user, ...JSON.parse(data)};
-  } catch ({code, message}) {
+    res.locals.user = { ...res.locals.user, ...JSON.parse(data) };
+  } catch ({ code, message }) {
     if (code !== 'ENOENT') {
-      res.code(500).send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
+      res
+        .code(500)
+        .send(
+          `An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`
+        );
       return;
     }
   }

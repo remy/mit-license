@@ -17,9 +17,11 @@ var PORT = process.env.PORT || 8080;
 
 // Prepare application
 const app = express();
-app.use(minify({
-  cache: tmpdir
-}));
+app.use(
+  minify({
+    cache: tmpdir,
+  })
+);
 app.use(favicon(path.join(__dirname, 'favicon.ico')));
 app.set('views', path.join(__dirname, '/licenses'));
 app.set('view engine', 'ejs');
@@ -48,9 +50,11 @@ app.use(
 // CORS
 app.use(require('./middleware/cors'));
 // Parse URL-encoded bodies (as sent by HTML forms)
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 

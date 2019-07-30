@@ -37,9 +37,7 @@ module.exports = (req, res, next) => {
       }
 
       if (curr.startsWith('+')) {
-        acc.license = curr
-          .substr(1)
-          .toUpperCase();
+        acc.license = curr.substr(1).toUpperCase();
         return acc;
       }
 

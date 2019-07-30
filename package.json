@@ -12,6 +12,12 @@
   "engines": {
     "node": ">=10.x.x"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
+  },
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
@@ -30,7 +36,6 @@
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
     "md5": "^2.2.1",
-    "node-html-parser": "^1.1.15",
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
     "serve-favicon": "^2.5.0"
@@ -45,9 +50,13 @@
     "@types/node": "^12.6.8",
     "css": "^2.2.4",
     "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
     "has-flag": "^4.0.0",
-    "nodemon": "^1.19.1"
+    "husky": "^3.0.2",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
   },
   "resolutions": {
     "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"

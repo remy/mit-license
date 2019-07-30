@@ -5,9 +5,12 @@ const { stripTags, escapeTags } = require('./utils');
 function getCopyrightHTML(user, plain) {
   let html = '';
 
-  const name = typeof user === "string" ? user
-    : plain ? user.name || user.copyright
-    : escapeTags(user.name || user.copyright);
+  const name =
+    typeof user === 'string'
+      ? user
+      : plain
+      ? user.name || user.copyright
+      : escapeTags(user.name || user.copyright);
 
   if (user.url) {
     html = `<a href="${stripTags(user.url)}">${name}</a>`;
@@ -18,7 +21,7 @@ function getCopyrightHTML(user, plain) {
   if (user.email) {
     html += ` &lt;<a href="mailto:${stripTags(user.email)}">${
       plain ? user.email : escapeTags(user.email)
-      }</a>&gt;`;
+    }</a>&gt;`;
   }
 
   return html;
@@ -39,9 +42,7 @@ module.exports = (req, res) => {
         .map(_ => (options.format !== 'html' ? _ : escapeTags(_)))
         .join(', ');
     } else {
-      name = user.copyright
-        .map(getCopyrightHTML)
-        .join(', ');
+      name = user.copyright.map(getCopyrightHTML).join(', ');
     }
   }
 
