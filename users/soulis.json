@@ -1,8 +1,8 @@
 {
-    "copyright": "Anastasios Selalmazidis, https://soulis.tech",
-    "url": "https://soulis.tech",
-    "format": "html",
-    "email": "t.selalmasidis@gmail.com",
-    "gravatar": true,
-    "theme": "opensans"
+  "copyright": "Anastasios Selalmazidis, https://soulis.tech",
+  "url": "https://soulis.tech",
+  "format": "html",
+  "email": "t.selalmasidis@gmail.com",
+  "gravatar": true,
+  "theme": "opensans"
 }

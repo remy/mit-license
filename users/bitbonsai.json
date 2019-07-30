@@ -1,1 +1,8 @@
-{"copyright":"Mauricio Wolff - BitBonsai","url":"http:\/\/bitbonsai.com","email":"m@bitbonsai.com","format":"html","gravatar":true,"theme":"double-windsor"}
+{
+  "copyright": "Mauricio Wolff - BitBonsai",
+  "url": "http://bitbonsai.com",
+  "email": "m@bitbonsai.com",
+  "format": "html",
+  "gravatar": true,
+  "theme": "double-windsor"
+}

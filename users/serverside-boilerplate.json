@@ -1,1 +1,6 @@
-{"copyright":"Server-side Boilerplate","theme":"default","email":"support@icodeclarity.com","format":"html"}
+{
+  "copyright": "Server-side Boilerplate",
+  "theme": "default",
+  "email": "support@icodeclarity.com",
+  "format": "html"
+}
