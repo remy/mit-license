@@ -37,9 +37,7 @@ a:link, a:visited, a:hover {
   position: relative;
   text-decoration: none;
   color: #820340;
-  -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
 }
 
@@ -56,15 +54,12 @@ a:before {
   left: 0;
   background-color: #7a3e96;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 a:hover:before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
