@@ -88,10 +88,6 @@ a img {
   color: #bc4a46;
 }
 
-::-moz-selection {
-  color: #bc4a46;
-}
-
 footer {
   background-color: #FFFFFF;
   border-bottom: 3px solid #FF3366;

@@ -6,11 +6,6 @@
   color: #eff7ff;
 }
 
-*::-moz-selection {
-  background: #de5833;
-  color: #eff7ff;
-}
-
 * {
   margin: 0;
   padding: 0;

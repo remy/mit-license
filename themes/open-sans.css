@@ -21,10 +21,6 @@ body {
   background: #ccc
 }
 
-::-moz-selection {
-  background: #ccc
-}
-
 h1 {
   text-align: center;
   font: 36px 'Open Sans Bold'

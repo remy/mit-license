@@ -70,11 +70,6 @@ footer a:hover, footer a:active {
   color: white
 }
 
-::-moz-selection {
-  background: #663300;
-  color: white
-}
-
 #gravatar {
   position: relative;
   float: right;

@@ -87,10 +87,6 @@ a:active {
   background: #ccc;
 }
 
-::-moz-selection {
-  background: #ccc;
-}
-
 #gravatar {
   position: relative;
   float: right;

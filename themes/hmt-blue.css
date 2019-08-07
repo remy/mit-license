@@ -116,8 +116,6 @@ optgroup {
   font-weight: 700
 }
 
-button, input {}
-
 button, select {
   text-transform: none
 }

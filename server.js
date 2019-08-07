@@ -34,7 +34,7 @@ app.use(
   postcssMiddleware({
     plugins: [
       require('postcss-preset-env')({
-        overrideBrowserslist: 'last 2 versions',
+        overrideBrowserslist: '>= 0%',
         stage: 0,
       }),
     ],

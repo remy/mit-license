@@ -53,10 +53,6 @@ a img {
   background: #bc4a46;
 }
 
-::-moz-selection {
-  background: #bc4a46;
-}
-
 #gravatar {
   position: relative;
   float: right;
