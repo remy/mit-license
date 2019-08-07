@@ -4,13 +4,12 @@ const { promisify } = require('util');
 const access = promisify(fs.access);
 const writeFile = promisify(fs.writeFile);
 const btoa = require('btoa');
-var github = require('@octokit/rest')({
+const { version } = require(path.join(__dirname, '..', 'package.json'));
+const github = require('@octokit/rest')({
   // GitHub personal access token
   auth: process.env.github_token,
   // User agent with version from package.json
-  userAgent:
-    'mit-license v' +
-    require(path.join(__dirname, '..', 'package.json')).version,
+  userAgent: `mit-license v${version}`,
 });
 const { validDomainId } = require('./utils');
 
