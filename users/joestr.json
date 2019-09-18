@@ -1,7 +1,7 @@
 {
-  "copyright": "Joel Strasser",
-  "url": "https://www.joestr.xyz",
-  "email": "email@joestr.xyz",
+  "copyright": ["Joel Strasser", "joestr"],
+  "url": ["https://www.joestr.xyz", "https://www.joestr.xyz"],
+  "email": ["strasser999@gmail.com", "email@joestr.xyz"],
   "format": "text",
   "license": "isc",
   "theme": "default",
