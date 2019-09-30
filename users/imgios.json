@@ -1,9 +1,9 @@
 {
-  "copyright": "Giosuè",
+  "copyright": "Giosuï¿½",
   "url": "https://www.giosuesulipano.it",
   "email": "contact@giosuesulipano.it",
   "format": "html",
   "license": "mit",
   "theme": "8bits-monochrome",
-  "gravatar": "true"
+  "gravatar": true
 }

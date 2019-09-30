@@ -3,6 +3,6 @@
   "url": "http://duncanjohnson.ca/",
   "email": "duncan@duncanjohnson.ca",
   "format": "html",
-  "gravatar": "true",
+  "gravatar": true,
   "theme": "double-windsor"
 }

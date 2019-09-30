@@ -4,5 +4,5 @@
   "email": "sina@mashek.xyz",
   "format": "html",
   "theme": "default-dark",
-  "gravatar": "true"
+  "gravatar": true
 }

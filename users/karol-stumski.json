@@ -4,5 +4,5 @@
   "format": "html",
   "license": "mit",
   "theme": "8bits-monochrome-blue-white",
-  "gravatar": "false"
+  "gravatar": false
 }

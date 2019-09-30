@@ -3,6 +3,6 @@
   "url": "https://github.com/greenify",
   "email": "greeenify@gmail.com",
   "format": "html",
-  "gravatar": "true",
+  "gravatar": true,
   "theme": "magicmint"
 }

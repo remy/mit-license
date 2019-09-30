@@ -3,5 +3,5 @@
   "url": "http://yungsang.com",
   "email": "info@yungsang.com",
   "theme": "flesch",
-  "gravatar": "ture"
+  "gravatar": false
 }

@@ -2,7 +2,7 @@
   "copyright": "David Conner",
   "email": "dconner.pro@gmail.com",
   "format": "html",
-  "gravatar": "true",
+  "gravatar": true,
   "url": "http://te.xel.io",
   "theme": "opensans"
 }

@@ -3,6 +3,6 @@
   "url": "http://naoimporta.com",
   "email": "fabio@naoimporta.com",
   "format": "html",
-  "gravatar": "true",
+  "gravatar": true,
   "theme": "flesch"
 }

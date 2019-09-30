@@ -3,6 +3,6 @@
   "url": "https://rin.rocks",
   "email": "ri7nz.labs@gmail.com",
   "format": "html",
-  "gravatar": "false",
+  "gravatar": false,
   "theme": "afterdark"
 }

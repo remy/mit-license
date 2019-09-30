@@ -40,6 +40,13 @@ function report(content, fix) {
             fs.writeFile(path.join('users', user), stringified, () => {});
           });
         }
+        if (typeof u.gravatar === 'string') {
+          report(`Gravatar boolean encoded as string found in ${user}`, () => {
+            u.gravatar = u.gravatar === 'true';
+            const stringified = `${JSON.stringify(u, 0, 2)}\n`;
+            fs.writeFile(path.join('users', user), stringified, () => {});
+          });
+        }
       } catch ({ message }) {
         report(`Invalid JSON in ${user} (${message})`);
       }

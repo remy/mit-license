@@ -5,5 +5,5 @@
   "format": "html",
   "license": "mit",
   "theme": "black-beauty",
-  "gravatar": "false"
+  "gravatar": false
 }
