@@ -1,0 +1,9 @@
+{
+  "copyright": "Glasgolia",
+  "url": "https://glasgolia.com",
+  "email": "peter@glasgolia.com",
+  "format": "html",
+  "license": "mit",
+  "theme": "default",
+  "gravatar": true
+}
