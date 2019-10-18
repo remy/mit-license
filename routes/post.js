@@ -82,7 +82,7 @@ module.exports = async (req, res) => {
   try {
     const fileContent = JSON.stringify(userData, 0, 2);
 
-    await github.repos.createFile({
+    await github.repos.createOrUpdateFile({
       owner: 'remy',
       repo: 'mit-license',
       path: `users/${id}.json`,
