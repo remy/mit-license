@@ -1,8 +1,16 @@
+const _ = require('lodash');
+
 const tags = {
   '<': '&lt;',
   '>': '&gt;',
   '&': '&amp;',
 };
-exports.escapeTags = str => (str || '').replace(/[<>&]/g, m => tags[m]);
-exports.stripTags = str => (str || '').replace(/<(?:.|\n)*?>/gm, '');
-exports.validDomainId = str => /^[\w-_]+$/.test(str);
+const untags = _.invert(tags);
+
+module.exports = {
+  escapeTags: str => (str || '').replace(/[<>&]/g, m => tags[m]),
+  unescapeTags: str =>
+    (str || '').replace(/(&lt;|&gt;|&amp;)/g, m => untags[m]),
+  stripTags: str => (str || '').replace(/<(?:.|\n)*?>/gm, ''),
+  validDomainId: str => /^[\w-_]+$/.test(str),
+};

@@ -5,6 +5,7 @@ const access = promisify(fs.access);
 const writeFile = promisify(fs.writeFile);
 const btoa = require('btoa');
 const { version } = require(path.join(__dirname, '..', 'package.json'));
+const _ = require('lodash');
 const github = require('@octokit/rest')({
   // GitHub personal access token
   auth: process.env.github_token,
@@ -15,10 +16,10 @@ const { validDomainId } = require('./utils');
 
 function getUserData({ query, body }) {
   // If query parameters provided
-  if (Object.keys(query).length > 0) return query;
+  if (_.size(query) > 0) return query;
   // If the data parsed as {'{data: "value"}': ''}
-  const keys = Object.keys(body);
-  if (keys.length === 1 && !Object.values(body)[0]) return JSON.parse(keys[0]);
+  if (_.size(body) === 1 && !_.first(_.values(body)))
+    return JSON.parse(_.first(_.keys(body)));
   // Fallback
   return body;
 }
@@ -39,7 +40,7 @@ module.exports = async (req, res) => {
   }
 
   // Extract the name from the URL
-  const id = params[0];
+  const id = _.first(params);
 
   if (!validDomainId(id)) {
     // Return a vague error intentionally

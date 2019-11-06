@@ -1,14 +1,14 @@
 const md5 = require('md5');
 const path = require('path');
-const { stripTags, escapeTags } = require('./utils');
+const { stripTags, escapeTags, unescapeTags } = require('./utils');
+const _ = require('lodash');
 
 function getCopyrightHTML(user, plain) {
   let html = '';
 
-  const name =
-    typeof user === 'string'
-      ? user
-      : plain
+  const name = _.isString(user)
+    ? user
+    : plain
       ? user.name || user.copyright
       : escapeTags(user.name || user.copyright);
 
@@ -34,9 +34,9 @@ module.exports = (req, res) => {
 
   // No error and valid
   if (user.copyright) {
-    if (typeof user.copyright === 'string') {
+    if (_.isString(user.copyright)) {
       name = getCopyrightHTML(user, options.format !== 'html');
-    } else if (user.copyright.every(val => typeof val === 'string')) {
+    } else if (user.copyright.every(val => _.isString(val))) {
       // Supports: ['Remy Sharp', 'Richie Bendall']
       name = user
         .map(_ => (options.format !== 'html' ? _ : escapeTags(_)))
@@ -51,7 +51,7 @@ module.exports = (req, res) => {
     gravatar = `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(
       user.email.trim().toLowerCase()
     )}" />`;
-  } else if (typeof user.copyright[0] === 'object' && user.gravatar) {
+  } else if (_.isObject(user.copyright[0]) && user.gravatar) {
     // Supports multi-user format
     gravatar = `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(
       user.copyright[0].email.trim().toLowerCase()
@@ -82,7 +82,7 @@ module.exports = (req, res) => {
 
       res
         .set('Content-Type', 'text/plain; charset=UTF-8')
-        .send(stripTags(plain).trim());
+        .send(unescapeTags(stripTags(plain)).trim());
       return;
     }
 

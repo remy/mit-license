@@ -1,3 +1,0 @@
-# use the prettier defaults except for:
-trailingComma: "es5"
-singleQuote: true
