@@ -1,5 +1,5 @@
 {
-  "copyright": "Jake Woods",
+  "copyright": ["Jake Woods", "Jeremie Desautels"],
   "format": "html",
   "license": "mit",
   "theme": "default",
