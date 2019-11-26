@@ -36,10 +36,10 @@ module.exports = (req, res) => {
   if (user.copyright) {
     if (_.isString(user.copyright)) {
       name = getCopyrightHTML(user, options.format !== 'html');
-    } else if (user.copyright.every(val => _.isString(val))) {
+    } else if (_.isArray(user.copyright) && user.copyright.every(val => _.isString(val))) {
       // Supports: ['Remy Sharp', 'Richie Bendall']
-      name = user
-        .map(_ => (options.format !== 'html' ? _ : escapeTags(_)))
+      name = user.copyright
+        .map(v => (options.format !== 'html' ? v : escapeTags(v)))
         .join(', ');
     } else {
       name = user.copyright.map(getCopyrightHTML).join(', ');
