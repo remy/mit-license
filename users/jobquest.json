@@ -1,1 +1,7 @@
-{"copyright":"JobQuest","url":"http:\/\/jobquest.heroku.com","email":"thisisjobquest@.com","format":"txt","theme":"white cherry"}
+{
+  "copyright": "JobQuest",
+  "url": "http://jobquest.heroku.com",
+  "email": "thisisjobquest@.com",
+  "format": "txt",
+  "theme": "white cherry"
+}

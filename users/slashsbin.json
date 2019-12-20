@@ -1,1 +1,7 @@
-{"copyright":"Mohammad Shokri","url":"http:\/\/slashsbin.com","email":"shokri.md@gmail.com","gravatar":true}
+{
+  "copyright": "Mohammad Shokri Khanghah, https://slashsbin.com",
+  "url": "https://slashsbin.com",
+  "email": "shokri.md@gmail.com",
+  "gravatar": true,
+  "theme": "material-blue"
+}

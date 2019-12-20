@@ -1,6 +1,8 @@
 {
-    "copyright" : "Andrew Chilton",
-    "url"       : "http://chilts.org/blog/",
-    "email"     : "andychilton@gmail.com",
-    "theme"     : "double-windsor"
+  "copyright": "Andrew Chilton",
+  "url": "https://chilts.org/",
+  "email": "andychilton@gmail.com",
+  "format": "html",
+  "gravatar": true,
+  "theme": "double-windsor"
 }

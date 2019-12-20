@@ -1,1 +1,6 @@
-{"copyright":"{{TEXTY}}","url":"{{URL}}","email":"{{EMAIL}}","format":"txt"}
+{
+  "copyright": "{{TEXTY}}",
+  "url": "{{URL}}",
+  "email": "{{EMAIL}}",
+  "format": "txt"
+}

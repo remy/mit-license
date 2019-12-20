@@ -1,1 +1,5 @@
-{"copyright":"{{TEXTY}}, {{URL}}","url":"{{URL}}","format":"txt"}
+{
+  "copyright": "{{TEXTY}}, {{URL}}",
+  "url": "{{URL}}",
+  "format": "txt"
+}

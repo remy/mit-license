@@ -1,7 +1,7 @@
 {
-    "copyright": "micxer, http:\/\/micxer.de/blog",
-    "url":       "http:\/\/micxer.de/blog",
-    "email":     "micxer@micxer.de",
-    "format":    "html",
-    "theme":     "material-light-blue"
+  "copyright": "micxer, http://micxer.de/blog",
+  "url": "http://micxer.de/blog",
+  "email": "micxer@micxer.de",
+  "format": "html",
+  "theme": "material-light-blue"
 }

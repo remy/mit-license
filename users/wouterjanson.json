@@ -1,8 +1,8 @@
 {
-    "copyright": "Wouter Janson",
-    "url": "http://www.wouterjanson.me",
-    "email": "wouterjanson@icloud.com",
-    "format": "html",
-    "gravatar": true,
-    "theme": "material-pink"
+  "copyright": "Wouter Janson",
+  "url": "https://wouterjanson.nl",
+  "email": "wouterjanson@icloud.com",
+  "format": "html",
+  "gravatar": true,
+  "theme": "mitserrat"
 }

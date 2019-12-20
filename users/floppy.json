@@ -1,1 +1,6 @@
-{"copyright":"James Smith","url":"http:\/\/floppy.org.uk","email":"james@floppy.org.uk","gravatar":true}
+{
+  "copyright": "James Smith",
+  "url": "http://floppy.org.uk",
+  "email": "james@floppy.org.uk",
+  "gravatar": true
+}

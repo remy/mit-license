@@ -1,5 +1,7 @@
-{ "copyright":  "Filippo Valsorda, FiloSottile",
-  "url":        "http:\/\/filippo.io",
-  "email":      "fv@filippo.io",
-  "theme":      "default",
-  "gravatar":   true }
+{
+  "copyright": "Filippo Valsorda, FiloSottile",
+  "url": "http://filippo.io",
+  "email": "fv@filippo.io",
+  "theme": "default",
+  "gravatar": true
+}

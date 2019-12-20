@@ -1,1 +1,6 @@
-{"copyright":"Remy Sharp","url":"http:\/\/remysharp.com","email":"me@mysite.com","format":"html"}
+{
+  "copyright": "Remy Sharp",
+  "url": "http://remysharp.com",
+  "email": "me@mysite.com",
+  "format": "html"
+}

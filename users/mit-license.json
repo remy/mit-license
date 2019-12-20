@@ -1,0 +1,5 @@
+{
+  "//1": "Security holding user",
+  "//2": "This user is being locked incase of potential homepage hijack.",
+  "locked": true
+}
