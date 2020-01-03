@@ -1,8 +1,5 @@
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
-const { promisify } = require('util');
-const access = promisify(fs.access);
-const writeFile = promisify(fs.writeFile);
 const btoa = require('btoa');
 const { version } = require(path.join(__dirname, '..', 'package.json'));
 const _ = require('lodash');
@@ -18,8 +15,7 @@ function getUserData({ query, body }) {
   // If query parameters provided
   if (_.size(query) > 0) return query;
   // If the data parsed as {'{data: "value"}': ''}
-  if (_.size(body) === 1 && !_.first(_.values(body)))
-    return JSON.parse(_.first(_.keys(body)));
+  if (_.size(body) === 1 && !_.first(_.values(body))) return JSON.parse(_.first(_.keys(body)));
   // Fallback
   return body;
 }
@@ -53,24 +49,15 @@ module.exports = async (req, res) => {
     return;
   }
 
-  try {
-    // Check if the user file exists in the users directory
-    await access(path.join(__dirname, '..', 'users', `${id}.json`));
+  // Check if the user file exists in the users directory
+  const exists = await fs.pathExists(path.join(__dirname, '..', 'users', `${id}.json`));
+  if (exists) {
     res
       .status(409)
       .send(
         'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'
       );
     return;
-  } catch ({ code, message }) {
-    if (code !== 'ENOENT') {
-      res
-        .code(500)
-        .send(
-          `An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`
-        );
-      return;
-    }
   }
 
   // File doesn't exist
@@ -95,7 +82,7 @@ module.exports = async (req, res) => {
       },
     });
 
-    writeFile(path.join(__dirname, '..', 'users', `${id}.json`), fileContent);
+    await fs.writeFile(path.join(__dirname, '..', 'users', `${id}.json`), fileContent);
 
     res.status(201).send(`MIT license page created: https://${hostname}`);
   } catch (err) {

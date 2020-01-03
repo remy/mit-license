@@ -5,5 +5,5 @@
   "format": "html",
   "license": "mit",
   "theme": "friendly",
-  "gravatar": "true"
+  "gravatar": true
 }

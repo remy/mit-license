@@ -1,5 +1,4 @@
-const { promisify } = require('util');
-const readFile = promisify(require('fs').readFile);
+const fs = require('fs-extra');
 const path = require('path');
 
 module.exports = async (req, res, next) => {
@@ -16,7 +15,7 @@ module.exports = async (req, res, next) => {
   };
 
   try {
-    const data = await readFile(
+    const data = await fs.readFile(
       path.join(__dirname, '..', 'users', `${id}.json`),
       'utf8'
     );

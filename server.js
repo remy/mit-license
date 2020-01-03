@@ -9,7 +9,7 @@ const express = require('express');
 const minify = require('express-minify');
 const favicon = require('serve-favicon');
 const postcssMiddleware = require('postcss-middleware');
-const tmpdir = require('os').tmpdir();
+const tmpdir = require('temp-dir');
 const path = require('path');
 
 // Server

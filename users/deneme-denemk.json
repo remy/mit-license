@@ -5,5 +5,5 @@
   "format": "html",
   "license": "isc",
   "theme": "eula-modern",
-  "gravatar": "true"
+  "gravatar": true
 }

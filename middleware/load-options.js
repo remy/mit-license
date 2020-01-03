@@ -1,4 +1,4 @@
-const thisYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
 
 module.exports = (req, res, next) => {
   const parts = req.url.split('/');
@@ -47,7 +47,7 @@ module.exports = (req, res, next) => {
     {
       format: 'html',
       startYear: null,
-      endYear: thisYear,
+      endYear: currentYear,
       sha: null,
     }
   );
