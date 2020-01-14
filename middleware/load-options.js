@@ -1,63 +1,63 @@
-const currentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear()
 
 module.exports = (req, res, next) => {
-  const parts = req.url.split('/');
+  const parts = req.url.split('/')
 
   res.locals.options = parts.reduce(
     (acc, curr) => {
-      if (!curr) return acc;
+      if (!curr) return acc
 
-      let match = curr.match(/^@?(\d{4})$/) || [];
+      let match = curr.match(/^@?(\d{4})$/) || []
 
       if (match.length) {
         // Pinned year
         if (curr.startsWith('@')) {
-          acc.pinnedYear = parseInt(curr.substr(1), 10);
+          acc.pinnedYear = parseInt(curr.substr(1), 10)
         } else {
-          acc.startYear = parseInt(curr, 10);
+          acc.startYear = parseInt(curr, 10)
         }
-        return acc;
+        return acc
       }
 
-      match = curr.match(/^(\d{4})-(\d{4})$/) || [];
+      match = curr.match(/^(\d{4})-(\d{4})$/) || []
 
       if (match.length) {
-        acc.startYear = parseInt(match[1], 10);
-        acc.endYear = parseInt(match[2], 10);
+        acc.startYear = parseInt(match[1], 10)
+        acc.endYear = parseInt(match[2], 10)
 
-        return acc;
+        return acc
       }
 
       if (curr.startsWith('license')) {
         acc.format = curr
           .split('.')
           .pop()
-          .trim();
-        return acc;
+          .trim()
+        return acc
       }
 
       if (curr.startsWith('+')) {
-        acc.license = curr.substr(1).toUpperCase();
-        return acc;
+        acc.license = curr.substr(1).toUpperCase()
+        return acc
       }
 
-      acc.sha = curr; // not actually supported now - 2019-06-19
-      return acc;
+      acc.sha = curr // not actually supported now - 2019-06-19
+      return acc
     },
     {
       format: 'html',
       startYear: null,
       endYear: currentYear,
-      sha: null,
+      sha: null
     }
-  );
+  )
 
   if (res.locals.options.sha) {
     res.setHeader(
       'X-note',
       'SHA and commit pinning is no longer supported, showing you latest release'
-    );
+    )
   }
 
-  next();
-};
+  next()
+}

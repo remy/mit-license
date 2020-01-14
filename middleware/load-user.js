@@ -1,35 +1,35 @@
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require('fs-extra')
+const path = require('path')
 
 module.exports = async (req, res, next) => {
-  const id = req.hostname.split('.')[0];
-  res.locals.id = id;
+  const id = req.hostname.split('.')[0]
+  res.locals.id = id
 
   if (req.method.toUpperCase() !== 'GET') {
-    return next();
+    return next()
   }
 
   // Otherwise load up the user json file
   res.locals.user = {
-    copyright: '<copyright holders>',
-  };
+    copyright: '<copyright holders>'
+  }
 
   try {
     const data = await fs.readFile(
       path.join(__dirname, '..', 'users', `${id}.json`),
       'utf8'
-    );
-    res.locals.user = { ...res.locals.user, ...JSON.parse(data) };
+    )
+    res.locals.user = { ...res.locals.user, ...JSON.parse(data) }
   } catch ({ code, message }) {
     if (code !== 'ENOENT') {
       res
         .code(500)
         .send(
           `An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`
-        );
-      return;
+        )
+      return
     }
   }
 
-  next();
-};
+  next()
+}

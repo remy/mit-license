@@ -23,7 +23,7 @@
     "dev": "nodemon .",
     "serve": "node server.js",
     "test": "node test.js",
-    "lint": "eslint server.js middleware/*.js routes/*.js --color"
+    "lint": "standard"
   },
   "bugs": {
     "url": "https://github.com/remy/mit-license/issues"
@@ -41,17 +41,15 @@
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
     "serve-favicon": "^2.5.0",
-    "temp-dir": "^2.0.0"
+    "temp-dir": "^2.0.0",
+    "yn": "^4.0.0"
   },
   "devDependencies": {
-    "@remy/eslint": "^3.2.2",
-    "babel-eslint": "^10.0.3",
     "css": "^2.2.4",
-    "eslint": "^6.8.0",
-    "eslint-plugin-node": "^11.0.0",
     "has-flag": "^4.0.0",
-    "husky": "^3.1.0",
-    "nodemon": "^2.0.2"
+    "husky": "^4.0.7",
+    "nodemon": "^2.0.2",
+    "standard": "^14.3.1"
   },
   "resolutions": {
     "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
