@@ -1,9 +1,7 @@
 {
-  "copyright": "Pradeep K. Pant",
+  "copyright": "Pradeep K. Pant, http://pradeeppant.com",
   "url": "http://pradeeppant.com",
-  "email": "ppant@cpan.org",
-  "format": "html",
-  "license": "mit",
-  "theme": "default",
+  "email": "pantpradeep@gmail.com",
+  "theme": "opensans",
   "gravatar": true
 }
