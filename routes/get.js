@@ -1,12 +1,14 @@
 const md5 = require('md5')
 const path = require('path')
-const { stripTags, escapeTags, unescapeTags } = require('./utils')
-const _ = require('lodash')
+const escapeTags = require('escape-html')
+const unescapeTags = require('unescape-html')
+const stripTags = require('html-text')
+const is = require('@sindresorhus/is')
 
 function getCopyrightHTML (user, plain) {
   let html = ''
 
-  const name = _.isString(user)
+  const name = is.string(user)
     ? user
     : plain
       ? user.name || user.copyright
@@ -34,9 +36,9 @@ module.exports = (req, res) => {
 
   // No error and valid
   if (user.copyright) {
-    if (_.isString(user.copyright)) {
+    if (is.string(user.copyright)) {
       name = getCopyrightHTML(user, options.format !== 'html')
-    } else if (_.isArray(user.copyright) && user.copyright.every(val => _.isString(val))) {
+    } else if (is.array(user.copyright) && user.copyright.every(val => is.string(val))) {
       // Supports: ['Remy Sharp', 'Richie Bendall']
       name = user.copyright
         .map(v => (options.format !== 'html' ? v : escapeTags(v)))
@@ -51,7 +53,7 @@ module.exports = (req, res) => {
     gravatar = `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(
       user.email.trim().toLowerCase()
     )}" />`
-  } else if (_.isObject(user.copyright[0]) && user.gravatar) {
+  } else if (is.object(user.copyright[0]) && user.gravatar) {
     // Supports multi-user format
     gravatar = `<img id="gravatar" alt="Profile image" src="https://www.gravatar.com/avatar/${md5(
       user.copyright[0].email.trim().toLowerCase()

@@ -1,5 +1,4 @@
 {
-  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "name": "mit-licence",
   "description": "Hosted MIT License with details controlled through this repo",
   "private": true,
@@ -12,12 +11,7 @@
   "engines": {
     "node": ">=10"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
-  },
+  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
@@ -30,28 +24,38 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^16.36.0",
+    "@octokit/rest": "^16.41.0",
+    "@sindresorhus/is": "^2.0.0",
+    "any-size": "^1.0.0",
     "btoa": "^1.2.1",
     "ejs": "^3.0.1",
+    "escape-html": "^1.0.3",
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
     "fs-extra": "^8.1.0",
-    "lodash": "^4.17.15",
+    "html-text": "^1.0.1",
     "md5": "^2.2.1",
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
     "serve-favicon": "^2.5.0",
     "temp-dir": "^2.0.0",
+    "unescape-html": "^1.1.0",
     "yn": "^4.0.0"
   },
   "devDependencies": {
     "css": "^2.2.4",
     "has-flag": "^4.0.0",
-    "husky": "^4.0.7",
+    "husky": "^4.2.1",
     "nodemon": "^2.0.2",
     "standard": "^14.3.1"
   },
   "resolutions": {
     "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   }
 }
