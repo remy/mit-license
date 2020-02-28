@@ -1,6 +1,6 @@
 # A permalink for your MIT License ![Travis CI Status](https://img.shields.io/travis/remy/mit-license/master.svg?style=for-the-badge)
 
-I always forget to add an `MIT-license.txt` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
+I always forget to add a `LICENSE` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
 Why keep this to myself, there are two ways to create your _own_ MIT license page:
 

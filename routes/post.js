@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 const path = require('path')
 const btoa = require('btoa')
 const { version } = require(path.join(__dirname, '..', 'package.json'))
-const _ = require('lodash')
+const size = require('any-size')
 const github = require('@octokit/rest')({
   // GitHub personal access token
   auth: process.env.github_token,
@@ -10,14 +10,15 @@ const github = require('@octokit/rest')({
   userAgent: `mit-license v${version}`
 })
 const yn = require('yn')
+const is = require('@sindresorhus/is')
 
 const { validDomainId } = require('./utils')
 
 function getUserData ({ query, body }) {
   // If query parameters provided
-  if (_.size(query) > 0) return query
+  if (size(query) > 0) return query
   // If the data parsed as {'{data: "value"}': ''}
-  if (_.size(body) === 1 && !_.first(_.values(body))) return JSON.parse(_.first(_.keys(body)))
+  if (size(body) === 1 && !Object.values(body)[0]) return JSON.parse(Object.keys(body)[0])
   // Fallback
   return body
 }
@@ -38,7 +39,7 @@ module.exports = async (req, res) => {
   }
 
   // Extract the name from the URL
-  const id = _.first(params)
+  const id = params[0]
 
   if (!validDomainId(id)) {
     // Return a vague error intentionally
@@ -65,7 +66,7 @@ module.exports = async (req, res) => {
   if (userData.gravatar) {
     // Parse the string version of a boolean or similar
     userData.gravatar = yn(userData.gravatar, { lenient: true })
-    if (_.isUndefined(userData.gravatar)) {
+    if (is.undefined(userData.gravatar)) {
       res
         .status(400)
         .send(

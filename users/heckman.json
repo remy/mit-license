@@ -1,0 +1,9 @@
+{
+  "copyright": "erik ben heckman",
+  "url": "https://heckman.ca/",
+  "email": "erik@heckman.ca",
+  "format": "html",
+  "license": "isc",
+  "theme": "default",
+  "gravatar": true
+}

@@ -1,0 +1,9 @@
+{
+  "copyright": "Jackson Brink",
+  "url": "https://jacksonbrink.com",
+  "email": "admin@jacksonbrink.com",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-teal",
+  "gravatar": true
+}
