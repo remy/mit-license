@@ -13,7 +13,7 @@ const tempdir = require('temp-dir')
 const path = require('path')
 
 // Server
-var PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080
 
 // Prepare application
 const app = express()
