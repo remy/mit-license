@@ -3,7 +3,8 @@ const path = require('path')
 const btoa = require('btoa')
 const { version } = require(path.join(__dirname, '..', 'package.json'))
 const size = require('any-size')
-const github = require('@octokit/rest')({
+const { Octokit } = require('@octokit/rest')
+const github = new Octokit({
   // GitHub personal access token
   auth: process.env.github_token,
   // User agent with version from package.json
