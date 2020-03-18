@@ -1,45 +1,54 @@
-const path = require('path')
 const fs = require('fs-extra')
 const CSS = require('css')
 const { validDomainId } = require('./routes/utils')
 const hasFlag = require('has-flag')
+const getExtension = require('file-ext')
+const path = require('path-extra')
+const is = require('@sindresorhus/is')
 
-function report (content, fix) {
+async function report (content, fix) {
   console.error(content)
-  if (fix && hasFlag('--fix')) fix()
+  if (fix && hasFlag('--fix')) await fix()
   process.exitCode = 1
 }
 
 (async () => {
   const users = await fs.readdir('users')
-  users.forEach(async user => {
-    if (!user.endsWith('json')) {
-      report(`${user} is not a json file`, () =>
-        fs.unlink(path.join('users', user), () => { })
-      )
+
+  for (const user of users) {
+    if (getExtension(user) !== 'json') {
+      await report(`${user} is not a json file`, async () => {
+        await fs.remove(user)
+      })
     }
-    if (!validDomainId(user.replace('.json', ''))) {
-      report(`${user} is not a valid domain id.`)
+
+    if (!validDomainId(path.base(user))) {
+      await report(`${user} is not a valid domain id.`)
     }
+
     try {
       const data = await fs.readFile(path.join('users', user), 'utf8')
+
       try {
-        const u = JSON.parse(data)
-        if (!u.locked && !u.copyright) {
+        const parsedData = JSON.parse(data)
+
+        if (!parsedData.locked && !parsedData.copyright) {
           report(`Copyright not specified in ${user}`)
         }
-        if (u.version) {
-          report(`Version tag found in ${user}`, () => {
-            delete u.version
-            const stringified = `${JSON.stringify(u, 0, 2)}\n`
-            fs.writeFile(path.join('users', user), stringified, () => { })
+
+        if (parsedData.version) {
+          await report(`Version tag found in ${user}`, async () => {
+            delete parsedData.version
+            const stringified = `${JSON.stringify(parsedData, 0, 2)}\n`
+            await fs.writeFile(path.join('users', user), stringified)
           })
         }
-        if (typeof u.gravatar === 'string') {
-          report(`Gravatar boolean encoded as string found in ${user}`, () => {
-            u.gravatar = u.gravatar === 'true'
-            const stringified = `${JSON.stringify(u, 0, 2)}\n`
-            fs.writeFile(path.join('users', user), stringified, () => { })
+
+        if (is.string(parsedData.gravatar)) {
+          await report(`Gravatar boolean encoded as string found in ${user}`, async () => {
+            parsedData.gravatar = parsedData.gravatar === 'true'
+            const stringified = `${JSON.stringify(parsedData, 0, 2)}\n`
+            await fs.writeFile(path.join('users', user), stringified)
           })
         }
       } catch ({ message }) {
@@ -48,15 +57,16 @@ function report (content, fix) {
     } catch ({ message }) {
       report(`Unable to read ${user} (${message})`)
     }
-  })
+  }
 
   const themes = await fs.readdir('themes')
-  await themes.forEach(async theme => {
-    if (theme.endsWith('css')) {
+
+  for (const theme of themes) {
+    if (getExtension(theme) === 'css') {
       try {
-        const data = await fs.readFile(path.join('themes', theme), 'utf8')
+        const cssData = await fs.readFile(path.join('themes', theme), 'utf8')
         try {
-          CSS.parse(data)
+          CSS.parse(cssData)
         } catch ({ message }) {
           report(`Invalid CSS in ${theme} (${message})`)
         }
@@ -64,5 +74,5 @@ function report (content, fix) {
         report(`Unable to read ${theme} (${message})`)
       }
     }
-  })
+  }
 })()

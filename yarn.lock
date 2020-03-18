@@ -1447,6 +1447,14 @@ file-entry-cache@^5.0.1:
   dependencies:
     flat-cache "^2.0.1"
 
+file-ext@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/file-ext/-/file-ext-1.0.0.tgz#2125fa6e27fd92154a5448b091fcddaf00916a5e"
+  integrity sha512-/gd7NKKmNageT+bw5l+/GFxwIPcvoO0re6yM71hbxlwthdeuNOlegTN/FR7GVj1ZZQFATwoVAz0n4a0dlmwzVQ==
+  dependencies:
+    get-ext "^1.0.2"
+    ow "^0.16.0"
+
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"
@@ -1585,6 +1593,11 @@ functional-red-black-tree@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
   integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
+
+get-ext@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/get-ext/-/get-ext-1.0.2.tgz#fce896d0cc4cd615ece7c13a0ebd55e65270056d"
+  integrity sha1-/OiW0MxM1hXs58E6Dr1V5lJwBW0=
 
 get-stdin@^7.0.0:
   version "7.0.0"
@@ -2768,6 +2781,13 @@ osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+ow@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/ow/-/ow-0.16.0.tgz#c096cfbee8fe447577099598e8f04e002f2fc391"
+  integrity sha512-pJAkOEbRT7vhJZlkyKp/rQKR4YQ3qqdek6f3MnHMs7MRBKm5RfZq6GiLnqMRbQeYTwhMFXsTFuyhDrFuPu+yFQ==
+  dependencies:
+    type-fest "^0.8.1"
+
 p-finally@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
@@ -2894,6 +2914,14 @@ path-exists@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/path-exists/-/path-exists-4.0.0.tgz#513bdbe2d3b95d7762e8c1137efa195c6c61b5b3"
   integrity sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==
+
+path-extra@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/path-extra/-/path-extra-4.3.0.tgz#480cae968c698f779c4db939442fb2b871e89385"
+  integrity sha512-ZzYeovxrO9rxKHJ27kFjF8oKnN4U7y463Y4WH7PC3wH5GzEPVdX32Z2ayy3lwMIM2iGKkq6XuufeSRblgHNnhQ==
+  dependencies:
+    escape-string-regexp "^1.0.5"
+    replace-ext "^1.0.0"
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
@@ -4127,6 +4155,11 @@ type-fest@^0.3.0:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.3.1.tgz#63d00d204e059474fe5e1b7c011112bbd1dc29e1"
   integrity sha512-cUGJnCdr4STbePCgqNFbpVNCepa+kAVohJs1sLhxzdH+gnEoOd8VhbYa7pD3zZYGiURWM2xzEII3fQcRizDkYQ==
+
+type-fest@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
+  integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
