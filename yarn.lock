@@ -1071,7 +1071,12 @@ es6-weak-map@^2.0.2:
     es6-iterator "^2.0.3"
     es6-symbol "^3.1.1"
 
-escape-html@^1.0.3, escape-html@~1.0.3:
+escape-goat@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/escape-goat/-/escape-goat-3.0.0.tgz#e8b5fb658553fe8a3c4959c316c6ebb8c842b19c"
+  integrity sha512-w3PwNZJwRxlp47QGzhuEBldEqVHHhh8/tIPcl6ecf2Bou99cdAt0knihBV0Ecc7CGxYduXVBDheH1K2oADRlvw==
+
+escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
   integrity sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
@@ -4155,11 +4160,6 @@ undefsafe@^2.0.2:
   integrity sha1-Il9rngM3Zj4Njnz9aG/Cg2zKznY=
   dependencies:
     debug "^2.2.0"
-
-unescape-html@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/unescape-html/-/unescape-html-1.1.0.tgz#d24705e82f0c9e62a87ada62f3cd96303d7d2a3c"
-  integrity sha512-O9/yBNqIkArjS597iHez5hAaAdn7b8/230SX8IncgXAX5tWI9XlEQYaz6Qbou0Sloa9n6lx9G5s6hg5qhJyzGg==
 
 uniq@^1.0.1:
   version "1.0.1"

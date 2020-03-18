@@ -1,8 +1,7 @@
 const md5 = require('md5')
 const path = require('path')
-const escapeTags = require('escape-html')
-const unescapeTags = require('unescape-html')
-const stripTags = require('html-text')
+const { htmlEscape, htmlUnescape } = require('escape-goat')
+const stripHtml = require('html-text')
 const is = require('@sindresorhus/is')
 
 function getCopyrightHTML (user, plain) {
@@ -12,17 +11,17 @@ function getCopyrightHTML (user, plain) {
     ? user
     : plain
       ? user.name || user.copyright
-      : escapeTags(user.name || user.copyright)
+      : htmlEscape(user.name || user.copyright)
 
   if (user.url) {
-    html = `<a href="${stripTags(user.url)}">${name}</a>`
+    html = `<a href="${stripHtml(user.url)}">${name}</a>`
   } else {
     html = name
   }
 
   if (user.email) {
-    html += ` &lt;<a href="mailto:${stripTags(user.email)}">${
-      plain ? user.email : escapeTags(user.email)
+    html += ` &lt;<a href="mailto:${stripHtml(user.email)}">${
+      plain ? user.email : htmlEscape(user.email)
       }</a>&gt;`
   }
 
@@ -41,7 +40,7 @@ module.exports = (req, res) => {
     } else if (is.array(user.copyright) && user.copyright.every(val => is.string(val))) {
       // Supports: ['Remy Sharp', 'Richie Bendall']
       name = user.copyright
-        .map(v => (options.format !== 'html' ? v : escapeTags(v)))
+        .map(v => (options.format !== 'html' ? v : htmlEscape(v)))
         .join(', ')
     } else {
       name = user.copyright.map(getCopyrightHTML).join(', ')
@@ -84,7 +83,7 @@ module.exports = (req, res) => {
 
       res
         .set('Content-Type', 'text/plain; charset=UTF-8')
-        .send(unescapeTags(stripTags(plain)).trim())
+        .send(htmlUnescape(stripHtml(plain)).trim())
       return
     }
 

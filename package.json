@@ -29,7 +29,7 @@
     "any-size": "^1.0.0",
     "btoa": "^1.2.1",
     "ejs": "^3.0.1",
-    "escape-html": "^1.0.3",
+    "escape-goat": "^3.0.0",
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
     "fs-extra": "^8.1.0",
@@ -39,7 +39,6 @@
     "postcss-preset-env": "^6.7.0",
     "serve-favicon": "^2.5.0",
     "temp-dir": "^2.0.0",
-    "unescape-html": "^1.1.0",
     "yn": "^4.0.0"
   },
   "devDependencies": {
