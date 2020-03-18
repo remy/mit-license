@@ -48,7 +48,7 @@ app.use(
 // Middleware
 
 // CORS
-app.use(require('./middleware/cors'))
+app.use(require('cors'))
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(
   express.urlencoded({

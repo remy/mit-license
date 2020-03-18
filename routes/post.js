@@ -17,8 +17,10 @@ const { validDomainId } = require('./utils')
 function getUserData ({ query, body }) {
   // If query parameters provided
   if (size(query) > 0) return query
+
   // If the data parsed as {'{data: "value"}': ''}
   if (size(body) === 1 && !Object.values(body)[0]) return JSON.parse(Object.keys(body)[0])
+
   // Fallback
   return body
 }
@@ -26,6 +28,7 @@ function getUserData ({ query, body }) {
 // HTTP POST API
 module.exports = async (req, res) => {
   const { hostname } = req
+
   // Get different parts of hostname (example: remy.mit-license.org -> ['remy', 'mit-license', 'org'])
   const params = hostname.split('.')
 
