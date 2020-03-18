@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^16.41.0",
-    "@sindresorhus/is": "^2.0.0",
-    "any-size": "^1.0.0",
+    "@octokit/rest": "^17.1.0",
+    "@sindresorhus/is": "^2.1.0",
+    "any-size": "^1.0.1",
     "btoa": "^1.2.1",
     "cors": "^2.8.5",
     "ejs": "^3.0.1",
@@ -45,12 +45,11 @@
   "devDependencies": {
     "css": "^2.2.4",
     "file-ext": "^1.0.0",
-    "get-ext": "^1.0.2",
     "has-flag": "^4.0.0",
-    "husky": "^4.2.1",
+    "husky": "^4.2.3",
     "nodemon": "^2.0.2",
     "path-extra": "^4.3.0",
-    "standard": "^14.3.1"
+    "standard": "^14.3.3"
   },
   "resolutions": {
     "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
