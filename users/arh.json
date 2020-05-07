@@ -1,7 +1,7 @@
 {
-  "copyright": "Ali Reza Hayati, https://ealireza.com"
+  "copyright": "Ali Reza Hayati, https://ealireza.com",
   "url": "https://ealireza.com",
-  "email": "arhayati@systemli.org"
-  "theme": "opensans"
+  "email": "arhayati@systemli.org",
+  "theme": "open-sans",
   "gravatar": true
 }
