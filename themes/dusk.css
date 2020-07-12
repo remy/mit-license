@@ -1,13 +1,7 @@
 /* Dusk theme v1.0.0 by @georapbox */
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
 
 *::selection {
-  background: #de5833;
-  color: #eff7ff;
-}
-
-*::-moz-selection {
   background: #de5833;
   color: #eff7ff;
 }
@@ -31,9 +25,7 @@ a:link, a:visited, a:hover {
   position: relative;
   text-decoration: none;
   color: #de5833;
-  -webkit-transition: color 0.3s ease-in-out;
   transition: color 0.3s ease-in-out;
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
 }
 
@@ -50,15 +42,12 @@ a:before {
   left: 0;
   background-color: #de5833;
   visibility: hidden;
-  -webkit-transform: scaleX(0);
   transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 a:hover:before {
   visibility: visible;
-  -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
@@ -79,7 +68,7 @@ article h1 {
   background: #1F222A;
 }
 
-article h1 + p {
+article h1+p {
   max-width: 100%;
   margin-top: 0;
   padding-top: 0.1em;
@@ -89,7 +78,7 @@ article h1 + p {
   background: #1F222A;
 }
 
-article h1 + p + p {
+article h1+p+p {
   margin-top: 1.6em;
 }
 
@@ -127,7 +116,7 @@ footer p {
 }
 
 @media (max-width: 750px) {
-  article h1 + p {
+  article h1+p {
     font-size: 0.8em;
   }
 }

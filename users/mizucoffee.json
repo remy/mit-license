@@ -1,0 +1,9 @@
+{
+  "copyright": "Ritsuki Goto",
+  "url": "https://mizu.coffee/",
+  "email": "develop@mizucoffee.net",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-indigo",
+  "gravatar": true
+}

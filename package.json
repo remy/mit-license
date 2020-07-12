@@ -1,21 +1,63 @@
 {
-  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "name": "mit-licence",
   "description": "Hosted MIT License with details controlled through this repo",
-  "version": "1.0.0",
+  "private": true,
+  "version": "2.0.0",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:remy/mit-license.git"
   },
+  "engines": {
+    "node": ">=10"
+  },
+  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "scripts": {
-    "test": "node test.js"
+    "start": "node .",
+    "dev": "nodemon .",
+    "serve": "node server.js",
+    "test": "node test.js",
+    "lint": "standard"
   },
   "bugs": {
     "url": "https://github.com/remy/mit-license/issues"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "dependencies": {
-    "nconf": "^0.8.4",
-    "request": "^2.72.0"
+    "@octokit/rest": "^17.1.0",
+    "@sindresorhus/is": "^2.1.0",
+    "any-size": "^1.0.1",
+    "btoa": "^1.2.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.1",
+    "escape-goat": "^3.0.0",
+    "express": "^4.17.1",
+    "express-minify": "^1.0.0",
+    "fs-extra": "^8.1.0",
+    "html-text": "^1.0.1",
+    "md5": "^2.2.1",
+    "postcss-middleware": "^1.1.4",
+    "postcss-preset-env": "^6.7.0",
+    "serve-favicon": "^2.5.0",
+    "temp-dir": "^2.0.0",
+    "yn": "^4.0.0"
+  },
+  "devDependencies": {
+    "css": "^2.2.4",
+    "file-ext": "^1.0.0",
+    "has-flag": "^4.0.0",
+    "husky": "^4.2.3",
+    "nodemon": "^2.0.2",
+    "path-extra": "^4.3.0",
+    "standard": "^14.3.3"
+  },
+  "resolutions": {
+    "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
   }
 }

@@ -1,8 +1,8 @@
 {
-  "copyright"	: "Luiz Picolo",
-  "url"			: "http://www.luizpicolo.com.br",
-  "format"		: "html",
-  "email"		: "luizpicolo@gmail.com",
-  "gravatar"	: false,
-  "theme"     	: "rokkitt"
+  "copyright": "Luiz Picolo",
+  "url": "http://www.luizpicolo.com.br",
+  "format": "html",
+  "email": "luizpicolo@gmail.com",
+  "gravatar": false,
+  "theme": "rokkitt"
 }

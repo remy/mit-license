@@ -1,15 +1,18 @@
-# A permalink for your MIT License
+# A permalink for your MIT License ![Travis CI Status](https://img.shields.io/travis/remy/mit-license/master.svg?style=for-the-badge)
 
-I always forget to add an MIT-license.txt file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
+I always forget to add a `LICENSE` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
-Why keep this to myself, there's two ways to create your *own* MIT license page:
+Why keep this to myself, there are two ways to create your _own_ MIT license page:
 
-1. Make a request to the API (details below)
-2. Fork this project and send a pull request
+1.  Use the generator tool (easiest)
+2.  Make a request to the API (details below)
+3.  Fork this project and send a pull request
 
-Now I can always include http://rem.mit-license.org in all my projects which links `rem` (the cname) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
+Now I can always include <https://rem.mit-license.org> in all my projects which links `rem` (the CNAME) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
 
 ## Requesting your own MIT license page
+
+The simplest way to create your own MIT license page is to use the self-service generator found [here](https://richienb.github.io/mit-license-generator).
 
 You can fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
 
@@ -17,31 +20,43 @@ You can fork this project, send me a pull request and wait for me to pull (which
 curl -d'{ "copyright": "Remy Sharp" }' https://rem.mit-license.org
 ```
 
-If the `rem` user isn't taken already, then this will create the new user file on the fly and the url will be immediately available.
+If the `rem` user isn't taken already, then this will create the new user file on the fly and the URL will be immediately available.
 
-You can send a full JSON file to the API, not *just* the copyright, so this works too:
+You can send a full JSON file to the API, not _just_ the copyright, so this works too:
 
 ```bash
-curl -d'{ "copyright": "Remy Sharp", "url": "http://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
+curl -d'{ "copyright": "Remy Sharp", "url": "https://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
 ```
 
-If there's any problems in the automated creation, send me a pull request and it'll go live soon after.
+Whilst the command above sends the data as a string which will later be parsed, you can explicitly specify a JSON `Content-Type`:
 
-Equally if you need to update the user file to include more details that you didn't initially include (extra fields in the next section) you will need to send a pull request on that `user.json` file via GitHub.
+```bash
+curl -H 'Content-Type: application/json' -d'{ "copyright": "Remy Sharp", "url": "https://remysharp.com", "email": "me@mysite.com", "format": "txt" }' https://rem.mit-license.org
+```
+
+You can also encode the data as URL query parameters like so:
+
+```bash
+curl -X POST "https://rem.mit-license.org/?copyright=Remy%20Sharp&url=http%3A%2F%2Fremysharp.com&email=me%40mysite.com&format=txt"
+```
+
+If there are any problems in the automated creation, send me a pull request and it'll go live soon after.
+
+Equally, if you need to update the user file to include more details that you didn't initially include (extra fields in the next section) you will need to send a pull request on that `user.json` file via GitHub.
 
 ## The user.json file
 
-The `users` directory contains a list of files, each representing a host on mit-license.org. The minimum requirement for the JSON is that is contains a `copyright` field - everything else is optional. Remember to ensure the `user.json` file is [valid JSON](http://jsonlint.com/).
+The `users` directory contains a list of files, each representing a host on mit-license.org. The minimum requirement for the JSON is that it contains a `copyright` field - everything else is optional. Remember to ensure the `user.json` file is [valid JSON](https://jsonlint.com/).
 
 Available fields:
 
 * copyright (required)
-* url
+* URL
 * email
 * format
 * gravatar
-* version
 * theme
+* license
 
 ### copyright
 
@@ -49,20 +64,51 @@ Create a new file and give it the name of the CNAME you want (in my case it's `r
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com"
+  "copyright": "Remy Sharp, https://remysharp.com"
 }
 ```
 
-Means I can now link to: http://rem.mit-license.org and it will show my license name (note that the date will always show the current year).
+Means I can now link to <https://rem.mit-license.org> and it will show my license name (note that the date will always show the current year).
 
-### url
-
-In addition to the `copyright` property, if you want to make a link from the copyright text, you can include a `url` property:
+You can also use an array to hold multiple copyright holders:
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com"
+  "copyright": ["Remy Sharp", "Richie Bendall"]
+}
+```
+
+Which will be formatted as:
+
+    Remy Sharp and Richie Bendall
+
+If you additionally want to include a URL and email with each copyright holder, use objects in the array:
+
+```json
+{
+  "copyright": [
+    {
+      "name": "Remy Sharp, https://remysharp.com",
+      "url": "https://remysharp.com",
+      "email": "remy@remysharp.com"
+    },
+    {
+      "name": "Richie Bendall, https://www.richie-bendall.ml",
+      "url": "https://www.richie-bendall.ml",
+      "email": "richiebendall@gmail.com"
+    }
+  ]
+}
+```
+
+### url
+
+In addition to the `copyright` property, if you want to make a link from the copyright text, you can include a `URL` property:
+
+```json
+{
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com"
 }
 ```
 
@@ -72,8 +118,8 @@ You can also include a link to your email which is displayed after the copyright
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "email": "me@mysite.com"
 }
 ```
@@ -84,8 +130,8 @@ And if you want your license to appear as plain text, just add the `format` prop
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "format": "txt"
 }
 ```
@@ -96,8 +142,8 @@ And if you want to show your gravatar, just add the `gravatar` boolean property:
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "email": "me@mysite.com",
   "gravatar": true
 }
@@ -105,38 +151,16 @@ And if you want to show your gravatar, just add the `gravatar` boolean property:
 
 Note that the gravatar requires the email property. You also need to check the compatibility of the chosen theme. Currently, only the default theme supports Gravatar.
 
-### License version targeting
-
-License version targeting allows you to link your MIT license to a specific revision in this project - therefore fixing it permanently to a specific license text.
-
-Though I don't expect the license text to change ever, this is just some extra assurance for you.
-
-Targeting requires the [sha from the license commit](https://github.com/remy/mit-license/commits/master/LICENSE.html). This can be specified on the URL (in your permalink) or in the JSON file.
-
-For example: http://rem.mit-license.org/a526bf7ad1 (make sure to view-source) shows an older version of the LICENSE.html file (compared to the [latest version](http://rem.mit-license.org) - the older version didn't have the new themes).
-
-This can also be targeted in my JSON file:
-
-```json
-{
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
-  "version": "a526rbf7"
-}
-```
-
-Note that if no version is supplied, the latest copy of the LICENSE.html will be displayed with your information included.
-
 ### Themes
 
-If you've got an eye for design (or like me: not): you can contribute a theme by adding a CSS file to the `themes` directory. The default theme is simple and clean, but you can add your own as you like.
+If you've got an eye for design (or like me: not): you can contribute a theme by adding a CSS file to the `themes` directory. You can use the latest CSS technologies since they are automatically polyfilled. The default theme is simple and clean, but you can add your own as you like.
 
 To use a theme, add the `theme` property to your `user.json` file, for example:
 
 ```json
 {
-  "copyright": "Remy Sharp, http://remysharp.com",
-  "url": "http://remysharp.com",
+  "copyright": "Remy Sharp, https://remysharp.com",
+  "url": "https://remysharp.com",
   "theme": "flesch"
 }
 ```
@@ -175,36 +199,40 @@ Current available themes:
 * material - [preview](http://ahaasler.github.io/mit-license-material-theme/) (by [@ahaasler](https://github.com/ahaasler)). *Available colours: blue gray (default), red, pink, purple, deep purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown and grey. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `material-deep-orange`.*
 * hmt-blue - [preview](https://jsbin.com/naqorar/) (by [@J2TeaM](https://github.com/J2TeaM))
 * dusk - [preview](https://output.jsbin.com/giqivoh) (by [@georapbox](https://github.com/georapbox))
-* 8bits - [preview](http://jorge-matricali.github.io/mit-license-8bits-theme/) (by [@jorge-matricali](https://github.com/jorge-matricali)). *Available colours: monochrome, monochrome-white, monochrome-blue-white. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`.*
+* 8bits - [preview](https://matricali.github.io/mit-license-8bits-theme/) (by [@matricali](https://github.com/matricali)). *Available colours: monochrome, monochrome-white, monochrome-blue-white, monochrome-green, monochrome-amber. To use a specific colour, add it as a dash-separated suffix on the theme name, such as `8bits-monochrome`.*
+* hacker - [preview](https://tommy.mit-license.org/) (by [@TommyPujol06](https://github.com/TommyPujol06))
+* anon-pro - [preview](https://b.mit-license.org) (by [@bbbrrriiiaaannn](https://github.com/bbbrrriiiaaannn))
+* richienb - [preview](https://richienb.github.io/mit-license-richienb-theme/demo) (by [@Richienb](https://github.com/Richienb)). *Dark variant: `richienb-dark` - [preview](https://richienb.github.io/mit-license-richienb-theme/demo-dark).*
+* tryhtml - [preview](https://output.jsbin.com/cawihuwuku) (by [@abranhe](https://github.com/abranhe))
 
 ## Formats & URLs
 
 The following types of requests can be made to this project:
 
-* [http://rem.mit-license.org/](http://rem.mit-license.org/) HTML, or the default format specified in
-the json file (currently none specified on `rem`)
-* [http://rem.mit-license.org/license.html](http://rem.mit-license.org/license.html) HTML
-* [http://rem.mit-license.org/license.txt](http://rem.mit-license.org/license.txt) Text
-* [http://rem.mit-license.org/a526bf7ad1](http://rem.mit-license.org/a526bf7ad1) a526bf7ad1 version, HTML, or the
-default format specified in the json file (again, none specified for
-`rem` so defaults to HTML)
-* [http://rem.mit-license.org/a526bf7ad1/license.html](http://rem.mit-license.org/a526bf7ad1/license.html) a526bf7ad1 version,
-HTML
-* [http://rem.mit-license.org/a526bf7ad1/license.txt](http://rem.mit-license.org/a526bf7ad1/license.txt) a526bf7ad1 version,
-text
+* <https://rem.mit-license.org/> HTML, or the default format specified in
+    the json file (currently none specified on `rem`)
+* <https://rem.mit-license.org/license.html> HTML
+* <https://rem.mit-license.org/license.txt> Text
 
-The url also supports including a start year:
+The URL also supports including a start year:
 
-* [http://rem.mit-license.org/2009/](http://rem.mit-license.org/2009/) will
-  show a license year range of 2009-2016 (2016 being the current year)
-* [http://rem.mit-license.org/2009-2010](http://rem.mit-license.org/2009-2010/)
-  allows me to force the year range
-* [http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt](http://rem.mit-license.org/a526bf7ad1/2009-2010/license.txt) a526bf7ad1 version, with year range of 2009-2010 in plain text
+* <https://rem.mit-license.org/2009/> will
+    show a license year range of 2009-2016 (2016 being the current year)
+* <https://rem.mit-license.org/2009-2010>
+    allows me to force the year range
+* <https://rem.mit-license.org/2009-2010/license.txt> year range of 2009-2010 in plain text
 
-Finally, the url also supports pinning the year
+You can also specify either the `MIT` or `ISC` license in the URL:
 
-* [http://rem.mit-license.org/@2009](http://rem.mit-license.org/@2009)
-  this is useful for when your software copyright should expire ([as discussed here](https://github.com/remy/mit-license/issues/771))
+* <https://rem.mit-license.org/+MIT> will
+    show the MIT License (default)
+* <https://rem.mit-license.org/+ISC>
+    shows the ISC license instead
+
+Finally, the URL also supports pinning the year
+
+* <https://rem.mit-license.org/@2009>
+    this is useful for when your software copyright should expire ([as discussed here](https://github.com/remy/mit-license/issues/771))
 
 ## Ways to contribute
 
@@ -217,6 +245,7 @@ Development contributions from:
 * [georgebashi](https://github.com/georgebashi)
 * [mathiasbynens](https://github.com/mathiasbynens)
 * [evertton](https://github.com/evertton)
+* [Richienb](https://github.com/Richienb)
 
 **SSL and wildcard DNS is supported by [CloudFlare](https://www.cloudflare.com) - thank you 🙏💙**
 
@@ -224,7 +253,7 @@ Development contributions from:
 
 I host the domain with namecheap.com and yearly renewal is $9.69 per year. If you want to contribute a year, send me a message and I'll add the years on.
 
-Of course I'll do my best to continue running the domain and hosting, but this is your chance to contribute to the community project.
+Of course, I'll do my best to continue running the domain and hosting, but this is your chance to contribute to the community project.
 
 Domain contributions:
 
@@ -240,11 +269,11 @@ Domain contributions:
 * [barberboy](https://github.com/barberboy) - 2029-2030
 * [mostly-magic](https://github.com/mostly-magic) - 2030-2032
 
-*Please note that the whois says 2021 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)*
+_Please note that the whois says 2021 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)_
 
 ### 2. Hosting
 
-For the first 5 years mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a monthly fee. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting is currently costs $7 per month, if you want to donate in months or years, it's gratefully received ❤
+For the first 5 years, mit-license.org was hosted on my own dedicated server, but I've now moved to Heroku and am paying a monthly fee. If you would like to donate **[please donate here](https://www.paypal.me/rem)** include a message and I will add your name to the credit. Hosting currently costs $7 per month if you want to donate in months or years, it's gratefully received ❤
 
 Hosting contributions:
 
@@ -256,21 +285,24 @@ Hosting contributions:
 * [zhengyi-yang](https://github.com/zhengyi-yang) 5 months
 * [catodd](https://github.com/catodd) 2 months
 * [lrz0](https://github.com/lrz0) 1 month
-* [jorge-matricali](https://github.com/jorge-matricali) 3 months
+* [matricali](https://github.com/matricali) 3 months
 * [youchenlee](https://github.com/youchenlee) 12 months
 * [ramsey](https://github.com/ramsey) 12 months
 * [rmm5t](https://github.com/rmm5t) 1 month
 * [wrainaud](https://github.com/wrainaud) 3 months
 * [romkey](https://github.com/romkey) 12 months
 * [kylewelsby](https://github.com/kylewelsby) 6 months
+* [wiesner](https://github.com/wiesner) 1 month
+* [rajinwonderland](https://github.com/rajinwonderland) 3 months
+* [miszo](https://github.com/miszo) 1 month
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
 
-I'm a developer, I seem only capable of *grey*! If you're a designer and want to contribute a decent lick of paint on the project that would be super. Just create a new theme and send me a pull request.
+I'm a developer, I seem only capable of _grey_! If you're a designer and want to contribute a decent lick of paint on the project that would be super. Just create a new theme and send me a pull request.
 
 ## License
 
 And of course:
 
-MIT: http://rem.mit-license.org
+MIT: <https://rem.mit-license.org>
