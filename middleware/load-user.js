@@ -1,5 +1,5 @@
-const fs = require('fs-extra')
 const path = require('path')
+const loadJsonFile = require('load-json-file')
 
 module.exports = async (req, res, next) => {
   const id = req.hostname.split('.')[0]
@@ -15,11 +15,10 @@ module.exports = async (req, res, next) => {
   }
 
   try {
-    const data = await fs.readFile(
-      path.join(__dirname, '..', 'users', `${id}.json`),
-      'utf8'
-    )
-    res.locals.user = { ...res.locals.user, ...JSON.parse(data) }
+    res.locals.user = {
+      ...res.locals.user,
+      ...await loadJsonFile(path.join(__dirname, '..', 'users', `${id}.json`))
+    }
   } catch ({ code, message }) {
     if (code !== 'ENOENT') {
       res

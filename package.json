@@ -33,13 +33,15 @@
     "escape-goat": "^3.0.0",
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
-    "fs-extra": "^9.0.1",
     "html-text": "^1.0.1",
+    "load-json-file": "^6.2.0",
     "md5": "^2.3.0",
+    "path-exists": "^4.0.0",
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
     "serve-favicon": "^2.5.0",
     "temp-dir": "^2.0.0",
+    "write-json-file": "^4.3.0",
     "yn": "^4.0.0"
   },
   "devDependencies": {
