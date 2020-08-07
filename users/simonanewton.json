@@ -4,6 +4,6 @@
   "email": "simonanewton@gmail.com",
   "format": "html",
   "license": "mit",
-  "theme": "material-teal",
-  "gravatar": false
+  "theme": "material-grey",
+  "gravatar": true
 }
