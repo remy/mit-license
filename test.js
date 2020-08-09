@@ -1,4 +1,5 @@
-const fs = require('fs-extra')
+const { promises: fs } = require('fs')
+const writeJsonFile = require('write-json-file')
 const CSS = require('css')
 const { validDomainId } = require('./routes/utils')
 const hasFlag = require('has-flag')
@@ -18,7 +19,7 @@ async function report (content, fix) {
   for (const user of users) {
     if (getExtension(user) !== 'json') {
       await report(`${user} is not a json file`, async () => {
-        await fs.remove(user)
+        await fs.unlink(user)
       })
     }
 
@@ -39,8 +40,7 @@ async function report (content, fix) {
         if (parsedData.version) {
           await report(`Version tag found in ${user}`, async () => {
             delete parsedData.version
-            const stringified = `${JSON.stringify(parsedData, 0, 2)}\n`
-            await fs.writeFile(path.join('users', user), stringified)
+            await writeJsonFile(path.join('users', user), parsedData, { indent: 2 })
           })
         }
 

@@ -1,9 +1,10 @@
-const fs = require('fs-extra')
 const path = require('path')
 const btoa = require('btoa')
 const { version } = require(path.join(__dirname, '..', 'package.json'))
 const size = require('any-size')
 const { Octokit } = require('@octokit/rest')
+const pathExists = require('path-exists')
+const writeJsonFile = require('write-json-file')
 const github = new Octokit({
   // GitHub personal access token
   auth: process.env.github_token,
@@ -57,7 +58,7 @@ module.exports = async (req, res) => {
   }
 
   // Check if the user file exists in the users directory
-  const exists = await fs.pathExists(path.join(__dirname, '..', 'users', `${id}.json`))
+  const exists = await pathExists(path.join(__dirname, '..', 'users', `${id}.json`))
   if (exists) {
     res
       .status(409)
@@ -88,21 +89,19 @@ module.exports = async (req, res) => {
   }
 
   try {
-    const fileContent = JSON.stringify(userData, 0, 2)
-
-    await github.repos.createOrUpdateFile({
+    await github.repos.createOrUpdateFileContents({
       owner: 'remy',
       repo: 'mit-license',
       path: `users/${id}.json`,
       message: `Automated creation of user ${id}.`,
-      content: btoa(fileContent),
+      content: btoa(JSON.stringify(userData, 0, 2)),
       committer: {
         name: 'MIT License Bot',
         email: 'remy@leftlogic.com'
       }
     })
 
-    await fs.writeFile(path.join(__dirname, '..', 'users', `${id}.json`), fileContent)
+    await writeJsonFile(path.join(__dirname, '..', 'users', `${id}.json`), userData, { indent: undefined })
 
     res.status(201).send(`MIT license page created: https://${hostname}`)
   } catch (err) {
