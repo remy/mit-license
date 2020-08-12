@@ -1,9 +1,9 @@
 {
   "copyright": "Theo Paris",
   "url": "https://theoparis.com",
-  "email": "theoparisdesigns@gmail.com",
+  "email": "theo@throw-out-error.dev",
   "format": "html",
   "license": "mit",
-  "theme": "default-dark",
+  "theme": "hacker",
   "gravatar": true
 }
