@@ -204,7 +204,7 @@ Current available themes:
 * anon-pro - [preview](https://b.mit-license.org) (by [@bbbrrriiiaaannn](https://github.com/bbbrrriiiaaannn))
 * richienb - [preview](https://richienb.github.io/mit-license-richienb-theme/demo) (by [@Richienb](https://github.com/Richienb)). *Dark variant: `richienb-dark` - [preview](https://richienb.github.io/mit-license-richienb-theme/demo-dark).*
 * tryhtml - [preview](https://output.jsbin.com/cawihuwuku) (by [@abranhe](https://github.com/abranhe))
-* clarity - [preview](https://output.jsbin.com/wexexamada) (by [@Richienb](https://github.com/Richienb))
+* clarity - [preview](https://output.jsbin.com/likezir) (by [@Richienb](https://github.com/Richienb))
 
 ## Formats & URLs
 
