@@ -52,7 +52,6 @@ footer a {
   padding: 1em;
 }
 
-/*footer a:before{content: "â¦";  font-size:1.5em; padding-right:.2em; } */
 footer a:hover, footer a:focus {
   color: white;
 }
@@ -93,4 +92,14 @@ a:active {
   margin-bottom: 1em;
   margin-left: 1em;
   border: 1px solid #999;
+}
+
+@media all and (max-width: 500px) {
+  article {
+    padding: 1em;
+  }
+
+  body {
+    font-size: 1em;
+  }
 }
