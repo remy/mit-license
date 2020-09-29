@@ -24,9 +24,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^18.0.4",
+    "@octokit/rest": "^18.0.6",
     "@sindresorhus/is": "^3.1.2",
-    "any-size": "^1.0.1",
+    "any-size": "^1.0.2",
     "btoa": "^1.2.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.5",
@@ -48,7 +48,7 @@
     "css": "^3.0.0",
     "file-ext": "^1.0.0",
     "has-flag": "^4.0.0",
-    "husky": "^4.2.5",
+    "husky": "^4.3.0",
     "nodemon": "^2.0.4",
     "path-extra": "^4.3.0",
     "standard": "^14.3.4"
