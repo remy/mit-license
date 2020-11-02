@@ -1,0 +1,9 @@
+{
+  "copyright": "re",
+  "url": "http://test.com",
+  "email": "test@test.com",
+  "format": "html",
+  "license": "mit",
+  "theme": "default",
+  "gravatar": false
+}
