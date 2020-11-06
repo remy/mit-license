@@ -14,41 +14,45 @@ const github = new Octokit({
 const yn = require('yn')
 const is = require('@sindresorhus/is')
 
-const { validDomainId } = require('./utils')
+const { isDomainId } = require('./utils')
 
 function getUserData ({ query, body }) {
   // If query parameters provided
-  if (size(query) > 0) return query
+  if (size(query) > 0) {
+    return query
+  }
 
   // If the data parsed as {'{data: "value"}': ''}
-  if (size(body) === 1 && !Object.values(body)[0]) return JSON.parse(Object.keys(body)[0])
+  if (size(body) === 1 && !Object.values(body)[0]) {
+    return JSON.parse(Object.keys(body)[0])
+  }
 
   // Fallback
   return body
 }
 
 // HTTP POST API
-module.exports = async (req, res) => {
-  const { hostname } = req
+module.exports = async (request, response) => {
+  const { hostname } = request
 
   // Get different parts of hostname (example: remy.mit-license.org -> ['remy', 'mit-license', 'org'])
   const params = hostname.split('.')
 
   // This includes the copyright, year, etc.
-  const userData = getUserData(req)
+  const userData = getUserData(request)
 
   // If there isn't enough part of the hostname
   if (params.length < 2) {
-    res.status(400).send('Please specify a subdomain in the URL.')
+    response.status(400).send('Please specify a subdomain in the URL.')
     return
   }
 
   // Extract the name from the URL
-  const id = params[0]
+  const [id] = params
 
-  if (!validDomainId(id)) {
+  if (!isDomainId(id)) {
     // Return a vague error intentionally
-    res
+    response
       .status(400)
       .send(
         'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'
@@ -58,9 +62,8 @@ module.exports = async (req, res) => {
   }
 
   // Check if the user file exists in the users directory
-  const exists = await pathExists(path.join(__dirname, '..', 'users', `${id}.json`))
-  if (exists) {
-    res
+  if (await pathExists(path.join(__dirname, '..', 'users', `${id}.json`))) {
+    response
       .status(409)
       .send(
         'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'
@@ -72,7 +75,7 @@ module.exports = async (req, res) => {
     // Parse the string version of a boolean or similar
     userData.gravatar = yn(userData.gravatar, { lenient: true })
     if (is.undefined(userData.gravatar)) {
-      res
+      response
         .status(400)
         .send(
           'The "gravatar" JSON property must be a boolean.'
@@ -84,28 +87,29 @@ module.exports = async (req, res) => {
   // File doesn't exist
   // If copyright property and key doesn't exist
   if (!userData.copyright) {
-    res.status(400).send('JSON requires "copyright" property and value')
+    response.status(400).send('JSON requires "copyright" property and value')
     return
   }
 
   try {
-    await github.repos.createOrUpdateFileContents({
-      owner: 'remy',
-      repo: 'mit-license',
-      path: `users/${id}.json`,
-      message: `Automated creation of user ${id}.`,
-      content: btoa(JSON.stringify(userData, 0, 2)),
-      committer: {
-        name: 'MIT License Bot',
-        email: 'remy@leftlogic.com'
-      }
-    })
+    await Promise.all([
+      github.repos.createOrUpdateFileContents({
+        owner: 'remy',
+        repo: 'mit-license',
+        path: `users/${id}.json`,
+        message: `Automated creation of user ${id}.`,
+        content: btoa(JSON.stringify(userData, 0, 2)),
+        committer: {
+          name: 'MIT License Bot',
+          email: 'remy@leftlogic.com'
+        }
+      }),
+      writeJsonFile(path.join(__dirname, '..', 'users', `${id}.json`), userData, { indent: undefined })
+    ])
 
-    await writeJsonFile(path.join(__dirname, '..', 'users', `${id}.json`), userData, { indent: undefined })
-
-    res.status(201).send(`MIT license page created: https://${hostname}`)
-  } catch (err) {
-    res
+    response.status(201).send(`MIT license page created: https://${hostname}`)
+  } catch {
+    response
       .status(500)
       .send(
         'Unable to create new user - please send a pull request on https://github.com/remy/mit-license'

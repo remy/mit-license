@@ -1,3 +1,1 @@
-module.exports = {
-  validDomainId: str => /^[\w-_]+$/.test(str)
-}
+exports.isDomainId = value => /^[\w-_]+$/.test(value)

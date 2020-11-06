@@ -1,7 +1,7 @@
 const { promises: fs } = require('fs')
 const writeJsonFile = require('write-json-file')
 const CSS = require('css')
-const { validDomainId } = require('./routes/utils')
+const { isDomainId } = require('./routes/utils')
 const hasFlag = require('has-flag')
 const getExtension = require('file-ext')
 const path = require('path-extra')
@@ -23,7 +23,7 @@ async function report (content, fix) {
       })
     }
 
-    if (!validDomainId(path.base(user))) {
+    if (!isDomainId(path.base(user))) {
       await report(`${user} is not a valid domain id.`)
     }
 

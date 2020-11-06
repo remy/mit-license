@@ -24,7 +24,6 @@ app.use(
 )
 app.use(favicon(path.join(__dirname, 'favicon.ico')))
 app.set('views', path.join(__dirname, '/licenses'))
-app.set('view engine', 'ejs')
 
 // Setup static files
 app.use('/robots.txt', express.static('robots.txt'))
@@ -34,12 +33,11 @@ app.use(
   postcssMiddleware({
     plugins: [
       require('postcss-preset-env')({
-        overrideBrowserslist: '>= 0%',
-        stage: 0
+        overrideBrowserslist: '>= 0%'
       })
     ],
-    src (req) {
-      return path.join(__dirname, 'themes', req.path)
+    src (request) {
+      return path.join(__dirname, 'themes', request.path)
     }
   }),
   express.static('themes')
