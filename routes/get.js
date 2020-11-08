@@ -99,11 +99,11 @@ module.exports = async (_, response) => {
     })
 
     if (format === 'txt') {
-      const plain = content.match(/<article>(.*)<\/article>/ms)[1]
+      const { articleContent } = content.match(/<article>(?<articleContent>.*)<\/article>/ms).groups
 
       response
         .set('Content-Type', 'text/plain; charset=UTF-8')
-        .send(htmlUnescape(stripHtml(plain)).trim())
+        .send(htmlUnescape(stripHtml(articleContent)).trim())
       return
     }
 
