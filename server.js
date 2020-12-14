@@ -56,11 +56,11 @@ app.use(
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json())
 
-// Capture the id from the subdomain
+// Capture the id from the subdomain and options from parts of the url
 app.use(require('./middleware/load-user'))
 app.use(require('./middleware/load-options'))
 
-// HTTP POST API
+// HTTP endpoints
 app.post('/', require('./routes/post'))
 app.get('/*', require('./routes/get'))
 
