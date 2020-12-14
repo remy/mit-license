@@ -14,11 +14,9 @@ module.exports = async (request, response, next) => {
   }
 
   try {
-    const userData = await loadJsonFile(path.join(__dirname, '..', 'users', `${response.locals.id}.json`))
-    
     response.locals.user = {
       ...response.locals.user,
-      ...userData
+      ...await loadJsonFile(path.join(__dirname, '..', 'users', `${response.locals.id}.json`))
     }
   } catch ({ code, message }) {
     if (code !== 'ENOENT') {
