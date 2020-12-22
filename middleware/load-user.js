@@ -2,7 +2,7 @@ const path = require('path')
 const loadJsonFile = require('load-json-file')
 
 module.exports = async (request, response, next) => {
-  response.locals.id = request.hostname.split('.')[0]
+  const id = request.hostname.split('.')[0]
 
   if (request.method.toUpperCase() !== 'GET') {
     return next()
@@ -16,7 +16,7 @@ module.exports = async (request, response, next) => {
   try {
     response.locals.user = {
       ...response.locals.user,
-      ...await loadJsonFile(path.join(__dirname, '..', 'users', `${response.locals.id}.json`))
+      ...await loadJsonFile(path.join(__dirname, '..', 'users', `${id}.json`))
     }
   } catch ({ code, message }) {
     if (code !== 'ENOENT') {
