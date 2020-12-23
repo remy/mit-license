@@ -16,8 +16,6 @@ jobs:
           echo "127.0.0.1       ${{ github.actor }}.localhost" | sudo tee -a /etc/hosts
       - name: Install Dependencies
         run: |
-          sudo apt update
-          sudo apt install -y jq
           yarn install
       - name: Run Server in Background
         run: |
