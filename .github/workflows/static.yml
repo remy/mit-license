@@ -22,10 +22,11 @@ jobs:
           sleep 5
       - name: Get Files
         run: |
+          rm -r docs # just to make sure everything goes smoothly
           mkdir -p docs
-          mkdir -p docs/themes
           # until I find a way to get the stylesheet in reference from
           # the HTML file, I'm just going to copy all of them.
+          mkdir -p docs/themes
           cp themes/* docs/themes
           wget http://${{ github.actor }}.localhost:8080/ -O docs/index.html
           sed -i 's|/themes/|/mit-license/themes/|g' docs/index.html
