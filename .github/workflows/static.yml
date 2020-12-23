@@ -15,19 +15,21 @@ jobs:
         run: |
           echo "127.0.0.1       ${{ github.actor }}.localhost" | sudo tee -a /etc/hosts
       - name: Install Dependencies
-        run: yarn install
+        run: |
+          sudo apt update
+          sudo apt install -y jq
+          yarn install
       - name: Run Server in Background
         run: |
           yarn start &
           sleep 5
       - name: Get Files
         run: |
+          export THEME="`cat users/${{ github.actor }}.json | jq .theme | sed 's/"//g'`.css"
           rm -r docs # just to make sure everything goes smoothly
           mkdir -p docs
-          # until I find a way to get the stylesheet in reference from
-          # the HTML or JSON file, I'm just going to copy all of them.
           mkdir -p docs/themes
-          cp themes/* docs/themes
+          cp themes/$THEME docs/themes/$THEME
           wget http://${{ github.actor }}.localhost:8080/ -O docs/index.html
           wget http://${{ github.actor }}.localhost:8080/license.txt -O docs/license.txt
           sed -i 's|/themes/|/mit-license/themes/|g' docs/index.html
