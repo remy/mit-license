@@ -248,7 +248,7 @@ Steps to host:
 3.  Push your changes.
 4.  Enable GitHub Pages in the repository settings. Make sure that the you set the `master` branch as the main branch and that the `docs` folder is used to get the page.
 
-That's it! You can navigate to `<your GitHub Username>.github.io/mit-license/` to see your static license! If you have a custom DNS to your GitHub Pages's main site, you can still access the license at `<your base url>/mit-license/`.
+That's it! You can navigate to `<your GitHub Username>.github.io/mit-license/` to see your static license! If you have a custom DNS to your GitHub Pages's main site, you can still access the license at `<your base url>/mit-license/`. The `license.txt` file also works, it can be accessed at `<your base url>/mit-license/license.txt`.
 
 ## Ways to contribute
 
