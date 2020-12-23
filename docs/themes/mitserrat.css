@@ -1,0 +1,71 @@
+/*-----------------------------------------------------------------------------
+
+MIT-license Theme: MITserrat
+
+version:    1.0
+date:     17/09/2016
+author:     Wouter Janson
+github:     https://github.com/WouterJanson
+
+description:  A simple theme based on the Montserrat font
+
+-----------------------------------------------------------------------------*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #F9F9F9;
+}
+
+h1 {
+  color: #B93A32;
+  font-family: Montserrat;
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 72px;
+  letter-spacing: -4px;
+  margin-bottom: 48px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  color: #3E4147;
+  font-family: Montserrat;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  margin-bottom: 48px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%;
+}
+
+a {
+  color: #3E4147;
+  border-bottom: 3px solid #B93A32;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #B93A32;
+}
+
+p:first-of-type, footer {
+  text-align: center;
+}
+
+#gravatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 80px;
+  width: 80px;
+  margin-top: 72px;
+  border-radius: 40px;
+}

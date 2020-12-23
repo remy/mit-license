@@ -1,0 +1,91 @@
+/*Solarized theme by Ethan Schoonover*/
+/*Part of source code reused from the Open Sans Theme */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Source+Code+Pro:700);
+
+html {
+  padding: 0;
+  font-size: 1em;
+  background-color: #eee8d5
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  text-align: center;
+  margin: 0;
+  background: none repeat scroll 0 0 #eee8d5
+}
+
+article, footer {
+  text-align: center;
+  margin: auto;
+  max-width: 100%
+}
+
+article {
+  margin-top: 0;
+  padding: 1.75em;
+  color: #dc322f;
+  text-align: center;
+  position: relative;
+  background: none repeat scroll 0 0 #002b36
+}
+
+article p {
+  text-align: left;
+  color: #93a1a1
+}
+
+article p:first-of-type {
+  text-align: center;
+  color: #b58900
+}
+
+article p:last-of-type {
+  color: #268bd2
+}
+
+#gravatar {
+  width: 50px;
+  border: 5px solid #FFF;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed #dc322f;
+  margin: 0
+}
+
+a {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: #859900;
+  text-decoration: none;
+  word-wrap: break-word
+}
+
+a:active, a:focus, a:hover {
+  color: #d33682
+}
+
+@media screen and (min-width:960px) {
+  #gravatar {
+    display: none;
+    position: absolute;
+    top: 2em;
+    left: 2em
+  }
+
+  h1 {
+    font-size: 2.5em
+  }
+}
