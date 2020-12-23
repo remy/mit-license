@@ -2,11 +2,12 @@
 
 I always forget to add a `LICENSE` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
-Why keep this to myself, there are two ways to create your _own_ MIT license page:
+Why keep this to myself, there are four ways to create your _own_ MIT license page:
 
 1.  Use the generator tool (easiest)
 2.  Make a request to the API (details below)
 3.  Fork this project and send a pull request
+4.  Fork this project and use it as a static site (details below)
 
 Now I can always include <https://rem.mit-license.org> in all my projects which links `rem` (the CNAME) against my copyright holder name `Remy Sharp` - all stored in the `users` directory.
 
@@ -205,6 +206,7 @@ Current available themes:
 * richienb - [preview](https://richienb.github.io/mit-license-richienb-theme/demo) (by [@Richienb](https://github.com/Richienb)). *Dark variant: `richienb-dark` - [preview](https://richienb.github.io/mit-license-richienb-theme/demo-dark).*
 * tryhtml - [preview](https://output.jsbin.com/cawihuwuku) (by [@abranhe](https://github.com/abranhe))
 * clarity - [preview](https://output.jsbin.com/likezir) (by [@Richienb](https://github.com/Richienb))
+* darkblog - [preview](https://chand1012.dev/mit-license/) (by [@chand1012](https://github.com/chand1012))
 
 ## Formats & URLs
 
@@ -234,6 +236,19 @@ Finally, the URL also supports pinning the year
 
 * <https://rem.mit-license.org/@2009>
     this is useful for when your software copyright should expire ([as discussed here](https://github.com/remy/mit-license/issues/771))
+
+## Static Hosting
+
+GitHub offers free static hosting via GitHub Pages, which can be used to host your very own license page statically. The above API endpoints will not work, but the site will be updated on a monthly basis to keep the year up to date. 
+
+Steps to host:
+
+1.  Fork this repository.
+2.  Add a `.json` file with your GitHub username as the name of the file and add the required fields as indicated [here](#the-userjson-file).
+3.  Push your changes.
+4.  Enable GitHub Pages in the repository settings. Make sure that the you set the `master` branch as the main branch and that the `docs` folder is used to get the page.
+
+That's it! You can navigate to `<your GitHub Username>.github.io/mit-license/` to see your static license! If you have a custom DNS to your GitHub Pages's main site, you can still access the license at `<your base url>/mit-license/`. The `license.txt` file also works, it can be accessed at `<your base url>/mit-license/license.txt`.
 
 ## Ways to contribute
 
