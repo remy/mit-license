@@ -25,10 +25,11 @@ jobs:
           rm -r docs # just to make sure everything goes smoothly
           mkdir -p docs
           # until I find a way to get the stylesheet in reference from
-          # the HTML file, I'm just going to copy all of them.
+          # the HTML or JSON file, I'm just going to copy all of them.
           mkdir -p docs/themes
           cp themes/* docs/themes
           wget http://${{ github.actor }}.localhost:8080/ -O docs/index.html
+          wget http://${{ github.actor }}.localhost:8080/license.txt -O docs/license.txt
           sed -i 's|/themes/|/mit-license/themes/|g' docs/index.html
       - name: Commit and Push changes
         env:
