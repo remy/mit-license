@@ -205,6 +205,7 @@ Current available themes:
 * richienb - [preview](https://richienb.github.io/mit-license-richienb-theme/demo) (by [@Richienb](https://github.com/Richienb)). *Dark variant: `richienb-dark` - [preview](https://richienb.github.io/mit-license-richienb-theme/demo-dark).*
 * tryhtml - [preview](https://output.jsbin.com/cawihuwuku) (by [@abranhe](https://github.com/abranhe))
 * clarity - [preview](https://output.jsbin.com/likezir) (by [@Richienb](https://github.com/Richienb))
+* darkblog - [preview](https://chand1012.dev/mit-license/) (by [@chand1012](https://github.com/chand1012))
 
 ## Formats & URLs
 

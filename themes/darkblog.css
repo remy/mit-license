@@ -1,0 +1,103 @@
+html {
+  background: #141518;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: #E2E2E2;
+}
+
+article, footer {
+  display: block;
+  min-width: 360px;
+  max-width: 900px;
+  width: 80%;
+}
+
+article {
+  margin: 2.5em auto 0 auto;
+  border: 1px solid;
+  border-color: #141518;
+  padding: 2em;
+  background: #141518;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+article p:first-of-type {
+  margin-top: 1.6em;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  margin: 0em auto 2em auto;
+  text-align: center;
+}
+
+footer a {
+  color: #666;
+  text-shadow: 0 1px 1px #999;
+  text-decoration: none;
+  font-size: .8em;
+  padding: 1em;
+}
+
+footer a:hover, footer a:focus {
+  color: white;
+}
+
+h1 {
+  font-weight: normal;
+  display: inline;
+  border-bottom: 1px solid #999;
+  padding: 0 0 3px 0;
+  line-height: 36px;
+}
+
+a {
+  color: #5090DD;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #2844FA;
+}
+
+a:active {
+  color: white;
+}
+
+:-moz-any-link:focus {
+  color: #000;
+  border: 0;
+}
+
+::selection {
+  background: #ccc;
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border: 1px solid #999;
+}
+
+@media all and (max-width: 500px) {
+  article {
+    padding: 1em;
+  }
+
+  body {
+    font-size: 1em;
+  }
+}
