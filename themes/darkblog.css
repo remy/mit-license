@@ -1,6 +1,5 @@
-
 html {
-  background:#141518;
+  background: #141518;
 }
 
 body {
@@ -8,7 +7,7 @@ body {
   font-family: monospace;
   font-size: 1.2em;
   line-height: 1.2em;
-  color:#E2E2E2;
+  color: #E2E2E2;
 }
 
 article, footer {
@@ -23,7 +22,7 @@ article {
   border: 1px solid;
   border-color: #141518;
   padding: 2em;
-  background:#141518;
+  background: #141518;
 }
 
 h1 {
