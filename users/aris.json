@@ -1,5 +1,9 @@
 {
   "copyright": "Aris Ripandi",
-  "url": "https://kataris.id",
-  "email": "riipandi@gmail.com"
+  "url": "https://github.com/riipandi",
+  "email": "riipandi@gmail.com",
+  "format": "html",
+  "license": "isc",
+  "theme": "default",
+  "gravatar": false
 }
