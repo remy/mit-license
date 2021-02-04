@@ -9,7 +9,7 @@
     "url": "git@github.com:remy/mit-license.git"
   },
   "engines": {
-    "node": ">=12"
+    "node": "14.x"
   },
   "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "scripts": {
