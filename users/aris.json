@@ -5,5 +5,5 @@
   "format": "html",
   "license": "isc",
   "theme": "default",
-  "gravatar": false
+  "gravatar": true
 }
