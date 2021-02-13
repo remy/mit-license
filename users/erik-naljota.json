@@ -3,6 +3,6 @@
   "email": "enaljota@gmail.com",
   "format": "html",
   "license": "mit",
-  "theme": "default",
-  "gravatar": false
+  "theme": "material-teal",
+  "gravatar": true
 }
