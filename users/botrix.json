@@ -1,0 +1,9 @@
+{
+  "copyright": "Botrix",
+  "url": "https://botrix.cc",
+  "email": "hello@botrix.cc",
+  "format": "html",
+  "license": "mit",
+  "theme": "default",
+  "gravatar": false
+}
