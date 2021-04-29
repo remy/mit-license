@@ -40,3 +40,17 @@ a {
 #gravatar {
   border-radius: 50%;
 }
+
+@media only screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+  }
+  
+  h1 {
+    color: #bbc0c3;
+  }
+  
+  p {
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
