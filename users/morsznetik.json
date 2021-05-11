@@ -1,9 +1,9 @@
 {
-  "copyright": "Morsznetik",
-  "url": "https://github.com/morsznetik",
-  "email": "marcin@2loud.pl",
-  "format": "html",
-  "license": "mit",
-  "theme": "friendly",
-  "gravatar": true
+    "copyright": "Marcin Kaźmierski",
+    "url": "https://github.com/morsznetik",
+    "email": "marcin@2loud.pl",
+    "format": "html",
+    "license": "mit",
+    "theme": "friendly",
+    "gravatar": true
 }
