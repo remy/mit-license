@@ -1,1 +1,66 @@
-@font-face{font-family:'Open Sans Bold';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url(http://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff')}// begin styles html{background:#f2f2f8}body{margin:0;padding:100px;font-family:'Open Sans',sans-serif;font-size:1.2em;line-height:1.6}::selection{background:#ccc}::-moz-selection{background:#ccc}h1{text-align:center;font:36px 'Open Sans Bold'}p{margin:25px 0 0}p:first-of-type{text-align:center;margin:0 0 50px}a{color:#0a0a0b;text-decoration:none;border-bottom:3px solid rgba(10,10,11,1);-webkit-transition:.15s ease;-moz-transition:.15s ease;-ms-transition:.15s ease;-o-transition:.15s ease;transition:.15s ease}a:focus,a:hover{opacity:.5}article,footer{display:block;margin:0 auto!important;padding:25px;max-width:900px;width:100%}footer{text-align:center;font:75% 'Open Sans Bold'}#gravatar{display:block!important;border-radius:100%;margin:0 auto}
+@font-face {
+  font-family: 'Open Sans Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://themes.googleusercontent.com/static/fonts/opensans/v6/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff) format('woff')
+}
+
+html {
+  background: #f2f2f8
+}
+
+body {
+  margin: 0;
+  padding: 100px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  line-height: 1.6
+}
+
+::selection {
+  background: #ccc
+}
+
+h1 {
+  text-align: center;
+  font: 36px 'Open Sans Bold'
+}
+
+p {
+  margin: 25px 0 0
+}
+
+p:first-of-type {
+  text-align: center;
+  margin: 0 0 50px
+}
+
+a {
+  color: #0a0a0b;
+  text-decoration: none;
+  border-bottom: 3px solid rgba(10, 10, 11, 1);
+  transition: .15s ease
+}
+
+a:focus, a:hover {
+  opacity: .5
+}
+
+article, footer {
+  display: block;
+  margin: 0 auto !important;
+  padding: 25px;
+  max-width: 900px;
+  width: 100%
+}
+
+footer {
+  text-align: center;
+  font: 75% 'Open Sans Bold'
+}
+
+#gravatar {
+  display: block !important;
+  border-radius: 100%;
+  margin: 0 auto
+}

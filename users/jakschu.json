@@ -1,7 +1,6 @@
-{ 
-  "copyright": "Jakob Schurdak, https://jakschu.de",
-  "url": "https://jakschu.de",
-  "email": "i@jakschu.de",
+{
+  "copyright": "Jakob Schurdak",
+  "email": "i@jakschu.cf",
   "gravatar": true,
   "theme": "double-windsor"
 }

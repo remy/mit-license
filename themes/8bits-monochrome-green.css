@@ -1,0 +1,118 @@
+/* 8bits theme v1.1.0 by Jorge Matricali, https://github.com/matricali/mit-license-8bits-theme */
+/* MIT License https://jorge-matricali.mit-license.org/ */
+@import url('https://fonts.googleapis.com/css?family=PT+Mono|VT323');
+
+body {
+  font-family: 'PT Mono', monospace;
+  padding: .4em;
+  font-size: 1.1em;
+  background: #000;
+  color: #0f0;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #0f0;
+}
+
+article {
+  display: block;
+  margin: 1em;
+  position: relative;
+  max-width: 800px;
+  margin: 10px auto 0;
+}
+
+article h1 {
+  color: #0f0;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 1.5em;
+  font-size: 3em;
+}
+
+article h1,
+article h1+p {
+  font-family: 'VT323', monospace;
+  padding-left: 6%;
+}
+
+article h1+p {
+  margin-top: 0;
+  margin-bottom: 3em;
+}
+
+article h1+p a:link,
+article h1+p a:visited {
+  color: #0f0;
+}
+
+article p {
+  padding: 0 2em;
+  text-align: justify;
+}
+
+article p:last-child {
+  padding-bottom: 1.8em;
+  font-size: 0.9em;
+}
+
+footer {
+  margin: 0 auto;
+  font-size: .8em;
+  text-align: center;
+}
+
+#gravatar {
+  display: block;
+  float: right;
+}
+
+@media (min-width: 750px) {
+  #gravatar {
+    position: absolute;
+    top: 4em;
+    right: 3em;
+  }
+
+  #gravatar+h1+p+p {
+    padding-top: 2em;
+  }
+
+  h1+p {
+    padding-right: 6em;
+  }
+
+  h1+p+p {
+    padding-top: 0.8em;
+  }
+}
+
+@media (max-width: 750px) {
+  body {
+    font-size: 14px;
+  }
+
+  #gravatar {
+    position: relative;
+    top: 4em;
+    right: 2em;
+  }
+
+  article h1+p {
+    padding-bottom: 1em;
+  }
+
+  article h1+p+p {
+    padding-top: 0.8em;
+  }
+
+  footer {
+    padding-bottom: 4em;
+  }
+}
+
+img {
+  filter: contrast(700%) sepia(100%) saturate(100) sepia(100%) saturate(10) hue-rotate(40deg);
+}

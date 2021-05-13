@@ -1,7 +1,8 @@
 {
-  "copyright": "Jaswinder Singh, http://jaswindersingh.me",
-  "url": "http://jaswindersingh.me",
+  "copyright": "Jaswinder Singh",
   "email": "s.jaswinder03@gmail.com",
-  "gravatar": true,
-  "theme": "cherry"
+  "format": "html",
+  "license": "mit",
+  "theme": "material",
+  "gravatar": true
 }

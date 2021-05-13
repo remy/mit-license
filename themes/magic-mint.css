@@ -1,8 +1,9 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,400italic");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
 
-html{
+html {
   font-size: 62.5%;
 }
+
 body {
   font-family: Lato, Helvetica, sans-serif;
   padding: 8px;
@@ -18,7 +19,7 @@ article {
   position: relative;
 }
 
-#gravatar{
+#gravatar {
   position: absolute;
   left: 0;
   top: 22px;
@@ -56,11 +57,12 @@ article p:last-child {
   font-size: 1.8rem;
 }
 
-p{
+p {
   text-align: justify;
   font-size: 18px;
   font-size: 1.8rem;
 }
+
 a {
   padding: 0.1em;
 }
@@ -97,6 +99,7 @@ footer {
   padding: 12px 0;
   font-style: italic;
 }
-footer p{
+
+footer p {
   text-align: center;
 }

@@ -1,0 +1,9 @@
+{
+  "copyright": "Claviux Sistemas Informáticos S. L.",
+  "url": "https://claviux.com",
+  "email": "claviux@claviux.com",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-indigo",
+  "gravatar": true
+}

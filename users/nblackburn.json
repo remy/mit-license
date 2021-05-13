@@ -1,1 +1,8 @@
-{"copyright":"Nathaniel Blackburn","url":"http:\/\/nblackburn.co.uk","email":"support@nblackburn.co.uk","format":"txt","theme":"plaintext","gravatar":true}
+{
+  "copyright": "Nathaniel Blackburn",
+  "url": "http://nblackburn.co.uk",
+  "email": "support@nblackburn.co.uk",
+  "format": "txt",
+  "theme": "plaintext",
+  "gravatar": true
+}

@@ -1,1 +1,7 @@
-{"copyright":"Yusuke Matsubara","url":"http:\/\/whym.org","email":"whym@whym.org","format":"txt"}
+{
+  "copyright": "Yusuke Matsubara",
+  "url": "http://whym.org",
+  "email": "whym@whym.org",
+  "gravatar": true,
+  "theme": "eula-modern"
+}

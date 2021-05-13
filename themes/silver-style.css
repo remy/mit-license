@@ -3,35 +3,78 @@
 **v1.0
 **by Dipesh Bhardwaj
 **09.2013
-**http://in.linkedin.com/in/devdipesh/
+**https://in.linkedin.com/in/devdipesh/
 */
 body {
-  margin:0; padding: 50px;
-  font: normal 14px/20px       "DroidSansRegular",Arial,Helvetica,sans-serif;
+  margin: 0;
+  padding: 50px;
+  font: normal 14px/20px "DroidSansRegular", Arial, Helvetica, sans-serif;
   color: #444;
   background: #FAFAFA;
   background: url(/themes/page_gradient_radial.svg) 50% -300px no-repeat, url(/themes/page_gradient_linear.svg) 50% 0 repeat-x, #FAFAFA;
-  background-size: 1600px 600px, 100% 500px,auto;
+  background-size: 1600px 600px, 100% 500px, auto;
 }
 
 article {
-  border-right: 1.5px solid #9ab8ed; padding: 17px;
+  border-right: 1.5px solid #9ab8ed;
+  padding: 17px;
   border-radius: 1%;
-  -webkit-box-shadow: 3px 0px 20px -2px #7ba5e4;
-     -moz-box-shadow: 3px 0px 20px -2px #7ba5e4;
-          box-shadow: 3px 0px 20px -2px #7ba5e4;
-
-background: -webkit-radial-gradient(50% 0%, 50% 15px, #EB8CF2 0%, white 100%);
+  box-shadow: 3px 0px 20px -2px #7ba5e4;
+  background: radial-gradient(50% 0%, 50% 15px, #EB8CF2 0%, white 100%);
 }
 
-article, footer { display:block; max-width:720px; margin:0 auto; }
-  article { padding:28px;}
-footer { padding:0 28px; text-align:center; }
-  h1 { margin:0; font-size: 24px; line-height: 32px;color:#008CCC; text-transform: uppercase;}
-a, a:visited { color:#577446; padding:4px; text-decoration:none; } 
-a:active, a:hover { color:#5dd912; }
-a img { position: absolute; top: 0; right: 0; border: 0; }
-:-moz-any-link:focus {background:#bc4a46;}
-::selection {background:#bc4a46;}
-::-moz-selection {background:#bc4a46;}
-#gravatar { position: relative; float: right; margin-bottom: 1em; margin-left: 1em; border: 1px solid #ddd; }
+article, footer {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+article {
+  padding: 28px;
+}
+
+footer {
+  padding: 0 28px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  color: #008CCC;
+  text-transform: uppercase;
+}
+
+a, a:visited {
+  color: #577446;
+  padding: 4px;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  color: #5dd912;
+}
+
+a img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+:-moz-any-link:focus {
+  background: #bc4a46;
+}
+
+::selection {
+  background: #bc4a46;
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border: 1px solid #ddd;
+}

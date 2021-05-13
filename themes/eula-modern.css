@@ -1,4 +1,4 @@
-/*author: lo sauer, 2013 - http://github.com/lsauer, @sauerlo */
+/*author: lo sauer, 2013 - https://github.com/lsauer, @sauerlo */
 * {
   scrollbar-base-color: white;
   scrollbar-track-color: white;
@@ -17,22 +17,23 @@
 ::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 8px;
-  border:1px solid rgba(0,0,0,0.3);
-  box-shadow: -3px -3px 6px rgba(180,180,160,.5) inset, 3px 3px 3px rgba(226,226,225,.5) inset;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: -3px -3px 6px rgba(180, 180, 160, .5) inset, 3px 3px 3px rgba(226, 226, 225, .5) inset;
 }
 
 ::-webkit-scrollbar-track {
-  background:#fbfbfb;
-  box-shadow: 3px 3px 10px rgba(0,0,0,.25) inset;
+  background: #fbfbfb;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .25) inset;
 }
 
 body {
-  font-family:  Segoe UI, 'SegoeUIWF',Arial,sans-serif;
+  font-family: Segoe UI, 'SegoeUIWF', Arial, sans-serif;
   padding: 10px;
   line-height: 1.5em;
 }
 
 article {
+  position: relative;
   color: #444;
   max-width: 700px;
   margin: 10px auto 0px;
@@ -40,24 +41,27 @@ article {
 }
 
 @media (max-device-height: 699px) {
-	article {
-		max-width: none !important;
-		margin: 8px 8px !important;
-	}
+  article {
+    max-width: none !important;
+    margin: 8px 8px !important;
+  }
 }
 
 h1 {
-  font-size: 4.2em;
-  font-family: Segoe UI Light,'SegoeUILightWF',Arial,sans-serif;
-  line-height: .9em;
+  font-size: 3.7em;
+  line-height: 1.3em;
+  font-family: Segoe UI Light, 'SegoeUILightWF', Arial, sans-serif;
   color: #000;
   padding: 0px;
   font-weight: normal;
   clear: both;
   margin: .2em auto .4em;
+  margin-right: 100px;
+  /* allow for avatar */
 }
 
-article p:nth-of-type(1) {  background: #666;
+article p:nth-of-type(1) {
+  background: #666;
   color: white;
   border: none;
   border-top: 1px solid #eee;
@@ -118,16 +122,15 @@ footer {
   font-style: italic;
 }
 
-footer a:link, 
+footer a:link,
 footer a:visited {
-  color:#ccc;
+  color: #ccc;
 }
 
 #gravatar {
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 0;
   border: 3px solid #ccc;
-  top: -4.3em;
   z-index: 1;
   border-radius: 10px;
 }

@@ -1,14 +1,11 @@
-@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300);
 
 * {
   margin: 0;
   padding: 0;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
+
 body {
   background: #aaa;
   font-family: Merriweather, "Palatino Linotype", Georgia, serif;
@@ -16,44 +13,54 @@ body {
   line-height: 170%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
   overflow-y: auto;
   padding: 20pt;
 }
+
 a:link, a:visited {
   color: #000;
   text-decoration: none;
   border-bottom: 1pt solid #aaa;
 }
+
 a:hover, a:focus, a:active {
   background: #aaa;
   text-decoration: none;
 }
+
 h1 {
   font-size: 64pt;
   font-weight: 400;
   line-height: 100%;
 }
+
 article, footer {
   padding: 50pt 50pt 20pt 20%;
   background: #ccc;
 }
-article p { margin-top: 40pt; }
+
+article p {
+  margin-top: 40pt;
+}
+
 article p:first-of-type {
   margin-top: 20pt;
   font-size: 14pt;
   line-height: 150%;
 }
-article :nth-child(4), 
+
+article :nth-child(4),
 article :nth-child(4):before {
   font-size: 18pt;
   font-weight: 300;
 }
+
 article :nth-child(4):before {
   content: "*";
   margin-left: -20pt;
   float: left;
 }
+
 article p:last-child {
   border: 20pt solid #c4c4c4;
   font-size: 17pt;
@@ -62,145 +69,215 @@ article p:last-child {
   color: #888;
   padding: 20pt;
 }
+
 footer {
   padding-top: 0;
   font-size: 14pt;
   line-height: 100%;
   margin-top: -1pt;
 }
+
 footer p {
   background: url("hipster-gray-octocat.png") 0 0 no-repeat;
   margin-left: -20pt;
   padding-left: 20pt;
 }
+
 footer a:link, footer a:visited {
   border-bottom-color: #bbb;
   color: #888;
 }
+
 footer a:hover, footer a:focus, footer a:active {
   color: #000;
 }
-
 
 @media only screen and (max-width: 1360px) {
   article, footer {
     padding-left: 50pt;
   }
 }
+
 @media only screen and (max-width: 1140px) {
   body {
     font-size: 17pt;
     padding: 15pt;
   }
-  h1 { font-size: 40pt; }
-  article, footer { padding: 30pt; }
-  article p { margin-top: 17pt; }
+
+  h1 {
+    font-size: 40pt;
+  }
+
+  article, footer {
+    padding: 30pt;
+  }
+
+  article p {
+    margin-top: 17pt;
+  }
+
   article p:first-of-type {
     font-size: 12pt;
     line-height: 120%;
     margin-top: 10pt;
   }
-  article :nth-child(4), article :nth-child(4):before { font-size: 15pt; }
-  article :nth-child(4):before { margin-left: -15pt; }
+
+  article :nth-child(4), article :nth-child(4):before {
+    font-size: 15pt;
+  }
+
+  article :nth-child(4):before {
+    margin-left: -15pt;
+  }
+
   article p:last-child {
     border-width: 15pt;
     font-size: 13pt;
     margin: 15pt 0 0 0;
     padding: 15pt;
   }
-  footer { 
+
+  footer {
     padding-top: 0;
     font-size: 11pt;
     line-height: 120%;
   }
+
   footer p {
     margin-left: -15pt;
     padding-left: 15pt;
   }
 }
+
 @media only screen and (max-width: 720px) {
   body {
     font-size: 12pt;
     padding: 10pt;
   }
-  h1 { font-size: 24pt; }
-  article, footer { padding: 20pt; }
-  article p { margin-top: 15pt; }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  article, footer {
+    padding: 20pt;
+  }
+
+  article p {
+    margin-top: 15pt;
+  }
+
   article p:first-of-type {
     font-size: 9pt;
     line-height: 120%;
     margin-top: 10pt;
   }
-  article :nth-child(4), article :nth-child(4):before { font-size: 10pt; }
-  article :nth-child(4):before { margin-left: -10pt; }
+
+  article :nth-child(4), article :nth-child(4):before {
+    font-size: 10pt;
+  }
+
+  article :nth-child(4):before {
+    margin-left: -10pt;
+  }
+
   article p:last-child {
     border-width: 10pt;
     font-size: 10pt;
     margin: 15pt 0 0 0;
     padding: 10pt;
   }
-  footer { 
+
+  footer {
     padding-top: 0;
     font-size: 9pt;
     line-height: 120%;
   }
+
   footer p {
     background-position: 0 1px;
-    -webkit-background-size: 9px;
     background-size: 11px;
     margin-left: -10pt;
     padding-left: 10pt;
   }
 }
 
-
 @media print {
-  @page { margin: .5cm; }
-  * { color: black !important; }
-  a[href]:after { content: " [" attr(href) "]" }
-  a:link, a[href]:after { border: none; }
+  @page {
+    margin: .5cm;
+  }
+
+  * {
+    color: black;
+  }
+
+  a[href^="http"]:after {
+    content: " ["attr(href) "]"
+  }
+
+  a:link, a[href]:after {
+    border: none;
+  }
+
   body {
     background: none;
     font-size: 12pt;
     padding: 0;
   }
-  h1 { font-size: 28pt; }
+
+  h1 {
+    font-size: 28pt;
+  }
+
   article, footer {
     background: none;
     padding: 30pt;
   }
-  article p { margin-top: 16pt; }
+
+  article p {
+    margin-top: 16pt;
+  }
+
   article p:first-of-type {
     font-size: 10pt;
     line-height: 120%;
     margin-top: 10pt;
   }
-  article :nth-child(4), article :nth-child(4):before { font-size: 12pt; }
-  article :nth-child(4):before { margin-left: -12pt; }
+
+  article :nth-child(4), article :nth-child(4):before {
+    font-size: 12pt;
+  }
+
+  article :nth-child(4):before {
+    margin-left: -12pt;
+  }
+
   article p:last-child {
     border-width: 11pt;
     font-size: 11pt;
     margin: 18pt 0 0 0;
     padding: 11pt;
   }
-  footer { 
+
+  footer {
     padding-top: 0;
     font-size: 10pt;
     line-height: 120%;
   }
+
   footer p {
     background-position: 0 1px;
-    -webkit-background-size: 11px;
     background-size: 11px;
     margin-left: -12pt;
     padding-left: 12pt;
   }
 }
+
 #gravatar {
-    position: relative;
-    float: left;
-    border: 20px solid #c4c4c4;
-    margin-left: -12em;
-    margin-top: -1em;
-    width: 5em;
+  position: relative;
+  float: left;
+  border: 20px solid #c4c4c4;
+  margin-left: -12em;
+  margin-top: -1em;
+  width: 5em;
 }

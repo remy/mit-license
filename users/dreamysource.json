@@ -1,7 +1,7 @@
 {
-	"copyright" : "DreamySource",
-	"url" : "http:\/\/dreamysource.fr",
-	"email" : "contact@dreamysource.fr",
-	"gravatar" : true,
-	"theme" : "friendly"
+  "copyright": "DreamySource",
+  "url": "http://dreamysource.fr",
+  "email": "contact@dreamysource.fr",
+  "gravatar": true,
+  "theme": "friendly"
 }

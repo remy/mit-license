@@ -1,19 +1,118 @@
-@import url(http://fonts.googleapis.com/css?family=Alegreya:400italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Alegreya:400italic,400,700);
 
-body { color: #94979E; font: 16px/28px  'Alegreya', "Garamond",serif; margin: 0; padding: 0 50px;}
-article, footer { display:block; max-width:720px; margin:0 auto; }
-article {background: repeat scroll 0 0 #FFFFFF; border-bottom: 4px solid #FF3366; border-right: 3px solid #FF6666; padding: 45px 28px 28px; position: relative; -webkit-border-radius: 0px 0 10px 10px;	-moz-border-radius: 0px 0 10px 10px; border-radius: 0px 0 10px 10px; margin-top: 28px; border-left: 1px solid #F7F7F7;}
-h1 {  background: none repeat scroll 0 0 #FF3366; color: #FFFFFF; font-size: 24px; left: -12px; line-height: 32px; padding: 10px 0 10px 13px; position: absolute; top: -22px; width: 100%; display: block; -moz-box-shadow: 2px 7px 0px -3px #CCCCCC; -webkit-box-shadow: 2px 7px 0px -3px #CCCCCC; box-shadow: 2px 7px 0px -3px #CCCCCC; }
-h1:after { background-color: #AD0431; border-radius: 0 0 0 32px; content: ""; height: 7px; left: 3px; position: absolute; top: 52px; width: 7px; }
-h1:before { background-color: #D01B4B; content: ""; height: 11px; left: 0; position: absolute; top: 52px; width: 11px; -webkit-border-radius: 0 0 0 32px; -moz-border-radius: 0 0 0 32px; border-radius: 0 0 0 32px; }
-article p:nth-of-type(1) {font-size: 24px;}
-a, a:visited { color:#3A3A3A; padding:4px 4px 0 4px; text-decoration:none;  } 
-a:active, a:hover { color:#710257; }
-a img { position: absolute; top: 0; right: 0; border: 0; }
-:-moz-any-link:focus {color:#bc4a46;}
-::selection {color:#bc4a46;}
-::-moz-selection {color:#bc4a46; }
-footer {  background-color: #FFFFFF; border-bottom: 3px solid #FF3366; margin-top: 10px; padding: 4px 28px; text-align: center; border-top: 1px solid #F5F5F5; }
-footer a { padding: 10px;  }
-footer p { font-size: 16px; margin: 0; padding: 0;}
-#gravatar { position: relative; float: right; border: 3px solid #CCCCCC; top: -2.3em; z-index: 1; border-radius: 10px; }
+body {
+  color: #94979E;
+  font: 16px/28px 'Alegreya', "Garamond", serif;
+  margin: 0;
+  padding: 0 50px;
+}
+
+article, footer {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+article {
+  background: repeat scroll 0 0 #FFFFFF;
+  border-bottom: 4px solid #FF3366;
+  border-right: 3px solid #FF6666;
+  padding: 45px 28px 28px;
+  position: relative;
+  border-radius: 0px 0 10px 10px;
+  margin-top: 28px;
+  border-left: 1px solid #F7F7F7;
+}
+
+h1 {
+  background: none repeat scroll 0 0 #FF3366;
+  color: #FFFFFF;
+  font-size: 24px;
+  left: -12px;
+  line-height: 32px;
+  padding: 10px 0 10px 13px;
+  position: absolute;
+  top: -22px;
+  width: 100%;
+  display: block;
+  box-shadow: 2px 7px 0px -3px #CCCCCC;
+}
+
+h1:after {
+  background-color: #AD0431;
+  border-radius: 0 0 0 32px;
+  content: "";
+  height: 7px;
+  left: 3px;
+  position: absolute;
+  top: 52px;
+  width: 7px;
+}
+
+h1:before {
+  background-color: #D01B4B;
+  content: "";
+  height: 11px;
+  left: 0;
+  position: absolute;
+  top: 52px;
+  width: 11px;
+  border-radius: 0 0 0 32px;
+}
+
+article p:nth-of-type(1) {
+  font-size: 24px;
+}
+
+a, a:visited {
+  color: #3A3A3A;
+  padding: 4px 4px 0 4px;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  color: #710257;
+}
+
+a img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+:-moz-any-link:focus {
+  color: #bc4a46;
+}
+
+::selection {
+  color: #bc4a46;
+}
+
+footer {
+  background-color: #FFFFFF;
+  border-bottom: 3px solid #FF3366;
+  margin-top: 10px;
+  padding: 4px 28px;
+  text-align: center;
+  border-top: 1px solid #F5F5F5;
+}
+
+footer a {
+  padding: 10px;
+}
+
+footer p {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  border: 3px solid #CCCCCC;
+  top: -2.3em;
+  z-index: 1;
+  border-radius: 10px;
+}

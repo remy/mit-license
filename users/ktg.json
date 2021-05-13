@@ -1,0 +1,9 @@
+{
+  "copyright": "Nachwahl",
+  "url": "https://nachwahl.dev",
+  "email": "admin@nachwahl.dev",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-grey",
+  "gravatar": false
+}

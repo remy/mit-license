@@ -1,0 +1,9 @@
+{
+  "copyright": "Guillaume Fayard",
+  "url": "https://www.pycolore.fr",
+  "email": "guillaume.fayard@pycolore.fr",
+  "format": "html",
+  "license": "mit",
+  "theme": "default",
+  "gravatar": true
+}

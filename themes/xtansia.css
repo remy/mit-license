@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Rambla:400,400italic);
+@import url(https://fonts.googleapis.com/css?family=Rambla:400,400italic);
 
 body {
   font-family: Rambla, serif;
@@ -67,8 +67,8 @@ a:active {
 }
 
 #gravatar {
-    position: relative;
-    float: right;
-    border: 2px solid gray;
-    top: -1em;
+  position: relative;
+  float: right;
+  border: 2px solid gray;
+  top: -1em;
 }

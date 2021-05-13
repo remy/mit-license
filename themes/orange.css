@@ -1,14 +1,80 @@
-@import url(http://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption:700);
-html,body{background:#663B14;font:13pt "PT Sans",sans-serif;text-align:center}
-a:link,a:visited{color:#234234;text-decoration:none}
-a:hover,a:active{color:#432321;text-decoration:underline}
-article{background:#CC9900;text-align:left;width:85%;margin:80px auto;border-radius:10px;-moz-border-radius:10px;box-shadow:-1px 1px 20px rgba(30,30,30,0.5),2px 1px 15px rgba(80,80,80,0.4),inset 0 0 10px rgba(50,50,50,0.7);-webkit-box-shadow:-1px 1px 20px rgba(30,30,30,0.5),2px 1px 15px rgba(80,80,80,0.4),inset 0 0 10px rgba(50,50,50,0.7)}
-article h1{background:#CC6600;text-align:center;font:bold 35pt "PT Sans Caption","PT Sans",sans-serif;margin:0;padding:19px;border-radius:10px;-moz-border-radius:10px;box-shadow:inset 0 0 10px rgba(70,70,70,0.2),inset 1px 0 10px rgba(50,50,50,0.3),inset -1px 0 10px rgba(50,50,50,0.3);-webkit-box-shadow:inset 0 0 10px rgba(70,70,70,0.2),inset 1px 0 10px rgba(50,50,50,0.3),inset -1px 0 10px rgba(50,50,50,0.3)}
-article p{margin:0;padding:10px 15px}
-footer{position:fixed;bottom:0;left:0;width:100%;border-top:1px solid #7A7A00;background:#333300;user-select:none;-moz-user-select:none;-webkit-user-select:none}
-footer p,footer a{display:block;margin:0;text-shadow:0 0 10px #ccc;font-size:11.5pt}
-footer a:link,footer a:visited{color:#aaa}
-footer a:hover,footer a:active{color:#eee}
-::selection{background:#663300;color:white}
-::-moz-selection{background:#663300;color:white}
-#gravatar { position: relative; float: right; top: 0.5em; z-index: 1; right: 0.7em; border-radius: 10px; }
+@import url(https://fonts.googleapis.com/css?family=PT+Sans|PT+Sans+Caption:700);
+
+html, body {
+  background: #663B14;
+  font: 13pt "PT Sans", sans-serif;
+  text-align: center
+}
+
+a:link, a:visited {
+  color: #234234;
+  text-decoration: none
+}
+
+a:hover, a:active {
+  color: #432321;
+  text-decoration: underline
+}
+
+article {
+  background: #CC9900;
+  text-align: left;
+  width: 85%;
+  margin: 80px auto;
+  border-radius: 10px;
+  box-shadow: -1px 1px 20px rgba(30, 30, 30, 0.5), 2px 1px 15px rgba(80, 80, 80, 0.4), inset 0 0 10px rgba(50, 50, 50, 0.7);
+}
+
+article h1 {
+  background: #CC6600;
+  text-align: center;
+  font: bold 35pt "PT Sans Caption", "PT Sans", sans-serif;
+  margin: 0;
+  padding: 19px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(70, 70, 70, 0.2), inset 1px 0 10px rgba(50, 50, 50, 0.3), inset -1px 0 10px rgba(50, 50, 50, 0.3);
+}
+
+article p {
+  margin: 0;
+  padding: 10px 15px
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #7A7A00;
+  background: #333300;
+  user-select: none;
+}
+
+footer p, footer a {
+  display: block;
+  margin: 0;
+  text-shadow: 0 0 10px #ccc;
+  font-size: 11.5pt
+}
+
+footer a:link, footer a:visited {
+  color: #aaa
+}
+
+footer a:hover, footer a:active {
+  color: #eee
+}
+
+::selection {
+  background: #663300;
+  color: white
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  top: 0.5em;
+  z-index: 1;
+  right: 0.7em;
+  border-radius: 10px;
+}

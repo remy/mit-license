@@ -1,0 +1,148 @@
+/*Material theme v1.0.1 by @ahaasler, https://github.com/ahaasler/mit-license-material-theme*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400|Roboto+Condensed:300,400);
+
+body {
+  font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: .4em;
+  font-size: 1.1em;
+  background: #eee;
+  color: #5c5c5c
+}
+
+a:link, a:visited {
+  text-decoration: none
+}
+
+article {
+  background: #fff;
+  border-radius: 2px;
+  display: block;
+  margin: 1em;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  transition: box-shadow .2s ease-in-out;
+  position: relative;
+  max-width: 800px;
+  margin: 10px auto 0
+}
+
+article:hover {
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .16), 0 2px 3px rgba(0, 0, 0, .23)
+}
+
+article h1 {
+  color: #fff;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  height: 4.5em;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 3.5em;
+  padding-bottom: .7em;
+  box-sizing: border-box;
+  font-size: 2em;
+  font-weight: 300
+}
+
+article h1, article h1+p {
+  background: #cddc39;
+  font-family: Roboto Condensed, Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding-left: 6%
+}
+
+article h1+p {
+  color: #f9fbe7;
+  margin: 0;
+  text-align: left;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2);
+  font-size: 1em;
+  padding-top: .6em;
+  min-height: 3.6em;
+  font-weight: 400;
+  margin-top: 0
+}
+
+article h1+p a:link, article h1+p a:visited {
+  color: #f0f4c3
+}
+
+article h1+p a:hover {
+  color: #827717
+}
+
+article p {
+  padding: 0 2em;
+  text-align: justify
+}
+
+article p:last-child {
+  color: #afb42b;
+  padding-bottom: 1.8em;
+  font-size: .9em
+}
+
+footer {
+  margin: 0 auto;
+  font-size: .8em;
+  text-align: center
+}
+
+footer a:link, footer a:visited {
+  color: #5c5c5c
+}
+
+footer a:hover {
+  color: #827717
+}
+
+#gravatar {
+  display: block;
+  float: right;
+  border-radius: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, .23), 0 3px 10px rgba(0, 0, 0, .16);
+  transition: box-shadow .2s ease-in-out
+}
+
+#gravatar:hover {
+  box-shadow: 0 5px 12px rgba(0, 0, 0, .23), 0 5px 12px rgba(0, 0, 0, .16)
+}
+
+@media (min-width:750px) {
+  #gravatar {
+    position: absolute;
+    top: 10.8em;
+    right: 3em
+  }
+
+  #gravatar+h1+p+p {
+    padding-top: 2em
+  }
+
+  h1+p {
+    padding-right: 6em
+  }
+
+  h1+p+p {
+    padding-top: .8em
+  }
+}
+
+@media (max-width:750px) {
+  #gravatar {
+    position: fixed;
+    bottom: 1em;
+    right: 1em
+  }
+
+  article h1+p {
+    font-size: .8em;
+    padding-bottom: 1em
+  }
+
+  article h1+p+p {
+    padding-top: .8em
+  }
+
+  footer {
+    padding-bottom: 4em
+  }
+}

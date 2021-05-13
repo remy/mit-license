@@ -1,1 +1,7 @@
-{"copyright":"Clay Loveless","url":"http:\/\/claylo.com","email":"clay@php.net","format":"html","theme":"plaintext"}
+{
+  "copyright": "Clay Loveless",
+  "url": "http://claylo.com",
+  "email": "clay@php.net",
+  "format": "html",
+  "theme": "plaintext"
+}

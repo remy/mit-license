@@ -1,0 +1,9 @@
+{
+  "copyright": "ReadOnly  Development",
+  "url": "https://readonlydev.com",
+  "email": "admin@readonlydev.com",
+  "format": "html",
+  "license": "isc",
+  "theme": "darkblog",
+  "gravatar": true
+}

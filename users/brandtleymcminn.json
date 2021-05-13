@@ -1,8 +1,8 @@
 {
-  "copyright":  "Brandtley McMinn, https://github.com/bmcminn",
-  "url":        "http://giggleboxstudios.net",
-  "format":     "txt",
-  "email":      "contact@giggleboxstudios.net",
-  "gravatar":   true,
-  "theme":      "default"
+  "copyright": "Brandtley McMinn, https://github.com/bmcminn",
+  "url": "http://giggleboxstudios.net",
+  "format": "txt",
+  "email": "contact@giggleboxstudios.net",
+  "gravatar": true,
+  "theme": "default"
 }

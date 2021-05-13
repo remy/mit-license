@@ -1,7 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(https://fonts.googleapis.com/css?family=Inconsolata);
+
 body {
   max-width: 625px;
 }
+
 body, h1, h2, h3, h4, h5, h6 {
   font: normal 15px Inconsolata, Consolas, monospace;
 }

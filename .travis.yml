@@ -1,3 +1,15 @@
-language: node_js
-node_js:
-  - "0.10"
+language:          node_js
+
+node_js:           lts/*
+
+cache:
+    - npm
+    - yarn
+
+before_install:    npm i -g yarn
+
+install:           yarn install --non-interactive
+
+script:
+    - yarn test
+    - yarn lint
