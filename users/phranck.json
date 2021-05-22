@@ -4,6 +4,6 @@
   "email": "phranck@woodbytes.me",
   "format": "html",
   "license": "mit",
-  "theme": "default-dark",
+  "theme": "default",
   "gravatar": true
 }
