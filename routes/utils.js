@@ -1,1 +1,1 @@
-exports.isDomainId = value => /^[\w-_]+$/.test(value)
+export const isDomainId = value => /^[\w-_]+$/.test(value)

@@ -1,10 +1,16 @@
-const path = require('path')
-const { htmlEscape, htmlUnescape } = require('escape-goat')
-const stripHtml = require('html-text')
-const is = require('@sindresorhus/is')
-const getGravatarUrl = require('gravatar-url')
-const createHtmlElement = require('create-html-element')
-const { renderFile } = require('ejs')
+import {fileURLToPath} from 'node:url'
+import path, {dirname} from 'node:path'
+import {htmlEscape, htmlUnescape} from 'escape-goat'
+import stripHtml from 'html-text'
+import is from '@sindresorhus/is'
+import getGravatarUrl from 'gravatar-url'
+import createHtmlElement from 'create-html-element'
+import {renderFile} from 'ejs'
+
+import loadUser from '../lib/load-user.js'
+import loadOptions from '../lib/load-options.js'
+
+const directoryName = dirname(fileURLToPath(import.meta.url))
 
 const getCopyrightName = (user, isPlainText) => {
   if (is.string(user)) {
@@ -53,9 +59,24 @@ const getGravatarEmail = user => {
 
 const removeFalsy = array => array.filter(Boolean)
 
-module.exports = async (_, response) => {
-  const { user, options } = response.locals
-  const isPlainText = options.format !== 'html'
+const getRoute = async (request, response) => {
+  let user
+  try {
+    user = await loadUser(request.hostname)
+  } catch ({message}) {
+    response
+      .status(500)
+      .send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
+    return
+  }
+
+  const options = loadOptions(request.url)
+  const year = options.pinnedYear ?
+    options.pinnedYear :
+    removeFalsy([options.startYear, options.endYear]).join('-')
+  const license = (options.license || user.license || 'MIT').toUpperCase()
+  const format = options.format || user.format || 'html'
+  const isPlainText = format !== 'html'
 
   let name
 
@@ -85,21 +106,15 @@ module.exports = async (_, response) => {
     })
   }
 
-  const year = options.pinnedYear
-    ? options.pinnedYear
-    : removeFalsy([options.startYear, options.endYear]).join('-')
-  const license = (options.license || user.license || 'MIT').toUpperCase()
-  const format = options.format || user.format || 'html'
-
   try {
-    const content = await renderFile(path.join(__dirname, '..', 'licenses', `${license}.ejs`), {
+    const content = await renderFile(path.join(directoryName, '..', 'licenses', `${license}.ejs`), {
       info: `${year} ${name}`,
       theme: user.theme || 'default',
       gravatar
     })
 
     if (format === 'txt') {
-      const { articleContent } = content.match(/<article>(?<articleContent>.*)<\/article>/ms).groups
+      const {articleContent} = content.match(/<article>(?<articleContent>.*)<\/article>/ms).groups
 
       response
         .set('Content-Type', 'text/plain; charset=UTF-8')
@@ -111,8 +126,11 @@ module.exports = async (_, response) => {
       response.send(content)
       return
     }
-    response.json({ ...user, ...options })
+
+    response.json({...user, ...options})
   } catch (error) {
     response.status(500).send(error)
   }
 }
+
+export default getRoute
