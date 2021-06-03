@@ -3,6 +3,6 @@
   "email": "raghavtan@gmail.com",
   "format": "html",
   "license": "mit",
-  "theme": "afterdark",
-  "gravatar": true
+  "theme": "default",
+  "gravatar": false
 }
