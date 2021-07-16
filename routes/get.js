@@ -74,8 +74,8 @@ const getRoute = async (request, response) => {
   const year = options.pinnedYear ?
     options.pinnedYear :
     removeFalsy([options.startYear, options.endYear]).join('-')
-  const license = (options.license || user.license || 'MIT').toUpperCase()
-  const format = options.format || user.format || 'html'
+  const license = (options.license || user.license).toUpperCase()
+  const format = options.format || user.format
   const isPlainText = format !== 'html'
 
   let name
