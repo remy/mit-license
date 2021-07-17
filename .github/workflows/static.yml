@@ -1,0 +1,48 @@
+name: Static MIT License Generation
+on:
+  # Schedule updates
+  schedule: [{cron: "0 0 1 * *"}]
+  push: {branches: "master"}
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+      - name: Add Domain to Hosts
+        run: |
+          echo "127.0.0.1       ${{ github.actor }}.localhost" | sudo tee -a /etc/hosts
+      - name: Install Dependencies
+        run: |
+          yarn install
+      - name: Run Server in Background
+        run: |
+          yarn start &
+          sleep 5
+      - name: Get Files
+        run: |
+          export THEME="`cat users/${{ github.actor }}.json | jq .theme | sed 's/"//g'`.css"
+          rm -r docs # just to make sure everything goes smoothly
+          mkdir -p docs
+          mkdir -p docs/themes
+          cp themes/$THEME docs/themes/$THEME
+          wget http://${{ github.actor }}.localhost:8080/ -O docs/index.html
+          wget http://${{ github.actor }}.localhost:8080/license.txt -O docs/license.txt
+          sed -i 's|/themes/|/mit-license/themes/|g' docs/index.html
+      - name: Commit and Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "Github Action"
+          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git checkout ${{ github.head_ref }}
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "there are changes";
+            git add -A
+            git commit -m "[bot] Update static files."
+            git push "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" ${{ github.head_ref }}
+          else
+            echo "no changes";
+          fi
