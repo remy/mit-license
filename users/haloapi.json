@@ -2,6 +2,16 @@
   "theme": "default",
   "license": "mit",
   "gravatar": false,
-  "copyright": "System.Object[]",
+  "copyright": [
+    {
+      "name": "Mikey O'Toole",
+      "url": "https://homotechsual.dev",
+      "email": "mikey@homotechsual.dev"
+    },
+    {
+      "name": "Luke Whitelock",
+      "url": "https://mspp.io"
+    }
+  ],
   "format": "html"
 }
