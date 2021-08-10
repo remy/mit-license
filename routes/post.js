@@ -1,4 +1,5 @@
 import path, {dirname} from 'node:path'
+import {fileURLToPath} from 'node:url'
 import toBase64 from 'btoa'
 import {readPackageAsync as readPackage} from 'read-pkg'
 import size from 'any-size'
@@ -7,9 +8,6 @@ import pathExists from 'path-exists'
 import writeJsonFile from 'write-json-file'
 import yn from 'yn'
 import is from '@sindresorhus/is'
-
-import {fileURLToPath} from 'node:url'
-
 import {isDomainId} from './utils.js'
 
 const directoryName = dirname(fileURLToPath(import.meta.url))
