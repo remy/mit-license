@@ -70,6 +70,7 @@ a:visited {
   color: #676e8a;
   padding: 4px;
   text-decoration: none;
+  transition: all 5s ease-in-out;
 }
 
 a:active,
@@ -102,6 +103,23 @@ a img {
 
 ::-moz-selection {
   background: #15204b9a;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: #676e8a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7780a1;
+}
+::-webkit-scrollbar-track {
+  background: #121520;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
 }
 
 @media all and (max-width: 500px) {
