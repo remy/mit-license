@@ -206,6 +206,7 @@ Current available themes:
 * tryhtml - [preview](https://output.jsbin.com/cawihuwuku) (by [@abranhe](https://github.com/abranhe))
 * clarity - [preview](https://output.jsbin.com/likezir) (by [@Richienb](https://github.com/Richienb))
 * darkblog - [preview](https://chand1012.dev/mit-license/) (by [@chand1012](https://github.com/chand1012))
+* ubuntu mono - [preview](https://kuameh.github.io/ubuntu-mono-theme-preview/) (by [@Kuameh](https://github.com/Kuameh))
 
 ## Formats & URLs
 
