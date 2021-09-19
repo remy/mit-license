@@ -25,8 +25,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^18.5.3",
-    "@sindresorhus/is": "^4.0.1",
+    "@octokit/rest": "^18.10.0",
+    "@sindresorhus/is": "^4.2.0",
     "any-size": "^1.2.0",
     "btoa": "^1.2.1",
     "cors": "^2.8.5",
@@ -35,37 +35,30 @@
     "escape-goat": "^4.0.0",
     "express": "^4.17.1",
     "express-minify": "^1.0.0",
-    "gravatar-url": "^4.0.0",
+    "gravatar-url": "^4.0.1",
     "html-text": "^1.0.1",
-    "load-json-file": "^6.2.0",
-    "path-exists": "^4.0.0",
+    "load-json-file": "^7.0.1",
+    "path-exists": "^5.0.0",
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
-    "read-pkg": "^6.0.0",
+    "read-pkg": "^7.0.0",
     "serve-favicon": "^2.5.0",
     "temp-dir": "^2.0.0",
-    "write-json-file": "^4.3.0",
-    "yn": "^4.0.0"
+    "write-json-file": "^5.0.0",
+    "yn": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.14.3",
-    "@babel/plugin-syntax-top-level-await": "^7.12.13",
+    "@babel/eslint-parser": "^7.15.7",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "css": "^3.0.0",
     "file-ext": "^1.0.0",
-    "has-flag": "^5.0.0",
-    "husky": "^4.3.0",
-    "nodemon": "^2.0.7",
+    "has-flag": "^5.0.1",
+    "nodemon": "^2.0.12",
     "path-extra": "^4.3.0",
-    "xo": "^0.40.1"
+    "xo": "^0.44.0"
   },
   "resolutions": {
     "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm test"
-    }
   },
   "xo": {
     "space": 2,
@@ -74,9 +67,9 @@
     "parserOptions": {
       "requireConfigFile": false,
       "babelOptions": {
-          "plugins": [
-            "@babel/plugin-syntax-top-level-await"
-          ]
+        "plugins": [
+          "@babel/plugin-syntax-top-level-await"
+        ]
       }
     }
   }

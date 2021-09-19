@@ -1,14 +1,15 @@
 import path, {dirname} from 'node:path'
 import {fileURLToPath} from 'node:url'
+import process from 'node:process'
 import toBase64 from 'btoa'
-import {readPackageAsync as readPackage} from 'read-pkg'
+import {readPackage} from 'read-pkg'
 import size from 'any-size'
 import {Octokit} from '@octokit/rest'
-import pathExists from 'path-exists'
-import writeJsonFile from 'write-json-file'
+import {pathExists} from 'path-exists'
+import {writeJsonFile} from 'write-json-file'
 import yn from 'yn'
 import is from '@sindresorhus/is'
-import {isDomainId} from './utils.js'
+import isDomainId from '../utils/is-domain-id.js'
 
 const directoryName = dirname(fileURLToPath(import.meta.url))
 
@@ -18,7 +19,7 @@ const github = new Octokit({
   // GitHub personal access token
   auth: process.env.github_token,
   // User agent with version from package.json
-  userAgent: `mit-license v${version}`
+  userAgent: `mit-license v${version}`,
 })
 
 function getUserData({query, body}) {
@@ -36,7 +37,7 @@ function getUserData({query, body}) {
   return body
 }
 
-const postRoute = async (request, response) => {
+export default async function postRoute(request, response) {
   const {hostname} = request
 
   // Get different parts of hostname (example: remy.mit-license.org -> ['remy', 'mit-license', 'org'])
@@ -59,7 +60,7 @@ const postRoute = async (request, response) => {
     response
       .status(400)
       .send(
-        'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'
+        'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license',
       )
 
     return
@@ -70,7 +71,7 @@ const postRoute = async (request, response) => {
     response
       .status(409)
       .send(
-        'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license'
+        'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license',
       )
     return
   }
@@ -82,7 +83,7 @@ const postRoute = async (request, response) => {
       response
         .status(400)
         .send(
-          'The "gravatar" JSON property must be a boolean.'
+          'The "gravatar" JSON property must be a boolean.',
         )
       return
     }
@@ -105,10 +106,10 @@ const postRoute = async (request, response) => {
         content: toBase64(JSON.stringify(userData, 0, 2)),
         committer: {
           name: 'MIT License Bot',
-          email: 'remy@leftlogic.com'
-        }
+          email: 'remy@leftlogic.com',
+        },
       }),
-      writeJsonFile(path.join(directoryName, '..', 'users', `${id}.json`), userData, {indent: undefined})
+      writeJsonFile(path.join(directoryName, '..', 'users', `${id}.json`), userData, {indent: undefined}),
     ])
 
     response.status(201).send(`MIT license page created: https://${hostname}`)
@@ -116,10 +117,7 @@ const postRoute = async (request, response) => {
     response
       .status(500)
       .send(
-        'Unable to create new user - please send a pull request on https://github.com/remy/mit-license'
+        'Unable to create new user - please send a pull request on https://github.com/remy/mit-license',
       )
   }
 }
-
-// HTTP POST API
-export default postRoute

@@ -1,11 +1,12 @@
 import {promises as fs} from 'node:fs'
+import process from 'node:process'
 import writeJsonFile from 'write-json-file'
 import {parse as parseCSS} from 'css'
 import hasFlag from 'has-flag'
 import getExtension from 'file-ext'
 import path from 'path-extra'
 import is from '@sindresorhus/is'
-import {isDomainId} from './routes/utils.js'
+import isDomainId from './utils/is-domain-id.js'
 
 async function report(content, fix) {
   console.error(content)

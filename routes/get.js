@@ -12,7 +12,7 @@ import loadOptions from '../lib/load-options.js'
 
 const directoryName = dirname(fileURLToPath(import.meta.url))
 
-const getCopyrightName = (user, isPlainText) => {
+function getCopyrightName(user, isPlainText) {
   if (is.string(user)) {
     return user
   }
@@ -22,30 +22,30 @@ const getCopyrightName = (user, isPlainText) => {
   return isPlainText ? copyright : htmlEscape(copyright)
 }
 
-const getCopyrightHtml = (user, isPlainText) => {
+function getCopyrightHtml(user, isPlainText) {
   const name = getCopyrightName(user, isPlainText)
   let html = user.url ? createHtmlElement({
     name: 'a',
     attributes: {
-      href: user.url
+      href: user.url,
     },
-    text: name
+    text: name,
   }) : name
 
   if (user.email) {
     html += ` &lt;${createHtmlElement({
       name: 'a',
       attributes: {
-        href: `mailto:${user.email}`
+        href: `mailto:${user.email}`,
       },
-      text: user.email
+      text: user.email,
     })}&gt;`
   }
 
   return html
 }
 
-const getGravatarEmail = user => {
+function getGravatarEmail(user) {
   if (user.gravatar && user.email) {
     // Supports regular format
     return user.email.trim().toLowerCase()
@@ -59,7 +59,7 @@ const getGravatarEmail = user => {
 
 const removeFalsy = array => array.filter(Boolean)
 
-const getRoute = async (request, response) => {
+export default async function getRoute(request, response) {
   let user
   try {
     user = await loadUser(request.hostname)
@@ -71,9 +71,9 @@ const getRoute = async (request, response) => {
   }
 
   const options = loadOptions(request.url)
-  const year = options.pinnedYear ?
-    options.pinnedYear :
-    removeFalsy([options.startYear, options.endYear]).join('-')
+  const year = options.pinnedYear
+    ? options.pinnedYear
+    : removeFalsy([options.startYear, options.endYear]).join('-')
   const license = (options.license || user.license).toUpperCase()
   const format = options.format || user.format
   const isPlainText = format !== 'html'
@@ -101,8 +101,8 @@ const getRoute = async (request, response) => {
       attributes: {
         id: 'gravatar',
         alt: 'Profile image',
-        src: getGravatarUrl(gravatarEmail)
-      }
+        src: getGravatarUrl(gravatarEmail),
+      },
     })
   }
 
@@ -110,7 +110,7 @@ const getRoute = async (request, response) => {
     const content = await renderFile(path.join(directoryName, '..', 'licenses', `${license}.ejs`), {
       info: `${year} ${name}`,
       theme: user.theme || 'default',
-      gravatar
+      gravatar,
     })
 
     if (format === 'txt') {
@@ -132,5 +132,3 @@ const getRoute = async (request, response) => {
     response.status(500).send(error)
   }
 }
-
-export default getRoute
