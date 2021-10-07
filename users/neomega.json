@@ -12,6 +12,6 @@
   ],
   "format": "html",
   "license": "mit",
-  "theme": "default",
+  "theme": "ubuntu-mono",
   "gravatar": true
 }
