@@ -1,12 +1,11 @@
 {
   "copyright": [
     {
-      "copyright": "ProtoByter",
-      "url": "http://protobyte.me",
+      "name": "ProtoByter",
       "email": "bobrow2006@gmail.com"
     },
     {
-      "copyright": "Stats",
+      "name": "Stats",
       "email": "stefmorino@protonmail.com"
     }
   ],
