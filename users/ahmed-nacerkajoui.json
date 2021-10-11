@@ -4,6 +4,6 @@
   "email": "nacer.k2@gmail.com",
   "format": "text",
   "license": "mit",
-  "theme": "default",
-  "gravatar": true
+  "theme": "ubuntu-mono",
+  "gravatar": false
 }
