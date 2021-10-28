@@ -1,0 +1,18 @@
+{
+  "copyright": [
+    {
+      "copyright": "AstolfoDev",
+      "url": "https://astoflodev.nora.lgbt",
+      "email": "AstolfoDev@wafflepowered.com"
+    },
+    {
+      "copyright": "Mokiy",
+      "url": "https://nora.lgbt",
+      "email": "mokiy@wafflepowered.com"
+    }
+  ],
+  "format": "html",
+  "license": "mit",
+  "theme": "material-pink",
+  "gravatar": false
+}
