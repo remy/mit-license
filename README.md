@@ -1,4 +1,4 @@
-# A permalink for your MIT License ![Travis CI Status](https://img.shields.io/travis/remy/mit-license/master.svg?style=for-the-badge)
+# A permalink for your MIT License
 
 I always forget to add a `LICENSE` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
