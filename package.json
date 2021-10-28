@@ -17,8 +17,7 @@
     "start": "node .",
     "dev": "nodemon .",
     "serve": "node server.js",
-    "test": "node test.js",
-    "lint": "xo"
+    "test": "xo && node test.js"
   },
   "bugs": {
     "url": "https://github.com/remy/mit-license/issues"
