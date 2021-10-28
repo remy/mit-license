@@ -1,6 +1,6 @@
 import {promises as fs} from 'node:fs'
 import process from 'node:process'
-import writeJsonFile from 'write-json-file'
+import {writeJsonFile} from 'write-json-file'
 import {parse as parseCSS} from 'css'
 import hasFlag from 'has-flag'
 import getExtension from 'file-ext'
