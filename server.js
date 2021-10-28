@@ -1,6 +1,7 @@
 // IMPORTANT: Set the `github_token` environment variable to a personal access token with at least the `public_repo` scope for the API.
 // The `PORT` environment variable can also be set to control the port the server should be hosted on.
 import path, {dirname} from 'node:path'
+import {fileURLToPath} from 'node:url'
 import process from 'node:process'
 import express from 'express'
 import minify from 'express-minify'
@@ -9,8 +10,6 @@ import postcssMiddleware from 'postcss-middleware'
 import tempDirectory from 'temp-dir'
 import postcssPresetEnv from 'postcss-preset-env'
 import cors from 'cors'
-
-import {fileURLToPath} from 'node:url'
 
 import postRoute from './routes/post.js'
 import getRoute from './routes/get.js'
