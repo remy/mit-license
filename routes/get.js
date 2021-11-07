@@ -1,12 +1,18 @@
-const path = require('path')
-const { htmlEscape, htmlUnescape } = require('escape-goat')
-const stripHtml = require('html-text')
-const is = require('@sindresorhus/is')
-const getGravatarUrl = require('gravatar-url')
-const createHtmlElement = require('create-html-element')
-const { renderFile } = require('ejs')
+import {fileURLToPath} from 'node:url'
+import path, {dirname} from 'node:path'
+import {htmlEscape, htmlUnescape} from 'escape-goat'
+import stripHtml from 'html-text'
+import is from '@sindresorhus/is'
+import getGravatarUrl from 'gravatar-url'
+import createHtmlElement from 'create-html-element'
+import {renderFile} from 'ejs'
 
-const getCopyrightName = (user, isPlainText) => {
+import loadUser from '../lib/load-user.js'
+import loadOptions from '../lib/load-options.js'
+
+const directoryName = dirname(fileURLToPath(import.meta.url))
+
+function getCopyrightName(user, isPlainText) {
   if (is.string(user)) {
     return user
   }
@@ -16,30 +22,30 @@ const getCopyrightName = (user, isPlainText) => {
   return isPlainText ? copyright : htmlEscape(copyright)
 }
 
-const getCopyrightHtml = (user, isPlainText) => {
+function getCopyrightHtml(user, isPlainText) {
   const name = getCopyrightName(user, isPlainText)
   let html = user.url ? createHtmlElement({
     name: 'a',
     attributes: {
-      href: user.url
+      href: user.url,
     },
-    text: name
+    text: name,
   }) : name
 
   if (user.email) {
     html += ` &lt;${createHtmlElement({
       name: 'a',
       attributes: {
-        href: `mailto:${user.email}`
+        href: `mailto:${user.email}`,
       },
-      text: user.email
+      text: user.email,
     })}&gt;`
   }
 
   return html
 }
 
-const getGravatarEmail = user => {
+function getGravatarEmail(user) {
   if (user.gravatar && user.email) {
     // Supports regular format
     return user.email.trim().toLowerCase()
@@ -53,9 +59,24 @@ const getGravatarEmail = user => {
 
 const removeFalsy = array => array.filter(Boolean)
 
-module.exports = async (_, response) => {
-  const { user, options } = response.locals
-  const isPlainText = options.format !== 'html'
+export default async function getRoute(request, response) {
+  let user
+  try {
+    user = await loadUser(request.hostname)
+  } catch ({message}) {
+    response
+      .status(500)
+      .send(`An internal error occurred - open an issue on https://github.com/remy/mit-license with the following information: ${message}`)
+    return
+  }
+
+  const options = loadOptions(request.url)
+  const year = options.pinnedYear
+    ? options.pinnedYear
+    : removeFalsy([options.startYear, options.endYear]).join('-')
+  const license = (options.license || user.license).toUpperCase()
+  const format = options.format || user.format
+  const isPlainText = format !== 'html'
 
   let name
 
@@ -80,26 +101,20 @@ module.exports = async (_, response) => {
       attributes: {
         id: 'gravatar',
         alt: 'Profile image',
-        src: getGravatarUrl(gravatarEmail)
-      }
+        src: getGravatarUrl(gravatarEmail),
+      },
     })
   }
 
-  const year = options.pinnedYear
-    ? options.pinnedYear
-    : removeFalsy([options.startYear, options.endYear]).join('-')
-  const license = (options.license || user.license || 'MIT').toUpperCase()
-  const format = options.format || user.format || 'html'
-
   try {
-    const content = await renderFile(path.join(__dirname, '..', 'licenses', `${license}.ejs`), {
+    const content = await renderFile(path.join(directoryName, '..', 'licenses', `${license}.ejs`), {
       info: `${year} ${name}`,
       theme: user.theme || 'default',
-      gravatar
+      gravatar,
     })
 
     if (format === 'txt') {
-      const { articleContent } = content.match(/<article>(?<articleContent>.*)<\/article>/ms).groups
+      const {articleContent} = content.match(/<article>(?<articleContent>.*)<\/article>/ms).groups
 
       response
         .set('Content-Type', 'text/plain; charset=UTF-8')
@@ -111,7 +126,8 @@ module.exports = async (_, response) => {
       response.send(content)
       return
     }
-    response.json({ ...user, ...options })
+
+    response.json({...user, ...options})
   } catch (error) {
     response.status(500).send(error)
   }

@@ -1,0 +1,9 @@
+{
+  "copyright": "Marcin Kazmierski, https://marcinkaz.pl/",
+  "url": "https://marcinkaz.pl/",
+  "email": "marcin@marcinkaz.pl",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-deep-orange",
+  "gravatar": true
+}

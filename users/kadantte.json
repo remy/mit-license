@@ -4,6 +4,6 @@
     "email": "info@kadantte.moe",
     "format": "html",
     "license": "mit",
-    "theme": "default-dark",
+    "theme": "material-deep-purple",
     "gravatar": true
 }

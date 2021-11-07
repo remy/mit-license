@@ -1,4 +1,4 @@
-# A permalink for your MIT License ![Travis CI Status](https://img.shields.io/travis/remy/mit-license/master.svg?style=for-the-badge)
+# A permalink for your MIT License
 
 I always forget to add a `LICENSE` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
@@ -206,6 +206,7 @@ Current available themes:
 * tryhtml - [preview](https://output.jsbin.com/cawihuwuku) (by [@abranhe](https://github.com/abranhe))
 * clarity - [preview](https://output.jsbin.com/likezir) (by [@Richienb](https://github.com/Richienb))
 * darkblog - [preview](https://chand1012.dev/mit-license/) (by [@chand1012](https://github.com/chand1012))
+* ubuntu mono - [preview](https://kuameh.github.io/ubuntu-mono-theme-preview/) (by [@Kuameh](https://github.com/Kuameh))
 
 ## Formats & URLs
 
