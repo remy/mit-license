@@ -1,5 +1,7 @@
 {
-  "copyright": "Seyed Mojtaba Seyedi, http://seyedi.github.com",
-  "url": "http://seyedi.github.com",
-  "theme": "default"
+  "copyright": "Mojtaba Seyedi, https://mojtabaseyedi.com",
+  "url": "https://mojtabaseyedi.com",
+  "gravatar": true,
+  "email": "seyedmojtabaseyedi@gmail.com",
+  "theme": "material"
 }

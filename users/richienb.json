@@ -1,8 +1,8 @@
 {
-  "copyright": "Richie Bendall, https://www.richie-bendall.ml",
-  "url": "https://www.richie-bendall.ml",
+  "copyright": "Richie Bendall, https://richienb.github.io",
+  "url": "https://richienb.github.io",
   "email": "richiebendall@gmail.com",
   "format": "html",
   "gravatar": true,
-  "theme": "richienb"
+  "theme": "clarity"
 }

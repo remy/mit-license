@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css");
+
+article {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+footer {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+h1 {
+  font-weight: 500;
+  font-family: Poppins, Roboto, Helvetica, Arial, sans-serif;
+  color: #3c4043;
+  line-height: 28px;
+}
+
+p {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  color: rgba(0, 0, 0, 0.87);
+  line-height: 24px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #2962ff;
+}
+
+#gravatar {
+  border-radius: 50%;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+  }
+  
+  h1, p {
+    color: white;
+  }
+}

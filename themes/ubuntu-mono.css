@@ -1,0 +1,133 @@
+/*Ubuntu Mono v1.0 by @kuameh*/
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono");
+
+body {
+  margin: 0;
+  padding: 50px;
+  background: #121520;
+  font: 16px/28px "Ubuntu Mono", monospace;
+}
+
+article,
+footer {
+  display: block;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+article {
+  padding: 28px;
+}
+
+article :nth-child(2) {
+  color: #676e8a;
+}
+
+article :nth-child(5) {
+  border-left: 5px solid;
+  border-image: linear-gradient(
+      180deg,
+      rgba(249, 67, 72, 1) 0%,
+      rgba(146, 97, 255, 1) 16.7%,
+      rgba(60, 197, 248, 1) 33.4%,
+      rgba(74, 203, 138, 1) 50.1%,
+      rgba(255, 213, 67, 1) 66.8%,
+      rgba(255, 147, 73, 1) 100%
+    )
+    1;
+  padding: 0 0 0 25px;
+  color: #606b96;
+}
+
+footer {
+  padding: 0 28px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 32px;
+  background: linear-gradient(
+    90deg,
+    rgba(249, 67, 72, 1) 0%,
+    rgba(146, 97, 255, 1) 16.7%,
+    rgba(60, 197, 248, 1) 33.4%,
+    rgba(74, 203, 138, 1) 50.1%,
+    rgba(255, 213, 67, 1) 66.8%,
+    rgba(255, 147, 73, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p {
+  color: #e1e3ee;
+}
+
+a,
+a:visited {
+  color: #676e8a;
+  padding: 4px;
+  text-decoration: none;
+  transition: all 5s ease-in-out;
+}
+
+a:active,
+a:hover {
+  /* color: #f94348; */
+  background: linear-gradient(
+    90deg,
+    rgba(249, 67, 72, 1) 15%,
+    rgba(146, 97, 255, 1) 30%,
+    rgba(60, 197, 248, 1) 70%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+:-moz-any-link:focus {
+  background: #15204b9a;
+}
+
+::selection {
+  background: #15204b9a;
+}
+
+::-moz-selection {
+  background: #15204b9a;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: #676e8a;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7780a1;
+}
+::-webkit-scrollbar-track {
+  background: #121520;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+}
+
+@media all and (max-width: 500px) {
+  article {
+    padding: 1em;
+  }
+
+  body {
+    font-size: 1em;
+  }
+}

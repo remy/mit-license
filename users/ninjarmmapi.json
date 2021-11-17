@@ -1,0 +1,11 @@
+{
+  "theme": "default",
+  "license": "mit",
+  "gravatar": true,
+  "copyright": {
+      "name": "Mikey O'Toole",
+      "url": "https://homotechsual.dev",
+      "email": "mikey@homotechsual.dev"
+  },
+  "format": "html"
+}

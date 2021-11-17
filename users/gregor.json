@@ -1,0 +1,9 @@
+{
+  "copyright": "Gregor Parzefall",
+  "url": "https://greygit.de",
+  "email": "gregor@greygit.de",
+  "format": "html",
+  "license": "mit",
+  "theme": "default-dark",
+  "gravatar": true
+}

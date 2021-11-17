@@ -1,5 +1,6 @@
 {
-  "copyright": "Nobuo OOHARA, http://www.oppara.tv/",
-  "url": "http://www.oppara.tv/",
-  "theme": "afterdark"
+  "copyright": "Nobuo OOHARA, https://oppara.tv/",
+  "url": "https://oppara.tv/",
+  "gravatar": true,
+  "theme": "dusk"
 }
