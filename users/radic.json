@@ -1,8 +1,8 @@
 {
-  "copyright": "Robin Radic, Radic Technologies",
-  "url": "http://radic.nl",
-  "email": "info@radic.nl",
+  "copyright": "Robin Radic",
+  "url": "https://github.com/robinradic",
+  "email": "rradic@hotmail.com",
   "format": "html",
-  "theme": "xtansia",
-  "gravatar": true
+  "gravatar": true,
+  "theme": "xtansia"
 }
