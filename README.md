@@ -2,7 +2,7 @@
 
 I always forget to add a `LICENSE` file to my projects, so I wanted to link to a single resource that would always be up to date and would always have my details online.
 
-Why keep this to myself, there are two ways to create your _own_ MIT license page:
+Why keep this to myself, there are three ways to create your _own_ MIT license page:
 
 1.  Use the generator tool (easiest)
 2.  Make a request to the API (details below)

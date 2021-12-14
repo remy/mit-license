@@ -24,12 +24,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^18.10.0",
     "@sindresorhus/is": "^4.2.0",
     "any-size": "^1.2.0",
     "btoa": "^1.2.1",
     "cors": "^2.8.5",
-    "create-html-element": "^3.0.0",
+    "create-html-element": "^4.0.1",
     "ejs": "^3.1.6",
     "escape-goat": "^4.0.0",
     "express": "^4.17.1",
@@ -37,6 +36,7 @@
     "gravatar-url": "^4.0.1",
     "html-text": "^1.0.1",
     "load-json-file": "^7.0.1",
+    "octokit": "^1.7.0",
     "path-exists": "^5.0.0",
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
@@ -55,9 +55,6 @@
     "nodemon": "^2.0.12",
     "path-extra": "^4.3.0",
     "xo": "^0.44.0"
-  },
-  "resolutions": {
-    "postcss-middleware/vinyl-fs/glob-stream/micromatch/braces": "^3.0.2"
   },
   "xo": {
     "space": 2,
