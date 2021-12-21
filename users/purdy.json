@@ -1,8 +1,13 @@
 {
-  "copyright": "Joe Purdy",
-  "url": "https://joepurdy.io",
-  "email": "hello@joepurdy.io",
+  "copyright": [
+    {
+      "name": "Joe Purdy",
+      "email": "joe@purdy.dev"
+    }
+  ],
+  "url": "https://purdy.dev",
+  "email": "joe@purdy.dev",
+  "format": "html",
   "gravatar": true,
-  "theme": "material-blue",
-  "format": "html"
+  "theme": "ubuntu-mono"
 }
