@@ -3,7 +3,7 @@
   "url": "https://github.com/riipandi",
   "email": "riipandi@gmail.com",
   "format": "html",
-  "license": "isc",
+  "license": "mit",
   "theme": "default",
   "gravatar": true
 }
