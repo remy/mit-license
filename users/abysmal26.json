@@ -4,6 +4,5 @@
   "email": "abysmal26@tuta.io",
   "format": "html",
   "license": "mit",
-  "theme": "8bits-monochrome",
-  "gravatar": true
+  "theme": "default-dark"
 }
