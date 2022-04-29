@@ -1,0 +1,9 @@
+{
+  "copyright": "Jakob Kampichler",
+  "url": "https://jkdev.run",
+  "email": "me@jkdev.run",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-cyan",
+  "gravatar": false
+}
