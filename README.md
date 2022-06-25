@@ -149,7 +149,7 @@ And if you want to show your gravatar, just add the `gravatar` boolean property:
 }
 ```
 
-Note that the gravatar requires the email property. You also need to check the compatibility of the chosen theme. Currently, only the default theme supports Gravatar.
+Note that the gravatar option requires the email property. You also need to check the compatibility of the chosen theme.
 
 ### Themes
 
