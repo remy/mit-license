@@ -4,6 +4,6 @@
   "email": "acestriker0001@icloud.com",
   "format": "html",
   "license": "mit",
-  "theme": "default",
+  "theme": "ubuntu-mono",
   "gravatar": true
 }
