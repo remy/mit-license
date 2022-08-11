@@ -1,7 +1,8 @@
 {
-  "copyright": "Zoult#1234",
+  "copyright": "Zoult",
+  "email": "fm1416@duck.com",
   "format": "html",
   "license": "mit",
-  "theme": "default",
-  "gravatar": false
+  "theme": "default-dark",
+  "gravatar": true
 }
