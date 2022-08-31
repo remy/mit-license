@@ -1,0 +1,9 @@
+{
+  "copyright": "12Steps Limited, https://12steps.io",
+  "url": "https://12steps.io",
+  "email": "code@12steps.io",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-blue",
+  "gravatar": true
+}
