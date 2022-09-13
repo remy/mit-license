@@ -10,7 +10,7 @@
   position: relative;
 }
 
-body{
+body {
     height: 100%;
     margin: 0;
     font-family: 'Epilogue', 'Times New Roman', Georgia, sans-serif;
@@ -24,39 +24,42 @@ body{
 ::-webkit-scrollbar {
     width: 0.625rem;
 }  
+
 ::-webkit-scrollbar-track {
     background: hsl(0, 0%, 95%);
 } 
+
 ::-webkit-scrollbar-thumb {
     border-radius: 1.5625rem;
     background-image: linear-gradient(90deg,hsl(263, 69%, 42%),hsl(199, 89%, 48%));
     cursor: pointer;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     opacity: 0.6;
 }
 
-article{
+article {
   display: block;
   max-width: 64rem;
   margin: 0 auto;
 }
 
-a, a:visited, a:hover {
+a, a:visited {
     text-decoration: none;
 }
 
-p{
+p {
     text-align: justify;
     line-height: 1.75rem;
 }
 
-article p:nth-child(2), h1{
+article p:nth-child(2), h1 {
     text-align: center;
     color: #fff;
 }
 
-h1{
+h1 {
     font-size: 3rem;
     line-height: 1;
     border-top-left-radius: 0.5rem;
@@ -66,34 +69,35 @@ h1{
     background-color: hsl(266, 77%, 15%);
 }
 
-article p{
+article p {
     background-color: #fff;
     padding: 1rem 2rem;
 }
 
-article p:nth-child(2){
+article p:nth-child(2) {
     padding-top: 0.75rem;
     background-color: hsl(266, 77%, 15%);
     padding-bottom: 1.5rem;
 }
 
-article p:nth-child(5){
+article p:nth-child(5) {
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
 
-footer p a{
+footer p a {
     color: #fff;
     display: block;
     text-align: center;
     padding: 1rem 0;
     transition: 0.6s;
 }
-footer p a:hover{
+
+footer p a:hover {
     color: orange;
 }
 
-footer::after{
+footer::after {
     content: '';
     width: 0%;
     height: 10px;
@@ -104,14 +108,15 @@ footer::after{
     transition: 0.9s;
 }        
 
-footer:hover::after{
-    width: 20%;
+footer:hover::after {
+    width: 40%;
 }
 
 @media all and (max-width: 31.25rem) {
   article {
     padding: 1em;
   }
+  
   body {
     font-size: 1em;
   }
