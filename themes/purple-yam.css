@@ -13,7 +13,7 @@
 body {
     height: 100%;
     margin: 0;
-    font-family: 'Epilogue', 'Times New Roman', Georgia, sans-serif;
+    font-family: 'Epilogue', 'Times New Roman', sans-serif;
     padding: 1.875rem 1.25rem; 
     font-size: 1rem;
     background-image: linear-gradient(60deg,hsl(263, 69%, 42%),hsl(199, 89%, 48%));
