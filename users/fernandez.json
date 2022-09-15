@@ -1,9 +1,9 @@
 {
-    "copyright": "Jhun Fernandez",
-    "url": "https://portfoliojhun.wordpress.com/",
-    "email": "jhun.dayawon.fernandez@gmail.com",
-    "format": "html",
-    "license": "mit",
-    "theme": "ubuntu-mono",
-    "gravatar": false
+  "copyright": "Jhun Fernandez",
+  "url": "https://portfoliojhun.wordpress.com/",
+  "email": "jhun.dayawon.fernandez@gmail.com",
+  "format": "html",
+  "license": "mit",
+  "theme": "ubuntu-mono",
+  "gravatar": false
 }
