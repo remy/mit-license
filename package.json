@@ -24,6 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@octokit/rest": "^19.0.4",
     "@sindresorhus/is": "^4.2.0",
     "any-size": "^1.2.0",
     "btoa": "^1.2.1",
@@ -36,7 +37,6 @@
     "gravatar-url": "^4.0.1",
     "html-text": "^1.0.1",
     "load-json-file": "^7.0.1",
-    "octokit": "^1.7.0",
     "path-exists": "^5.0.0",
     "postcss-middleware": "^1.1.4",
     "postcss-preset-env": "^6.7.0",
