@@ -1,7 +1,8 @@
 {
-  "copyright": "Tobias Wallin",
+  "copyright": "Tobias Wallin, https://github.com/Bisa",
   "format": "html",
   "license": "mit",
-  "theme": "default",
-  "gravatar": false
+  "theme": "default-dark",
+  "gravatar": false,
+  "email": "mit@tobiaswallin.info"
 }
