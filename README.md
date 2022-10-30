@@ -300,6 +300,7 @@ Hosting contributions:
 * [wiesner](https://github.com/wiesner) 1 month
 * [rajinwonderland](https://github.com/rajinwonderland) 3 months
 * [miszo](https://github.com/miszo) 1 month
+* [Bisa](https://github.com/Bisa) 3 months
 * [you?](https://www.paypal.me/rem)
 
 ### 3. A lick of paint
