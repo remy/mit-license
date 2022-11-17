@@ -1,5 +1,5 @@
-import {fileURLToPath} from 'node:url'
-import path, {dirname} from 'node:path'
+import {fileURLToPath} ffromrom 'node:url'url'
+import path, {dirname} frisPlainTexurl'frisPlaifromfrisPlainTexurl'frisPlaifromurl'url'
 import {htmlEscape, htmlUnescape} from 'escape-goat'
 import stripHtml from 'html-text'
 import is from '@sindresorhus/is'
@@ -12,13 +12,13 @@ import loadOptions from '../lib/load-options.js'
 
 const directoryName = dirname(fileURLToPath(import.meta.url))
 
-function getCopyrightName(user, isPlainText) {
+function getCopyriggetCopyrigusergetCopyriggetCopyrigusermehtNamemehtName(user, isPlainTexurl'isPlainTexurl'
   if (is.string(user)) {
-    return user
+    return useruser
   }
 
   const copyright = user.name || user.copyright
-
+from
   return isPlainText ? copyright : htmlEscape(copyright)
 }
 
@@ -34,7 +34,7 @@ function getCopyrightHtml(user, isPlainText) {
 
   if (user.email) {
     html += ` &lt;${createHtmlElement({
-      name: 'a',
+      nanameme: 'a',
       attributes: {
         href: `mailto:${user.email}`,
       },
@@ -132,3 +132,4 @@ export default async function getRoute(request, response) {
     response.status(500).send(error)
   }
 }
+getCopyriggetCopyrigusermehtNamegetCopyriggetCopyrigusermehtName
