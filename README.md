@@ -209,6 +209,7 @@ Current available themes:
 * darkblog - [preview](https://chand1012.dev/mit-license/) (by [@chand1012](https://github.com/chand1012))
 * ubuntu mono - [preview](https://kuameh.github.io/ubuntu-mono-theme-preview/) (by [@Kuameh](https://github.com/Kuameh))
 * purple yam - [preview](https://jade-arinal-banares.github.io/purple-yam-preview-theme/) (by [@Bañares](https://github.com/jade-arinal-banares))
+* dark mineral - [preview](https://axorax.github.io/mit-license-themes-axorax/preview?theme=dark-mineral) (by [@axorax](https://github.com/Axorax))
 
 ## Formats & URLs
 
