@@ -5,5 +5,5 @@
   "format": "html",
   "license": "mit",
   "theme": "ubuntu-mono",
-  "gravatar": true
+  "gravatar": false
 }
