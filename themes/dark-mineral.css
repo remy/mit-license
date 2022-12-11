@@ -1,5 +1,7 @@
-/* dark-mineral theme v1.0.0 by Axorax, https://github.com/Axorax/mit-license-themes-axorax */
-/* MIT License https://axorax.mit-license.org/ */
+/* dark-mineral theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=dark-mineral
+ */
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
@@ -47,13 +49,13 @@ footer {
     width: 54rem;
     max-width: calc(100% - 3.6rem);
     text-align: center;
-    padding: 0 .8rem!important;
+    padding: 0 .8rem !important;
     margin-bottom: 1em;
 }
 
 footer a, footer p {
     color: #6b6b6b;
-    padding: 0!important;
+    padding: 0 !important;
     transition: 400ms;
 }
 
@@ -64,7 +66,7 @@ footer a:hover, footer a:focus {
 
 h1 {
   margin-top: 0;
-  color: #fff!important;
+  color: #fff !important;
   font-weight: normal;
   display: inline;
   padding: 0 0 3px 0;

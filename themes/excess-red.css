@@ -52,7 +52,7 @@
  }
 
  article p:nth-last-child(3n) {
-  margin-top: 7rem!important;
+  margin-top: 7rem !important;
  }
 
  article p:not(:nth-last-child(4n)) {
@@ -67,7 +67,7 @@
      border-radius: 7px;
      font-size: 14px;
      border-left: 2px solid red;
-     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace!important;
+     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
  }
 
  article p:nth-last-child(3n) {
@@ -76,22 +76,22 @@
  
  footer {
      border-radius: 0 0 5px 5px;
-     font-size: 15px!important;
-     margin: 0 auto 0 auto!important;
+     font-size: 15px !important;
+     margin: 0 auto 0 auto !important;
      width: 54rem;
      max-width: calc(100% - 3.6rem);
      text-align: center;
-     padding: 0 .8rem!important;
+     padding: 0 .8rem !important;
      margin-bottom: 1em;
  }
  
  footer a, footer p {
-     padding: 0!important;
+     padding: 0 !important;
      transition: 400ms;
  }
  
  h1 {
-   color: rgb(252, 205, 205)!important;
+   color: rgb(252, 205, 205) !important;
    font-weight: normal;
    display: inline;
    line-height: 36px;

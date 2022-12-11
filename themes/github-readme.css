@@ -40,29 +40,29 @@
      border-radius: 7px;
      background: #161B22;
      font-size: 14px;
-     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace!important;
+     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
  }
  
  footer {
      border-radius: 0 0 5px 5px;
-     font-size: 15px!important;
-     margin: 0 auto 0 auto!important;
+     font-size: 15px !important;
+     margin: 0 auto 0 auto !important;
      width: 54rem;
-     border-bottom: 1.3px solid #30363D!important;
+     border-bottom: 1.3px solid #30363D !important;
      max-width: calc(100% - 3.6rem);
      text-align: center;
-     padding: 0 .8rem!important;
+     padding: 0 .8rem !important;
      margin-bottom: 1em;
  }
  
  footer a, footer p {
-     padding: 0!important;
+     padding: 0 !important;
      transition: 400ms;
  }
  
  h1 {
    margin-top: 0;
-   color: #fff!important;
+   color: #fff !important;
    font-weight: normal;
    display: inline;
    padding: 0 0 3px 0;

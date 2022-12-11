@@ -11,7 +11,7 @@
  
  body {
    margin: 0;
-   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace!important;
+   font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
    line-height: 1.5;
    background: #040804;
    color: #42C882;
@@ -52,7 +52,7 @@
  }
  
  footer a, footer p {
-     padding: 0!important;
+     padding: 0 !important;
      position: relative;
  }
 
@@ -85,7 +85,7 @@
 
  h1 {
    margin-top: 0;
-   color: #42C882!important;
+   color: #42C882 !important;
    font-weight: normal;
    padding: 0;
    line-height: 36px;
