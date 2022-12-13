@@ -1,0 +1,126 @@
+/* united-colors theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=united-colors
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+ :root {
+     color-scheme: dark;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: 'Source Sans Pro', sans-serif;
+   line-height: 1.5;
+   background: #121212;
+   color: #f5f5f5;
+ }
+
+ p {
+    background: linear-gradient(to right, #8a2387, #e94057, #f27121);
+    padding: .4rem .5rem;
+    border-radius: 6px;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #dfdffe;
+ }
+ 
+ a:hover, a:focus {
+     text-decoration: underline;
+ }
+ 
+ article {
+    width: 51.5rem;
+    max-width: calc(100% - 6rem);
+    margin: 1.2em auto 0 auto;
+    border-radius: 5px;
+    padding: 2rem;
+    background: #171717;
+    border: 1.3px solid #2F2F2F;
+    font-size: 16px;
+ }
+
+ footer {
+    width: 54rem;
+    max-width: calc(100% - 3.6rem);
+    margin: 1.2em auto 0 auto;
+    text-align: center;
+    font-size: 15px;
+    padding: 0 .8rem !important;
+    margin-bottom: 1em;
+ }
+ 
+ article p:nth-last-child(2) {
+     padding: .8rem 1.2rem;
+     position: relative;
+     border-radius: 0 5px 5px 0;
+     background: linear-gradient(to right, #8a23872f, #e940572f, #f271212f);
+ }
+
+ article p:nth-last-child(2)::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to bottom, #8a2387, #e94057, #f27121);
+    height: 100%;
+    width: 3px;
+    top: 0;
+    left: 0;
+ }
+ 
+ footer {
+     width: 54rem;
+     max-width: calc(100% - 3.6rem);
+     text-align: center;
+     padding: 0 .8rem !important;
+     margin-bottom: 1em;
+ }
+ 
+ footer a, footer p {
+     color: #9f9f9f;
+     padding: 0 !important;
+     transition: color 400ms;
+     background: none;
+ }
+ 
+ footer a:hover, footer a:focus {
+    color: #c6c6c6;
+     text-decoration: none;
+ }
+ 
+ h1 {
+   margin-top: 0;
+   font-weight: normal;
+   display: inline;
+   padding: 0 0 3px 0;
+   line-height: 36px;
+   background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-clip: text;
+   fill: transparent;
+ }
+ 
+ article p:first-of-type {
+   margin-top: 1.6em;
+ }
+ 
+ article p:last-child {
+   margin-bottom: 0;
+ }
+ 
+ ::selection {
+   background: #2d68fc;
+ }
+ 
+ #gravatar {
+   position: relative;
+   float: right;
+   margin-bottom: 1em;
+   margin-left: 1em;
+   border-radius: 50%;
+   outline-offset: -5px;
+   outline: 7px solid #171717;
+ }
