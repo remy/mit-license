@@ -1,6 +1,6 @@
-/* light-coral-mineral theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+/* unity-lights-on theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
  * MIT License - https://axorax.mit-license.org/
- * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=light-coral-mineral
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=unity-lights-on
  */
 
  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
@@ -15,7 +15,7 @@
  
  a {
      text-decoration: none;
-     color: #ff7f50;
+     color: #1152f6;
  }
  
  a:hover, a:focus {
@@ -29,16 +29,25 @@
      border-radius: 5px;
      padding: 2rem;
      background: #fdfdfd;
-     border: 1.3px solid #ff7f50;
+     border: 1.3px solid #c7c7c7;
      font-size: 16px;
  }
  
  article p:nth-last-child(2) {
-     border-left: 3px solid #ff7f50;
-     padding: .8rem 1.2rem;
-     border-radius: 7px;
-     background: #ff7f5059;
-     color: #ff7f50;
+    padding: .8rem 1.2rem;
+    position: relative;
+    border-radius: 0 5px 5px 0;
+     background: linear-gradient(to right, #8a23872f, #e940572f, #f271212f);
+ }
+
+ article p:nth-last-child(2)::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to bottom, #8a2387, #e94057, #f27121);
+    height: 100%;
+    width: 3px;
+    top: 0;
+    left: 0;
  }
  
  footer {
@@ -50,23 +59,27 @@
  }
  
  footer a, footer p {
-     color: #ff7f50;
+     color: #6e6e6e;
      padding: 0 !important;
      transition: 400ms;
  }
  
  footer a:hover, footer a:focus {
-     color: #faa687;
+     color: #181818;
      text-decoration: none;
  }
  
  h1 {
-   margin-top: 0;
-   color: #ff7f50 !important;
-   font-weight: normal;
-   display: inline;
-   padding: 0 0 3px 0;
-   line-height: 36px;
+    margin-top: 0;
+    font-weight: normal;
+    display: inline;
+    padding: 0 0 3px 0;
+    line-height: 36px;
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    fill: transparent;
  }
  
  article p:first-of-type {
@@ -87,5 +100,5 @@
    margin-bottom: 1em;
    margin-left: 1em;
    border-radius: 50%;
-   border: 1.3px solid #ff7f50;
+   border: 1.3px solid #c7c7c7;
  }

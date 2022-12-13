@@ -1,21 +1,25 @@
-/* light-coral-mineral theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+/* rainbow theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
  * MIT License - https://axorax.mit-license.org/
- * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=light-coral-mineral
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=rainbow
  */
 
  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
 
+ :root {
+     color-scheme: dark;
+ }
+ 
  body {
    margin: 0;
    font-family: 'Source Sans Pro', sans-serif;
    line-height: 1.5;
-   background: #f2f2f2;
-   color: #141414;
+   color: #f5f5f5;
+   background-image: linear-gradient( 110.7deg,  rgba(255,81,47,1) 1.7%, rgba(255,167,47,1) 8.2%, rgba(218,253,1,1) 16.2%, rgba(98,234,20,1) 23.4%, rgba(69,193,42,1) 32.8%, rgba(7,249,149,1) 43.7%, rgba(6,200,217,1) 55.3%, rgba(18,51,233,1) 65.5%, rgba(122,59,202,1) 74.5%, rgba(231,7,249,1) 82.3%, rgba(202,59,163,1) 91.4% );
  }
  
  a {
      text-decoration: none;
-     color: #ff7f50;
+     color: #779eff;
  }
  
  a:hover, a:focus {
@@ -28,17 +32,18 @@
      margin: 1.2em auto 0 auto;
      border-radius: 5px;
      padding: 2rem;
-     background: #fdfdfd;
-     border: 1.3px solid #ff7f50;
+     background: #171717c8;
+     backdrop-filter: blur(5px);
+     border: 1.3px solid #2F2F2F;
      font-size: 16px;
  }
  
  article p:nth-last-child(2) {
-     border-left: 3px solid #ff7f50;
+     border-left: 3px solid #4649ffac;
      padding: .8rem 1.2rem;
      border-radius: 7px;
-     background: #ff7f5059;
-     color: #ff7f50;
+     background: #4649ff59;
+     color: #b9bbff;
  }
  
  footer {
@@ -50,19 +55,19 @@
  }
  
  footer a, footer p {
-     color: #ff7f50;
+     color: #dedede;
      padding: 0 !important;
      transition: 400ms;
  }
  
  footer a:hover, footer a:focus {
-     color: #faa687;
+     color: #f1f1f1;
      text-decoration: none;
  }
  
  h1 {
    margin-top: 0;
-   color: #ff7f50 !important;
+   color: #fff !important;
    font-weight: normal;
    display: inline;
    padding: 0 0 3px 0;
@@ -87,5 +92,5 @@
    margin-bottom: 1em;
    margin-left: 1em;
    border-radius: 50%;
-   border: 1.3px solid #ff7f50;
+   border: 1.3px solid #404040;
  }
