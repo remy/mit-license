@@ -4,6 +4,6 @@
   "email": "axoraxmail@gmail.com",
   "format": "html",
   "license": "mit",
-  "theme": "ubuntu-mono",
+  "theme": "isolate",
   "gravatar": false
 }
