@@ -3,15 +3,16 @@
  * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=official-document
  */
 
-body {
+ body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 1.2em;
   line-height: 1.2em;
   background: #fff;
 }
 
-article, footer {
+article,
+footer {
   display: block;
   min-width: 360px;
   max-width: 900px;
@@ -51,21 +52,21 @@ h1 {
 }
 
 #gravatar {
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    border-radius: 50%;
-    width: 100px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 50%;
+  width: 100px;
 }
 
 p:nth-last-child(4n) {
-    text-align: center;
-    font-size: 16px;
-    margin-bottom: 1rem;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 1rem;
 }
 
 a:last-child {
-    color: #000;
+  color: #000;
 }
 
 @media all and (max-width: 500px) {
