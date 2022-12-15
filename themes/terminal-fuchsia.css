@@ -1,0 +1,107 @@
+/* terminal-fuchsia theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+* MIT License - https://axorax.mit-license.org/
+* Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=terminal-fuchsia
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace !important;
+  line-height: 1.5;
+  background: #040804;
+  color: #ff00ff;
+}
+
+a {
+  text-decoration: underline;
+  color: #ff00ff;
+}
+
+a:hover,
+a:focus {
+  text-decoration: double underline;
+}
+
+article,
+footer {
+  width: 51.5rem;
+  max-width: calc(100% - 6rem);
+  border-radius: 5px 5px 0 0;
+  padding: 1em 2rem 0 2rem;
+  border-bottom: none;
+  font-size: 15px;
+  text-align: left;
+}
+
+article p:nth-last-child(2) {
+  padding: 0.8rem 0;
+  border-radius: 7px;
+  font-size: 14px;
+}
+
+footer {
+  border-radius: 0 0 5px 5px;
+  width: 54rem;
+  max-width: calc(100% - 3.6rem);
+  margin-bottom: 1em;
+  margin: 0;
+  padding: 0 2rem 1em 2rem;
+}
+
+footer a,
+footer p {
+  padding: 0 !important;
+  position: relative;
+}
+
+footer p::before {
+  content: "> ";
+}
+
+footer p::after {
+  position: absolute;
+  content: "";
+  background: #ff00ff;
+  width: 12px;
+  height: 19px;
+  margin-left: 3px;
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    width: 12px;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+h1 {
+  margin-top: 0;
+  color: #ff00ff !important;
+  font-weight: normal;
+  padding: 0;
+  line-height: 36px;
+}
+
+article p:first-of-type {
+  margin: -0.5em 0 2rem 0;
+}
+
+::selection {
+  background: #bb00ff;
+  color: #fff;
+}
