@@ -11,8 +11,7 @@
 
 body {
   margin: 0;
-  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-    "Liberation Mono", monospace !important;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
   line-height: 1.5;
   background: #040804;
   color: #808000;
