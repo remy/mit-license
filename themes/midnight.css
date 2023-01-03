@@ -75,7 +75,7 @@ a {
   position: relative;
 }
 
-p:nth-last-child(4n) a:hover::before {
+p:nth-last-child(4n) a:last-child:hover::before {
     position: absolute;
     content: 'Type: E-mail';
     top: -2.4rem;
