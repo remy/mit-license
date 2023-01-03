@@ -165,7 +165,7 @@ To use a theme, add the `theme` property to your `user.json` file, for example:
 }
 ```
 
-Current available themes:
+<details><summary><h4>Browse custom themes</h4></summary>
 
 * default - [preview](https://mit-license.org) (by
   [@remy](https://github.com/remy),
@@ -231,6 +231,8 @@ Current available themes:
 * riri - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=riri&&avatar=true) (by [@axorax](https://github.com/Axorax))
 * midnight - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=midnight&&avatar=true) (by [@axorax](https://github.com/Axorax))
 * boat - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=boat&&avatar=true) (by [@axorax](https://github.com/Axorax))
+
+</details>
 
 ## Formats & URLs
 
