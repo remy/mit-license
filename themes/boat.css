@@ -1,0 +1,196 @@
+/* boat theme by axorax - github.com/axorax */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+html {
+  background: #00203FFF;
+}
+
+:root {
+    color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  font-size: 15px;
+  line-height: 1.2em;
+  margin-top: 2rem;
+}
+
+body::before {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    bottom: 0;
+    width: 80%;
+    height: 50%;
+    top: 30%;
+    background: rgb(0, 43, 86);
+    rotate: -13deg;
+}
+
+body::after {
+    position: absolute;
+    content: '';
+    z-index: -1;
+    bottom: 0;
+    width: 70%;
+    height: 30%;
+    right: 0;
+    background: rgb(0, 43, 86);
+}
+
+article, footer {
+  display: block;
+  min-width: 360px;
+  max-width: 900px;
+  width: 80%;
+}
+
+article {
+  margin: 2.5em auto 0 auto;
+  padding: 3em;
+  color: #F4D499;
+  background: #B1624EFF;
+  border-radius: 6rem;
+  max-width: 100%;
+  width: 25rem;
+  font-size: 13.5px;
+}
+
+article p:first-of-type {
+  margin-top: 1.6em;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  margin: 0em auto 2em auto;
+  text-align: center;
+}
+
+footer a {
+  color: #0063B2FF;
+  text-decoration: none;
+  font-size: .8em;
+  padding: 1em;
+  text-decoration: underline wavy;
+}
+
+h1 {
+  font-weight: normal;
+  padding: 0 0 3px 0;
+  line-height: 36px;
+  margin-top: 0;
+  color: #010307;
+  text-align: center !important;
+}
+
+h1::before {
+    content: '';
+    width: 55px;
+    height: 55px;
+    background: #5a342b;
+    position: absolute;
+    left: 50.6%;
+    margin-top: -4.2rem;
+    transform: translate(-50%);
+    border-radius: 5px;
+}
+
+p:nth-last-child(4n) {
+    color: #010307;
+}
+
+p {
+    position: relative;   
+}
+
+p:nth-last-child(3n):after {
+    content: '';
+    background: #7e493c;
+    height: 100px;
+    width: 5px;
+    position: absolute;
+    right: 0;
+    rotate: -60deg;
+}
+
+p:nth-last-child(3n):before {
+    content: '';
+    background: #7e493c;
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    bottom: -4.4rem;
+    right: -4rem;
+    rotate: -60deg;
+    border-radius: 2px;
+}
+
+p:nth-last-child(2n):after {
+    content: '';
+    background: #7e493c;
+    height: 100px;
+    width: 5px;
+    position: absolute;
+    left: 0;
+    rotate: -60deg;
+}
+
+p:nth-last-child(2n):before {
+    content: '';
+    background: #7e493c;
+    height: 30px;
+    width: 50px;
+    position: absolute;
+    bottom: -1.4rem;
+    left: -4rem;
+    rotate: -60deg;
+    border-radius: 2px;
+}
+
+a {
+  color: #010307;
+  position: relative;
+  text-decoration: none;
+}
+
+p:nth-last-child(4n) a:hover::before {
+    position: absolute;
+    content: 'Type: E-mail';
+    top: -2.4rem;
+    right: 0;
+    color: #d2d8e0;
+    background: #3A4989;
+    border-radius: 5px;
+    padding: .2rem .5rem;
+    font-size: 13px;
+}
+
+:-moz-any-link:focus {
+  color: #000;
+  border: 0;
+}
+
+::selection {
+  background: #835211;
+  color: #eff2f1;
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: 49.5%;
+  height: 45px;
+  transform: translate(-50%);
+  z-index: 9;
+}

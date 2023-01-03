@@ -230,6 +230,7 @@ Current available themes:
 * circle - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=circle&&avatar=true) (by [@axorax](https://github.com/Axorax))
 * riri - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=riri&&avatar=true) (by [@axorax](https://github.com/Axorax))
 * midnight - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=midnight&&avatar=true) (by [@axorax](https://github.com/Axorax))
+* boat - [preview](https://axorax.github.io/remy-mit-license-themes/preview?theme=boat&&avatar=true) (by [@axorax](https://github.com/Axorax))
 
 ## Formats & URLs
 
