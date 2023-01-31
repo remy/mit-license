@@ -4,6 +4,6 @@
   "email": "devsimsek@outlook.com",
   "format": "html",
   "license": "mit",
-  "theme": "default",
-  "gravatar": false
+  "theme": "unity",
+  "gravatar": true
 }
