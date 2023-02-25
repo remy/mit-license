@@ -1,22 +1,7 @@
 {
-  "copyright": [
-    {
-      "copyright": "RatWithAFace (Michael)",
-      "url": "https://www.ratface.lol",
-      "email": "michael@ratface.lol"
-    },
-    {
-      "copyright": "LegitZenith (Sy)",
-      "url": "https://legitzenith.com",
-      "email": "sy@legitzenith.com"
-    },
-    {
-      "copyright": "backslash",
-      "url": "https://backslashg.com",
-      "email": "slash@backslashg.com"
-    },
-    "LuigiDude (Noah)"
-  ],
+  "copyright": "Internet Felons LLC",
+  "url": "https://felons.wtf",
+  "email": "contact@felons.wtf",
   "format": "html",
   "license": "mit",
   "theme": "terminal",
