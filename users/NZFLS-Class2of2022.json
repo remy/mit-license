@@ -4,6 +4,6 @@
   "email": "support@nzcae.eu.org",
   "format": "html",
   "license": "mit",
-  "theme": "default",
-  "gravatar": false
+  "theme": "material-deep-blue gray",
+  "gravatar": true
 }
