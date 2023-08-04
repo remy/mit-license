@@ -12,7 +12,7 @@ Now I can always include <https://rem.mit-license.org> in all my projects which 
 
 ## Requesting your own MIT license page
 
-The simplest way to create your own MIT license page is to use the self-service generator found [here](https://richienb.github.io/mit-license-generator).
+The simplest way to create your own MIT license page is to use the self-service generator found [here.](https://richienb.github.io/mit-license-generator) If you are unable to access this link due to router restrictions, it being blocked, ETC. Try visiting the generator [here.](https://legitzenith.com/mit/)
 
 You can fork this project, send me a pull request and wait for me to pull (which I'll do as quickly as possible) or if the user is still available you can do it yourself from the command line:
 
@@ -138,7 +138,7 @@ And if you want your license to appear as plain text, just add the `format` prop
 
 ### gravatar
 
-And if you want to show your gravatar, just add the `gravatar` boolean property:
+And if you want to show a PFP (Profile Picture) or Avatar on your license, simply create an account with [Gravatar](https://gravatar.com/connect/?source=_signup), and add the `gravatar` boolean property:
 
 ```json
 {
@@ -281,7 +281,7 @@ Development contributions from:
 
 ### 1. Donate domain years
 
-I host the domain with namecheap.com and yearly renewal is $9.69 per year. If you want to contribute a year, send me a message and I'll add the years on.
+I host the domain with [NameCheap](https://namecheap.com) and yearly renewal is $9.69 per year. If you want to contribute a year, send me a message and I'll add the years on.
 
 Of course, I'll do my best to continue running the domain and hosting, but this is your chance to contribute to the community project.
 
@@ -299,7 +299,7 @@ Domain contributions:
 * [barberboy](https://github.com/barberboy) - 2029-2030
 * [mostly-magic](https://github.com/mostly-magic) - 2030-2032
 
-_Please note that the whois says 2021 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)_
+_Please note that the whois says 2027 as you can only have 10 active registered years with ICANN - but the domain is set to auto-renew, so it's all good :)_
 
 ### 2. Hosting
 
