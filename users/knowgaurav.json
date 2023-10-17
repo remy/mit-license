@@ -4,6 +4,6 @@
   "email": "contact@sgaurav.me",
   "format": "html",
   "license": "mit",
-  "theme": "afterdark"
+  "theme": "afterdark",
   "gravatar": true
 }
