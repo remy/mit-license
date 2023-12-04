@@ -1,9 +1,9 @@
 {
-  "copyright": "Randy Halim",
+  "copyright": "Randy Halim, https://fcrh.me",
   "url": "https://github.com/randy-halim",
-  "email": "randy.halim@outlook.com",
+  "email": "dev@fcrh.me",
   "format": "html",
   "license": "mit",
-  "theme": "dusk",
+  "theme": "ubuntu-mono",
   "gravatar": false
 }
