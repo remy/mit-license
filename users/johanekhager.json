@@ -1,5 +1,6 @@
-{ "copyright": "Johan Ekhager",
+{
+  "copyright": "Johan Ekhager",
   "url": "http://johanekhager.com",
   "format": "html",
   "theme": "magic-mint"
- }
+}

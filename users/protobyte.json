@@ -1,0 +1,12 @@
+{
+  "copyright": [
+    {
+      "name": "ProtoByter",
+      "email": "bobrow2006@gmail.com"
+    }
+  ],
+  "format": "html",
+  "license": "mit",
+  "theme": "ubuntu-mono",
+  "gravatar": true
+}

@@ -1,1 +1,6 @@
-{"copyright":"$1","theme":"$2","email":"$3","format":"$4"}
+{
+  "copyright": "$1",
+  "theme": "$2",
+  "email": "$3",
+  "format": "$4"
+}

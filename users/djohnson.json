@@ -1,1 +1,8 @@
-{"copyright":"Duncan Johnson, http:\/\/duncanjohnson.ca\/","url":"http:\/\/duncanjohnson.ca\/","email":"duncan@duncanjohnson.ca","format":"html","gravatar":"true","theme":"double-windsor"}
+{
+  "copyright": "Duncan Johnson, http://duncanjohnson.ca/",
+  "url": "http://duncanjohnson.ca/",
+  "email": "duncan@duncanjohnson.ca",
+  "format": "html",
+  "gravatar": true,
+  "theme": "double-windsor"
+}

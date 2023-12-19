@@ -1,1 +1,7 @@
-{"copyright":"Gregory Armer","url":"https:\/\/sigterm.sh","email":"greg@sigterm.sh","gravatar":true,"theme":"eula-modern"}
+{
+  "copyright": "Gregory Armer",
+  "url": "https://sigterm.sh",
+  "email": "greg@sigterm.sh",
+  "gravatar": true,
+  "theme": "eula-modern"
+}

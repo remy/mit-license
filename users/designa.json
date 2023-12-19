@@ -1,1 +1,6 @@
-{ "copyright": "Designa", "url": "http://designa.com.br", "email": "contato@designa.com.br", "format": "txt" }
+{
+  "copyright": "Designa",
+  "url": "http://designa.com.br",
+  "email": "contato@designa.com.br",
+  "format": "txt"
+}

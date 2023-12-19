@@ -1,1 +1,8 @@
-{"copyright":"Robin Radic, Radic Technologies","url":"http:\/\/radic.nl","email":"info@radic.nl","format":"html","theme":"xtansia","gravatar":true}
+{
+  "copyright": "Robin Radic",
+  "url": "https://github.com/robinradic",
+  "email": "rradic@hotmail.com",
+  "format": "html",
+  "gravatar": true,
+  "theme": "xtansia"
+}

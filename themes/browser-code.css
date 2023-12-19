@@ -1,0 +1,39 @@
+/* Browser Code theme by Axorax - github.com/axorax */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+html {
+    font-family: monospace;
+    background: #121212;
+    color: #FFF;
+    font-size: 13px !important;
+    font-weight: 400;
+}
+
+body {
+    margin: 1em 1em;
+    max-width: calc(100% - 2rem);
+}
+
+h1 {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+body p {
+    margin-bottom: 12px;
+}
+
+img {
+    width: 45px;
+    aspect-ratio: 1/1;
+    margin-bottom: 12px;
+}

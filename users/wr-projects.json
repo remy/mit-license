@@ -1,0 +1,9 @@
+{
+  "copyright": "WR Projects",
+  "url": "https://github.com/wr-projects/",
+  "email": "support@webreadyprojects.atlassian.net",
+  "format": "html",
+  "license": "mit",
+  "theme": "material",
+  "gravatar": true
+}

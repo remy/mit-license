@@ -1,21 +1,72 @@
 {
-  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "name": "mit-licence",
   "description": "Hosted MIT License with details controlled through this repo",
-  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "version": "2.0.0",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:remy/mit-license.git"
   },
+  "engines": {
+    "node": "14.x"
+  },
+  "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "scripts": {
-    "test": "node test.js"
+    "start": "node .",
+    "dev": "nodemon .",
+    "serve": "node server.js",
+    "test": "xo && node test.js"
   },
   "bugs": {
     "url": "https://github.com/remy/mit-license/issues"
   },
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "MIT",
   "dependencies": {
-    "nconf": "^0.8.4",
-    "request": "^2.72.0"
+    "@octokit/rest": "^19.0.4",
+    "@sindresorhus/is": "^4.2.0",
+    "any-size": "^1.2.0",
+    "btoa": "^1.2.1",
+    "cors": "^2.8.5",
+    "create-html-element": "^4.0.1",
+    "ejs": "^3.1.6",
+    "escape-goat": "^4.0.0",
+    "express": "^4.17.1",
+    "express-minify": "^1.0.0",
+    "gravatar-url": "^4.0.1",
+    "html-text": "^1.0.1",
+    "load-json-file": "^7.0.1",
+    "path-exists": "^5.0.0",
+    "postcss-middleware": "^1.1.4",
+    "postcss-preset-env": "^6.7.0",
+    "read-pkg": "^7.0.0",
+    "serve-favicon": "^2.5.0",
+    "temp-dir": "^2.0.0",
+    "write-json-file": "^5.0.0",
+    "yn": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.15.7",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "css": "^3.0.0",
+    "file-ext": "^1.0.0",
+    "has-flag": "^5.0.1",
+    "nodemon": "^2.0.12",
+    "path-extra": "^4.3.0",
+    "xo": "^0.44.0"
+  },
+  "xo": {
+    "space": 2,
+    "semicolon": false,
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false,
+      "babelOptions": {
+        "plugins": [
+          "@babel/plugin-syntax-top-level-await"
+        ]
+      }
+    }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "copyright": "Internet Felons LLC",
+  "url": "https://felons.wtf",
+  "email": "contact@felons.wtf",
+  "format": "html",
+  "license": "mit",
+  "theme": "terminal",
+  "gravatar": false
+}

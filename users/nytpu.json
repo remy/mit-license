@@ -1,0 +1,9 @@
+{
+  "copyright": "Alex Gentilucci",
+  "url": "https://www.nytpu.com",
+  "email": "alex@nytpu.com",
+  "format": "html",
+  "license": "mit",
+  "theme": "default-dark",
+  "gravatar": false
+}

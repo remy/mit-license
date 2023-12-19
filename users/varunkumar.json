@@ -1,1 +1,7 @@
-{"copyright":"Varunkumar Nagarajan, http:\/\/www.varunkumar.me","url":"http:\/\/www.varunkumar.me","email":"varunkumar.n@gmail.com","theme":"xtansia"}
+{
+  "copyright": "Varunkumar Nagarajan, https://varunkumar.dev",
+  "url": "https://varunkumar.dev",
+  "email": "varunkumar.n@gmail.com",
+  "theme": "default-dark",
+  "gravatar": true
+}

@@ -67,8 +67,8 @@ a:active {
 }
 
 #gravatar {
-    position: relative;
-    float: right;
-    border: 2px solid gray;
-    top: -1em;
+  position: relative;
+  float: right;
+  border: 2px solid gray;
+  top: -1em;
 }

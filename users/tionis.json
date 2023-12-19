@@ -1,0 +1,9 @@
+{
+  "copyright": "Tionis",
+  "url": "https://tionis.tasadar.net",
+  "email": "tionis@tasadar.net",
+  "format": "html",
+  "license": "mit",
+  "theme": "default",
+  "gravatar": true
+}

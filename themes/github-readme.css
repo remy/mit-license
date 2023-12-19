@@ -1,0 +1,90 @@
+/* readme theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=readme
+ */
+
+:root {
+     color-scheme: dark;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+   line-height: 1.5;
+   background: #0D1117;
+   color: #c9d1d9;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #58a6ff;
+ }
+ 
+ a:hover, a:focus {
+     text-decoration: underline;
+ }
+ 
+ article, footer {
+     width: 51.5rem;
+     max-width: calc(100% - 6rem);
+     margin: 1.2em auto 0 auto;
+     border-radius: 5px 5px 0 0;
+     padding: 2rem;
+     border: 1.3px solid #30363D;
+     border-bottom: none;
+     font-size: 16.5px;
+ }
+ 
+ article p:nth-last-child(2) {
+     padding: .8rem 1.2rem;
+     border-radius: 7px;
+     background: #161B22;
+     font-size: 14px;
+     font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace !important;
+ }
+ 
+ footer {
+     border-radius: 0 0 5px 5px;
+     font-size: 15px !important;
+     margin: 0 auto 0 auto !important;
+     width: 54rem;
+     border-bottom: 1.3px solid #30363D !important;
+     max-width: calc(100% - 3.6rem);
+     text-align: center;
+     padding: 0 .8rem !important;
+     margin-bottom: 1em;
+ }
+ 
+ footer a, footer p {
+     padding: 0 !important;
+     transition: 400ms;
+ }
+ 
+ h1 {
+   margin-top: 0;
+   color: #fff !important;
+   font-weight: normal;
+   display: inline;
+   padding: 0 0 3px 0;
+   line-height: 36px;
+ }
+ 
+ article p:first-of-type {
+   margin-top: 1.6em;
+ }
+ 
+ article p:last-child {
+   margin-bottom: 0;
+ }
+ 
+ ::selection {
+   background: #2d68fc;
+ }
+ 
+ #gravatar {
+   position: relative;
+   float: right;
+   margin-bottom: 1em;
+   margin-left: 1em;
+   border: 1.3px solid #404040;
+ }

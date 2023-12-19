@@ -32,7 +32,6 @@ article p {
 article p:first-of-type {
   text-align: center;
   font-size: .8em;
-
 }
 
 article p:last-of-type {
@@ -75,9 +74,9 @@ footer p a {
 }
 
 a {
-    color: gray;
-    text-decoration: none;
-    word-wrap: break-word;
+  color: gray;
+  text-decoration: none;
+  word-wrap: break-word;
 }
 
 a:hover, a:focus, a:active {

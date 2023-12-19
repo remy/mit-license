@@ -1,1 +1,13 @@
-{"copyright":"Joe Purdy","url":"https:\/\/poweredbypurdy.com","email":"joe@poweredbypurdy.com","gravatar":true,"theme":"material-blue","format":"html"}
+{
+  "copyright": [
+    {
+      "name": "Joe Purdy",
+      "email": "joe@purdy.dev"
+    }
+  ],
+  "url": "https://purdy.dev",
+  "email": "joe@purdy.dev",
+  "format": "html",
+  "gravatar": true,
+  "theme": "ubuntu-mono"
+}

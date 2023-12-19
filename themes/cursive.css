@@ -1,0 +1,63 @@
+/* cursive theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=cursive
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+ :root {
+     color-scheme: dark;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: 'Dancing Script', cursive;
+   line-height: 1.5;
+   background: #121212;
+ }
+ 
+ a {
+    text-decoration: none;
+ }
+ 
+ article, footer {
+     max-width: calc(100% - 4rem);
+     padding: 2rem;
+     font-size: 20px;
+ }
+ 
+ article p:nth-last-child(2) {
+     padding: .9rem 0;
+ }
+ 
+ footer {
+     margin: 0;
+     margin-bottom: 1em;
+     text-align: center;
+     padding: 0;
+ }
+ 
+ h1 {
+   margin-top: 0;
+   display: inline;
+ }
+ 
+ article p:first-of-type {
+   margin-top: 1.6em;
+ }
+ 
+ article p:last-child {
+   margin-bottom: 0;
+ }
+ 
+ ::selection {
+   background: #2d68fc;
+ }
+ 
+ #gravatar {
+   position: relative;
+   float: right;
+   margin-bottom: 1em;
+   margin-left: 1em;
+   border-radius: 50%;
+ }

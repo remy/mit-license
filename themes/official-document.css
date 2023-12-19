@@ -1,0 +1,80 @@
+/* official-document theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=official-document
+ */
+
+ body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  background: #fff;
+}
+
+article,
+footer {
+  display: block;
+  min-width: 360px;
+  max-width: 900px;
+  width: 80%;
+}
+
+article {
+  margin: 0 auto 0 auto;
+  padding: 2em;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+article p:first-of-type {
+  margin-top: 1.6em;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  margin: 0em auto 2em auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+h1 {
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  padding: 0 0 3px 0;
+  line-height: 36px;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#gravatar {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 50%;
+  width: 100px;
+}
+
+p:nth-last-child(4n) {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+a:last-child {
+  color: #000;
+}
+
+@media all and (max-width: 500px) {
+  article {
+    padding: 1em;
+  }
+
+  body {
+    font-size: 1em;
+  }
+}

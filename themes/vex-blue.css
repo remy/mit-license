@@ -1,0 +1,57 @@
+/* Vex Blue theme by Axorax - github.com/axorax */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #7070ff;
+}
+
+article, footer {
+    max-width: calc(100% - 2rem);
+    width: 60rem;
+    background: #5252ff;
+    color: #fff;
+    outline: 1px solid #9797ff;
+    padding: 1.5rem;
+}
+
+p {
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+p:nth-child(3n) {
+    margin-bottom: 2.5rem !important;
+}
+
+p:not(:first-child) {
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+#gravatar {
+    float: right;
+    outline: 1px solid #9797ff;
+}
