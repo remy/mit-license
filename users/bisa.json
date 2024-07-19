@@ -3,6 +3,6 @@
   "format": "html",
   "license": "mit",
   "theme": "default-dark",
-  "gravatar": false,
-  "email": "mit@tobiaswallin.info"
+  "gravatar": true,
+  "email": "bisa.wallin@gmail.com"
 }
