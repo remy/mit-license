@@ -1,9 +1,8 @@
 {
   "copyright": "Abysmal",
-  "url": "https://abysmal26.github.io",
-  "email": "abysmal26@tuta.io",
+  "url": "https://abysmal.is-a.dev",
+  "email": "abysmal@disroot.org",
   "format": "html",
   "license": "mit",
-  "theme": "8bits-monochrome",
-  "gravatar": true
+  "theme": "default-dark"
 }

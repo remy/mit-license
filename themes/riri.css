@@ -1,0 +1,96 @@
+/* riri theme by axorax - github.com/axorax */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+html {
+  background: #eff2f1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16.5px;
+  line-height: 1.2em;
+}
+
+article, footer {
+  display: block;
+  min-width: 360px;
+  max-width: 900px;
+  width: 80%;
+}
+
+article {
+  margin: 2.5em auto 0 auto;
+  padding: 2em;
+  background: #4059ad;
+  color: #eff2f1;
+  border-radius: 15px;
+}
+
+h1 {
+  margin-top: 0;
+  color: #f4b942;
+}
+
+article p:first-of-type {
+  margin-top: 1.6em;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+footer {
+  margin: 0em auto 2em auto;
+  text-align: center;
+}
+
+footer a {
+  color: #666;
+  text-decoration: none;
+  font-size: .8em;
+  padding: 1em;
+}
+
+footer a:hover, footer a:focus {
+  color: #111;
+}
+
+h1 {
+  font-weight: normal;
+  display: inline;
+  padding: 0 0 3px 0;
+  line-height: 36px;
+}
+
+a {
+  color: #97d8c4;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+a:active {
+  color: #000;
+}
+
+:-moz-any-link:focus {
+  color: #000;
+  border: 0;
+}
+
+::selection {
+  background: #6b9ac4;
+  color: #eff2f1;
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border-radius: 15px;
+}

@@ -1,8 +1,9 @@
 {
-  "copyright": "Zzbaivong",
-  "url": "https://baivong.github.io",
-  "email": "Zzbaivong@gmail.com",
+  "copyright": "baivong",
+  "url": "https://lelinhtinh.github.io",
+  "email": "lelinhtinh2013@gmail.com",
   "format": "html",
   "gravatar": true,
-  "theme": "material-teal"
+  "theme": "dusk",
+  "license": "MIT"
 }

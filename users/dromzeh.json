@@ -1,9 +1,9 @@
 {
   "copyright": "dromzeh",
   "url": "https://dromzeh.dev",
-  "email": "dromzeh@protonmail.com",
+  "email": "marcel@dromzeh.dev",
   "format": "html",
   "license": "mit",
-  "theme": "8bits-monochrome",
+  "theme": "ubuntu-mono",
   "gravatar": false
 }

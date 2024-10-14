@@ -1,0 +1,95 @@
+/* dark-tan-mineral theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=dark-tan-mineral
+ */
+
+ @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+ :root {
+     color-scheme: dark;
+ }
+ 
+ body {
+   margin: 0;
+   font-family: 'Source Sans Pro', sans-serif;
+   line-height: 1.5;
+   background: #121212;
+   color: #f5f5f5;
+ }
+ 
+ a {
+     text-decoration: none;
+     color: #d2b48c;
+ }
+ 
+ a:hover, a:focus {
+     text-decoration: underline;
+ }
+ 
+ article, footer {
+     width: 51.5rem;
+     max-width: calc(100% - 6rem);
+     margin: 1.2em auto 0 auto;
+     border-radius: 5px;
+     padding: 2rem;
+     background: #171717;
+     border: 1.3px solid #d2b48c;
+     font-size: 16px;
+ }
+ 
+ article p:nth-last-child(2) {
+     border-left: 3px solid #d2b48c;
+     padding: .8rem 1.2rem;
+     border-radius: 7px;
+     background: #d2b48c59;
+     color: #d2b48c;
+ }
+ 
+ footer {
+     width: 54rem;
+     max-width: calc(100% - 3.6rem);
+     text-align: center;
+     padding: 0 .8rem !important;
+     margin-bottom: 1em;
+ }
+ 
+ footer a, footer p {
+     color: #d2b48c;
+     padding: 0 !important;
+     transition: 400ms;
+ }
+ 
+ footer a:hover, footer a:focus {
+     color: #f3dbbc;
+     text-decoration: none;
+ }
+ 
+ h1 {
+   margin-top: 0;
+   color: #d2b48c !important;
+   font-weight: normal;
+   display: inline;
+   padding: 0 0 3px 0;
+   line-height: 36px;
+ }
+ 
+ article p:first-of-type {
+   margin-top: 1.6em;
+ }
+ 
+ article p:last-child {
+   margin-bottom: 0;
+ }
+ 
+ ::selection {
+   background: #2d68fc;
+ }
+ 
+ #gravatar {
+   position: relative;
+   float: right;
+   margin-bottom: 1em;
+   margin-left: 1em;
+   border-radius: 50%;
+   border: 1.3px solid #d2b48c;
+ }

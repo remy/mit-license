@@ -1,0 +1,132 @@
+/* Dusk Textured theme v1.0.0 by @robfrawley, heavily based on Dusk theme v1.0.0 by @georapbox */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400);
+
+*::selection {
+  background: #7a8bb8;
+  color: #eff7ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Open Sans', Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  background: #272b35;
+  color: #68798d;
+  margin: 86px 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:link, a:visited, a:hover {
+  position: relative;
+  text-decoration: none;
+  color: #7a8bb8;
+  transition: color 0.3s ease-in-out;
+  transform: scaleX(0);
+}
+
+a:hover {
+  color: #eff7ff;
+}
+
+a:before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #7a8bb8;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+article {
+  display: block;
+  margin: 1.0em;
+  position: relative;
+  margin: 0 auto;
+}
+
+article h1, article h1+p {
+  text-align: center;
+  background-color: #1f222a;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkBAMAAACCzIhnAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMJDhMYEkBm58sAAABISURBVHhe7dExEQAwFINQrMRD/Gurhix/6LGwc48AmUKBToGQMZSOgcyhY25eblx+0ldfffXVV1999dVXX3311VdfffXVV/8Btlgq5Eo+mtMAAAAASUVORK5CYII=);
+}
+
+article h1 {
+  margin: 0;
+  padding: 68px .4em 4px .4em;
+  color: #eff7ff;
+  font-size: 2.0em;
+  font-weight: 300;
+}
+
+article h1+p {
+  max-width: 100%;
+  margin-top: 0;
+  padding-top: 4px;
+  padding-bottom: 68px;
+  font-size: 1.0em;
+}
+
+article h1+p+p {
+  margin-top: 2em;
+}
+
+article p {
+  max-width: 960px;
+  padding: 0 1.4em;
+  margin: 1.6em auto;
+  text-align: justify;
+  font-size: 0.9em;
+  line-height: 1.8;
+}
+
+article p:last-child {
+  padding-bottom: 1.8em;
+  font-size: 0.8em;
+  line-height: 1.9em;
+}
+
+footer {
+  margin: 0 auto;
+  font-size: 0.8em;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: #272b35;
+}
+
+footer p {
+  padding: 1.8em 1.4em;
+  opacity: 0.8;
+}
+
+#gravatar {
+  display: block;
+  position: absolute;
+  top: -46px;
+  left: 50%;
+  margin-left: -46px;
+  border-radius: 100%;
+  border: 6px solid #272b35;
+}
+
+@media (max-width: 750px) {
+  article h1+p {
+    font-size: 0.8em;
+  }
+}

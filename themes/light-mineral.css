@@ -1,0 +1,91 @@
+/* light-mineral theme v1.0.0 by Axorax - https://github.com/Axorax/mit-license-themes-axorax
+ * MIT License - https://axorax.mit-license.org/
+ * Preview - https://axorax.github.io/mit-license-themes-axorax/preview?theme=light-mineral
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.5;
+  background: #f2f2f2;
+  color: #141414;
+}
+
+a {
+    text-decoration: none;
+    color: #1152f6;
+}
+
+a:hover, a:focus {
+    text-decoration: underline;
+}
+
+article, footer {
+    width: 51.5rem;
+    max-width: calc(100% - 6rem);
+    margin: 1.2em auto 0 auto;
+    border-radius: 5px;
+    padding: 2rem;
+    background: #fdfdfd;
+    border: 1.3px solid #c7c7c7;
+    font-size: 16px;
+}
+
+article p:nth-last-child(2) {
+    border-left: 3px solid #1014fb;
+    padding: .8rem 1.2rem;
+    border-radius: 7px;
+    background: #4649ff59;
+    color: #4047cb;
+}
+
+footer {
+    width: 54rem;
+    max-width: calc(100% - 3.6rem);
+    text-align: center;
+    padding: 0 .8rem !important;
+    margin-bottom: 1em;
+}
+
+footer a, footer p {
+    color: #6e6e6e;
+    padding: 0 !important;
+    transition: 400ms;
+}
+
+footer a:hover, footer a:focus {
+    color: #181818;
+    text-decoration: none;
+}
+
+h1 {
+  margin-top: 0;
+  color: #000 !important;
+  font-weight: normal;
+  display: inline;
+  padding: 0 0 3px 0;
+  line-height: 36px;
+}
+
+article p:first-of-type {
+  margin-top: 1.6em;
+}
+
+article p:last-child {
+  margin-bottom: 0;
+}
+
+::selection {
+  background: #2d68fc;
+}
+
+#gravatar {
+  position: relative;
+  float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  border-radius: 50%;
+  border: 1.3px solid #c7c7c7;
+}

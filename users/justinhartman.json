@@ -1,0 +1,9 @@
+{
+  "copyright": "Justin Hartman, https://justinhartman.co",
+  "url": "https://justinhartman.co",
+  "email": "code@justinhartman.co",
+  "format": "html",
+  "license": "mit",
+  "theme": "material-indigo",
+  "gravatar": true
+}
