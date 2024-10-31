@@ -1,6 +1,9 @@
 {
-  "copyright": "Softwave, http://softwavestudios.com/",
-  "url": "http://softwavestudios.com/",
+  "copyright": "Softwave",
+  "url": "https://www.s0ftwave.com/",
+  "email": "jcleyba92@gmail.com",
+  "format": "html",
+  "license": "mit",
   "theme": "default",
   "gravatar": true
 }
