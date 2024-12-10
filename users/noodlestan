@@ -1,0 +1,9 @@
+{
+  "copyright": "Noodlestan Collective",
+  "url": "https://noodlestan.org",
+  "email": "hello@noodlestan.org",
+  "format": "html",
+  "license": "mit",
+  "theme": "default",
+  "gravatar": false
+}
