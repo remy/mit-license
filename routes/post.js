@@ -1,4 +1,4 @@
-import path, {dirname} from 'node:path'
+import path from 'node:path'
 import {fileURLToPath} from 'node:url'
 import process from 'node:process'
 import toBase64 from 'btoa'
@@ -11,7 +11,7 @@ import yn from 'yn'
 import is from '@sindresorhus/is'
 import isDomainId from '../utils/is-domain-id.js'
 
-const directoryName = dirname(fileURLToPath(import.meta.url))
+const directoryName = path.dirname(fileURLToPath(import.meta.url))
 
 const {version} = await readPackage()
 
@@ -59,9 +59,7 @@ export default async function postRoute(request, response) {
     // Return a vague error intentionally
     response
       .status(400)
-      .send(
-        'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license',
-      )
+      .send('User already exists - to update values, please send a pull request on https://github.com/remy/mit-license')
 
     return
   }
@@ -70,9 +68,7 @@ export default async function postRoute(request, response) {
   if (await pathExists(path.join(directoryName, '..', 'users', `${id}.json`))) {
     response
       .status(409)
-      .send(
-        'User already exists - to update values, please send a pull request on https://github.com/remy/mit-license',
-      )
+      .send('User already exists - to update values, please send a pull request on https://github.com/remy/mit-license')
     return
   }
 
@@ -82,9 +78,7 @@ export default async function postRoute(request, response) {
     if (is.undefined(userData.gravatar)) {
       response
         .status(400)
-        .send(
-          'The "gravatar" JSON property must be a boolean.',
-        )
+        .send('The "gravatar" JSON property must be a boolean.')
       return
     }
   }
@@ -116,8 +110,6 @@ export default async function postRoute(request, response) {
   } catch {
     response
       .status(500)
-      .send(
-        'Unable to create new user - please send a pull request on https://github.com/remy/mit-license',
-      )
+      .send('Unable to create new user - please send a pull request on https://github.com/remy/mit-license')
   }
 }
