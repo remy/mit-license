@@ -1,9 +1,8 @@
 {
-  "copyright": "Randy Halim",
+  "copyright": "Randy Halim, https://randy-halim.github.io",
   "url": "https://github.com/randy-halim",
-  "email": "randy.halim@outlook.com",
   "format": "html",
   "license": "mit",
-  "theme": "dusk",
+  "theme": "ubuntu-mono",
   "gravatar": false
 }

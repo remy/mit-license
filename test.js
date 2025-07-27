@@ -37,7 +37,7 @@ for await (const user of users) {
       const parsedData = JSON.parse(data)
 
       if (!parsedData.locked && !parsedData.copyright) {
-        report(`Copyright not specified in ${user}`)
+        await report(`Copyright not specified in ${user}`)
       }
 
       if (parsedData.version) {
@@ -55,10 +55,10 @@ for await (const user of users) {
         })
       }
     } catch ({message}) {
-      report(`Invalid JSON in ${user} (${message})`)
+      await report(`Invalid JSON in ${user} (${message})`)
     }
   } catch ({message}) {
-    report(`Unable to read ${user} (${message})`)
+    await report(`Unable to read ${user} (${message})`)
   }
 }
 
@@ -71,10 +71,10 @@ for await (const theme of themes) {
       try {
         parseCSS(cssData)
       } catch ({message}) {
-        report(`Invalid CSS in ${theme} (${message})`)
+        await report(`Invalid CSS in ${theme} (${message})`)
       }
     } catch ({message}) {
-      report(`Unable to read ${theme} (${message})`)
+      await report(`Unable to read ${theme} (${message})`)
     }
   }
 }

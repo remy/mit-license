@@ -1,16 +1,15 @@
 import {fileURLToPath} from 'node:url'
-import path, {dirname} from 'node:path'
+import path from 'node:path'
 import {htmlEscape, htmlUnescape} from 'escape-goat'
 import stripHtml from 'html-text'
 import is from '@sindresorhus/is'
 import getGravatarUrl from 'gravatar-url'
 import createHtmlElement from 'create-html-element'
 import {renderFile} from 'ejs'
-
 import loadUser from '../lib/load-user.js'
 import loadOptions from '../lib/load-options.js'
 
-const directoryName = dirname(fileURLToPath(import.meta.url))
+const directoryName = path.dirname(fileURLToPath(import.meta.url))
 
 function getCopyrightName(user, isPlainText) {
   if (is.string(user)) {
@@ -24,13 +23,15 @@ function getCopyrightName(user, isPlainText) {
 
 function getCopyrightHtml(user, isPlainText) {
   const name = getCopyrightName(user, isPlainText)
-  let html = user.url ? createHtmlElement({
-    name: 'a',
-    attributes: {
-      href: user.url,
-    },
-    text: name,
-  }) : name
+  let html = user.url
+    ? createHtmlElement({
+      name: 'a',
+      attributes: {
+        href: user.url,
+      },
+      text: name,
+    })
+    : name
 
   if (user.email) {
     html += ` &lt;${createHtmlElement({
@@ -71,6 +72,7 @@ export default async function getRoute(request, response) {
   }
 
   const options = loadOptions(request.url)
+  // eslint-disable-next-line unicorn/prefer-logical-operator-over-ternary
   const year = options.pinnedYear
     ? options.pinnedYear
     : removeFalsy([options.startYear, options.endYear]).join('-')

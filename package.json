@@ -10,7 +10,7 @@
     "url": "git@github.com:remy/mit-license.git"
   },
   "engines": {
-    "node": "14.x"
+    "node": "24.x"
   },
   "author": "Remy Sharp <remy@leftlogic.com> (http://remysharp.com/)",
   "scripts": {
@@ -47,26 +47,15 @@
     "yn": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.15.7",
-    "@babel/plugin-syntax-top-level-await": "^7.14.5",
     "css": "^3.0.0",
     "file-ext": "^1.0.0",
     "has-flag": "^5.0.1",
     "nodemon": "^2.0.12",
     "path-extra": "^4.3.0",
-    "xo": "^0.44.0"
+    "xo": "^1.2.1"
   },
   "xo": {
     "space": 2,
-    "semicolon": false,
-    "parser": "@babel/eslint-parser",
-    "parserOptions": {
-      "requireConfigFile": false,
-      "babelOptions": {
-        "plugins": [
-          "@babel/plugin-syntax-top-level-await"
-        ]
-      }
-    }
+    "semicolon": false
   }
 }
