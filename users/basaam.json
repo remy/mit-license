@@ -4,5 +4,6 @@
   "email": "rbasaam@gmail.com",
   "format": "txt",
   "gravatar": true,
-  "theme": "allnight"
+  "theme": "plaintext",
+  "license": "mit"
 }
