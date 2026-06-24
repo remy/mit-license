@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@octokit/rest": "^19.0.4",
+    "@octokit/rest": "^22.0.1",
     "@sindresorhus/is": "^4.2.0",
     "any-size": "^1.2.0",
     "btoa": "^1.2.1",
@@ -38,8 +38,8 @@
     "html-text": "^1.0.1",
     "load-json-file": "^7.0.1",
     "path-exists": "^5.0.0",
-    "postcss-middleware": "^1.1.4",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-middleware": "^0.0.1",
+    "postcss-preset-env": "^11.3.1",
     "read-pkg": "^7.0.0",
     "serve-favicon": "^2.5.0",
     "temp-dir": "^2.0.0",
@@ -52,7 +52,7 @@
     "has-flag": "^5.0.1",
     "nodemon": "^2.0.12",
     "path-extra": "^4.3.0",
-    "xo": "^1.2.1"
+    "xo": "^3.0.2"
   },
   "xo": {
     "space": 2,
