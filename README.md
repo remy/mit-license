@@ -93,8 +93,8 @@ If you additionally want to include a URL and email with each copyright holder, 
       "email": "remy@remysharp.com"
     },
     {
-      "name": "Richie Bendall, https://www.richie-bendall.ml",
-      "url": "https://www.richie-bendall.ml",
+      "name": "Richie Bendall, https://richienb.github.io",
+      "url": "https://richienb.github.io",
       "email": "richiebendall@gmail.com"
     }
   ]
